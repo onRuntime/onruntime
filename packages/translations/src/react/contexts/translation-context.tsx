@@ -2,12 +2,15 @@
 
 import { createContext, useMemo, useState, type ReactNode } from "react";
 
+import { DEFAULT_LOCALE_COOKIE } from "../../core/constants";
 import type { TranslationLoader } from "../../core/types";
 
 export type TranslationContextValue = {
   locale: string;
   locales: readonly string[];
   defaultLocale: string;
+  localeCookie: string;
+  debug: boolean;
   setLocale: (locale: string) => void;
   load: TranslationLoader;
   keySplit?: boolean;
@@ -21,6 +24,8 @@ export type TranslationProviderProps = {
   children: ReactNode;
   locales: readonly string[];
   defaultLocale?: string;
+  localeCookie?: string;
+  debug?: boolean;
   load: TranslationLoader;
   keySplit?: boolean;
 };
@@ -29,6 +34,8 @@ export const TranslationProvider = ({
   children,
   locales,
   defaultLocale,
+  localeCookie = DEFAULT_LOCALE_COOKIE,
+  debug = false,
   load,
   keySplit = true,
 }: TranslationProviderProps) => {
@@ -44,11 +51,13 @@ export const TranslationProvider = ({
       locale,
       locales,
       defaultLocale: resolvedDefaultLocale,
+      localeCookie,
+      debug,
       setLocale,
       load,
       keySplit,
     }),
-    [locale, locales, resolvedDefaultLocale, load, keySplit],
+    [locale, locales, resolvedDefaultLocale, localeCookie, debug, load, keySplit],
   );
 
   return (

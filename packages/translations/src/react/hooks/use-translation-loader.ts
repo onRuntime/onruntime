@@ -13,19 +13,27 @@ export const useTranslationLoader = (
   t: TranslateFunction;
   locale: string;
 } => {
-  const { locale, defaultLocale, load, keySplit } = useTranslationContext();
+  const { locale, defaultLocale, load, keySplit, debug } = useTranslationContext();
 
-  const translation = useMemo(() => {
-    let dict = load(locale, namespace);
-    if (!dict && defaultLocale !== locale) {
-      dict = load(defaultLocale, namespace);
+  const translation = useMemo(() => load(locale, namespace), [locale, namespace, load]);
+
+  const fallbackTranslation = useMemo(() => {
+    if (defaultLocale !== locale) {
+      return load(defaultLocale, namespace);
     }
-    return dict;
-  }, [locale, defaultLocale, namespace, load]);
+    return undefined;
+  }, [defaultLocale, locale, namespace, load]);
 
   const t = useMemo(
-    () => createTranslate(translation, keySplit),
-    [translation, keySplit],
+    () =>
+      createTranslate(translation, {
+        keySplit,
+        fallback: fallbackTranslation,
+        debug,
+        locale,
+        fallbackLocale: defaultLocale,
+      }),
+    [translation, fallbackTranslation, keySplit, debug, locale, defaultLocale],
   );
 
   return { translation, t, locale };

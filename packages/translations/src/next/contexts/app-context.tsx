@@ -3,6 +3,7 @@
 import { type ReactNode, useMemo, useCallback } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
+import { DEFAULT_LOCALE_COOKIE } from "../../core/constants";
 import type { TranslationLoader } from "../../core/types";
 import { TranslationContext } from "../../react/contexts/translation-context";
 
@@ -11,6 +12,8 @@ export type AppTranslationProviderProps = {
   locale: string;
   locales: readonly string[];
   defaultLocale?: string;
+  localeCookie?: string;
+  debug?: boolean;
   load: TranslationLoader;
   keySplit?: boolean;
 };
@@ -24,6 +27,8 @@ export const AppTranslationProvider = ({
   locale,
   locales,
   defaultLocale,
+  localeCookie = DEFAULT_LOCALE_COOKIE,
+  debug = false,
   load,
   keySplit = true,
 }: AppTranslationProviderProps) => {
@@ -40,7 +45,7 @@ export const AppTranslationProvider = ({
     (newLocale: string) => {
       // Set cookie to remember user's choice
       const isSecure = window.location.protocol === "https:";
-      document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax${isSecure ? ";Secure" : ""}`;
+      document.cookie = `${localeCookie}=${newLocale};path=/;max-age=31536000;SameSite=Lax${isSecure ? ";Secure" : ""}`;
 
       const segments = pathname.split("/");
       const hasLocalePrefix = locales.includes(segments[1]);
@@ -67,7 +72,7 @@ export const AppTranslationProvider = ({
 
       router.push(newPath, { scroll: false });
     },
-    [pathname, locales, resolvedDefaultLocale, router],
+    [pathname, locales, resolvedDefaultLocale, localeCookie, router],
   );
 
   const value = useMemo(
@@ -75,11 +80,13 @@ export const AppTranslationProvider = ({
       locale,
       locales,
       defaultLocale: resolvedDefaultLocale,
+      localeCookie,
+      debug,
       setLocale,
       load,
       keySplit,
     }),
-    [locale, locales, resolvedDefaultLocale, setLocale, load, keySplit],
+    [locale, locales, resolvedDefaultLocale, localeCookie, debug, setLocale, load, keySplit],
   );
 
   return (

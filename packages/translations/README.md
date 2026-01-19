@@ -81,7 +81,11 @@ import { load, defaultLocale } from "./translations";
 export const getTranslation = async (namespace = "common") => {
   const headersList = await headers();
   const locale = headersList.get("x-locale") || defaultLocale;
-  return getTranslationCore(load, locale, namespace);
+  return getTranslationCore(load, locale, {
+    namespace,
+    fallbackLocale: defaultLocale,
+    debug: process.env.NODE_ENV === "development",
+  });
 };
 ```
 
@@ -192,6 +196,8 @@ export default async function RootLayout({
 }
 ```
 
+> **Note:** The provider uses `NEXT_LOCALE` as the cookie name by default. You can customize it with the `localeCookie` prop if needed.
+
 #### 4. Use in Server Components
 
 ```typescript
@@ -202,11 +208,17 @@ import { getTranslation } from "@/lib/translations.server";
 
 export default async function Home() {
   const { t, locale } = await getTranslation();
+  const otherLocale = locale === "en" ? "fr" : "en";
 
   return (
     <div>
       <h1>{t("greeting", { name: "John" })}</h1>
       <Link href="/about">{t("nav.about")}</Link>
+
+      {/* Switch locale */}
+      <Link href="/" locale={otherLocale}>
+        {t("actions.switch")}
+      </Link>
     </div>
   );
 }
@@ -254,11 +266,11 @@ module.exports = {
 ```typescript
 // pages/_app.tsx
 import type { AppProps } from "next/app";
-import { TranslationProvider } from "@onruntime/translations/next";
+import { NextTranslationProvider } from "@onruntime/translations/next";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <TranslationProvider
+    <NextTranslationProvider
       load={(locale, ns) => {
         try {
           return require(`@/locales/${locale}/${ns}.json`);
@@ -268,7 +280,7 @@ export default function App({ Component, pageProps }: AppProps) {
       }}
     >
       <Component {...pageProps} />
-    </TranslationProvider>
+    </NextTranslationProvider>
   );
 }
 ```
@@ -354,6 +366,37 @@ export const Demo = () => {
   }
 }
 ```
+
+## Debug Mode
+
+Enable debug mode to get console warnings when translations are missing:
+
+```typescript
+<AppTranslationProvider
+  locale={lang}
+  locales={locales}
+  load={load}
+  debug={process.env.NODE_ENV === "development"}
+>
+  {children}
+</AppTranslationProvider>
+```
+
+When a translation is missing, you'll see warnings like:
+
+```
+[translations] Missing translation for key "greeting" in locale "fr", using fallback from "en"
+[translations] Missing translation for key "unknown.key" in locale "fr" and fallback "en"
+```
+
+## Fallback Behavior
+
+The library automatically falls back to the default locale when a translation key is missing:
+
+1. **Key-level fallback**: If a key exists in `en` but not in `fr`, the English translation is used
+2. **File-level fallback**: If a locale file doesn't exist at all, the default locale file is loaded
+
+This ensures your app never shows raw translation keys to users, even if some translations are incomplete.
 
 ## License
 
