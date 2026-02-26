@@ -1,10 +1,12 @@
+import { DEFAULT_LOCALE_COOKIE } from "@onruntime/translations";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-import { locales, defaultLocale, LOCALE_COOKIE, getPreferredLocale } from "@/lib/translations";
+import { locales, getPreferredLocale } from "@/lib/translations";
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const defaultLocale = locales[0];
 
   const pathnameLocale = locales.find(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
@@ -16,7 +18,7 @@ export function proxy(request: NextRequest) {
   if (pathnameLocale === defaultLocale) {
     const newPathname = pathname.slice(`/${defaultLocale}`.length) || "/";
     const response = NextResponse.redirect(new URL(newPathname, request.url));
-    response.cookies.set(LOCALE_COOKIE, defaultLocale, {
+    response.cookies.set(DEFAULT_LOCALE_COOKIE, defaultLocale, {
       path: "/",
       maxAge: 60 * 60 * 24 * 365, // 1 year
       secure: isSecure,
@@ -33,7 +35,7 @@ export function proxy(request: NextRequest) {
     const response = NextResponse.next({
       request: { headers: requestHeaders },
     });
-    response.cookies.set(LOCALE_COOKIE, pathnameLocale, {
+    response.cookies.set(DEFAULT_LOCALE_COOKIE, pathnameLocale, {
       path: "/",
       maxAge: 60 * 60 * 24 * 365, // 1 year
       secure: isSecure,
