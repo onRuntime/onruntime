@@ -1,5 +1,8 @@
-import type { TranslationLoader } from "@onruntime/translations";
-import type { NextRequest } from "next/server";
+import {
+  createGetPreferredLocale,
+  type LocaleRequest,
+  type TranslationLoader,
+} from "@onruntime/translations";
 
 export const locales = [
   // Default
@@ -29,8 +32,6 @@ export type Locale = (typeof locales)[number]["code"];
 export const localeCodes = locales.map((l) => l.code);
 export const defaultLocale = locales[0].code;
 
-export const LOCALE_COOKIE = "NEXT_LOCALE";
-
 export const load: TranslationLoader = (locale, namespace) => {
   try {
     return require(`@/locales/${locale}/${namespace}.json`);
@@ -39,30 +40,6 @@ export const load: TranslationLoader = (locale, namespace) => {
   }
 };
 
-export function getPreferredLocale(request: NextRequest): Locale {
-  // Check cookie first (user's explicit choice)
-  const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
-  if (cookieLocale && localeCodes.includes(cookieLocale as Locale)) {
-    return cookieLocale as Locale;
-  }
-
-  // Fall back to Accept-Language header
-  const acceptLanguage = request.headers.get("accept-language");
-  if (!acceptLanguage) return defaultLocale;
-
-  const preferred = acceptLanguage
-    .split(",")
-    .map((lang) => {
-      const [code, priorityToken] = lang.trim().split(";");
-      const priorityMatch = priorityToken?.match(/q=([0-9.]+)/);
-      const priority = priorityMatch ? parseFloat(priorityMatch[1]) : 1.0;
-      return {
-        code: code.split("-")[0].toLowerCase(),
-        priority: Number.isNaN(priority) ? 1.0 : priority,
-      };
-    })
-    .sort((a, b) => b.priority - a.priority)
-    .find((lang) => localeCodes.includes(lang.code as Locale));
-
-  return (preferred?.code as Locale) || defaultLocale;
-}
+export const getPreferredLocale = createGetPreferredLocale({
+  locales: localeCodes,
+}) as (request: LocaleRequest) => Locale;
