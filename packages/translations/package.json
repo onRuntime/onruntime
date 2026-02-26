@@ -1,6 +1,6 @@
 {
   "name": "@onruntime/translations",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Lightweight i18n library for React, Next.js, and React Native",
   "author": "onRuntime Studio <contact@onruntime.com>",
   "repository": {
