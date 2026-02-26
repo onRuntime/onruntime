@@ -1,16 +1,19 @@
+/// <reference types="node" />
 import { defineConfig } from "tsup";
-import { readdir, readFile, writeFile } from "fs/promises";
-import { join } from "path";
+import { readdir, readFile, writeFile } from "node:fs/promises";
+import { join } from "node:path";
 
 const addUseClient = async () => {
   const distDir = join(process.cwd(), "dist");
 
-  // Handle subdirectories (react/, next/)
+  // Handle subdirectories (react/, next/) - NOT next/app/ (server-callable)
   for (const subdir of ["react", "next"]) {
     const subdirPath = join(distDir, subdir);
     try {
       const subFiles = await readdir(subdirPath);
       for (const file of subFiles) {
+        // Skip directories (like app/, server/)
+        if (!file.includes(".")) continue;
         if (file.endsWith(".js") || file.endsWith(".cjs")) {
           const filePath = join(subdirPath, file);
           const content = await readFile(filePath, "utf-8");
@@ -64,6 +67,17 @@ export default defineConfig([
     splitting: true,
     treeshake: true,
     onSuccess: addUseClient,
+  },
+  // Next.js server entry (NO "use client" - server-only)
+  {
+    entry: {
+      "next/server/index": "src/next/server/index.ts",
+    },
+    format: ["esm", "cjs"],
+    dts: true,
+    external: ["react", "react-dom", "next", "@onruntime/translations"],
+    splitting: false,
+    treeshake: true,
   },
   // Vite plugin
   {

@@ -34,6 +34,11 @@
       "import": "./dist/next/index.js",
       "require": "./dist/next/index.cjs"
     },
+    "./next/server": {
+      "types": "./dist/next/server/index.d.ts",
+      "import": "./dist/next/server/index.js",
+      "require": "./dist/next/server/index.cjs"
+    },
     "./vite": {
       "types": "./dist/vite/index.d.ts",
       "import": "./dist/vite/index.js",
