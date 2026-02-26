@@ -1,9 +1,10 @@
 "use client";
 
 import type { ReactNode } from "react";
+
 import { AppTranslationProvider } from "@onruntime/translations/next";
 
-import { load, locales, LOCALE_COOKIE } from "@/lib/translations";
+import { locales } from "@/lib/translations";
 
 export const Providers = ({
   children,
@@ -16,8 +17,14 @@ export const Providers = ({
     <AppTranslationProvider
       locale={locale}
       locales={locales}
-      localeCookie={LOCALE_COOKIE}
-      load={load}
+      debug={process.env.NODE_ENV === "development"}
+      load={(loc, ns) => {
+        try {
+          return require(`@/locales/${loc}/${ns}.json`);
+        } catch {
+          return undefined;
+        }
+      }}
     >
       {children}
     </AppTranslationProvider>
