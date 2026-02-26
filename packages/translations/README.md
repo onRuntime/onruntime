@@ -18,82 +18,36 @@ pnpm add @onruntime/translations
 
 ### Next.js App Router
 
-#### 1. Create your translations config
-
-Create two files to separate shared config from server-only code:
+#### 1. Create your config
 
 ```typescript
-// lib/translations.ts (shared config - can be imported anywhere)
-import type { TranslationLoader } from "@onruntime/translations";
-import type { NextRequest } from "next/server";
+// lib/translations.ts
+import {
+  createGetPreferredLocale,
+  DEFAULT_LOCALE_COOKIE,
+  DEFAULT_LOCALES_DIR,
+} from "@onruntime/translations";
 
 export const locales = ["en", "fr"];
 export const defaultLocale = locales[0];
+export const LOCALE_COOKIE = DEFAULT_LOCALE_COOKIE; // "NEXT_LOCALE"
+export const localesDir = DEFAULT_LOCALES_DIR; // "locales"
 
-export const LOCALE_COOKIE = "NEXT_LOCALE";
-
-export const load: TranslationLoader = (locale, namespace) => {
-  try {
-    return require(`../locales/${locale}/${namespace}.json`);
-  } catch {
-    return undefined;
-  }
-};
-
-export function getPreferredLocale(request: NextRequest): string {
-  // Check cookie first (user's explicit choice)
-  const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
-  if (cookieLocale && locales.includes(cookieLocale)) {
-    return cookieLocale;
-  }
-
-  // Fall back to Accept-Language header
-  const acceptLanguage = request.headers.get("accept-language");
-  if (!acceptLanguage) return defaultLocale;
-
-  const preferred = acceptLanguage
-    .split(",")
-    .map((lang) => {
-      const [code, priorityToken] = lang.trim().split(";");
-      const priorityMatch = priorityToken?.match(/q=([0-9.]+)/);
-      const priority = priorityMatch ? parseFloat(priorityMatch[1]) : 1.0;
-      return {
-        code: code.split("-")[0].toLowerCase(),
-        priority: Number.isNaN(priority) ? 1.0 : priority,
-      };
-    })
-    .sort((a, b) => b.priority - a.priority)
-    .find((lang) => locales.includes(lang.code));
-
-  return preferred?.code || defaultLocale;
-}
+export const getPreferredLocale = createGetPreferredLocale({ locales });
 ```
+
+#### 2. Create server translation helper
 
 ```typescript
-// lib/translations.server.ts (server-only - for server components)
-import "server-only";
+// lib/translations.server.ts
+import { createGetTranslation } from "@onruntime/translations/next/server";
 
-import { headers } from "next/headers";
-import { getTranslation as getTranslationCore } from "@onruntime/translations";
-
-import { load, defaultLocale } from "./translations";
-
-export const getTranslation = async (namespace = "common") => {
-  const headersList = await headers();
-  const locale = headersList.get("x-locale") || defaultLocale;
-  return getTranslationCore(load, locale, {
-    namespace,
-    fallbackLocale: defaultLocale,
-    debug: process.env.NODE_ENV === "development",
-  });
-};
+export const getTranslation = createGetTranslation({
+  debug: process.env.NODE_ENV === "development",
+});
 ```
 
-> **Note:** Install the `server-only` package to prevent accidental imports in client components: `pnpm add server-only`
-
-#### 2. Setup proxy
-
-The proxy detects the user's language from a `NEXT_LOCALE` cookie (set when user changes language) or falls back to `Accept-Language` header.
+#### 3. Setup proxy middleware
 
 ```typescript
 // proxy.ts
@@ -116,24 +70,20 @@ export function proxy(request: NextRequest) {
     const response = NextResponse.redirect(new URL(newPathname, request.url));
     response.cookies.set(LOCALE_COOKIE, defaultLocale, {
       path: "/",
-      maxAge: 60 * 60 * 24 * 365, // 1 year
+      maxAge: 60 * 60 * 24 * 365,
       secure: isSecure,
       sameSite: "lax",
     });
     return response;
   }
 
-  // If URL has a non-default locale prefix, use it and persist preference
   if (pathnameLocale) {
     const requestHeaders = new Headers(request.headers);
     requestHeaders.set("x-locale", pathnameLocale);
-    requestHeaders.set("x-pathname", pathname);
-    const response = NextResponse.next({
-      request: { headers: requestHeaders },
-    });
+    const response = NextResponse.next({ request: { headers: requestHeaders } });
     response.cookies.set(LOCALE_COOKIE, pathnameLocale, {
       path: "/",
-      maxAge: 60 * 60 * 24 * 365, // 1 year
+      maxAge: 60 * 60 * 24 * 365,
       secure: isSecure,
       sameSite: "lax",
     });
@@ -143,18 +93,13 @@ export function proxy(request: NextRequest) {
   const preferredLocale = getPreferredLocale(request);
 
   if (preferredLocale !== defaultLocale) {
-    return NextResponse.redirect(
-      new URL(`/${preferredLocale}${pathname}`, request.url),
-    );
+    return NextResponse.redirect(new URL(`/${preferredLocale}${pathname}`, request.url));
   }
 
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-locale", defaultLocale);
-  requestHeaders.set("x-pathname", pathname);
   request.nextUrl.pathname = `/${defaultLocale}${pathname}`;
-  return NextResponse.rewrite(request.nextUrl, {
-    request: { headers: requestHeaders },
-  });
+  return NextResponse.rewrite(request.nextUrl, { request: { headers: requestHeaders } });
 }
 
 export const config = {
@@ -162,14 +107,55 @@ export const config = {
 };
 ```
 
-#### 3. Setup layout with provider
+#### 4. Setup providers
+
+```typescript
+// app/[lang]/providers.tsx
+"use client";
+
+import type { ReactNode } from "react";
+
+import { AppTranslationProvider } from "@onruntime/translations/next";
+
+import { locales, defaultLocale, LOCALE_COOKIE } from "@/lib/translations";
+
+export const Providers = ({
+  children,
+  locale,
+}: {
+  children: ReactNode;
+  locale: string;
+}) => {
+  return (
+    <AppTranslationProvider
+      locale={locale}
+      locales={locales}
+      defaultLocale={defaultLocale}
+      localeCookie={LOCALE_COOKIE}
+      debug={process.env.NODE_ENV === "development"}
+      load={(loc, ns) => {
+        try {
+          return require(`@/locales/${loc}/${ns}.json`);
+        } catch {
+          return undefined;
+        }
+      }}
+    >
+      {children}
+    </AppTranslationProvider>
+  );
+};
+```
+
+#### 5. Setup layout
 
 ```typescript
 // app/[lang]/layout.tsx
 import type { ReactNode } from "react";
-import { AppTranslationProvider } from "@onruntime/translations/next";
 
-import { load, locales } from "@/lib/translations";
+import { locales } from "@/lib/translations";
+
+import { Providers } from "./providers";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -187,18 +173,14 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <body>
-        <AppTranslationProvider locale={lang} locales={locales} load={load}>
-          {children}
-        </AppTranslationProvider>
+        <Providers locale={lang}>{children}</Providers>
       </body>
     </html>
   );
 }
 ```
 
-> **Note:** The provider uses `NEXT_LOCALE` as the cookie name by default. You can customize it with the `localeCookie` prop if needed.
-
-#### 4. Use in Server Components
+#### 6. Use in Server Components
 
 ```typescript
 // app/[lang]/page.tsx
@@ -224,7 +206,7 @@ export default async function Home() {
 }
 ```
 
-#### 5. Use in Client Components
+#### 7. Use in Client Components
 
 ```typescript
 // app/[lang]/about/page.tsx
@@ -266,11 +248,11 @@ module.exports = {
 ```typescript
 // pages/_app.tsx
 import type { AppProps } from "next/app";
-import { NextTranslationProvider } from "@onruntime/translations/next";
+import { TranslationProvider } from "@onruntime/translations/next";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <NextTranslationProvider
+    <TranslationProvider
       load={(locale, ns) => {
         try {
           return require(`@/locales/${locale}/${ns}.json`);
@@ -280,7 +262,7 @@ export default function App({ Component, pageProps }: AppProps) {
       }}
     >
       <Component {...pageProps} />
-    </NextTranslationProvider>
+    </TranslationProvider>
   );
 }
 ```
@@ -369,25 +351,14 @@ export const Demo = () => {
 
 ## Debug Mode
 
-Enable debug mode to get console warnings when translations are missing:
-
-```typescript
-<AppTranslationProvider
-  locale={lang}
-  locales={locales}
-  load={load}
-  debug={process.env.NODE_ENV === "development"}
->
-  {children}
-</AppTranslationProvider>
-```
-
-When a translation is missing, you'll see warnings like:
+Debug mode logs warnings when translations are missing:
 
 ```
 [translations] Missing translation for key "greeting" in locale "fr", using fallback from "en"
 [translations] Missing translation for key "unknown.key" in locale "fr" and fallback "en"
 ```
+
+Set `debug: true` or `debug: false` in your provider/config to control this behavior (defaults to `true` in development).
 
 ## Fallback Behavior
 
