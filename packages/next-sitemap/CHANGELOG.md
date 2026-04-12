@@ -1,5 +1,11 @@
 # @onruntime/next-sitemap
 
+## 0.9.5
+
+### Patch Changes
+
+- bcfb825: Add support for paginated additional sitemaps via `{ pattern, count }` objects to avoid nesting sitemap indexes
+
 ## 0.9.4
 
 ### Patch Changes
