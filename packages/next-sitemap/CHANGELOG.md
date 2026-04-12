@@ -1,5 +1,11 @@
 # @onruntime/next-sitemap
 
+## 0.9.4
+
+### Patch Changes
+
+- 867205f: Fix crash with Turbopack in dev mode where routes-manifest.json exists but staticRoutes and dynamicRoutes are undefined
+
 ## 0.9.3
 
 ### Patch Changes
