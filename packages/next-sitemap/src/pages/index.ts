@@ -42,8 +42,8 @@ interface RoutesManifestRoute {
 }
 
 interface RoutesManifest {
-  staticRoutes: RoutesManifestRoute[];
-  dynamicRoutes: RoutesManifestRoute[];
+  staticRoutes?: RoutesManifestRoute[];
+  dynamicRoutes?: RoutesManifestRoute[];
 }
 
 /**
@@ -77,7 +77,7 @@ function extractRoutesFromManifest(manifest: RoutesManifest): RouteInfo[] {
   const routes: RouteInfo[] = [];
 
   // Process static routes
-  for (const route of manifest.staticRoutes) {
+  for (const route of manifest.staticRoutes ?? []) {
     // Skip API routes
     if (route.page.startsWith("/api/")) continue;
 
@@ -89,7 +89,7 @@ function extractRoutesFromManifest(manifest: RoutesManifest): RouteInfo[] {
   }
 
   // Process dynamic routes
-  for (const route of manifest.dynamicRoutes) {
+  for (const route of manifest.dynamicRoutes ?? []) {
     // Skip API routes and catch-all routes
     if (route.page.startsWith("/api/")) continue;
     if (route.page.includes("[...")) continue;
@@ -201,7 +201,7 @@ function getRoutes(pagesDirectory: string | undefined, localeSegment: string, de
   // Try to use routes-manifest.json first (works in production/Docker)
   const manifest = readRoutesManifest(debug);
 
-  if (manifest) {
+  if (manifest && (manifest.staticRoutes || manifest.dynamicRoutes)) {
     if (debug) {
       console.log(`[next-sitemap] Using routes-manifest.json for route discovery`);
     }
