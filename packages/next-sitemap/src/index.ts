@@ -58,11 +58,15 @@ export interface SitemapConfig {
   changeFreq?: ChangeFrequency | ((path: string) => ChangeFrequency);
 
   /**
-   * Additional sitemaps to include in the sitemap index
-   * Useful for custom sitemaps (e.g., products from an API)
-   * @example additionalSitemaps: ["/products-sitemap.xml", "/blog-sitemap.xml"]
+   * Additional sitemaps to include in the sitemap index.
+   * Use a string for a single sitemap URL, or an object with pattern and count
+   * for paginated sitemaps (avoids nesting sitemap indexes).
+   * @example additionalSitemaps: [
+   *   "/products-sitemap.xml",
+   *   { pattern: "/blog/sitemap-{id}.xml", count: 3 }
+   * ]
    */
-  additionalSitemaps?: string[];
+  additionalSitemaps?: AdditionalSitemap[];
 
   /**
    * Enable debug logging to diagnose issues with route discovery
@@ -250,28 +254,38 @@ export function generateSitemapXml(
 /**
  * Generate sitemap index XML
  */
+export type AdditionalSitemap = string | { pattern: string; count: number };
+
 export function generateSitemapIndexXml(
   baseUrl: string,
   sitemapCount: number,
   options?: {
     sitemapPattern?: string;
-    additionalSitemaps?: string[];
+    additionalSitemaps?: AdditionalSitemap[];
     poweredBy?: boolean;
   }
 ): string {
   const { sitemapPattern = "/sitemap-{id}.xml", additionalSitemaps = [], poweredBy = true } = options || {};
   const now = formatDateW3C(new Date());
 
+  const makeSitemapEntry = (loc: string) =>
+    `  <sitemap>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n  </sitemap>`;
+
   // Generate entries for paginated sitemaps
-  const paginatedEntries = Array.from({ length: sitemapCount }, (_, i) => {
-    const loc = `${baseUrl}${sitemapPattern.replace("{id}", String(i))}`;
-    return `  <sitemap>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n  </sitemap>`;
-  });
+  const paginatedEntries = Array.from({ length: sitemapCount }, (_, i) =>
+    makeSitemapEntry(`${baseUrl}${sitemapPattern.replace("{id}", String(i))}`),
+  );
 
   // Generate entries for additional sitemaps
-  const additionalEntries = additionalSitemaps.map((sitemap) => {
-    const loc = sitemap.startsWith("http") ? sitemap : `${baseUrl}${sitemap}`;
-    return `  <sitemap>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n  </sitemap>`;
+  const additionalEntries = additionalSitemaps.flatMap((sitemap) => {
+    if (typeof sitemap === "string") {
+      const loc = sitemap.startsWith("http") ? sitemap : `${baseUrl}${sitemap}`;
+      return [makeSitemapEntry(loc)];
+    }
+    // Pattern with count: expand into individual sitemap entries
+    return Array.from({ length: sitemap.count }, (_, i) =>
+      makeSitemapEntry(`${baseUrl}${sitemap.pattern.replace("{id}", String(i))}`),
+    );
   });
 
   const allEntries = [...paginatedEntries, ...additionalEntries].join("\n");
