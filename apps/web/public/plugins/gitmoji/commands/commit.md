@@ -40,6 +40,11 @@ committing it, run its full `git diff <path>` yourself.
 
 ## Types
 
+The `<type>` **MUST** be exactly one of the values below. The gitmoji and the type
+are two independent choices: pick the gitmoji freely from the full list for
+expressiveness, but never derive the type from the gitmoji's name or description.
+When no type obviously fits, collapse to the nearest general one.
+
 | Type | Description |
 | --- | --- |
 | `add` | Add a new feature |
@@ -52,6 +57,7 @@ committing it, run its full `git diff <path>` yourself.
 | `move` | Move a file or folder |
 | `upgrade` | Upgrade dependencies |
 | `downgrade` | Downgrade dependencies |
+| `release` | Release / version tag |
 
 ## Your Task
 
@@ -61,7 +67,9 @@ If the user provided a hint: $ARGUMENTS
 
 **Important**:
 - Use the gitmoji list below to select the correct emoji.
-- Look at the recent commits below for style reference.
+- Look at the recent commits below for tone/wording style only. They are **not**
+  authoritative for the type slot: older commits may use a type not in the table
+  above. The Types table is the only source of truth for `<type>`.
 - The context below shows only compact **summaries** (`--short` / `--stat`). Before
   committing a file, read its full diff yourself with `git diff <path>` (or
   `git diff --staged <path>`). Never commit a file you haven't fully read.
@@ -73,6 +81,8 @@ If the user provided a hint: $ARGUMENTS
    - Stage only the relevant files
    - Choose the correct gitmoji from the list below based on the type of change
    - Write a concise commit message
+   - **Before committing, verify the second token of the message is exactly one
+     of the allowed types in the Types table. If it is not, fix it.**
    - Create the commit
 3. Repeat for each logical group of changes
 
