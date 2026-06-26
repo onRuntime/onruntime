@@ -1,4 +1,7 @@
 import React from "react";
+import { TonightPassWordmark } from "kitchn/logos";
+
+import { cn } from "@/lib/utils";
 
 type Props = React.SVGProps<SVGSVGElement> & {
   fill?: string;
@@ -162,4 +165,17 @@ const OnRuntimeWordMark: React.FC<OnRuntimeWordMarkProps> = ({
   </svg>
 );
 
-export { OnRuntimeIcon, OnRuntimeLogo, OnRuntimeWordMark };
+export type TonightPassLogoProps = React.ComponentProps<typeof TonightPassWordmark>;
+
+const TonightPassLogo: React.FC<TonightPassLogoProps> = ({
+  className,
+  ...props
+}) => (
+  <TonightPassWordmark
+    fill={"currentColor"}
+    className={cn("tonightpass-logo", className)}
+    {...props}
+  />
+);
+
+export { OnRuntimeIcon, OnRuntimeLogo, OnRuntimeWordMark, TonightPassLogo };

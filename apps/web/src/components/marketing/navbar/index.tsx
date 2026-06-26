@@ -3,6 +3,7 @@
 import { Link } from "@onruntime/translations/next";
 import type React from "react";
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { ChevronDown, Menu } from "lucide-react";
 
 import { useTranslation } from "@onruntime/translations/react";
@@ -13,7 +14,11 @@ import Routes from "@/constants/routes";
 import Services from "@/constants/services";
 import Projects from "@/constants/projects";
 import { getMajorAgencies } from "@/constants/agencies";
-import { OnRuntimeWordMark } from "@/logos/components";
+import {
+	OnRuntimeIcon,
+	OnRuntimeWordMark,
+	TonightPassLogo,
+} from "@/logos/components";
 import { cn } from "@/lib/utils";
 import { ServiceCategoryData, SubService } from "@/types/service";
 
@@ -115,6 +120,12 @@ type NavItem =
 
 const Navbar: React.FC = () => {
 	const { t } = useTranslation("layout/navbar");
+	const pathname = usePathname();
+	// Co-brand the navbar on the Tonight Pass product pages.
+	const isTonightPass =
+		!!pathname &&
+		(pathname.includes("/solutions/ticketing") ||
+			pathname.includes("/projects/tonightpass"));
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
@@ -211,9 +222,31 @@ const Navbar: React.FC = () => {
 				}
 			>
 				<div className="flex justify-between items-center p-2.5">
-					<Link href={Routes.landing.visitor} onClick={closeMenu}>
-						<OnRuntimeWordMark className="h-6" height={24} />
-					</Link>
+					{isTonightPass ? (
+						<span className="flex items-center gap-2.5">
+							<Link
+								href={Routes.landing.visitor}
+								onClick={closeMenu}
+								aria-label="onRuntime"
+							>
+								<OnRuntimeIcon className="h-6 w-6" />
+							</Link>
+							<span className="text-muted-foreground text-sm">×</span>
+							<a
+								href="https://tonightpass.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								onClick={closeMenu}
+								aria-label="Tonight Pass"
+							>
+								<TonightPassLogo className="h-5" />
+							</a>
+						</span>
+					) : (
+						<Link href={Routes.landing.visitor} onClick={closeMenu}>
+							<OnRuntimeWordMark className="h-6" height={24} />
+						</Link>
+					)}
 
 					<Navigation />
 
