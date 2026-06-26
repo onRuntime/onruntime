@@ -1,7 +1,8 @@
 "use client";
 
 import { Link } from "@onruntime/translations/next";
-import { X } from "lucide-react";
+import { useLocale } from "@onruntime/translations/react";
+import { Check, ChevronDown, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -9,8 +10,17 @@ import { DocsSwitcher } from "./docs-switcher";
 import type { DocsProject } from "./docs-config";
 
 import { cn } from "@/lib/utils";
+import { locales } from "@/lib/translations";
 import type { DocsMetadata } from "@/lib/docs";
 import { OnRuntimeWordMark } from "@/logos/components";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface DocsSidebarProps {
   metadata: DocsMetadata | null;
@@ -28,6 +38,7 @@ export function DocsSidebar({
   setIsMobileOpen,
 }: DocsSidebarProps) {
   const pathname = usePathname();
+  const { locale, setLocale } = useLocale();
   const [internalMobileOpen, setInternalMobileOpen] = useState(false);
 
   const mobileOpen = setIsMobileOpen ? isMobileOpen : internalMobileOpen;
@@ -40,11 +51,11 @@ export function DocsSidebar({
 
   const SidebarContent = () => (
     <div className="flex flex-col h-full">
-      <div className="sticky top-0 bg-background/95 backdrop-blur p-4 space-y-3 z-10">
+      <div className="sticky top-0 bg-muted/95 backdrop-blur p-4 space-y-3 z-10">
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-foreground transition-opacity hover:opacity-80"
           >
             <OnRuntimeWordMark className="h-5" height={20} />
           </Link>
@@ -88,6 +99,42 @@ export function DocsSidebar({
           ))}
         </div>
       </nav>
+
+      <div className="border-t border-border p-4 flex items-center gap-2">
+        <ThemeToggle />
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-9 flex-1 justify-between gap-2 text-xs"
+            >
+              {locales.find((l) => l.code === locale)?.label}
+              <ChevronDown className="h-3 w-3 opacity-50" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent
+            align="start"
+            className="w-(--radix-dropdown-menu-trigger-width)"
+          >
+            {locales.map((loc) => (
+              <DropdownMenuItem
+                key={loc.code}
+                onClick={() => setLocale(loc.code)}
+                className="gap-2 text-xs cursor-pointer"
+              >
+                {locale === loc.code ? (
+                  <Check className="h-3 w-3" />
+                ) : (
+                  <span className="h-3 w-3" />
+                )}
+                {loc.label}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
   );
 
@@ -102,7 +149,7 @@ export function DocsSidebar({
 
       <aside
         className={cn(
-          "hidden md:flex flex-col border-r bg-background/95 backdrop-blur md:w-[268px] lg:w-72 sticky top-0 h-screen",
+          "hidden md:flex flex-col border-r bg-muted/95 backdrop-blur md:w-[268px] lg:w-72 sticky top-0 h-screen",
           className,
         )}
       >
@@ -111,7 +158,7 @@ export function DocsSidebar({
 
       <aside
         className={cn(
-          "md:hidden fixed left-0 top-0 h-full w-72 bg-background border-r z-50 transform transition-transform duration-300",
+          "md:hidden fixed left-0 top-0 h-full w-72 bg-muted border-r z-50 transform transition-transform duration-300",
           mobileOpen ? "translate-x-0" : "-translate-x-full",
         )}
       >
