@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Software di biglietteria online per organizzatori di eventi",
+    "description": "Tutto in uno per la biglietteria online dei tuoi eventi: vendi biglietti, controllo accesso con QR code, analisi in tempo reale e pagamenti sicuri. Configura in 5 minuti, senza spese di installazione."
+  },
+  "variants": {
+    "nightlife": {
+      "metadata": {
+        "title": "Software di biglietteria per discoteche e feste",
+        "description": "Biglietteria online per le tue serate in discoteca e feste: vendi ingressi, controllo porta con QR code, analisi in tempo reale e pagamenti sicuri. Configura in 5 minuti, senza spese di installazione."
+      }
+    },
+    "concerts-festivals": {
+      "metadata": {
+        "title": "Software di biglietteria per concerti e festival",
+        "description": "Biglietteria online per i tuoi concerti e festival: vendi più livelli di biglietti, controllo accesso con QR code, analisi in tempo reale e pagamenti sicuri. Configura in 5 minuti, senza spese di installazione."
+      }
+    },
+    "business-events": {
+      "metadata": {
+        "title": "Software di biglietteria per eventi professionali",
+        "description": "Biglietteria online per i tuoi seminari e conferenze: gestisci le registrazioni, check-in con QR code, analisi in tempo reale e pagamenti sicuri. Configura in 5 minuti, senza spese di installazione."
+      }
+    }
+  }
+}

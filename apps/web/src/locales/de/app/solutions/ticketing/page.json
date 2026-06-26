@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Online-Ticketing-Software für Veranstalter",
+    "description": "All-in-one Online-Ticketing für deine Veranstaltungen: verkaufe Tickets, QR-Code-Zugangskontrolle, Echtzeitanalysen und sichere Zahlungen. In 5 Minuten eingerichtet, keine Installationsgebühren."
+  },
+  "variants": {
+    "nightlife": {
+      "metadata": {
+        "title": "Ticketing-Software für Nachtclubs und Partys",
+        "description": "Online-Ticketing für deine Clubnächte und Partys: verkaufe Eintritte, QR-Code-Türkontrolle, Echtzeitanalysen und sichere Zahlungen. In 5 Minuten eingerichtet, keine Installationsgebühren."
+      }
+    },
+    "concerts-festivals": {
+      "metadata": {
+        "title": "Ticketing-Software für Konzerte und Festivals",
+        "description": "Online-Ticketing für deine Konzerte und Festivals: verkaufe verschiedene Ticketstufen, QR-Code-Zugangskontrolle, Echtzeitanalysen und sichere Zahlungen. In 5 Minuten eingerichtet, keine Installationsgebühren."
+      }
+    },
+    "business-events": {
+      "metadata": {
+        "title": "Ticketing-Software für professionelle Veranstaltungen",
+        "description": "Online-Ticketing für deine Seminare und Konferenzen: verwalte Anmeldungen, QR-Code-Check-in, Echtzeitanalysen und sichere Zahlungen. In 5 Minuten eingerichtet, keine Installationsgebühren."
+      }
+    }
+  }
+}

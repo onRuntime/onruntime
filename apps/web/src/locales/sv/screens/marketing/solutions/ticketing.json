@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "title": "Online biljettförsäljning för dina evenemang",
+    "subtitle": "Sälj dina biljetter, hantera inträde och analysera din försäljning.",
+    "description": "Den kompletta biljettlösningen för evenemangsarrangörer. Skapa ditt evenemang, sälj dina biljetter och kontrollera tillgången med professionella verktyg. Installera på 5 minuter, inga installationsavgifter.",
+    "buttons": {
+      "create": "Skapa min biljettförsäljning",
+      "discover": "Se lösningen"
+    },
+    "stats": {
+      "setup": {
+        "value": "5 min",
+        "label": "Installation"
+      },
+      "cost": {
+        "value": "0€",
+        "label": "Installation"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Support"
+      }
+    }
+  },
+  "showcase": {
+    "title": "En biljett-sida dina deltagare kommer att älska",
+    "description": "En ren, mobilvänlig evenemangssida med säker betalning, rabattkoder och transparanta avgifter. Dine köpare ser ditt evenemang, väljer sina biljetter och betalar på några sekunder.",
+    "url": "tonightpass.com"
+  },
+  "dashboard": {
+    "title": "Hantera allt från en instrumentpanel",
+    "description": "Skapa dina evenemang, ställ in biljettklasser, följ din försäljning och kontrollera åtkomst från en enda arrangörs instrumentpanel. Ingen installation, inga kalkylblad.",
+    "url": "tonightpass.com"
+  },
+  "event-types": {
+    "title": "En biljettlösning för varje typ av evenemang",
+    "items": {
+      "nightclub": "Nattklubb",
+      "concert": "Konsert",
+      "festival": "Festival",
+      "party": "Fest",
+      "afterwork": "Efter jobbet",
+      "show": "Show",
+      "cruise": "Kryssning",
+      "seminar": "Seminarie",
+      "conference": "Konferens",
+      "trade-show": "Mässa",
+      "sport": "Sport",
+      "members-night": "Medlemskväll"
+    }
+  },
+  "features": {
+    "title": "Allt du behöver för att sälja och hantera dina biljetter",
+    "items": {
+      "flexible-tickets": {
+        "title": "Flexibla biljett-typer",
+        "description": "Skapa flera biljettklasser, tidiga fågelpriser, grupppaket och VIP-upplevelser."
+      },
+      "qr-control": {
+        "title": "QR-kod åtkomstkontroll",
+        "description": "Snabb och säker inträdeshantering med QR-kod scanning och realtidsverifiering."
+      },
+      "analytics": {
+        "title": "Realtidsanalys",
+        "description": "Spåra försäljning, deltagande och intäkter med kompletta instrumentpaneler."
+      },
+      "payments": {
+        "title": "Säkra betalningar",
+        "description": "PCI-kompatibel betalningshantering med stöd för flera betalningsmetoder."
+      },
+      "mobile": {
+        "title": "Mobiloptimerad",
+        "description": "Sälj biljetter vart som helst med vår mobilvänliga design och progressiva webbapp."
+      },
+      "refunds": {
+        "title": "Enkla återbetalningar",
+        "description": "Hanteringen av avbokningar och återbetalningar med automatiserade riktlinjer och ögonblicklig bearbetning."
+      }
+    }
+  },
+  "steps": {
+    "title": "Hur du skapar din online biljettförsäljning",
+    "items": {
+      "create": {
+        "title": "Skapa ditt evenemang",
+        "description": "Ställ in ditt evenemang på några minuter med alla detaljer dina deltagare behöver."
+      },
+      "configure": {
+        "title": "Konfigurera dina biljetter",
+        "description": "Definiera dina biljett-typer, priser, kapacitet och försäljningsperioder."
+      },
+      "sell": {
+        "title": "Sälj och hantera",
+        "description": "Sälj online, skanna biljetter vid dörren och följ allt i realtid."
+      }
+    }
+  },
+  "faq": {
+    "title": "Vanliga frågor",
+    "items": {
+      "fees": {
+        "question": "Vad är biljettavgifterna?",
+        "answer": "Transparent prissättning utan installationsavgifter. Du kan inkludera avgifterna i det visade priset eller överföra dem till deltagarna."
+      },
+      "setup-time": {
+        "question": "Hur lång tid tar det att skapa mitt evenemang?",
+        "answer": "Omkring 5 minuter. Skapa ditt evenemang, konfigurera dina biljetter och börja sälja direkt."
+      },
+      "payments": {
+        "question": "När får jag mina betalningar?",
+        "answer": "Snabba och säkra utbetalningar med PCI-kompatibel hantering och stöd för flera betalningsmetoder."
+      },
+      "features": {
+        "question": "Vilka funktioner ingår?",
+        "answer": "Flexibla biljett-typer, QR-kod åtkomstkontroll, realtidsanalys, säkra betalningar, mobiloptimering och enkla återbetalningar."
+      },
+      "support": {
+        "question": "Vilken typ av support erbjuder ni?",
+        "answer": "Dedikerad support för att hjälpa dig ställa in och köra dina evenemang."
+      }
+    }
+  },
+  "final-cta": {
+    "title": "Är du redo att lansera din biljettförsäljning?",
+    "description": "Skapa ditt evenemang och börja sälja biljetter online på bara några minuter.",
+    "button": "Skapa min biljettförsäljning"
+  },
+  "variants": {
+    "nightlife": {
+      "hero": {
+        "title": "Biljettförsäljning för nattklubbar och fester",
+        "subtitle": "Sälj inträden, hantera dörren och spåra din kväll i realtid.",
+        "description": "Den kompletta biljettlösningen för klubbar, barer och festarrangörer. Skapa ditt evenemang, sälj inträden och skanna QR-koder vid dörren. Installera på 5 minuter, inga installationsavgifter."
+      },
+      "event-types": {
+        "title": "Byggd för klubbar, barer och nattlivsevenemang"
+      },
+      "features": {
+        "title": "Allt du behöver för att driva dina klubbkvällar"
+      },
+      "steps": {
+        "title": "Hur du ställer in biljettförsäljning för din klubbkväll"
+      },
+      "faq": {
+        "title": "Frågor om biljettförsäljning för nattklubbar"
+      },
+      "final-cta": {
+        "title": "Är du redo att fylla din nästa klubbkväll?",
+        "description": "Skapa ditt evenemang och börja sälja inträden online på bara några minuter."
+      }
+    },
+    "concerts-festivals": {
+      "hero": {
+        "title": "Biljettförsäljning för konserter och festivaler",
+        "subtitle": "Sälj biljetter, hantera inträde och analysera din försäljning.",
+        "description": "Den kompletta biljettlösningen för konsert- och festivalarrangörer. Skapa ditt evenemang, sälj flera biljettklasser och kontrollera tillgången med QR-koder. Installera på 5 minuter, inga installationsavgifter."
+      },
+      "event-types": {
+        "title": "Byggd för konserter, festivaler och liveshower"
+      },
+      "features": {
+        "title": "Allt du behöver för att driva dina konserter och festivaler"
+      },
+      "steps": {
+        "title": "Hur du ställer in biljettförsäljning för din konsert eller festival"
+      },
+      "faq": {
+        "title": "Frågor om biljettförsäljning för konserter och festivaler"
+      },
+      "final-cta": {
+        "title": "Är du redo att sälja ut din nästa show?",
+        "description": "Skapa ditt evenemang och börja sälja biljetter online på bara några minuter."
+      }
+    },
+    "business-events": {
+      "hero": {
+        "title": "Biljettförsäljning för professionella evenemang",
+        "subtitle": "Sälj registreringar, hantera incheckning och spåra deltagande.",
+        "description": "Den kompletta biljettlösningen för seminarier, konferenser och professionella evenemang. Skapa ditt evenemang, hantera registreringar och checka in deltagare med QR-koder. Installera på 5 minuter, inga installationsavgifter."
+      },
+      "event-types": {
+        "title": "Byggd för seminarier, konferenser och professionella evenemang"
+      },
+      "features": {
+        "title": "Allt du behöver för att driva dina professionella evenemang"
+      },
+      "steps": {
+        "title": "Hur du ställer in biljettförsäljning för ditt professionella evenemang"
+      },
+      "faq": {
+        "title": "Frågor om biljettförsäljning för professionella evenemang"
+      },
+      "final-cta": {
+        "title": "Är du redo att lansera ditt nästa professionella evenemang?",
+        "description": "Skapa ditt evenemang och börja sälja registreringar online på bara några minuter."
+      }
+    }
+  }
+}

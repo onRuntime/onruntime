@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Software de venta de entradas online para organizadores de eventos",
+    "description": "Todo en uno para la venta de entradas de tus eventos: vende boletos, control de acceso con código QR, análisis en tiempo real y pagos seguros. Configúralo en 5 minutos, sin tarifas de instalación."
+  },
+  "variants": {
+    "nightlife": {
+      "metadata": {
+        "title": "Software de venta de entradas para discotecas y fiestas",
+        "description": "Venta de entradas online para tus noches de club y fiestas: vende entradas, control de puerta con código QR, análisis en tiempo real y pagos seguros. Configúralo en 5 minutos, sin tarifas de instalación."
+      }
+    },
+    "concerts-festivals": {
+      "metadata": {
+        "title": "Software de venta de entradas para conciertos y festivales",
+        "description": "Venta de entradas online para tus conciertos y festivales: vende múltiples niveles de boletos, control de acceso con código QR, análisis en tiempo real y pagos seguros. Configúralo en 5 minutos, sin tarifas de instalación."
+      }
+    },
+    "business-events": {
+      "metadata": {
+        "title": "Software de venta de entradas para eventos profesionales",
+        "description": "Venta de entradas online para tus seminarios y conferencias: gestiona registros, check-in con código QR, análisis en tiempo real y pagos seguros. Configúralo en 5 minutos, sin tarifas de instalación."
+      }
+    }
+  }
+}

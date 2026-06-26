@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "title": "Billetterie en ligne pour vos événements",
+    "subtitle": "Vendez vos billets, gérez l'entrée et analysez vos ventes.",
+    "description": "La solution de billetterie tout-en-un pour les organisateurs d'événements. Créez votre événement, vendez vos billets et contrôlez l'accès avec des outils professionnels. Configurez en 5 minutes, sans frais d'installation.",
+    "buttons": {
+      "create": "Créer ma billetterie",
+      "discover": "Découvrir la solution"
+    },
+    "stats": {
+      "setup": {
+        "value": "5 min",
+        "label": "Configuration"
+      },
+      "cost": {
+        "value": "0€",
+        "label": "Installation"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Support"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Une page de billetterie que vos participants vont adorer",
+    "description": "Une page d'événement propre, prête pour mobile avec paiement sécurisé, codes promo et frais transparents. Vos acheteurs voient votre événement, choisissent leurs billets et paient en quelques secondes.",
+    "url": "tonightpass.com"
+  },
+  "dashboard": {
+    "title": "Gérez tout depuis un seul tableau de bord",
+    "description": "Créez vos événements, configurez vos catégories de billets, suivez vos ventes et contrôlez l'accès depuis un seul tableau de bord organisateur. Pas d'installation, pas de tableurs.",
+    "url": "tonightpass.com"
+  },
+  "event-types": {
+    "title": "Une solution de billetterie pour chaque type d'événement",
+    "items": {
+      "nightclub": "Boîte de nuit",
+      "concert": "Concert",
+      "festival": "Festival",
+      "party": "Fête",
+      "afterwork": "Afterwork",
+      "show": "Spectacle",
+      "cruise": "Croisière",
+      "seminar": "Séminaire",
+      "conference": "Conférence",
+      "trade-show": "Salon professionnel",
+      "sport": "Sport",
+      "members-night": "Soirée membres"
+    }
+  },
+  "features": {
+    "title": "Tout ce dont vous avez besoin pour vendre et gérer vos billets",
+    "items": {
+      "flexible-tickets": {
+        "title": "Types de billets flexibles",
+        "description": "Créez plusieurs catégories de billets, tarif prévente, forfaits groupe et expériences VIP."
+      },
+      "qr-control": {
+        "title": "Contrôle d'accès par QR code",
+        "description": "Gestion d'entrée rapide et sécurisée avec scan de QR code et validation en temps réel."
+      },
+      "analytics": {
+        "title": "Analytique en temps réel",
+        "description": "Suivez les ventes, l'assistance et les revenus avec des tableaux de bord complets."
+      },
+      "payments": {
+        "title": "Paiements sécurisés",
+        "description": "Traitement des paiements conforme PCI avec support pour plusieurs méthodes de paiement."
+      },
+      "mobile": {
+        "title": "Optimisé pour mobile",
+        "description": "Vendez des billets partout avec notre design mobile-first et notre application web progressive."
+      },
+      "refunds": {
+        "title": "Remboursements faciles",
+        "description": "Gérez les annulations et remboursements avec des politiques automatisées et un traitement instantané."
+      }
+    }
+  },
+  "steps": {
+    "title": "Comment créer votre billetterie en ligne",
+    "items": {
+      "create": {
+        "title": "Créez votre événement",
+        "description": "Configurez votre événement en quelques minutes avec tous les détails dont vos participants ont besoin."
+      },
+      "configure": {
+        "title": "Configurez vos billets",
+        "description": "Définissez vos types de billets, prix, capacité et périodes de vente."
+      },
+      "sell": {
+        "title": "Vendez et gérez",
+        "description": "Vendez en ligne, scannez les billets à l'entrée et suivez tout en temps réel."
+      }
+    }
+  },
+  "faq": {
+    "title": "Questions fréquemment posées",
+    "items": {
+      "fees": {
+        "question": "Quels sont les frais de billetterie?",
+        "answer": "Tarification transparente sans frais d'installation. Vous pouvez inclure les frais dans le prix affiché ou les transférer aux participants."
+      },
+      "setup-time": {
+        "question": "Combien de temps faut-il pour créer mon événement?",
+        "answer": "Environ 5 minutes. Créez votre événement, configurez vos billets et commencez à vendre immédiatement."
+      },
+      "payments": {
+        "question": "Quand vais-je recevoir mes paiements?",
+        "answer": "Versements rapides et sécurisés avec un traitement conforme PCI et support pour plusieurs méthodes de paiement."
+      },
+      "features": {
+        "question": "Quelles fonctionnalités sont incluses?",
+        "answer": "Types de billets flexibles, contrôle d'accès par QR code, analytique en temps réel, paiements sécurisés, optimisation mobile et remboursements faciles."
+      },
+      "support": {
+        "question": "Quel type de support proposez-vous?",
+        "answer": "Support dédié pour vous aider à configurer et gérer vos événements."
+      }
+    }
+  },
+  "final-cta": {
+    "title": "Prêt à lancer votre billetterie?",
+    "description": "Créez votre événement et commencez à vendre des billets en ligne en quelques minutes.",
+    "button": "Créer ma billetterie"
+  },
+  "variants": {
+    "nightlife": {
+      "hero": {
+        "title": "Billetterie pour boîtes de nuit et fêtes",
+        "subtitle": "Vendez des entrées, gérez la porte et suivez votre soirée en temps réel.",
+        "description": "La billetterie tout-en-un conçue pour les clubs, bars et organisateurs de fêtes. Créez votre événement, vendez des entrées et scannez des QR codes à la porte. Configurez en 5 minutes, sans frais d'installation."
+      },
+      "event-types": {
+        "title": "Conçue pour les clubs, bars et événements nocturnes"
+      },
+      "features": {
+        "title": "Tout ce dont vous avez besoin pour gérer vos soirées"
+      },
+      "steps": {
+        "title": "Comment configurer la billetterie pour votre soirée en club"
+      },
+      "faq": {
+        "title": "Questions sur la billetterie en boîte de nuit"
+      },
+      "final-cta": {
+        "title": "Prêt à remplir votre prochaine soirée en club?",
+        "description": "Créez votre événement et commencez à vendre des entrées en ligne en quelques minutes."
+      }
+    },
+    "concerts-festivals": {
+      "hero": {
+        "title": "Billetterie pour concerts et festivals",
+        "subtitle": "Vendez des billets, gérez l'entrée et analysez vos ventes.",
+        "description": "La billetterie tout-en-un pour les organisateurs de concerts et festivals. Créez votre événement, vendez plusieurs catégories de billets et contrôlez l'accès avec des QR codes. Configurez en 5 minutes, sans frais d'installation."
+      },
+      "event-types": {
+        "title": "Conçue pour concerts, festivals et spectacles en direct"
+      },
+      "features": {
+        "title": "Tout ce dont vous avez besoin pour gérer vos concerts et festivals"
+      },
+      "steps": {
+        "title": "Comment configurer la billetterie pour votre concert ou festival"
+      },
+      "faq": {
+        "title": "Questions sur la billetterie pour concerts et festivals"
+      },
+      "final-cta": {
+        "title": "Prêt à vendre votre prochain spectacle?",
+        "description": "Créez votre événement et commencez à vendre des billets en ligne en quelques minutes."
+      }
+    },
+    "business-events": {
+      "hero": {
+        "title": "Billetterie pour événements professionnels",
+        "subtitle": "Vendez des inscriptions, gérez l'enregistrement et suivez l'assistance.",
+        "description": "La billetterie tout-en-un pour séminaires, conférences et événements professionnels. Créez votre événement, gérez les inscriptions et enregistrez les participants avec des QR codes. Configurez en 5 minutes, sans frais d'installation."
+      },
+      "event-types": {
+        "title": "Conçue pour séminaires, conférences et événements professionnels"
+      },
+      "features": {
+        "title": "Tout ce dont vous avez besoin pour gérer vos événements professionnels"
+      },
+      "steps": {
+        "title": "Comment configurer la billetterie pour votre événement professionnel"
+      },
+      "faq": {
+        "title": "Questions sur la billetterie pour événements professionnels"
+      },
+      "final-cta": {
+        "title": "Prêt à lancer votre prochain événement professionnel?",
+        "description": "Créez votre événement et commencez à vendre des inscriptions en ligne en quelques minutes."
+      }
+    }
+  }
+}

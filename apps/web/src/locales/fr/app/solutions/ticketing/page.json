@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Logiciel de billetterie en ligne pour les organisateurs d'événements",
+    "description": "Billetterie en ligne tout-en-un pour vos événements : vendez des billets, contrôle d'accès par QR code, analyses en temps réel et paiements sécurisés. Configurez en 5 minutes, sans frais d'installation."
+  },
+  "variants": {
+    "nightlife": {
+      "metadata": {
+        "title": "Logiciel de billetterie pour boîtes de nuit et fêtes",
+        "description": "Billetterie en ligne pour vos nuits en club et vos fêtes : vendez des entrées, contrôle d'entrée par QR code, analyses en temps réel et paiements sécurisés. Configurez en 5 minutes, sans frais d'installation."
+      }
+    },
+    "concerts-festivals": {
+      "metadata": {
+        "title": "Logiciel de billetterie pour concerts et festivals",
+        "description": "Billetterie en ligne pour vos concerts et festivals : vendez plusieurs niveaux de billets, contrôle d'accès par QR code, analyses en temps réel et paiements sécurisés. Configurez en 5 minutes, sans frais d'installation."
+      }
+    },
+    "business-events": {
+      "metadata": {
+        "title": "Logiciel de billetterie pour événements professionnels",
+        "description": "Billetterie en ligne pour vos séminaires et conférences : gérez les inscriptions, check-in par QR code, analyses en temps réel et paiements sécurisés. Configurez en 5 minutes, sans frais d'installation."
+      }
+    }
+  }
+}

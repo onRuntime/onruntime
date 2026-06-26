@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "title": "Etkinlikleriniz için çevrimiçi biletleme",
+    "subtitle": "Biletlerinizi satın, girişleri yönetin ve satışlarınızı analiz edin.",
+    "description": "Etkinlik organizatörleri için hepsi bir arada biletleme çözümü. Etkinliğinizi oluşturun, biletlerinizi satın ve profesyonel araçlarla erişimi kontrol edin. 5 dakikada kurulum, kurulum ücreti yok.",
+    "buttons": {
+      "create": "Biletleme oluştur",
+      "discover": "Çözümü gör"
+    },
+    "stats": {
+      "setup": {
+        "value": "5 dk",
+        "label": "Kurulum"
+      },
+      "cost": {
+        "value": "0€",
+        "label": "Kurulum ücreti"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Destek"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Katılımcılarınızın seveceği bir biletleme sayfası",
+    "description": "Güvenli ödeme, promosyon kodları ve şeffaf ücretlerle birlikte temiz, mobil uyumlu bir etkinlik sayfası. Alıcılarınız etkinliğinizi görür, biletlerini seçer ve birkaç saniye içinde ödeme yapar.",
+    "url": "tonightpass.com"
+  },
+  "dashboard": {
+    "title": "Her şeyi tek bir kontrol panelinden yönetin",
+    "description": "Etkinliklerinizi oluşturun, bilet katmanlarını ayarlayın, satışlarınızı takip edin ve tek bir organizatör kontrol panelinden erişimi yönetin. Kurulum yok, elektronik tablo yok.",
+    "url": "tonightpass.com"
+  },
+  "event-types": {
+    "title": "Her tür etkinlik için bir biletleme çözümü",
+    "items": {
+      "nightclub": "Gece kulübü",
+      "concert": "Konser",
+      "festival": "Festival",
+      "party": "Parti",
+      "afterwork": "Çalışma sonrası",
+      "show": "Gösteri",
+      "cruise": "Kruvaziyer",
+      "seminar": "Seminer",
+      "conference": "Konferans",
+      "trade-show": "Fuar",
+      "sport": "Spor",
+      "members-night": "Üye gecesi"
+    }
+  },
+  "features": {
+    "title": "Biletlerinizi satmak ve yönetmek için ihtiyacınız olan her şey",
+    "items": {
+      "flexible-tickets": {
+        "title": "Esnek bilet türleri",
+        "description": "Birden fazla bilet katmanı, erken kayıt fiyatlandırması, grup paketleri ve VIP deneyimleri oluşturun."
+      },
+      "qr-control": {
+        "title": "QR kod ile erişim kontrolü",
+        "description": "QR kod taraması ve gerçek zamanlı doğrulama ile hızlı ve güvenli giriş yönetimi."
+      },
+      "analytics": {
+        "title": "Gerçek zamanlı analiz",
+        "description": "Satışları, katılımı ve geliri tam panellerle takip edin."
+      },
+      "payments": {
+        "title": "Güvenli ödemeler",
+        "description": "Birden fazla ödeme yöntemini destekleyen PCI uyumlu ödeme işlemi."
+      },
+      "mobile": {
+        "title": "Mobil optimizasyon",
+        "description": "Mobil öncelikli tasarımımız ve progresif web uygulamamız ile her yerde bilet satın."
+      },
+      "refunds": {
+        "title": "Kolay iadeler",
+        "description": "İptal ve iadeleri otomatik politikalar ve anlık işleme ile yönetin."
+      }
+    }
+  },
+  "steps": {
+    "title": "Çevrimiçi biletlemeyi nasıl oluşturursunuz",
+    "items": {
+      "create": {
+        "title": "Etkinliğinizi oluşturun",
+        "description": "Katılımcılarınızın ihtiyaç duyduğu tüm detaylarla birlikte etkinliğinizi birkaç dakikada kurun."
+      },
+      "configure": {
+        "title": "Biletlerinizi yapılandırın",
+        "description": "Bilet türlerinizi, fiyatlarınızı, kapasitenizi ve satış dönemlerinizi belirleyin."
+      },
+      "sell": {
+        "title": "Satın ve yönetin",
+        "description": "Çevrimiçi satın, kapıda biletleri tarayın ve her şeyi gerçek zamanlı takip edin."
+      }
+    }
+  },
+  "faq": {
+    "title": "Sıkça sorulan sorular",
+    "items": {
+      "fees": {
+        "question": "Biletleme ücretleri nelerdir?",
+        "answer": "Kurulum ücreti yok, şeffaf fiyatlandırma. Ücretleri gösterilen fiyata dahil edebilir veya katılımcılara geçirebilirsiniz."
+      },
+      "setup-time": {
+        "question": "Etkinliğimi oluşturmak ne kadar sürer?",
+        "answer": "Yaklaşık 5 dakika. Etkinliğinizi oluşturun, biletlerinizi yapılandırın ve hemen satışa başlayın."
+      },
+      "payments": {
+        "question": "Ödemelerimi ne zaman alacağım?",
+        "answer": "PCI uyumlu işlem ile hızlı ve güvenli ödemeler."
+      },
+      "features": {
+        "question": "Hangi özellikler dahil?",
+        "answer": "Esnek bilet türleri, QR kod ile erişim kontrolü, gerçek zamanlı analiz, güvenli ödemeler, mobil optimizasyon ve kolay iadeler."
+      },
+      "support": {
+        "question": "Hangi tür destek sunuyorsunuz?",
+        "answer": "Etkinliklerinizi kurmanıza ve yürütmenize yardımcı olmak için özel destek."
+      }
+    }
+  },
+  "final-cta": {
+    "title": "Biletlemeyi başlatmaya hazır mısınız?",
+    "description": "Etkinliğinizi oluşturun ve sadece birkaç dakika içinde çevrimiçi bilet satışına başlayın.",
+    "button": "Biletleme oluştur"
+  },
+  "variants": {
+    "nightlife": {
+      "hero": {
+        "title": "Gece kulüpleri ve partiler için biletleme",
+        "subtitle": "Girişleri satın, kapıyı yönetin ve gecenizi gerçek zamanlı takip edin.",
+        "description": "Kulüpler, barlar ve parti organizatörleri için hepsi bir arada biletleme. Etkinliğinizi oluşturun, girişleri satın ve kapıda QR kod tarayın. 5 dakikada kurulumu, kurulum ücreti yok."
+      },
+      "event-types": {
+        "title": "Kulüpler, barlar ve gece hayatı etkinlikleri için tasarlandı"
+      },
+      "features": {
+        "title": "Kulüp gecelerinizi yürütmek için ihtiyacınız olan her şey"
+      },
+      "steps": {
+        "title": "Kulüp geceniz için biletlemenin nasıl kurulacağı"
+      },
+      "faq": {
+        "title": "Gece kulübü biletleme soruları"
+      },
+      "final-cta": {
+        "title": "Bir sonraki kulüp gecenizi doldurmaya hazır mısınız?",
+        "description": "Etkinliğinizi oluşturun ve sadece birkaç dakika içinde çevrimiçi giriş satışına başlayın."
+      }
+    },
+    "concerts-festivals": {
+      "hero": {
+        "title": "Konserler ve festivaller için biletleme",
+        "subtitle": "Bilet satın, girişleri yönetin ve satışlarınızı analiz edin.",
+        "description": "Konser ve festival organizatörleri için hepsi bir arada biletleme. Etkinliğinizi oluşturun, birden fazla bilet katmanı satın ve QR kodlarla erişimi kontrol edin. 5 dakikada kurulum, kurulum ücreti yok."
+      },
+      "event-types": {
+        "title": "Konserler, festivaller ve canlı gösteriler için tasarlandı"
+      },
+      "features": {
+        "title": "Konserlerinizi ve festivallerinizi yürütmek için ihtiyacınız olan her şey"
+      },
+      "steps": {
+        "title": "Konseriniz veya festivaliniz için biletlemenin nasıl kurulacağı"
+      },
+      "faq": {
+        "title": "Konser ve festival biletleme soruları"
+      },
+      "final-cta": {
+        "title": "Bir sonraki gösterinizi satmaya hazır mısınız?",
+        "description": "Etkinliğinizi oluşturun ve yalnızca birkaç dakika içinde çevrimiçi bilet satışına başlayın."
+      }
+    },
+    "business-events": {
+      "hero": {
+        "title": "Profesyonel etkinlikler için biletleme",
+        "subtitle": "Kayıtları satın, girişleri yönetin ve katılımı takip edin.",
+        "description": "Seminerler, konferanslar ve profesyonel etkinlikler için hepsi bir arada biletleme. Etkinliğinizi oluşturun, kayıtları yönetin ve katılımcıları QR kodlarla karşılayın. 5 dakikada kurulum, kurulum ücreti yok."
+      },
+      "event-types": {
+        "title": "Seminerler, konferanslar ve profesyonel etkinlikler için hazırlanmış"
+      },
+      "features": {
+        "title": "Profesyonel etkinliklerinizi yürütmek için ihtiyacınız olan her şey"
+      },
+      "steps": {
+        "title": "Profesyonel etkinliğiniz için biletlemenin nasıl kurulacağı"
+      },
+      "faq": {
+        "title": "Profesyonel etkinlik biletleme soruları"
+      },
+      "final-cta": {
+        "title": "Bir sonraki profesyonel etkinliğinizi başlatmaya hazır mısınız?",
+        "description": "Etkinliğinizi oluşturun ve sadece birkaç dakika içinde çevrimiçi kayıt satışına başlayın."
+      }
+    }
+  }
+}

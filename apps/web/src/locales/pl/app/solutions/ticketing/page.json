@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Oprogramowanie do sprzedaży biletów online dla organizatorów wydarzeń",
+    "description": "Wszechstronne oprogramowanie do sprzedaży biletów na Twoje wydarzenia: sprzedawaj bilety, kontroluj dostęp za pomocą kodów QR, analizuj w czasie rzeczywistym i obsługuj bezpieczne płatności. Skonfiguruj w 5 minut, bez opłat instalacyjnych."
+  },
+  "variants": {
+    "nightlife": {
+      "metadata": {
+        "title": "Oprogramowanie do sprzedaży biletów dla klubów i imprez",
+        "description": "Sprzedaż biletów online na Twoje noce w klubie i imprezy: sprzedawaj wejściówki, kontroluj drzwi za pomocą kodów QR, analizuj w czasie rzeczywistym i obsługuj bezpieczne płatności. Skonfiguruj w 5 minut, bez opłat instalacyjnych."
+      }
+    },
+    "concerts-festivals": {
+      "metadata": {
+        "title": "Oprogramowanie do sprzedaży biletów na koncerty i festiwale",
+        "description": "Sprzedaż biletów online na Twoje koncerty i festiwale: sprzedawaj różne kategorie biletów, kontroluj dostęp za pomocą kodów QR, analizuj w czasie rzeczywistym i obsługuj bezpieczne płatności. Skonfiguruj w 5 minut, bez opłat instalacyjnych."
+      }
+    },
+    "business-events": {
+      "metadata": {
+        "title": "Oprogramowanie do sprzedaży biletów na wydarzenia profesjonalne",
+        "description": "Sprzedaż biletów online na Twoje seminaria i konferencje: zarządzaj rejestracjami, kontroluj wejścia za pomocą kodów QR, analizuj w czasie rzeczywistym i obsługuj bezpieczne płatności. Skonfiguruj w 5 minut, bez opłat instalacyjnych."
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "title": "在线票务，让你的活动更轻松",
+    "subtitle": "销售你的票，管理入场并分析销售情况。",
+    "description": "为活动组织者提供的一体化票务解决方案。创建活动，销售票务，并使用专业工具控制入场。5分钟内设置，零安装费用。",
+    "buttons": {
+      "create": "创建我的票务",
+      "discover": "查看解决方案"
+    },
+    "stats": {
+      "setup": {
+        "value": "5分钟",
+        "label": "设置"
+      },
+      "cost": {
+        "value": "0€",
+        "label": "安装"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "支持"
+      }
+    }
+  },
+  "showcase": {
+    "title": "你的与会者会喜欢的票务页面",
+    "description": "一个简洁、适配移动设备的活动页面，提供安全结账、优惠码和透明费用。买家可以迅速看到活动，选择票务并支付。",
+    "url": "tonightpass.com"
+  },
+  "dashboard": {
+    "title": "从一个仪表板管理一切",
+    "description": "创建你的活动，设置票务等级，跟踪销量并从一个组织者仪表板上控制入场。无需安装，无需电子表格。",
+    "url": "tonightpass.com"
+  },
+  "event-types": {
+    "title": "适用于每种类型活动的票务解决方案",
+    "items": {
+      "nightclub": "夜总会",
+      "concert": "音乐会",
+      "festival": "节日",
+      "party": "派对",
+      "afterwork": "下班聚会",
+      "show": "演出",
+      "cruise": "游轮",
+      "seminar": "研讨会",
+      "conference": "会议",
+      "trade-show": "交易展",
+      "sport": "体育",
+      "members-night": "会员之夜"
+    }
+  },
+  "features": {
+    "title": "销售和管理票务所需的一切",
+    "items": {
+      "flexible-tickets": {
+        "title": "灵活的票务类型",
+        "description": "创建多个票务等级、早鸟价格、团体套餐和VIP体验。"
+      },
+      "qr-control": {
+        "title": "二维码入场控制",
+        "description": "通过二维码扫描和实时验证快速、安全地管理入场。"
+      },
+      "analytics": {
+        "title": "实时分析",
+        "description": "通过完整的仪表板跟踪销售、出席情况和收入。"
+      },
+      "payments": {
+        "title": "安全支付",
+        "description": "符合PCI标准的支付处理，支持多种支付方式。"
+      },
+      "mobile": {
+        "title": "移动优化",
+        "description": "通过我们以移动为先的设计和渐进式Web应用程序在任何地方销售票务。"
+      },
+      "refunds": {
+        "title": "轻松退款",
+        "description": "通过自动化政策和即时处理处理取消和退款。"
+      }
+    }
+  },
+  "steps": {
+    "title": "如何创建你的在线票务",
+    "items": {
+      "create": {
+        "title": "创建你的活动",
+        "description": "在几分钟内设置活动，提供与会者所需的所有细节。"
+      },
+      "configure": {
+        "title": "配置你的票务",
+        "description": "定义你的票务类型、价格、容量和销售周期。"
+      },
+      "sell": {
+        "title": "销售和管理",
+        "description": "在线销售，在门口扫描票务，实时跟踪一切。"
+      }
+    }
+  },
+  "faq": {
+    "title": "常见问题",
+    "items": {
+      "fees": {
+        "question": "票务费用是多少？",
+        "answer": "透明定价，无安装费用。你可以将费用包含在显示的价格中或转嫁给与会者。"
+      },
+      "setup-time": {
+        "question": "创建我的活动需要多长时间？",
+        "answer": "大约5分钟。创建你的活动，配置你的票务，马上开始销售。"
+      },
+      "payments": {
+        "question": "我什么时候能收到我的款项？",
+        "answer": "快速安全的支付，符合PCI标准，支持多种支付方式。"
+      },
+      "features": {
+        "question": "包括哪些功能？",
+        "answer": "灵活的票务类型、二维码入场控制、实时分析、安全支付、移动优化和轻松退款。"
+      },
+      "support": {
+        "question": "你们提供什么支持？",
+        "answer": "提供专属支持，帮助你设置和运营你的活动。"
+      }
+    }
+  },
+  "final-cta": {
+    "title": "准备好启动你的票务了吗？",
+    "description": "创建你的活动，几分钟内就能在线销售票务。",
+    "button": "创建我的票务"
+  },
+  "variants": {
+    "nightlife": {
+      "hero": {
+        "title": "夜总会和派对的票务",
+        "subtitle": "销售入场，管理门口并实时跟踪你的一晚。",
+        "description": "为夜总会、酒吧和派对组织者打造的一体化票务。创建你的活动，销售入场并在门口扫描二维码。5分钟内设置，零安装费用。"
+      },
+      "event-types": {
+        "title": "适用于夜总会、酒吧和夜生活活动"
+      },
+      "features": {
+        "title": "运行你的夜店活动所需的一切"
+      },
+      "steps": {
+        "title": "如何为你的夜店活动设置票务"
+      },
+      "faq": {
+        "title": "夜总会票务问题"
+      },
+      "final-cta": {
+        "title": "准备好填满你的下一场夜店活动了吗？",
+        "description": "创建你的活动，几分钟内在线销售入场。"
+      }
+    },
+    "concerts-festivals": {
+      "hero": {
+        "title": "音乐会和节日的票务",
+        "subtitle": "销售票务，管理入场并分析销售情况。",
+        "description": "为音乐会和节日组织者提供的一体化票务。创建你的活动，销售多个票务等级，并使用二维码控制入场。5分钟内设置，零安装费用。"
+      },
+      "event-types": {
+        "title": "适用于音乐会、节日和现场演出"
+      },
+      "features": {
+        "title": "运行你的音乐会和节日所需的一切"
+      },
+      "steps": {
+        "title": "如何为你的音乐会或节日设置票务"
+      },
+      "faq": {
+        "title": "音乐会和节日票务问题"
+      },
+      "final-cta": {
+        "title": "准备好售罄你的下一场演出了吗？",
+        "description": "创建你的活动，几分钟内在线销售票务。"
+      }
+    },
+    "business-events": {
+      "hero": {
+        "title": "专业活动的票务",
+        "subtitle": "销售注册，管理签到并跟踪出席情况。",
+        "description": "为研讨会、会议和专业活动提供的一体化票务。创建你的活动，管理注册并使用二维码签到与会者。5分钟内设置，零安装费用。"
+      },
+      "event-types": {
+        "title": "适用于研讨会、会议和专业活动"
+      },
+      "features": {
+        "title": "运行你的专业活动所需的一切"
+      },
+      "steps": {
+        "title": "如何为你的专业活动设置票务"
+      },
+      "faq": {
+        "title": "专业活动票务问题"
+      },
+      "final-cta": {
+        "title": "准备好启动你的下一场专业活动了吗？",
+        "description": "创建你的活动，几分钟内就能在线销售注册。"
+      }
+    }
+  }
+}

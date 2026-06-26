@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Online biljettprogram för evenemangsarrangörer",
+    "description": "Allt-i-ett online biljettlösning för dina evenemang: sälj biljetter, QR-kod åtkomstkontroll, realtidsanalys och säkra betalningar. Ställ in på 5 minuter, inga installationsavgifter."
+  },
+  "variants": {
+    "nightlife": {
+      "metadata": {
+        "title": "Biljettprogram för nattklubbar och fester",
+        "description": "Online biljettlösning för dina klubbkvällar och fester: sälj inträden, QR-kod dörrkontroll, realtidsanalys och säkra betalningar. Ställ in på 5 minuter, inga installationsavgifter."
+      }
+    },
+    "concerts-festivals": {
+      "metadata": {
+        "title": "Biljettprogram för konserter och festivaler",
+        "description": "Online biljettlösning för dina konserter och festivaler: sälj flera biljettkategorier, QR-kod åtkomstkontroll, realtidsanalys och säkra betalningar. Ställ in på 5 minuter, inga installationsavgifter."
+      }
+    },
+    "business-events": {
+      "metadata": {
+        "title": "Biljettprogram för professionella evenemang",
+        "description": "Online biljettlösning för dina seminarier och konferenser: hantera registreringar, QR-kod incheckning, realtidsanalys och säkra betalningar. Ställ in på 5 minuter, inga installationsavgifter."
+      }
+    }
+  }
+}

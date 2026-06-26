@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Software de bilhética online para organizadores de eventos",
+    "description": "Bilhetagem online tudo em um para seus eventos: venda de ingressos, controle de acesso por QR code, analytics em tempo real e pagamentos seguros. Configure em 5 minutos, sem taxas de instalação."
+  },
+  "variants": {
+    "nightlife": {
+      "metadata": {
+        "title": "Software de bilhética para baladas e festas",
+        "description": "Bilhetagem online para suas baladas e festas: venda de entradas, controle de porta por QR code, analytics em tempo real e pagamentos seguros. Configure em 5 minutos, sem taxas de instalação."
+      }
+    },
+    "concerts-festivals": {
+      "metadata": {
+        "title": "Software de bilhética para shows e festivais",
+        "description": "Bilhetagem online para seus shows e festivais: venda de múltiplos níveis de ingressos, controle de acesso por QR code, analytics em tempo real e pagamentos seguros. Configure em 5 minutos, sem taxas de instalação."
+      }
+    },
+    "business-events": {
+      "metadata": {
+        "title": "Software de bilhética para eventos profissionais",
+        "description": "Bilhetagem online para seus seminários e conferências: gerencie inscrições, check-in com QR code, analytics em tempo real e pagamentos seguros. Configure em 5 minutos, sem taxas de instalação."
+      }
+    }
+  }
+}

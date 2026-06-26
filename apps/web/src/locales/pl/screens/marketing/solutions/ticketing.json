@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "title": "Internetowa sprzedaż biletów na twoje wydarzenia",
+    "subtitle": "Sprzedawaj bilety, zarządzaj wejściem i analizuj swoje sprzedaże.",
+    "description": "Kompleksowe rozwiązanie do sprzedaży biletów dla organizatorów wydarzeń. Stwórz swoje wydarzenie, sprzedaj bilety i kontroluj dostęp za pomocą profesjonalnych narzędzi. Ustaw wszystko w 5 minut, bez opłat instalacyjnych.",
+    "buttons": {
+      "create": "Utwórz moją sprzedaż biletów",
+      "discover": "Zobacz rozwiązanie"
+    },
+    "stats": {
+      "setup": {
+        "value": "5 min",
+        "label": "Ustawienia"
+      },
+      "cost": {
+        "value": "0€",
+        "label": "Instalacja"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Wsparcie"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Strona sprzedaży biletów, którą pokochają twoi uczestnicy",
+    "description": "Czysta, przystosowana do urządzeń mobilnych strona wydarzenia z bezpiecznym procesem płatności, kodami promocyjnymi i przejrzystymi opłatami. Twoi klienci widzą twoje wydarzenie, wybierają bilety i płacą w kilka sekund.",
+    "url": "tonightpass.com"
+  },
+  "dashboard": {
+    "title": "Zarządzaj wszystkim z jednego pulpitu nawigacyjnego",
+    "description": "Twórz swoje wydarzenia, ustalaj poziomy cen biletów, śledź sprzedaż i kontroluj dostęp z jednego pulpitą organizatora. Bez instalacji, bez arkuszy kalkulacyjnych.",
+    "url": "tonightpass.com"
+  },
+  "event-types": {
+    "title": "Rozwiązanie do sprzedaży biletów dla każdego rodzaju wydarzenia",
+    "items": {
+      "nightclub": "Klub nocny",
+      "concert": "Koncert",
+      "festival": "Festiwal",
+      "party": "Impreza",
+      "afterwork": "Afterwork",
+      "show": "Pokaz",
+      "cruise": "Rejs",
+      "seminar": "Seminarium",
+      "conference": "Konferencja",
+      "trade-show": "Targi",
+      "sport": "Sport",
+      "members-night": "Noc członkowska"
+    }
+  },
+  "features": {
+    "title": "Wszystko, co potrzebujesz, aby sprzedawać i zarządzać swoimi biletami",
+    "items": {
+      "flexible-tickets": {
+        "title": "Elastyczne rodzaje biletów",
+        "description": "Twórz wiele poziomów cen biletów, ceny dla wczesnych ptaków, pakiety grupowe i VIP."
+      },
+      "qr-control": {
+        "title": "Kontrola dostępu za pomocą kodów QR",
+        "description": "Szybkie i bezpieczne zarządzanie wejściem z wykorzystaniem skanowania kodów QR i walidacji w czasie rzeczywistym."
+      },
+      "analytics": {
+        "title": "Analizy w czasie rzeczywistym",
+        "description": "Śledź sprzedaż, frekwencję i przychody za pomocą kompletnych pulpitów."
+      },
+      "payments": {
+        "title": "Bezpieczne płatności",
+        "description": "Przetwarzanie płatności zgodne z PCI, wspierające wiele metod płatności."
+      },
+      "mobile": {
+        "title": "Przyjazne dla urządzeń mobilnych",
+        "description": "Sprzedawaj bilety wszędzie dzięki naszemu projektowi zoptymalizowanemu pod kątem urządzeń mobilnych i postępowej aplikacji webowej."
+      },
+      "refunds": {
+        "title": "Łatwa obsługa zwrotów",
+        "description": "Obsługuj odwołania i zwroty za pomocą zautomatyzowanych zasad i natychmiastowego przetwarzania."
+      }
+    }
+  },
+  "steps": {
+    "title": "Jak stworzyć własną sprzedaż biletów online",
+    "items": {
+      "create": {
+        "title": "Utwórz swoje wydarzenie",
+        "description": "Skonfiguruj swoje wydarzenie w kilka minut, dodając wszystkie szczegóły, których potrzebują uczestnicy."
+      },
+      "configure": {
+        "title": "Skonfiguruj swoje bilety",
+        "description": "Zdefiniuj rodzaje biletów, ceny, pojemność i okres sprzedaży."
+      },
+      "sell": {
+        "title": "Sprzedawaj i zarządzaj",
+        "description": "Sprzedawaj online, skanuj bilety przy wejściu i śledź wszystko w czasie rzeczywistym."
+      }
+    }
+  },
+  "faq": {
+    "title": "Najczęściej zadawane pytania",
+    "items": {
+      "fees": {
+        "question": "Jakie są opłaty za sprzedaż biletów?",
+        "answer": "Przejrzyste ceny bez opłat instalacyjnych. Możesz uwzględnić opłaty w wyświetlanej cenie lub przekazać je uczestnikom."
+      },
+      "setup-time": {
+        "question": "Jak długo trwa utworzenie mojego wydarzenia?",
+        "answer": "Około 5 minut. Utwórz swoje wydarzenie, skonfiguruj bilety i zacznij sprzedawać od razu."
+      },
+      "payments": {
+        "question": "Kiedy otrzymam swoje płatności?",
+        "answer": "Szybkie i bezpieczne wypłaty z przetwarzaniem zgodnym z PCI oraz wsparciem dla wielu metod płatności."
+      },
+      "features": {
+        "question": "Jakie funkcje są w zestawie?",
+        "answer": "Elastyczne rodzaje biletów, kontrola dostępu za pomocą kodów QR, analizy w czasie rzeczywistym, bezpieczne płatności, optymalizacja mobilna i łatwe zwroty."
+      },
+      "support": {
+        "question": "Jakiego wsparcia oferujecie?",
+        "answer": "Dedykowane wsparcie, aby pomóc ci w konfiguracji i prowadzeniu wydarzeń."
+      }
+    }
+  },
+  "final-cta": {
+    "title": "Gotowy do uruchomienia swojej sprzedaży biletów?",
+    "description": "Utwórz swoje wydarzenie i zacznij sprzedawać bilety online w zaledwie kilka minut.",
+    "button": "Utwórz moją sprzedaż biletów"
+  },
+  "variants": {
+    "nightlife": {
+      "hero": {
+        "title": "Sprzedaż biletów na kluby i imprezy",
+        "subtitle": "Sprzedawaj wejścia, zarządzaj przy wejściu i śledź swoją noc w czasie rzeczywistym.",
+        "description": "Kompleksowe rozwiązanie do sprzedaży biletów stworzone dla klubów, barów i organizatorów imprez. Stwórz wydarzenie, sprzedawaj wejścia i skanuj kody QR przy drzwiach. Ustaw wszystko w 5 minut, bez opłat instalacyjnych."
+      },
+      "event-types": {
+        "title": "Stworzone dla klubów, barów i wydarzeń nocnych"
+      },
+      "features": {
+        "title": "Wszystko, czego potrzebujesz, aby prowadzić noce w klubie"
+      },
+      "steps": {
+        "title": "Jak skonfigurować sprzedaż biletów na noc w klubie"
+      },
+      "faq": {
+        "title": "Pytania dotyczące sprzedaży biletów w klubie"
+      },
+      "final-cta": {
+        "title": "Gotowy, aby wypełnić swoją następną noc w klubie?",
+        "description": "Utwórz swoje wydarzenie i zacznij sprzedawać wejścia online w zaledwie kilka minut."
+      }
+    },
+    "concerts-festivals": {
+      "hero": {
+        "title": "Sprzedaż biletów na koncerty i festiwale",
+        "subtitle": "Sprzedawaj bilety, zarządzaj wejściem i analizuj swoje sprzedaże.",
+        "description": "Kompleksowe rozwiązanie do sprzedaży biletów dla organizatorów koncertów i festiwali. Stwórz wydarzenie, sprzedawaj różne poziomy biletów i kontroluj dostęp za pomocą kodów QR. Ustaw wszystko w 5 minut, bez opłat instalacyjnych."
+      },
+      "event-types": {
+        "title": "Stworzone dla koncertów, festiwali i pokazów na żywo"
+      },
+      "features": {
+        "title": "Wszystko, czego potrzebujesz, aby prowadzić swoje koncerty i festiwale"
+      },
+      "steps": {
+        "title": "Jak skonfigurować sprzedaż biletów na koncert lub festiwal"
+      },
+      "faq": {
+        "title": "Pytania dotyczące sprzedaży biletów na koncerty i festiwale"
+      },
+      "final-cta": {
+        "title": "Gotowy, aby wyprzedać swoje następne show?",
+        "description": "Utwórz swoje wydarzenie i zacznij sprzedawać bilety online w zaledwie kilka minut."
+      }
+    },
+    "business-events": {
+      "hero": {
+        "title": "Sprzedaż biletów na wydarzenia zawodowe",
+        "subtitle": "Sprzedawaj rejestracje, zarządzaj check-inem i śledź frekwencję.",
+        "description": "Kompleksowe rozwiązanie do sprzedaży biletów dla seminariów, konferencji i wydarzeń zawodowych. Stwórz swoje wydarzenie, zarządzaj rejestracjami i dokonuj check-inu uczestników za pomocą kodów QR. Ustaw wszystko w 5 minut, bez opłat instalacyjnych."
+      },
+      "event-types": {
+        "title": "Stworzone dla seminariów, konferencji i wydarzeń zawodowych"
+      },
+      "features": {
+        "title": "Wszystko, czego potrzebujesz, aby prowadzić swoje wydarzenia zawodowe"
+      },
+      "steps": {
+        "title": "Jak skonfigurować sprzedaż biletów na wydarzenie zawodowe"
+      },
+      "faq": {
+        "title": "Pytania dotyczące sprzedaży biletów na wydarzenia zawodowe"
+      },
+      "final-cta": {
+        "title": "Gotowy do uruchomienia swojego następnego wydarzenia zawodowego?",
+        "description": "Utwórz swoje wydarzenie i zacznij sprzedawać rejestracje online w zaledwie kilka minut."
+      }
+    }
+  }
+}

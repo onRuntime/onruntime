@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Etkinlik organizatörleri için online biletleme yazılımı",
+    "description": "Etkinlikleriniz için hepsi bir arada online biletleme: bilet satışları, QR kod erişim kontrolü, gerçek zamanlı analiz ve güvenli ödemeler. 5 dakikada kurulum, kurulum ücreti yok."
+  },
+  "variants": {
+    "nightlife": {
+      "metadata": {
+        "title": "Gece kulüpleri ve partiler için biletleme yazılımı",
+        "description": "Kulüp geceleri ve partileriniz için online biletleme: giriş satışları, QR kod kapı kontrolü, gerçek zamanlı analiz ve güvenli ödemeler. 5 dakikada kurulum, kurulum ücreti yok."
+      }
+    },
+    "concerts-festivals": {
+      "metadata": {
+        "title": "Konserler ve festivaller için biletleme yazılımı",
+        "description": "Konserleriniz ve festivalleriniz için online biletleme: birden fazla bilet seviyesi satışı, QR kod erişim kontrolü, gerçek zamanlı analiz ve güvenli ödemeler. 5 dakikada kurulum, kurulum ücreti yok."
+      }
+    },
+    "business-events": {
+      "metadata": {
+        "title": "Profesyonel etkinlikler için biletleme yazılımı",
+        "description": "Seminerleriniz ve konferanslarınız için online biletleme: kayıtları yönetin, QR kod ile check-in, gerçek zamanlı analiz ve güvenli ödemeler. 5 dakikada kurulum, kurulum ücreti yok."
+      }
+    }
+  }
+}

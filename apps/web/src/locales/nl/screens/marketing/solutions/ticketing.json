@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "title": "Online ticketverkoop voor je evenementen",
+    "subtitle": "Verkoop je tickets, beheer de toegang en analyseer je verkopen.",
+    "description": "De all-in-one ticketoplossing voor evenementenorganisatoren. Maak je evenement aan, verkoop je tickets en controleer de toegang met professionele tools. Binnen 5 minuten opgezet, geen installatiekosten.",
+    "buttons": {
+      "create": "Maak mijn ticketverkoop aan",
+      "discover": "Bekijk de oplossing"
+    },
+    "stats": {
+      "setup": {
+        "value": "5 min",
+        "label": "Opzetten"
+      },
+      "cost": {
+        "value": "0€",
+        "label": "Installatie"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Ondersteuning"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Een ticketpagina waar je bezoekers dol op zullen zijn",
+    "description": "Een schone, mobiele evenementenpagina met een veilige check-out, promo codes en transparante kosten. Je kopers zien je evenement, kiezen hun tickets en betalen in enkele seconden.",
+    "url": "tonightpass.com"
+  },
+  "dashboard": {
+    "title": "Beheer alles vanuit één dashboard",
+    "description": "Maak je evenementen aan, stel ticketniveaus in, volg je verkopen en controleer de toegang vanuit een enkel organisator dashboard. Geen installatie, geen spreadsheets.",
+    "url": "tonightpass.com"
+  },
+  "event-types": {
+    "title": "Een ticketoplossing voor elk type evenement",
+    "items": {
+      "nightclub": "Nachtclub",
+      "concert": "Concert",
+      "festival": "Festival",
+      "party": "Feest",
+      "afterwork": "Afterwork",
+      "show": "Show",
+      "cruise": "Cruise",
+      "seminar": "Seminar",
+      "conference": "Conferentie",
+      "trade-show": "Beurs",
+      "sport": "Sport",
+      "members-night": "Ledenavond"
+    }
+  },
+  "features": {
+    "title": "Alles wat je nodig hebt om je tickets te verkopen en te beheren",
+    "items": {
+      "flexible-tickets": {
+        "title": "Flexibele tickettypen",
+        "description": "Creëer meerdere ticketniveaus, vroege vogels prijzen, groepspakketten en VIP ervaringen."
+      },
+      "qr-control": {
+        "title": "QR-code toegangcontrole",
+        "description": "Snelle en veilige toegang beheerders met QR-code scannen en real-time validatie."
+      },
+      "analytics": {
+        "title": "Real-time analytics",
+        "description": "Volg verkopen, aanwezigheid en inkomsten met complete dashboards."
+      },
+      "payments": {
+        "title": "Veilige betalingen",
+        "description": "PCI-conforme betalingsverwerking met ondersteuning voor meerdere betaalmethoden."
+      },
+      "mobile": {
+        "title": "Mobiel geoptimaliseerd",
+        "description": "Verkoop tickets overal met ons mobiel-first ontwerp en progressieve webapp."
+      },
+      "refunds": {
+        "title": "Gemakkelijke restituties",
+        "description": "Beheer annuleringen en restituties met geautomatiseerde beleidsregels en onmiddellijke verwerking."
+      }
+    }
+  },
+  "steps": {
+    "title": "Hoe je je online ticketverkoop aanmaakt",
+    "items": {
+      "create": {
+        "title": "Maak je evenement aan",
+        "description": "Stel je evenement binnen enkele minuten in met alle details die je bezoekers nodig hebben."
+      },
+      "configure": {
+        "title": "Configureer je tickets",
+        "description": "Definieer je tickettypen, prijzen, capaciteit en verkoopperiodes."
+      },
+      "sell": {
+        "title": "Verkoop en beheer",
+        "description": "Verkoop online, scan tickets aan de deur en volg alles in real time."
+      }
+    }
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "items": {
+      "fees": {
+        "question": "Wat zijn de ticketkosten?",
+        "answer": "Transparante prijzen zonder installatiekosten. Je kunt de kosten in de weergegeven prijs opnemen of doorberekenen aan bezoekers."
+      },
+      "setup-time": {
+        "question": "Hoe lang duurt het om mijn evenement aan te maken?",
+        "answer": "Ongeveer 5 minuten. Maak je evenement aan, configureer je tickets en begin meteen met verkopen."
+      },
+      "payments": {
+        "question": "Wanneer ontvang ik mijn betalingen?",
+        "answer": "Snelle en veilige uitbetalingen met PCI-conforme verwerking en ondersteuning voor meerdere betaalmethoden."
+      },
+      "features": {
+        "question": "Welke functies zijn inbegrepen?",
+        "answer": "Flexibele tickettypen, QR-code toegangcontrole, real-time analytics, veilige betalingen, mobiele optimalisatie en gemakkelijke restituties."
+      },
+      "support": {
+        "question": "Wat voor soort ondersteuning bieden jullie aan?",
+        "answer": "Toegewijde ondersteuning om je te helpen bij het opzetten en uitvoeren van je evenementen."
+      }
+    }
+  },
+  "final-cta": {
+    "title": "Klaar om je ticketverkoop te starten?",
+    "description": "Maak je evenement aan en begin binnen enkele minuten met het online verkopen van tickets.",
+    "button": "Maak mijn ticketverkoop aan"
+  },
+  "variants": {
+    "nightlife": {
+      "hero": {
+        "title": "Ticketverkoop voor nachtclubs en feesten",
+        "subtitle": "Verkoop toegang, beheer de deur en volg je avond in real time.",
+        "description": "De all-in-one ticketverkoop, gebouwd voor clubs, bars en feestorganisatoren. Maak je evenement aan, verkoop toegang en scan QR-codes aan de deur. Binnen 5 minuten opgezet, geen installatiekosten."
+      },
+      "event-types": {
+        "title": "Gebouwd voor clubs, bars en nachtleven evenementen"
+      },
+      "features": {
+        "title": "Alles wat je nodig hebt om je clubavonden te runnen"
+      },
+      "steps": {
+        "title": "Hoe je ticketverkoop voor je clubavond instelt"
+      },
+      "faq": {
+        "title": "Veelgestelde vragen over nachtclubticketverkoop"
+      },
+      "final-cta": {
+        "title": "Klaar om je volgende clubavond vol te krijgen?",
+        "description": "Maak je evenement aan en begin binnen enkele minuten met het online verkopen van toegang."
+      }
+    },
+    "concerts-festivals": {
+      "hero": {
+        "title": "Ticketverkoop voor concerten en festivals",
+        "subtitle": "Verkoop tickets, beheer de toegang en analyseer je verkopen.",
+        "description": "De all-in-one ticketverkoop voor concert- en festivalorganisatoren. Maak je evenement aan, verkoop meerdere ticketniveaus en controleer de toegang met QR-codes. Binnen 5 minuten opgezet, geen installatiekosten."
+      },
+      "event-types": {
+        "title": "Gebouwd voor concerten, festivals en livshows"
+      },
+      "features": {
+        "title": "Alles wat je nodig hebt om je concerten en festivals te runnen"
+      },
+      "steps": {
+        "title": "Hoe je ticketverkoop voor je concert of festival instelt"
+      },
+      "faq": {
+        "title": "Veelgestelde vragen over ticketverkoop voor concerten en festivals"
+      },
+      "final-cta": {
+        "title": "Klaar om je volgende show uit te verkopen?",
+        "description": "Maak je evenement aan en begin binnen enkele minuten met het online verkopen van tickets."
+      }
+    },
+    "business-events": {
+      "hero": {
+        "title": "Ticketverkoop voor professionele evenementen",
+        "subtitle": "Verkoop registraties, beheer check-in en volg de aanwezigheid.",
+        "description": "De all-in-one ticketverkoop voor seminars, conferenties en professionele evenementen. Maak je evenement aan, beheer registraties en controleer deelnemers met QR-codes. Binnen 5 minuten opgezet, geen installatiekosten."
+      },
+      "event-types": {
+        "title": "Gebouwd voor seminars, conferenties en professionele evenementen"
+      },
+      "features": {
+        "title": "Alles wat je nodig hebt om je professionele evenementen te runnen"
+      },
+      "steps": {
+        "title": "Hoe je ticketverkoop voor je professionele evenement instelt"
+      },
+      "faq": {
+        "title": "Veelgestelde vragen over ticketverkoop voor professionele evenementen"
+      },
+      "final-cta": {
+        "title": "Klaar om je volgende professionele evenement te lanceren?",
+        "description": "Maak je evenement aan en begin binnen enkele minuten met het online verkopen van registraties."
+      }
+    }
+  }
+}

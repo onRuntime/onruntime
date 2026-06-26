@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Online ticketsoftware voor evenementorganisatoren",
+    "description": "Alles-in-één online ticketverkoop voor je evenementen: verkoop tickets, QR-code toegangcontrole, realtime analytics en veilige betalingen. Binnen 5 minuten ingesteld, geen installatiekosten."
+  },
+  "variants": {
+    "nightlife": {
+      "metadata": {
+        "title": "Ticketsoftware voor nachtclubs en feesten",
+        "description": "Online ticketverkoop voor je clubavonden en feesten: verkoop toegang, QR-code deurcontrole, realtime analytics en veilige betalingen. Binnen 5 minuten ingesteld, geen installatiekosten."
+      }
+    },
+    "concerts-festivals": {
+      "metadata": {
+        "title": "Ticketsoftware voor concerten en festivals",
+        "description": "Online ticketverkoop voor je concerten en festivals: verkoop meerdere ticketniveaus, QR-code toegangcontrole, realtime analytics en veilige betalingen. Binnen 5 minuten ingesteld, geen installatiekosten."
+      }
+    },
+    "business-events": {
+      "metadata": {
+        "title": "Ticketsoftware voor professionele evenementen",
+        "description": "Online ticketverkoop voor je seminars en conferenties: beheer registraties, QR-code check-in, realtime analytics en veilige betalingen. Binnen 5 minuten ingesteld, geen installatiekosten."
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "title": "Online-Ticketing für deine Veranstaltungen",
+    "subtitle": "Verkauf deine Tickets, verwalte den Einlass und analysiere deine Verkäufe.",
+    "description": "Die All-in-One-Ticketlösung für Veranstalter. Erstelle dein Event, verkaufe deine Tickets und kontrolliere den Zutritt mit professionellen Tools. In 5 Minuten eingerichtet, keine Installationsgebühren.",
+    "buttons": {
+      "create": "Mein Ticketing erstellen",
+      "discover": "Die Lösung entdecken"
+    },
+    "stats": {
+      "setup": {
+        "value": "5 Min",
+        "label": "Einrichtung"
+      },
+      "cost": {
+        "value": "0€",
+        "label": "Installation"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Support"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Eine Ticketseite, die deine Teilnehmer lieben werden",
+    "description": "Eine saubere, mobil optimierte Veranstaltungsseite mit sicherem Checkout, Rabattcodes und transparenten Gebühren. Deine Käufer sehen dein Event, wählen ihre Tickets und bezahlen in Sekunden.",
+    "url": "tonightpass.com"
+  },
+  "dashboard": {
+    "title": "Verwalte alles von einem Dashboard aus",
+    "description": "Erstelle deine Events, richte Ticketkategorien ein, verfolge deine Verkäufe und kontrolliere den Zutritt von einem einzigen Veranstalter-Dashboard. Keine Installation, keine Tabellen.",
+    "url": "tonightpass.com"
+  },
+  "event-types": {
+    "title": "Eine Ticketlösung für jede Art von Event",
+    "items": {
+      "nightclub": "Nachtclub",
+      "concert": "Konzert",
+      "festival": "Festival",
+      "party": "Party",
+      "afterwork": "Afterwork",
+      "show": "Show",
+      "cruise": "Kreuzfahrt",
+      "seminar": "Seminar",
+      "conference": "Konferenz",
+      "trade-show": "Messe",
+      "sport": "Sport",
+      "members-night": "Mitgliedernacht"
+    }
+  },
+  "features": {
+    "title": "Alles, was du brauchst, um deine Tickets zu verkaufen und zu verwalten",
+    "items": {
+      "flexible-tickets": {
+        "title": "Flexible Ticketarten",
+        "description": "Erstelle mehrere Ticketkategorien, Frühbucherpreise, Gruppentarife und VIP-Erlebnisse."
+      },
+      "qr-control": {
+        "title": "QR-Code-Zugangskontrolle",
+        "description": "Schnelles und sicheres Einlassmanagement mit QR-Code-Scannen und Echtzeitvalidierung."
+      },
+      "analytics": {
+        "title": "Echtzeit-Analysen",
+        "description": "Verfolge Verkäufe, Teilnahme und Einnahmen mit vollständigen Dashboards."
+      },
+      "payments": {
+        "title": "Sichere Zahlungen",
+        "description": "PCI-konforme Zahlungsabwicklung mit Unterstützung für mehrere Zahlungsmethoden."
+      },
+      "mobile": {
+        "title": "Mobil optimiert",
+        "description": "Verkaufe Tickets überall mit unserem mobil-first Design und progressiven Web-App."
+      },
+      "refunds": {
+        "title": "Einfache Rückerstattungen",
+        "description": "Verwalte Stornierungen und Rückerstattungen mit automatisierten Richtlinien und sofortiger Bearbeitung."
+      }
+    }
+  },
+  "steps": {
+    "title": "So erstellst du dein Online-Ticketing",
+    "items": {
+      "create": {
+        "title": "Erstelle dein Event",
+        "description": "Richte dein Event in wenigen Minuten mit allen Details ein, die deine Teilnehmer benötigen."
+      },
+      "configure": {
+        "title": "Konfiguriere deine Tickets",
+        "description": "Definiere deine Ticketarten, Preise, Kapazität und Verkaufszeiträume."
+      },
+      "sell": {
+        "title": "Verkaufen und verwalten",
+        "description": "Verkauf online, scanne Tickets am Eingang und verfolge alles in Echtzeit."
+      }
+    }
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "items": {
+      "fees": {
+        "question": "Was sind die Ticketgebühren?",
+        "answer": "Transparente Preisgestaltung ohne Installationsgebühren. Du kannst die Gebühren im angezeigten Preis einbeziehen oder an die Teilnehmer weitergeben."
+      },
+      "setup-time": {
+        "question": "Wie lange dauert es, mein Event zu erstellen?",
+        "answer": "Ungefähr 5 Minuten. Erstelle dein Event, konfiguriere deine Tickets und beginne sofort mit dem Verkauf."
+      },
+      "payments": {
+        "question": "Wann werde ich meine Zahlungen erhalten?",
+        "answer": "Schnelle und sichere Auszahlungen mit PCI-konformer Verarbeitung und Unterstützung für mehrere Zahlungsmethoden."
+      },
+      "features": {
+        "question": "Welche Funktionen sind enthalten?",
+        "answer": "Flexible Ticketarten, QR-Code-Zugangskontrolle, Echtzeitanalysen, sichere Zahlungen, mobile Optimierung und einfache Rückerstattungen."
+      },
+      "support": {
+        "question": "Welche Art von Unterstützung bietet ihr an?",
+        "answer": "Dedizierter Support, um dir bei der Einrichtung und Durchführung deiner Events zu helfen."
+      }
+    }
+  },
+  "final-cta": {
+    "title": "Bereit, dein Ticketing zu starten?",
+    "description": "Erstelle dein Event und beginne in nur wenigen Minuten, Tickets online zu verkaufen.",
+    "button": "Mein Ticketing erstellen"
+  },
+  "variants": {
+    "nightlife": {
+      "hero": {
+        "title": "Ticketing für Nachtclubs und Partys",
+        "subtitle": "Verkauf Eintritte, verwalte den Eingang und verfolge deine Nacht in Echtzeit.",
+        "description": "Das All-in-One-Ticketing, das für Clubs, Bars und Partyveranstalter entwickelt wurde. Erstelle dein Event, verkaufe Einträge und scanne QR-Codes am Eingang. In 5 Minuten eingerichtet, keine Installationsgebühren."
+      },
+      "event-types": {
+        "title": "Für Clubs, Bars und Nachtleben-Events konzipiert"
+      },
+      "features": {
+        "title": "Alles, was du brauchst, um deine Clubabende zu veranstalten"
+      },
+      "steps": {
+        "title": "So richtest du Ticketing für deine Clubnacht ein"
+      },
+      "faq": {
+        "title": "Fragen zum Ticketing im Nachtclub"
+      },
+      "final-cta": {
+        "title": "Bereit, deine nächste Clubnacht zu füllen?",
+        "description": "Erstelle dein Event und beginne in nur wenigen Minuten, Einträge online zu verkaufen."
+      }
+    },
+    "concerts-festivals": {
+      "hero": {
+        "title": "Ticketing für Konzerte und Festivals",
+        "subtitle": "Verkauf Tickets, verwalte den Zugang und analysiere deine Verkäufe.",
+        "description": "Das All-in-One-Ticketing für Konzert- und Festivalveranstalter. Erstelle dein Event, verkaufe mehrere Ticketkategorien und kontrolliere den Zutritt mit QR-Codes. In 5 Minuten eingerichtet, keine Installationsgebühren."
+      },
+      "event-types": {
+        "title": "Für Konzerte, Festivals und Live-Shows konzipiert"
+      },
+      "features": {
+        "title": "Alles, was du brauchst, um deine Konzerte und Festivals zu organisieren"
+      },
+      "steps": {
+        "title": "So richtest du Ticketing für dein Konzert oder Festival ein"
+      },
+      "faq": {
+        "title": "Fragen zum Ticketing von Konzerten und Festivals"
+      },
+      "final-cta": {
+        "title": "Bereit, deine nächste Show auszuverkaufen?",
+        "description": "Erstelle dein Event und beginne in nur wenigen Minuten, Tickets online zu verkaufen."
+      }
+    },
+    "business-events": {
+      "hero": {
+        "title": "Ticketing für professionelle Events",
+        "subtitle": "Verkauf Registrierungen, verwalte das Einchecken und verfolge die Teilnahme.",
+        "description": "Das All-in-One-Ticketing für Seminare, Konferenzen und berufliche Veranstaltungen. Erstelle dein Event, verwalte Registrierungen und checke Teilnehmende mit QR-Codes ein. In 5 Minuten eingerichtet, keine Installationsgebühren."
+      },
+      "event-types": {
+        "title": "Für Seminare, Konferenzen und berufliche Veranstaltungen konzipiert"
+      },
+      "features": {
+        "title": "Alles, was du brauchst, um deine professionellen Events durchzuführen"
+      },
+      "steps": {
+        "title": "So richtest du Ticketing für dein berufliches Event ein"
+      },
+      "faq": {
+        "title": "Fragen zum Ticketing bei professionellen Veranstaltungen"
+      },
+      "final-cta": {
+        "title": "Bereit, dein nächstes berufliches Event zu starten?",
+        "description": "Erstelle dein Event und beginne in nur wenigen Minuten, Registrierungen online zu verkaufen."
+      }
+    }
+  }
+}

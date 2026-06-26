@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "title": "Venta de entradas en línea para tus eventos",
+    "subtitle": "Vende tus entradas, administra el acceso y analiza tus ventas.",
+    "description": "La solución de venta de entradas todo en uno para organizadores de eventos. Crea tu evento, vende tus entradas y controla el acceso con herramientas profesionales. Configúralo en 5 minutos, sin tarifas de instalación.",
+    "buttons": {
+      "create": "Crea mi venta de entradas",
+      "discover": "Ver la solución"
+    },
+    "stats": {
+      "setup": {
+        "value": "5 min",
+        "label": "Configuración"
+      },
+      "cost": {
+        "value": "0€",
+        "label": "Instalación"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Soporte"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Una página de venta de entradas que encantará a tus asistentes",
+    "description": "Una página de evento limpia y lista para móviles con pago seguro, códigos promocionales y tarifas transparentes. Tus compradores ven tu evento, eligen sus entradas y pagan en segundos.",
+    "url": "tonightpass.com"
+  },
+  "dashboard": {
+    "title": "Administra todo desde un solo panel",
+    "description": "Crea tus eventos, configura niveles de entradas, sigue tus ventas y controla el acceso desde un solo panel de organizador. Sin instalación, sin hojas de cálculo.",
+    "url": "tonightpass.com"
+  },
+  "event-types": {
+    "title": "Una solución de venta de entradas para todo tipo de eventos",
+    "items": {
+      "nightclub": "Club nocturno",
+      "concert": "Concierto",
+      "festival": "Festival",
+      "party": "Fiesta",
+      "afterwork": "Afterwork",
+      "show": "Espectáculo",
+      "cruise": "Crucero",
+      "seminar": "Seminario",
+      "conference": "Conferencia",
+      "trade-show": "Feria comercial",
+      "sport": "Deporte",
+      "members-night": "Noche de miembros"
+    }
+  },
+  "features": {
+    "title": "Todo lo que necesitas para vender y administrar tus entradas",
+    "items": {
+      "flexible-tickets": {
+        "title": "Tipos de entradas flexibles",
+        "description": "Crea múltiples niveles de entradas, precios anticipados, paquetes grupales y experiencias VIP."
+      },
+      "qr-control": {
+        "title": "Control de acceso con código QR",
+        "description": "Gestión de acceso rápida y segura con escaneo de código QR y validación en tiempo real."
+      },
+      "analytics": {
+        "title": "Analíticas en tiempo real",
+        "description": "Sigue ventas, asistencia y ingresos con paneles completos."
+      },
+      "payments": {
+        "title": "Pagos seguros",
+        "description": "Procesamiento de pagos conforme a PCI con soporte para múltiples métodos de pago."
+      },
+      "mobile": {
+        "title": "Optimizado para móviles",
+        "description": "Vende entradas desde cualquier lugar con nuestro diseño enfocado en móviles y aplicación web progresiva."
+      },
+      "refunds": {
+        "title": "Reembolsos fáciles",
+        "description": "Gestiona cancelaciones y reembolsos con políticas automatizadas y procesamiento instantáneo."
+      }
+    }
+  },
+  "steps": {
+    "title": "Cómo crear tu venta de entradas en línea",
+    "items": {
+      "create": {
+        "title": "Crea tu evento",
+        "description": "Configura tu evento en unos minutos con todos los detalles que tus asistentes necesitan."
+      },
+      "configure": {
+        "title": "Configura tus entradas",
+        "description": "Define tus tipos de entradas, precios, capacidad y períodos de venta."
+      },
+      "sell": {
+        "title": "Vende y administra",
+        "description": "Vende en línea, escanea entradas en la puerta y rastrea todo en tiempo real."
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": {
+      "fees": {
+        "question": "¿Cuáles son las tarifas de venta de entradas?",
+        "answer": "Precios transparentes sin tarifas de instalación. Puedes incluir las tarifas en el precio mostrado o pasarlas a los asistentes."
+      },
+      "setup-time": {
+        "question": "¿Cuánto tiempo se tarda en crear mi evento?",
+        "answer": "Aproximadamente 5 minutos. Crea tu evento, configura tus entradas y comienza a vender de inmediato."
+      },
+      "payments": {
+        "question": "¿Cuándo recibiré mis pagos?",
+        "answer": "Pagos rápidos y seguros con procesamiento conforme a PCI y soporte para múltiples métodos de pago."
+      },
+      "features": {
+        "question": "¿Qué características están incluidas?",
+        "answer": "Tipos de entradas flexibles, control de acceso con código QR, analíticas en tiempo real, pagos seguros, optimización móvil y reembolsos fáciles."
+      },
+      "support": {
+        "question": "¿Qué tipo de soporte ofrecen?",
+        "answer": "Soporte dedicado para ayudarte a configurar y gestionar tus eventos."
+      }
+    }
+  },
+  "final-cta": {
+    "title": "¿Listo para lanzar tu venta de entradas?",
+    "description": "Crea tu evento y comienza a vender entradas en línea en solo unos minutos.",
+    "button": "Crea mi venta de entradas"
+  },
+  "variants": {
+    "nightlife": {
+      "hero": {
+        "title": "Venta de entradas para clubes y fiestas",
+        "subtitle": "Vende entradas, gestiona la puerta y rastrea tu noche en tiempo real.",
+        "description": "La venta de entradas todo en uno construida para clubes, bares y organizadores de fiestas. Crea tu evento, vende entradas y escanea códigos QR en la puerta. Configúralo en 5 minutos, sin tarifas de instalación."
+      },
+      "event-types": {
+        "title": "Construido para clubes, bares y eventos nocturnos"
+      },
+      "features": {
+        "title": "Todo lo que necesitas para tus noches de club"
+      },
+      "steps": {
+        "title": "Cómo configurar la venta de entradas para tu noche de club"
+      },
+      "faq": {
+        "title": "Preguntas sobre venta de entradas para clubes nocturnos"
+      },
+      "final-cta": {
+        "title": "¿Listo para llenar tu próxima noche de club?",
+        "description": "Crea tu evento y comienza a vender entradas en línea en solo unos minutos."
+      }
+    },
+    "concerts-festivals": {
+      "hero": {
+        "title": "Venta de entradas para conciertos y festivales",
+        "subtitle": "Vende entradas, gestiona el acceso y analiza tus ventas.",
+        "description": "La venta de entradas todo en uno para organizadores de conciertos y festivales. Crea tu evento, vende múltiples niveles de entradas y controla el acceso con códigos QR. Configúralo en 5 minutos, sin tarifas de instalación."
+      },
+      "event-types": {
+        "title": "Construido para conciertos, festivales y shows en vivo"
+      },
+      "features": {
+        "title": "Todo lo que necesitas para gestionar tus conciertos y festivales"
+      },
+      "steps": {
+        "title": "Cómo configurar la venta de entradas para tu concierto o festival"
+      },
+      "faq": {
+        "title": "Preguntas sobre venta de entradas para conciertos y festivales"
+      },
+      "final-cta": {
+        "title": "¿Listo para agotar tu próximo show?",
+        "description": "Crea tu evento y comienza a vender entradas en línea en solo unos minutos."
+      }
+    },
+    "business-events": {
+      "hero": {
+        "title": "Venta de entradas para eventos profesionales",
+        "subtitle": "Vende inscripciones, gestiona el check-in y rastrea la asistencia.",
+        "description": "La venta de entradas todo en uno para seminarios, conferencias y eventos profesionales. Crea tu evento, gestiona inscripciones y haz check-in a los asistentes con códigos QR. Configúralo en 5 minutos, sin tarifas de instalación."
+      },
+      "event-types": {
+        "title": "Construido para seminarios, conferencias y eventos profesionales"
+      },
+      "features": {
+        "title": "Todo lo que necesitas para gestionar tus eventos profesionales"
+      },
+      "steps": {
+        "title": "Cómo configurar la venta de entradas para tu evento profesional"
+      },
+      "faq": {
+        "title": "Preguntas sobre venta de entradas para eventos profesionales"
+      },
+      "final-cta": {
+        "title": "¿Listo para lanzar tu próximo evento profesional?",
+        "description": "Crea tu evento y comienza a vender inscripciones en línea en solo unos minutos."
+      }
+    }
+  }
+}
