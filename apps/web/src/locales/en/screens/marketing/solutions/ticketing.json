@@ -1,0 +1,190 @@
+{
+  "hero": {
+    "title": "Online ticketing for your events",
+    "subtitle": "Sell your tickets, manage entry and analyze your sales.",
+    "description": "The all-in-one ticketing solution for event organizers. Create your event, sell your tickets and control access with professional tools. Set up in 5 minutes, no installation fees.",
+    "buttons": {
+      "create": "Create my ticketing",
+      "discover": "See the solution"
+    },
+    "stats": {
+      "setup": { "value": "5 min", "label": "Setup" },
+      "cost": { "value": "0€", "label": "Installation" },
+      "support": { "value": "24/7", "label": "Support" }
+    }
+  },
+  "showcase": {
+    "title": "A ticketing page your attendees will love",
+    "description": "A clean, mobile ready event page with secure checkout, promo codes and transparent fees. Your buyers see your event, pick their tickets and pay in seconds.",
+    "url": "tonightpass.com"
+  },
+  "dashboard": {
+    "title": "Manage everything from one dashboard",
+    "description": "Create your events, set up ticket tiers, follow your sales and control access from a single organizer dashboard. No installation, no spreadsheets.",
+    "url": "tonightpass.com"
+  },
+  "event-types": {
+    "title": "A ticketing solution for every type of event",
+    "items": {
+      "nightclub": "Nightclub",
+      "concert": "Concert",
+      "festival": "Festival",
+      "party": "Party",
+      "afterwork": "Afterwork",
+      "show": "Show",
+      "cruise": "Cruise",
+      "seminar": "Seminar",
+      "conference": "Conference",
+      "trade-show": "Trade show",
+      "sport": "Sport",
+      "members-night": "Members night"
+    }
+  },
+  "features": {
+    "title": "Everything you need to sell and manage your tickets",
+    "items": {
+      "flexible-tickets": {
+        "title": "Flexible ticket types",
+        "description": "Create multiple ticket tiers, early bird pricing, group packages and VIP experiences."
+      },
+      "qr-control": {
+        "title": "QR code access control",
+        "description": "Fast and secure entry management with QR code scanning and real-time validation."
+      },
+      "analytics": {
+        "title": "Real-time analytics",
+        "description": "Track sales, attendance and revenue with complete dashboards."
+      },
+      "payments": {
+        "title": "Secure payments",
+        "description": "PCI-compliant payment processing with support for multiple payment methods."
+      },
+      "mobile": {
+        "title": "Mobile optimized",
+        "description": "Sell tickets anywhere with our mobile-first design and progressive web app."
+      },
+      "refunds": {
+        "title": "Easy refunds",
+        "description": "Handle cancellations and refunds with automated policies and instant processing."
+      }
+    }
+  },
+  "steps": {
+    "title": "How to create your online ticketing",
+    "items": {
+      "create": {
+        "title": "Create your event",
+        "description": "Set up your event in a few minutes with all the details your attendees need."
+      },
+      "configure": {
+        "title": "Configure your tickets",
+        "description": "Define your ticket types, prices, capacity and sales periods."
+      },
+      "sell": {
+        "title": "Sell and manage",
+        "description": "Sell online, scan tickets at the door and track everything in real time."
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": {
+      "fees": {
+        "question": "What are the ticketing fees?",
+        "answer": "Transparent pricing with no installation fees. You can include the fees in the displayed price or pass them on to attendees."
+      },
+      "setup-time": {
+        "question": "How long does it take to create my event?",
+        "answer": "About 5 minutes. Create your event, configure your tickets and start selling right away."
+      },
+      "payments": {
+        "question": "When will I receive my payments?",
+        "answer": "Fast and secure payouts with PCI-compliant processing and support for multiple payment methods."
+      },
+      "features": {
+        "question": "Which features are included?",
+        "answer": "Flexible ticket types, QR code access control, real-time analytics, secure payments, mobile optimization and easy refunds."
+      },
+      "support": {
+        "question": "What kind of support do you offer?",
+        "answer": "Dedicated support to help you set up and run your events."
+      }
+    }
+  },
+  "final-cta": {
+    "title": "Ready to launch your ticketing?",
+    "description": "Create your event and start selling tickets online in just a few minutes.",
+    "button": "Create my ticketing"
+  },
+  "variants": {
+    "nightlife": {
+      "hero": {
+        "title": "Ticketing for nightclubs and parties",
+        "subtitle": "Sell entries, manage the door and track your night in real time.",
+        "description": "The all in one ticketing built for clubs, bars and party organizers. Create your event, sell entries and scan QR codes at the door. Set up in 5 minutes, no installation fees."
+      },
+      "event-types": {
+        "title": "Built for clubs, bars and nightlife events"
+      },
+      "features": {
+        "title": "Everything you need to run your club nights"
+      },
+      "steps": {
+        "title": "How to set up ticketing for your club night"
+      },
+      "faq": {
+        "title": "Nightclub ticketing questions"
+      },
+      "final-cta": {
+        "title": "Ready to fill your next club night?",
+        "description": "Create your event and start selling entries online in just a few minutes."
+      }
+    },
+    "concerts-festivals": {
+      "hero": {
+        "title": "Ticketing for concerts and festivals",
+        "subtitle": "Sell tickets, manage entry and analyze your sales.",
+        "description": "The all in one ticketing for concert and festival organizers. Create your event, sell multiple ticket tiers and control access with QR codes. Set up in 5 minutes, no installation fees."
+      },
+      "event-types": {
+        "title": "Built for concerts, festivals and live shows"
+      },
+      "features": {
+        "title": "Everything you need to run your concerts and festivals"
+      },
+      "steps": {
+        "title": "How to set up ticketing for your concert or festival"
+      },
+      "faq": {
+        "title": "Concert and festival ticketing questions"
+      },
+      "final-cta": {
+        "title": "Ready to sell out your next show?",
+        "description": "Create your event and start selling tickets online in just a few minutes."
+      }
+    },
+    "business-events": {
+      "hero": {
+        "title": "Ticketing for professional events",
+        "subtitle": "Sell registrations, manage check in and track attendance.",
+        "description": "The all in one ticketing for seminars, conferences and professional events. Create your event, manage registrations and check attendees in with QR codes. Set up in 5 minutes, no installation fees."
+      },
+      "event-types": {
+        "title": "Built for seminars, conferences and professional events"
+      },
+      "features": {
+        "title": "Everything you need to run your professional events"
+      },
+      "steps": {
+        "title": "How to set up ticketing for your professional event"
+      },
+      "faq": {
+        "title": "Professional event ticketing questions"
+      },
+      "final-cta": {
+        "title": "Ready to launch your next professional event?",
+        "description": "Create your event and start selling registrations online in just a few minutes."
+      }
+    }
+  }
+}

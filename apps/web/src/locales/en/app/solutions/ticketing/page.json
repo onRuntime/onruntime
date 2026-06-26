@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Online ticketing software for event organizers",
+    "description": "All-in-one online ticketing for your events: sell tickets, QR code access control, real-time analytics and secure payments. Set up in 5 minutes, no installation fees."
+  },
+  "variants": {
+    "nightlife": {
+      "metadata": {
+        "title": "Ticketing software for nightclubs and parties",
+        "description": "Online ticketing for your club nights and parties: sell entries, QR code door control, real-time analytics and secure payments. Set up in 5 minutes, no installation fees."
+      }
+    },
+    "concerts-festivals": {
+      "metadata": {
+        "title": "Ticketing software for concerts and festivals",
+        "description": "Online ticketing for your concerts and festivals: sell multiple ticket tiers, QR code access control, real-time analytics and secure payments. Set up in 5 minutes, no installation fees."
+      }
+    },
+    "business-events": {
+      "metadata": {
+        "title": "Ticketing software for professional events",
+        "description": "Online ticketing for your seminars and conferences: manage registrations, QR code check-in, real-time analytics and secure payments. Set up in 5 minutes, no installation fees."
+      }
+    }
+  }
+}
