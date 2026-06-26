@@ -1,5 +1,7 @@
 import { SVGProps } from "react";
 
+import { cn } from "@/lib/utils";
+
 type SafariMode = "default" | "simple";
 
 export interface SafariProps extends SVGProps<SVGSVGElement> {
@@ -18,6 +20,7 @@ export default function Safari({
   width = 1203,
   height = 753,
   mode = "default",
+  className,
   ...props
 }: SafariProps) {
   return (
@@ -27,6 +30,7 @@ export default function Safari({
       viewBox={`0 0 ${width} ${height}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={cn("max-w-full h-auto", className)}
       {...props}
     >
       <g clipPath="url(#path0)">
