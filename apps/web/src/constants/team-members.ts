@@ -41,6 +41,7 @@ const TeamMembers: Record<string, TeamMember> = {
   "alexis-mouchon": {
     name: "Alexis Mouchon",
     roles: [TeamRole.DEVELOPER],
+    website: "https://alexis-mouchon.fr",
     avatar: "/static/images/members/alexis-mouchon.jpg",
     github: "https://github.com/siralex214",
     linkedin: "https://linkedin.com/in/alexis-mouchon",
@@ -60,6 +61,7 @@ const TeamMembers: Record<string, TeamMember> = {
   "maeva-leclerc": {
     name: "Maëva Leclerc",
     roles: [TeamRole.MARKETING, TeamRole.COMMUNITY_MANAGER],
+    website: "https://maeval.fr",
     linkedin: "https://linkedin.com/in/maeval",
   },
   "killian-mendy": {
