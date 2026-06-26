@@ -30,7 +30,7 @@ const components = {
     <blockquote className="border-l-4 border-primary pl-4 italic my-4 text-muted-foreground" {...props} />
   ),
   code: (props: React.HTMLProps<HTMLElement>) => (
-    <code className="bg-muted text-foreground px-1 py-0.5 rounded font-mono text-sm" {...props} />
+    <code className="bg-card border border-border text-foreground px-1.5 py-0.5 rounded font-mono text-[0.85em]" {...props} />
   ),
   hr: (props: React.HTMLProps<HTMLHRElement>) => <hr className="border-border my-8" {...props} />,
 }

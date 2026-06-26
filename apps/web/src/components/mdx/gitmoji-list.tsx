@@ -27,13 +27,13 @@ export async function GitmojiList() {
       <table className="w-full border-collapse border border-border">
         <thead>
           <tr>
-            <th className="border border-border bg-muted/50 px-3 py-2 text-left font-semibold text-sm w-16">
+            <th className="border border-border bg-card px-3 py-2 text-left font-semibold text-sm w-16">
               Emoji
             </th>
-            <th className="border border-border bg-muted/50 px-3 py-2 text-left font-semibold text-sm">
+            <th className="border border-border bg-card px-3 py-2 text-left font-semibold text-sm">
               Code
             </th>
-            <th className="border border-border bg-muted/50 px-3 py-2 text-left font-semibold text-sm">
+            <th className="border border-border bg-card px-3 py-2 text-left font-semibold text-sm">
               Description
             </th>
           </tr>
@@ -45,7 +45,7 @@ export async function GitmojiList() {
                 {gitmoji.emoji}
               </td>
               <td className="border border-border px-3 py-2 text-sm">
-                <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">
+                <code className="bg-card border border-border px-1.5 py-0.5 rounded text-xs font-mono">
                   {gitmoji.code}
                 </code>
               </td>

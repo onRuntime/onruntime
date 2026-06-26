@@ -222,7 +222,7 @@ export const mdxComponents = {
     if (isInline) {
       return (
         <code
-          className="bg-muted px-2 py-1 rounded text-sm font-mono break-all"
+          className="bg-card border border-border px-1.5 py-0.5 rounded text-[0.85em] font-mono"
           {...props}
         >
           {children}
@@ -239,7 +239,7 @@ export const mdxComponents = {
 
   pre: ({ children, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <pre
-      className="bg-muted p-4 rounded-md overflow-x-auto mb-4 text-sm max-w-full break-all whitespace-pre-wrap"
+      className="bg-card border border-border p-4 rounded-lg overflow-x-auto mb-4 text-sm max-w-full"
       {...props}
     >
       {children}
@@ -278,7 +278,7 @@ export const mdxComponents = {
 
   th: ({ children, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th
-      className="border border-border bg-muted/50 px-3 py-2 text-left font-semibold text-sm"
+      className="border border-border bg-card px-3 py-2 text-left font-semibold text-sm"
       {...props}
     >
       {children}

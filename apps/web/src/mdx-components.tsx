@@ -22,7 +22,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <blockquote className="border-l-4 border-primary pl-4 italic my-4 text-muted-foreground">{children}</blockquote>
     ),
     code: ({ children }) => (
-      <code className="bg-muted text-foreground px-1 py-0.5 rounded font-mono text-sm">{children}</code>
+      <code className="bg-card border border-border text-foreground px-1.5 py-0.5 rounded font-mono text-[0.85em]">{children}</code>
     ),
     hr: () => <hr className="border-border my-8" />,
   }
