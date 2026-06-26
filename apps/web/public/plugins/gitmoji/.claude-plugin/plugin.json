@@ -1,6 +1,6 @@
 {
   "name": "gitmoji",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate git commits following the gitmoji conventional commits convention",
   "author": {
     "name": "onRuntime Studio",
