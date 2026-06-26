@@ -7,6 +7,12 @@
     "docs": "Docs",
     "contact": "Contact us"
   },
+  "theme": {
+    "label": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
   "services": {
     "title": "Our services",
     "description": "Discover our full range of development and design services to bring your digital projects to life.",

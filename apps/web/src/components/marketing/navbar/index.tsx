@@ -8,6 +8,7 @@ import { ChevronDown, Menu } from "lucide-react";
 import { useTranslation } from "@onruntime/translations/react";
 
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Routes from "@/constants/routes";
 import Services from "@/constants/services";
 import Projects from "@/constants/projects";
@@ -217,6 +218,8 @@ const Navbar: React.FC = () => {
 					<Navigation />
 
 					<div className="flex gap-2">
+						<ThemeToggle />
+
 						<Link href={Routes.contact} aria-label={t("links.contact")} passHref>
 							<Button className="hidden md:inline-flex" variant="outline">
 								{t("links.contact")}

@@ -7,7 +7,7 @@ type Props = React.SVGProps<SVGSVGElement> & {
 export type OnRuntimeIconProps = Props;
 
 const OnRuntimeIcon: React.FC<OnRuntimeIconProps> = ({
-  fill = "#111111",
+  fill = "currentColor",
   ...props
 }: OnRuntimeIconProps) => (
   <svg
@@ -29,7 +29,7 @@ const OnRuntimeIcon: React.FC<OnRuntimeIconProps> = ({
 export type OnRuntimeLogoProps = Props;
 
 const OnRuntimeLogo: React.FC<OnRuntimeLogoProps> = ({
-  fill = "#111111",
+  fill = "currentColor",
   ...props
 }: OnRuntimeLogoProps) => (
   <svg
@@ -111,7 +111,7 @@ const OnRuntimeLogo: React.FC<OnRuntimeLogoProps> = ({
 export type OnRuntimeWordMarkProps = Props;
 
 const OnRuntimeWordMark: React.FC<OnRuntimeWordMarkProps> = ({
-  fill = "#111111",
+  fill = "currentColor",
   ...props
 }: OnRuntimeWordMarkProps) => (
   <svg
