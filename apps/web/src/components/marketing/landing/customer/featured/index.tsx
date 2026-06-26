@@ -52,7 +52,7 @@ const Featured: React.FC = async () => {
 
         <Safari
           url="tonightpass.com"
-          imageSrc="/static/images/projects/tonightpass/showcase.jpg"
+          imageSrc="/static/images/projects/tonightpass/showcase.webp"
           className="relative bottom-[-10px] mt-12 max-h-[510px] size-full rounded-t-md rounded-b-none"
         />
       </div>

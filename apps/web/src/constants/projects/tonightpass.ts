@@ -6,7 +6,7 @@ export const tonightpassProject: Project = {
   name: "Tonight Pass",
   tags: [Tag.FEATURED],
   iconUrl: "/static/images/projects/tonightpass/icon.svg",
-  showcaseUrl: "/static/images/projects/tonightpass/showcase.jpg",
+  showcaseUrl: "/static/images/projects/tonightpass/showcase.webp",
   thumbnailUrl: "/static/images/projects/tonightpass/thumbnail.webp",
   website: "https://tonightpass.com",
   repository: undefined,
