@@ -64,5 +64,7 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|favicon.ico|api|.*\\.).*)"],
+  // `plugins` is excluded so the non-localized Claude Code marketplace route
+  // (src/app/plugins/route.ts) isn't rewritten under /[locale].
+  matcher: ["/((?!_next|favicon.ico|api|plugins|.*\\.).*)"],
 };
