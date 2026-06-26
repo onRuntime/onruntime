@@ -7,7 +7,7 @@
     "url": "https://onruntime.com"
   },
   "homepage": "https://onruntime.com/docs/gitmoji",
-  "repository": "https://github.com/onruntime/gitmoji-plugin",
+  "repository": "https://github.com/onruntime/onruntime",
   "license": "MIT",
   "keywords": ["gitmoji", "git", "commit", "conventional-commits"]
 }

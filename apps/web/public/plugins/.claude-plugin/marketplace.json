@@ -1,10 +1,18 @@
 {
   "name": "onruntime",
+  "owner": {
+    "name": "onRuntime Studio",
+    "email": "contact@onruntime.com"
+  },
   "description": "Official plugins by onRuntime Studio",
   "plugins": [
     {
       "name": "gitmoji",
-      "source": "../gitmoji",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/onruntime/onruntime.git",
+        "path": "apps/web/public/plugins/gitmoji"
+      },
       "description": "Generate git commits following the gitmoji conventional commits convention",
       "version": "1.0.0",
       "author": {
