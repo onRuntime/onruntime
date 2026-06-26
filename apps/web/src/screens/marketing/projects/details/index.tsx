@@ -32,6 +32,11 @@ const ProjectPage: React.FC<ProjectPageProps> = async ({ project }) => {
   const { t, locale } = await getTranslation("screens/marketing/projects/details");
   const { t: tProject } = await getTranslation(`constants/projects/${project.id}`);
 
+  // Tonight Pass ships /fr and /en flows; route the CTAs to the matching one.
+  const tpLocale = locale?.startsWith("fr") ? "fr" : "en";
+  const tpCreateUrl = `https://tonightpass.com/${tpLocale}/new`;
+  const tpDiscoverUrl = `https://tonightpass.com/${tpLocale}/ticketing`;
+
   const getTagLabel = (tag: Tag) => {
     if (tag === Tag.FEATURED) return t("tags.featured");
     if (tag === Tag.OPEN_SOURCE) return t("tags.open-source");
@@ -66,7 +71,7 @@ const ProjectPage: React.FC<ProjectPageProps> = async ({ project }) => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <GoogleAdsConversionLink
-                href="https://tonightpass.com/fr/auth?continue=%2Fnew"
+                href={tpCreateUrl}
                 sendTo="AW-16498437714/CRTrCMzs0akbENLciLs9"
               >
                 <Button size="lg" className="w-full sm:w-auto">
@@ -75,7 +80,7 @@ const ProjectPage: React.FC<ProjectPageProps> = async ({ project }) => {
                 </Button>
               </GoogleAdsConversionLink>
               <GoogleAdsConversionLink
-                href="https://tonightpass.com/fr/ticketing"
+                href={tpDiscoverUrl}
                 sendTo="AW-16498437714/CRTrCMzs0akbENLciLs9"
               >
                 <Button variant="outline" size="lg" className="w-full sm:w-auto">
@@ -248,7 +253,7 @@ const ProjectPage: React.FC<ProjectPageProps> = async ({ project }) => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <GoogleAdsConversionLink
-                  href="https://tonightpass.com/fr/auth?continue=%2Fnew"
+                  href={tpCreateUrl}
                   sendTo="AW-16498437714/CRTrCMzs0akbENLciLs9"
                 >
                   <Button size="lg" className="w-full sm:w-auto">
@@ -257,7 +262,7 @@ const ProjectPage: React.FC<ProjectPageProps> = async ({ project }) => {
                   </Button>
                 </GoogleAdsConversionLink>
                 <GoogleAdsConversionLink
-                  href="https://tonightpass.com/fr/ticketing"
+                  href={tpDiscoverUrl}
                   sendTo="AW-16498437714/CRTrCMzs0akbENLciLs9"
                 >
                   <Button variant="outline" size="lg" className="w-full sm:w-auto">
