@@ -7,6 +7,12 @@
     "docs": "Belgeler",
     "contact": "Bize ulaşın"
   },
+  "theme": {
+    "label": "Tema değiştir",
+    "light": "Aydınlık",
+    "dark": "Karanlık",
+    "system": "Sistem"
+  },
   "services": {
     "title": "Hizmetlerimiz",
     "description": "Dijital projelerinizi hayata geçirmek için kapsamlı geliştirme ve tasarım hizmetlerimizi keşfedin.",

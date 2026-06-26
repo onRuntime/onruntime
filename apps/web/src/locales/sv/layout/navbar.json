@@ -7,6 +7,12 @@
     "docs": "Dokument",
     "contact": "Kontakta oss"
   },
+  "theme": {
+    "label": "Byt tema",
+    "light": "Ljus",
+    "dark": "Mörk",
+    "system": "System"
+  },
   "services": {
     "title": "Våra tjänster",
     "description": "Upptäck vårt kompletta utbud av utvecklings- och designtjänster för att förverkliga dina digitala projekt.",

@@ -7,6 +7,12 @@
     "docs": "文档",
     "contact": "联系我们"
   },
+  "theme": {
+    "label": "切换主题",
+    "light": "明亮",
+    "dark": "黑暗",
+    "system": "系统"
+  },
   "services": {
     "title": "我们的服务",
     "description": "发现我们提供的全部开发和设计服务，让你的数字项目真正实现。",

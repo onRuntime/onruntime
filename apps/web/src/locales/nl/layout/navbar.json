@@ -7,6 +7,12 @@
     "docs": "Documenten",
     "contact": "Neem contact met ons op"
   },
+  "theme": {
+    "label": "Thema omschakelen",
+    "light": "Licht",
+    "dark": "Donker",
+    "system": "Systeem"
+  },
   "services": {
     "title": "Onze diensten",
     "description": "Ontdek ons complete aanbod van ontwikkelings- en ontwerp diensten om je digitale projecten tot leven te brengen.",

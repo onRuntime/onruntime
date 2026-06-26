@@ -7,6 +7,12 @@
     "docs": "Documentos",
     "contact": "Entre em contato conosco"
   },
+  "theme": {
+    "label": "Alternar tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
   "services": {
     "title": "Nossos serviços",
     "description": "Descubra nossa gama completa de serviços de desenvolvimento e design para dar vida aos seus projetos digitais.",

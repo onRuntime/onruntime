@@ -7,6 +7,12 @@
     "docs": "Dokumente",
     "contact": "Kontaktiere uns"
   },
+  "theme": {
+    "label": "Thema umschalten",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
   "services": {
     "title": "Unsere Dienstleistungen",
     "description": "Entdecke unser komplettes Angebot an Entwicklungs- und Design-Dienstleistungen, um deine digitalen Projekte zum Leben zu erwecken.",

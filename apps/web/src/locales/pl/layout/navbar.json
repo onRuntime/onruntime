@@ -7,6 +7,12 @@
     "docs": "Dokumentacja",
     "contact": "Skontaktuj się z nami"
   },
+  "theme": {
+    "label": "Przełącz motyw",
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "system": "Systemowy"
+  },
   "services": {
     "title": "Nasze usługi",
     "description": "Odkryj naszą pełną gamę usług rozwojowych i projektowych, aby ożywić swoje projekty cyfrowe.",
