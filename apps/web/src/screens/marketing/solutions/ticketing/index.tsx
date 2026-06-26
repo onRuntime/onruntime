@@ -74,6 +74,10 @@ const TicketingScreen: React.FC<TicketingScreenProps> = async ({
   const CREATE_URL = createUrl(locale);
   const DISCOVER_URL = discoverUrl(locale);
 
+  // Product screenshots come in French and English; match them to the locale.
+  const shot = (name: string) =>
+    `/static/images/solutions/ticketing/${name}-${tpLocale(locale)}.webp`;
+
   // Theme-aware accessor: pulls flavored copy from the variant overrides when a
   // variant is set, otherwise falls back to the generic base copy.
   const tv = (key: string) => (variant ? t(`variants.${variant}.${key}`) : t(key));
@@ -150,7 +154,7 @@ const TicketingScreen: React.FC<TicketingScreenProps> = async ({
               width={1200}
               height={750}
               url={t("showcase.url")}
-              imageSrc="/static/images/solutions/ticketing/event-page.webp"
+              imageSrc={shot("event-page")}
               className="w-full h-auto"
             />
           </div>
@@ -213,7 +217,7 @@ const TicketingScreen: React.FC<TicketingScreenProps> = async ({
               width={1200}
               height={750}
               url={t("dashboard.url")}
-              imageSrc="/static/images/solutions/ticketing/organizer-editor.webp"
+              imageSrc={shot("organizer-editor")}
               className="w-full h-auto"
             />
           </div>
