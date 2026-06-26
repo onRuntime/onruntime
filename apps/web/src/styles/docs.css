@@ -1,6 +1,8 @@
 /* Docs-specific styles */
 
-/* Override body background for docs */
+/* Docs use the same deep page background as the rest of the site.
+   --muted is the base page surface; --background/--card are the raised
+   surfaces (sidebar, cards) that sit on top of it. */
 body:has([data-docs-page]) {
-  background: var(--background);
+  background: var(--muted);
 }
