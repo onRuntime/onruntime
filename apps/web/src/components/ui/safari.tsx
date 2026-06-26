@@ -27,7 +27,11 @@ export default function Safari({
     <svg
       width={width}
       height={height}
-      viewBox={`0 0 ${width} ${height}`}
+      // The artwork is authored in a fixed 1203×753 coordinate space. The
+      // viewBox must stay at that native size (independent of the width/height
+      // props) so nothing is cropped, plus a 1px margin so the crisp border
+      // stroke below isn't clipped by the viewBox edge.
+      viewBox="-1 -1 1204 755"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn("max-w-full h-auto", className)}
@@ -172,9 +176,22 @@ export default function Safari({
           </foreignObject>
         )}
       </g>
+      {/* Crisp window outline drawn ON TOP of (and OUTSIDE) the clipped group.
+          The frame's left/right/bottom borders are only 1px wide in the artwork,
+          which becomes sub-pixel — and effectively invisible — once the mockup is
+          scaled down. A non-scaling stroke keeps the border at a constant 1 device
+          pixel at any render size. It must live outside the clip group, otherwise
+          the clip rect halves it on the edges. */}
+      <path
+        d="M0 12C0 5.37258 5.37258 0 12 0H1190C1196.63 0 1202 5.37258 1202 12V741C1202 747.627 1196.63 753 1190 753H12C5.37258 753 0 747.627 0 741V12Z"
+        fill="none"
+        strokeWidth="1"
+        vectorEffect="non-scaling-stroke"
+        className="stroke-[#E5E5E5] dark:stroke-[#404040]"
+      />
       <defs>
         <clipPath id="path0">
-          <rect width={width} height={height} fill="white" />
+          <rect width="1203" height="753" fill="white" />
         </clipPath>
         <clipPath id="roundedBottom">
           <path
