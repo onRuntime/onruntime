@@ -73,7 +73,7 @@ const Featured: React.FC = async () => {
               height={43}
             />
 
-            <p className="hidden md:block text-background leading-5">
+            <p className="hidden md:block text-white leading-5">
               <Balancer>
                 {t("testimonial")}
               </Balancer>
