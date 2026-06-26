@@ -239,7 +239,7 @@ export const mdxComponents = {
 
   pre: ({ children, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <pre
-      className="bg-card border border-border p-4 rounded-lg overflow-x-auto mb-4 text-sm max-w-full"
+      className="bg-card border border-border p-4 rounded-lg overflow-x-auto mb-4 text-sm max-w-full [&>code]:bg-transparent [&>code]:border-0 [&>code]:p-0 [&>code]:text-sm"
       {...props}
     >
       {children}
