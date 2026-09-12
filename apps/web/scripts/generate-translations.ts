@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync } from "fs";
+import { createHash } from "crypto";
 import { dirname, resolve, join } from "path";
 
 const SCRIPT_DIR = dirname(new URL(import.meta.url).pathname);
@@ -16,6 +17,79 @@ import { localeCodes, defaultLocale, type Locale } from "../src/lib/translations
 const LOCALES_DIR = "src/locales";
 const CONTENT_DIR = "src/content";
 const CONCURRENCY = 25;
+
+/**
+ * What each source said when it was last translated.
+ *
+ * Without it the generator only ever fills in what is MISSING, so an English
+ * string or a documentation page that is REWRITTEN keeps its old translation
+ * for good: nothing is absent, so nothing is re-asked. That is invisible,
+ * because the translated file is there and reads fine, and it is why the docs
+ * were still describing an earlier version of themselves in every language.
+ *
+ * A hash rather than a timestamp: a file's mtime moves for reasons that have
+ * nothing to do with its content (a checkout, a formatter), and the question
+ * here is historical, "has this text changed since the other locales were
+ * written from it", which only the text itself can answer.
+ *
+ * It lives beside the JSON locales but covers the MDX content too, because it
+ * belongs to the pipeline rather than to either tree.
+ */
+const HASHES_PATH = "apps/web/src/locales/source-hashes.json";
+
+const hashOf = (value: string): string =>
+  createHash("sha1").update(value).digest("hex").slice(0, 12);
+
+function readHashes(): Record<string, string> {
+  try {
+    return JSON.parse(readFileSync(toAbsolutePath(HASHES_PATH), "utf-8")) as Record<string, string>;
+  } catch {
+    return {};
+  }
+}
+
+/** Read once, so every locale in a run compares against the same snapshot: the
+ * new hashes are written at the END, or the first locale translated would mark
+ * the source current and the other thirty-four would skip it. */
+const hashes = readHashes();
+
+/**
+ * The first run has nothing recorded, and must not decide that every existing
+ * translation is stale and re-buy the whole tree. Anything already present is
+ * taken as settled and simply stamped.
+ */
+const seeding = Object.keys(hashes).length === 0;
+
+/** What this run learned, merged into the file once it is over. */
+const nextHashes: Record<string, string> = {};
+
+/**
+ * Say what would be translated, buy nothing.
+ *
+ * Worth having for its own sake, since a run over this tree is 1428 tasks
+ * against a paid model and "what is actually stale" is the one thing you want
+ * to know before starting. It is also the only way to check the staleness rule
+ * itself without spending: edit an English source, run `--dry`, see it listed.
+ */
+const DRY = process.argv.includes("--dry");
+
+/** How many tasks a dry run would have bought. */
+let dryTasks = 0;
+
+/**
+ * Whether a source has changed since the translation beside it was written.
+ *
+ * `present` is what the target already holds. With no recorded hash the answer
+ * is "not stale" when something is there, which is what makes seeding safe and
+ * an interrupted run resumable.
+ */
+function isStale(key: string, source: string, present: boolean): boolean {
+  if (!present) return true;
+  if (seeding) return false;
+  const recorded = hashes[key];
+  if (recorded === undefined) return false;
+  return recorded !== hashOf(source);
+}
 
 function getTargetLocales(): Locale[] {
   return localeCodes.filter((l) => l !== defaultLocale) as Locale[];
@@ -290,16 +364,20 @@ async function executeJsonTask(task: TranslationTask): Promise<TranslationResult
   const targetJson = readJson(task.targetPath) || {};
   const targetFlat = flattenJson(targetJson);
 
+  // Missing OR rewritten since this locale was written from it. Only the second
+  // half is new, and it is the half nothing else can see: the key is present,
+  // the file reads fine, and the sentence is the previous version's.
   const missingKeys: Record<string, string> = {};
   for (const [key, value] of Object.entries(sourceFlat)) {
-    if (!(key in targetFlat)) {
-      missingKeys[key] = value;
-    }
+    const id = `json:${task.namespace}:${key}`;
+    nextHashes[id] = hashOf(value);
+    if (isStale(id, value, key in targetFlat)) missingKeys[key] = value;
   }
 
   if (Object.keys(missingKeys).length === 0) return null;
 
   progress.log(`🔄 ${task.namespace} (${defaultLocale} → ${task.targetLocale}) - ${Object.keys(missingKeys).length} keys`);
+  if (DRY) { dryTasks++; return null; }
 
   const translated = await translateBatch(missingKeys, defaultLocale, task.targetLocale);
   const newTargetJson = mergeTranslations(sourceJson, targetJson, translated);
@@ -316,8 +394,19 @@ async function executeMdxTask(task: TranslationTask): Promise<TranslationResult 
 
   const targetContent = readFile(task.targetPath);
 
-  // If target exists, check if we need to update frontmatter
-  if (targetContent) {
+  // The whole document is the unit here, not a key: a page's prose has no
+  // stable identity to diff against, so what is recorded is the source file and
+  // a change anywhere in it re-translates the page.
+  const id = `mdx:${task.namespace}`;
+  nextHashes[id] = hashOf(sourceContent);
+  const stale = isStale(id, sourceContent, Boolean(targetContent));
+
+  // A target that exists and whose source has not moved needs at most its
+  // frontmatter topped up. A target whose source HAS moved is re-translated in
+  // full, which is the case this pipeline had no way to reach: the body was
+  // only ever written when the file did not exist, so a rewritten English page
+  // kept its first translation in all thirty-five languages, indefinitely.
+  if (targetContent && !stale) {
     const { data: sourceFrontmatter } = matter(sourceContent);
     const { data: targetFrontmatter, content: targetMarkdown } = matter(targetContent);
 
@@ -331,6 +420,7 @@ async function executeMdxTask(task: TranslationTask): Promise<TranslationResult 
     if (Object.keys(frontmatterToTranslate).length === 0) return null;
 
     progress.log(`🔄 ${task.namespace} (${defaultLocale} → ${task.targetLocale}) - frontmatter`);
+    if (DRY) { dryTasks++; return null; }
 
     const translatedFrontmatter = await translateBatch(
       frontmatterToTranslate,
@@ -355,8 +445,9 @@ async function executeMdxTask(task: TranslationTask): Promise<TranslationResult 
     };
   }
 
-  // Target doesn't exist - translate everything
+  // Either the target does not exist yet, or its source was rewritten since.
   progress.log(`🔄 ${task.namespace} (${defaultLocale} → ${task.targetLocale}) - full MDX`);
+  if (DRY) { dryTasks++; return null; }
 
   const { data: sourceFrontmatter, content: sourceMarkdown } = matter(sourceContent);
 
@@ -389,6 +480,24 @@ async function executeMdxTask(task: TranslationTask): Promise<TranslationResult 
   };
 }
 
+/**
+ * Stamp what every source said, at the very end.
+ *
+ * Stale entries whose source has since disappeared are dropped rather than
+ * kept, so the file does not grow a tail of keys nothing reads. Written once
+ * rather than per task, because twenty-five workers share it and because a run
+ * that stops early must leave the previous state intact: a half-written record
+ * would mark sources as translated that never were.
+ */
+function writeHashes(): void {
+  // Never from a dry run: stamping what was only reported would tell the next
+  // real run that everything is current.
+  const absPath = toAbsolutePath(HASHES_PATH);
+  mkdirSync(dirname(absPath), { recursive: true });
+  const sorted = Object.fromEntries(Object.keys(nextHashes).sort().map((k) => [k, nextHashes[k]]));
+  writeFileSync(absPath, `${JSON.stringify(sorted, null, 2)}\n`);
+}
+
 function writeResult(result: TranslationResult): void {
   const absPath = toAbsolutePath(result.targetPath);
   mkdirSync(dirname(absPath), { recursive: true });
@@ -403,7 +512,7 @@ async function executeTask(task: TranslationTask): Promise<void> {
       ? await executeJsonTask(task)
       : await executeMdxTask(task);
 
-    if (result) {
+    if (result && !DRY) {
       writeResult(result);
     }
   } finally {
@@ -456,6 +565,17 @@ async function main() {
   progress.setTotal(tasks.length);
 
   await runWithConcurrency(tasks, executeTask, CONCURRENCY);
+
+  if (!DRY) writeHashes();
+
+  if (DRY) {
+    console.log(
+      dryTasks === 0
+        ? "\n✅ Nothing is stale: every translation matches the source it was written from."
+        : `\n📝 ${dryTasks} task(s) would be translated. Nothing was written or bought.`,
+    );
+    return;
+  }
 
   const written = progress.getWritten();
   if (written === 0) {

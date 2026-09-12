@@ -8,6 +8,7 @@
     "start": "next start",
     "type-check": "tsc --noEmit",
     "translate": "npx tsx scripts/generate-translations.ts",
+    "translate:dry": "npx tsx scripts/generate-translations.ts --dry",
     "translate:init": "npx tsx scripts/generate-translations.ts --init",
     "test": "tsx --test tests/index.ts"
   },
