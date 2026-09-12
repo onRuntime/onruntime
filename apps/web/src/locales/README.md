@@ -97,6 +97,22 @@ pnpm --filter @onruntime/web translate:init
   // In JSON: "greeting": "Hello, {name}!"
   t("greeting", { name: "John" }) // → "Hello, John!"
   ```
+- Use a plural argument whenever a number decides the wording, never two keys:
+  ```tsx
+  // In JSON: "battles": "{count, plural, one {# battle} other {# battles}}"
+  t("battles", { count: 1 }) // → "1 battle"
+  t("battles", { count: 4 }) // → "4 battles"
+  ```
+  The branch is chosen by `Intl.PluralRules` in the locale being read, so a
+  language writes the branches it needs: Polish `one`/`few`/`many`, Arabic six,
+  Japanese only `other`. A hand-written `key` / `key-plural` pair cannot do that
+  and writes the 5-and-above form on every count from two upwards. `#` stands
+  for the count. Only the English file is written by hand; the generator is told
+  to adjust the branches per language.
+- Use a select argument when your data knows a grammatical attribute:
+  `"{gender, select, m {...} f {...} other {...}}"`. It cannot be derived from
+  the word, so pass it as a variable. For a dynamic proper noun, prefer a form
+  that needs no article at all
 - HTML is supported with `dangerouslySetInnerHTML`: `"Visit <strong>Paris</strong>"`
 - Avoid title case in translations: `"Our services"` (not `"Our Services"`)
 - Never use fallbacks in code: all translations must exist in all locale files

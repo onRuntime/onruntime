@@ -159,6 +159,75 @@ t("greeting", { name: "Alice" });  // "Hello, Alice!"
 t("items", { count: 5 });          // "You have 5 items"
 ```
 
+### Plurals
+
+A number that changes the wording goes through a `plural` argument rather than a
+second key:
+
+```json
+{
+  "battles": "{count, plural, one {# battle} other {# battles}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 battle"
+t("battles", { count: 4 });  // "4 battles"
+```
+
+`#` stands for the count. The branch is chosen by `Intl.PluralRules` in the
+locale being read, so each language writes the branches it needs:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+English and French need two forms, Polish and Russian three, Arabic six, and
+Japanese only one. A hand-written singular/plural pair cannot express that: it
+writes the 5-and-above form on every count from two upwards.
+
+An exact match takes precedence over its category, which is how a language says
+"none" without claiming it is the zero category:
+
+```json
+{
+  "messages": "{count, plural, =0 {No messages} one {# message} other {# messages}}"
+}
+```
+
+### Select
+
+`select` matches a value as written and falls back to `other`. It carries
+grammatical agreement when your data knows the attribute:
+
+```json
+{
+  "invited": "{gender, select, f {She} m {He} other {They}} joined the team"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "She joined the team"
+t("invited", { gender: "x" });  // "They joined the team"
+```
+
+The attribute cannot be derived from the word itself, so pass it as a variable.
+For a dynamic proper noun, prefer a phrasing that needs no article at all.
+
+Branches nest, so a `select` may hold a `plural`, and either may hold plain
+variables.
+
+Only `plural` and `select` are supported. Dates and numbers are better formatted
+with `Intl` at the call site, where you know the options you want.
+
 ### Nested Keys
 
 ```json

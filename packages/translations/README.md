@@ -349,6 +349,63 @@ export const Demo = () => {
 }
 ```
 
+### Plurals and agreement
+
+Beyond `{name}`, two ICU arguments are understood: `plural` and `select`.
+
+```json
+{
+  "battles": "{count, plural, one {# battle} other {# battles}}",
+  "videos": "Videos {gender, select, m {of the} f {of the} other {of}} {tank}"
+}
+```
+
+```tsx
+t("battles", { count: 1 }); // "1 battle"
+t("battles", { count: 4 }); // "4 battles"
+```
+
+`#` stands for the count. A branch may hold plain variables and further
+arguments, so a `select` can wrap a `plural`.
+
+**The category comes from CLDR, not from the message.** `Intl.PluralRules`
+decides which branch a number takes, in the locale the translation is being read
+in, so a language with more than two forms gets them right:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 }); // "1 bitwa"
+t("battles", { count: 3 }); // "3 bitwy"
+t("battles", { count: 5 }); // "5 bitew"
+```
+
+A two-form split writes the 5-and-above form on every count from two upwards,
+which is the mistake this exists to prevent. English and French need two forms,
+Polish and Russian three, Arabic six.
+
+An exact match takes precedence over its category, which is how a language says
+"none" without claiming it is the zero category:
+
+```json
+{ "messages": "{count, plural, =0 {No messages} one {# message} other {# messages}}" }
+```
+
+`select` matches the value as written and falls back to `other`. It is what
+carries grammatical agreement when the gender is something your data knows;
+it cannot be derived from the word itself, so pass it as a variable.
+
+Only `plural` and `select` are supported. Dates and numbers are better formatted
+with `Intl` at the call site, where the caller knows the options it wants.
+
+**Nothing existing changes.** Plain `{name}` interpolation matches word
+characters only, so every form above — each containing a comma — was inert in
+earlier versions. A message that does not use them is untouched, byte for byte.
+
 ## Debug Mode
 
 Debug mode logs warnings when translations are missing:

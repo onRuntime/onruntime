@@ -83,6 +83,14 @@ import { useTranslation } from "@onruntime/translations/react";
 const { t } = useTranslation("layout/footer");
 ```
 
+A number that changes the wording goes through an ICU plural argument
+(`"{count, plural, one {# item} other {# items}}"`), never a second key: the
+branch is picked by `Intl.PluralRules` in the locale being read, so Polish gets
+`one`/`few`/`many` where English has two forms. `select` carries grammatical
+agreement when the data knows it. The generator prompt is told to adjust the
+branches per language, and `tests/validation/locales/quality.ts` compares the
+argument names rather than raw braces.
+
 See `apps/web/src/locales/README.md` for full naming conventions and usage patterns.
 
 ## Environment Variables
