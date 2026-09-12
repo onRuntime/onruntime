@@ -1,11 +1,16 @@
 # @onruntime/translations
 
+## 0.3.0
+
+### Minor Changes
+
+- d896b40: Add ICU `plural` and `select` arguments to messages, with the plural category resolved from `Intl.PluralRules` in the locale being read so languages with more than two forms are correct
+
 ## 0.2.0
 
 ### Minor Changes
 
 - 2dd2428: Add server entry point, locale switching fix, fallback system, and debug mode
-
   - **New server entry point**: `@onruntime/translations/next/server` - Exports `createGetTranslation()` for server-side translations with automatic locale detection via `next/headers`
   - **Locale switching fix**: The `Link` component now updates the locale cookie when navigating with a different `locale` prop, fixing the issue where clicking a locale switch link would redirect back to the previous locale
   - **Fallback system**: Added key-level fallback to the default locale when a translation key is missing. This ensures users never see raw translation keys even if some translations are incomplete
