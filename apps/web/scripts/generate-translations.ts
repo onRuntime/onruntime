@@ -191,6 +191,13 @@ Rules:
 - Start sentences with a capital letter (like the source text)
 - Do NOT use title case (e.g., "Our services" not "Our Services")
 - Use casual tone (no em-dashes or semicolons)
+- ICU arguments like {count, plural, one {# item} other {# items}} or
+  {gender, select, m {...} other {...}}: keep the argument name, the keyword and
+  the # as they are, and translate ONLY the text inside each branch
+- Give a plural argument the branches ${targetLang} actually needs, which may be
+  more or fewer than the source has. Polish and Russian need one/few/many,
+  Arabic needs zero/one/two/few/many/other, Japanese and Chinese need only
+  other. Always include an other branch
 
 ${JSON.stringify(entries.map(([key, value]) => ({ key, value })))}`,
   });
