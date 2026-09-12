@@ -1,3 +1,4 @@
+import { formatMessage } from "./message";
 import type {
   TranslateFunction,
   TranslationDictionary,
@@ -33,18 +34,18 @@ const resolveKey = (
 };
 
 /**
- * Interpolate variables into a string
+ * Interpolate variables into a string.
+ *
+ * Handles plain `{name}` and the ICU `plural` / `select` arguments; see
+ * `message.ts` for why that subset and no more. The locale is passed through
+ * because the plural category is the language's, not the value's: 3 is `few` in
+ * Polish and `other` in French.
  */
 const interpolate = (
   str: string,
   variables?: TranslationVariables,
-): string => {
-  if (!variables) return str;
-  return str.replace(
-    /\{(\w+)\}/g,
-    (_, name: string) => String(variables[name] ?? `{${name}}`),
-  );
-};
+  locale?: string,
+): string => formatMessage(str, variables, locale);
 
 /**
  * Create a translation function for a given dictionary
@@ -66,7 +67,7 @@ export const createTranslate = (
     // Try primary dictionary
     const value = resolveKey(translation, keyList);
     if (value !== undefined) {
-      return interpolate(value, variables);
+      return interpolate(value, variables, locale);
     }
 
     // Try fallback dictionary
@@ -78,7 +79,7 @@ export const createTranslate = (
             `[translations] Missing translation for key "${key}" in locale "${locale ?? "unknown"}", using fallback from "${fallbackLocale ?? "default"}"`
           );
         }
-        return interpolate(fallbackValue, variables);
+        return interpolate(fallbackValue, variables, locale ?? fallbackLocale);
       }
     }
 
