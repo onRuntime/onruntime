@@ -1,10 +1,10 @@
 ---
-title: API Referens
-description: Komplett API-dokumentation för @onruntime/översättningar
+title: API-referens
+description: Fullständig API-dokumentation för @onruntime/översättningar
 ---
 ## TranslationsProvider
 
-Provider-komponenten som omsluter din applikation.
+Den provider-komponent som omsluter din applikation.
 
 ```tsx
 import { TranslationsProvider } from "@onruntime/translations/react";
@@ -22,14 +22,14 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 
 | Prop | Typ | Obligatorisk | Beskrivning |
 |------|-----|--------------|-------------|
-| `locale` | `string` | Ja | Nuvarande aktiva språkversion |
-| `locales` | `Record<string, object>` | Ja | Objekt som innehåller alla språkversioner |
-| `fallbackLocale` | `string` | Nej | Reservspråkversion när nyckeln saknas |
+| `locale` | `string` | Ja | Nuvarande aktiva språkvariant |
+| `locales` | `Record<string, object>` | Ja | Objekt som innehåller alla språkvariant-översättningar |
+| `fallbackLocale` | `string` | Nej | Återgångsspråkvariant när nyckeln saknas |
 | `children` | `ReactNode` | Ja | Barnkomponenter |
 
 ## useTranslation
 
-Hook för att få åtkomst till översättningar i klientkomponenter.
+Hook för att komma åt översättningar i klientkomponenter.
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("namespace");
@@ -39,15 +39,15 @@ const { t, locale, setLocale } = useTranslation("namespace");
 
 | Parameter | Typ | Obligatorisk | Beskrivning |
 |-----------|-----|--------------|-------------|
-| `namespace` | `string` | Ja | Översättningsnamnsrum att använda |
+| `namespace` | `string` | Ja | Översättningsnamnrymden som ska användas |
 
 ### Returer
 
 | Egenskap | Typ | Beskrivning |
 |----------|-----|-------------|
 | `t` | `(key: string, vars?: object) => string` | Översättningsfunktion |
-| `locale` | `string` | Aktuell språkversion |
-| `setLocale` | `(locale: string) => void` | Funktion för att byta språkversion |
+| `locale` | `string` | Nuvarande språkvariant |
+| `setLocale` | `(locale: string) => void` | Funktion för att ändra språkvariant |
 
 ### Exempel
 
@@ -60,16 +60,16 @@ t("greeting");  // "Hello"
 // Med variabler
 t("greeting_name", { name: "John" });  // "Hello, John!"
 
-// Nestade nycklar
+// Nedsatta nycklar
 t("nav.home");  // "Home"
 
-// Byt språkversion
+// Ändra språkvariant
 setLocale("fr");
 ```
 
 ## getTranslation
 
-Async-funktion för att få åtkomst till översättningar i serverkomponenter (Next.js).
+Asynkron funktion för att komma åt översättningar i serverkomponenter (Next.js).
 
 ```tsx
 const { t } = await getTranslation("namespace");
@@ -79,14 +79,14 @@ const { t } = await getTranslation("namespace");
 
 | Parameter | Typ | Obligatorisk | Beskrivning |
 |-----------|-----|--------------|-------------|
-| `namespace` | `string` | Ja | Översättningsnamnsrum att använda |
+| `namespace` | `string` | Ja | Översättningsnamnrymden som ska användas |
 
 ### Returer
 
 | Egenskap | Typ | Beskrivning |
 |----------|-----|-------------|
 | `t` | `(key: string, vars?: object) => string` | Översättningsfunktion |
-| `locale` | `string` | Aktuell språkversion |
+| `locale` | `string` | Nuvarande språkvariant |
 
 ### Exempel
 
@@ -101,7 +101,7 @@ export default async function Page() {
 
 ## Link Component
 
-Språkmedveten Link-komponent för Next.js.
+Språkvariant-medveten Link-komponent för Next.js.
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
@@ -115,15 +115,15 @@ Alla props från Next.js `Link`-komponenten, plus:
 
 | Prop | Typ | Standard | Beskrivning |
 |------|-----|----------|-------------|
-| `locale` | `string` | Aktuell språkversion | Överskriv länkens språkversion |
+| `locale` | `string` | Nuvarande språkvariant | Åsidosätt länkspråkvarianten |
 
 ### Exempel
 
 ```tsx
-// Använder aktuell språkversion
+// Använder nuvarande språkvariant
 <Link href="/about">About</Link>
 
-// Tvinga specifik språkversion
+// Tvinga specifik språkvariant
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
@@ -142,9 +142,9 @@ t(key: string, variables?: Record<string, string | number>): string
 | Parameter | Typ | Beskrivning |
 |-----------|-----|-------------|
 | `key` | `string` | Översättningsnyckel (stödjer punktnotation) |
-| `variables` | `object` | Variabler att interpolera |
+| `variables` | `object` | Variabler för interpolering |
 
-### Variabel Interpolering
+### Variabelinterpolering
 
 ```json
 {
@@ -158,7 +158,76 @@ t("greeting", { name: "Alice" });  // "Hello, Alice!"
 t("items", { count: 5 });          // "You have 5 items"
 ```
 
-### Nestade Nycklar
+### Pluralformer
+
+Ett nummer som förändrar ordalydelsen går genom ett `plural`-argument istället för en
+andra nyckel:
+
+```json
+{
+  "battles": "{count, plural, one {# battle} other {# battles}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 battle"
+t("battles", { count: 4 });  // "4 battles"
+```
+
+`#` står för antalet. Grenen väljs av `Intl.PluralRules` för
+språkvarianten som läses, så varje språk skriver de grenar den behöver:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+Engelska och franska behöver två former, polska och ryska tre, arabiska sex, och
+japanska bara en. En handskriven singular/plural-par kan inte uttrycka det: den
+skriver 5-och-uppåt-formen på varje antal från två och uppåt.
+
+En exakt matchning får företräde framför dess kategori, vilket är hur ett språk säger
+"ingen" utan att påstå att det är nollkategorin:
+
+```json
+{
+  "messages": "{count, plural, =0 {No messages} one {# message} other {# messages}}"
+}
+```
+
+### Select
+
+`select` matchar ett värde som angivet och faller tillbaka på `other`. Den har
+grammatisk överensstämmelse när dina data känner till attributet:
+
+```json
+{
+  "invited": "{gender, select, f {She} m {He} other {They}} joined the team"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "She joined the team"
+t("invited", { gender: "x" });  // "They joined the team"
+```
+
+Attributet kan inte härledas från ordet självt, så passera det som en variabel.
+För ett dynamiskt egennamn, föredra en formulering som inte behöver någon artikel alls.
+
+Grener kan nestas, så en `select` kan innehålla en `plural`, och antingen kan hålla
+vanliga variabler.
+
+Endast `plural` och `select` stöds. Datum och nummer formateras bättre med `Intl` på
+anropsstället, där du vet de alternativ du vill ha.
+
+### Nedsatta Nycklar
 
 ```json
 {
@@ -174,7 +243,7 @@ t("items", { count: 5 });          // "You have 5 items"
 t("user.profile.title");  // "Profile"
 ```
 
-## Type Definitions
+## Typdefinitioner
 
 ### TranslationNamespaces
 
@@ -190,5 +259,5 @@ declare module "@onruntime/translations" {
 ```
 
 <Callout type="info" title="TypeScript Fördelar">
-  Med rätt typdefinitioner får du autocompletion för översättningsnycklar och kompileringstidsfel för ogiltiga nycklar.
+  Med ordentliga typdefinitioner får du autocompletion för översättningsnycklar och kompileringsfel för ogiltiga nycklar.
 </Callout>

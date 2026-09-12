@@ -1,35 +1,34 @@
 ---
 title: Komma igång
-description: >-
-  Ett lättviktsbibliotek för internationellisering med typ-säkerhet för React
-  och Next.js
+description: 'Ett lättviktigt, typesäkert internationellt bibliotek för React och Next.js'
 ---
 ## Vad är @onruntime/translations?
 
-`@onruntime/translations` är ett lättviktigt, typ-säkert internationaliserings (i18n) bibliotek som är designat för React och Next.js applikationer. Det ger en enkel API för att hantera översättningar med full TypeScript-support.
+`@onruntime/translations` är ett lättviktigt, typesäker internationellisering (i18n) bibliotek som är utformat för React och Next.js-applikationer. Det erbjuder ett enkelt API för att hantera översättningar med fullt TypeScript-stöd.
 
 <Callout type="info" title="Nyckelfunktioner">
-  - Typ-säkra översättningar med TypeScript
+  - Typesäkra översättningar med TypeScript
   - Stöd för React och Next.js (App Router)
   - Namnrymdsbaserad organisation
-  - Variabel-interpolation
-  - Lättviktigt och prestandaeffektivt
+  - Variabelinterpolering
+  - Pluraler och grammatiskt avtal genom ICU `plural` och `select`
+  - Lättviktigt och prestandaoptimerat
 </Callout>
 
 ## Varför använda det?
 
-### Typ-säkerhet
+### Typesäkerhet
 
-Få kompileringsfel när du använder ogiltiga översättningsnycklar:
+Få kompileringstid fel när du använder ogiltiga översättningsnycklar:
 
 ```typescript
 const { t } = useTranslation("common");
 
-t("greeting");        // ✅ Ogiltig nyckel
-t("invalid_key");     // ❌ TypeScript fel
+t("greeting");        // ✅ Giltig nyckel
+t("invalid_key");     // ❌ TypeScript-fel
 ```
 
-### Enkel API
+### Enkelt API
 
 Bara två hooks för alla dina översättningsbehov:
 

@@ -1,26 +1,27 @@
 ---
 title: Erste Schritte
 description: >-
-  Eine leichte, typensichere Internationalisierungsbibliothek für React und
+  Eine leichte, typsichere Internationalisierungsbibliothek für React und
   Next.js
 ---
 ## Was ist @onruntime/translations?
 
-`@onruntime/translations` ist eine leichtgewichtige, typsichere Internationalisierungsbibliothek (i18n), die für React- und Next.js-Anwendungen entwickelt wurde. Sie bietet eine einfache API zur Verwaltung von Übersetzungen mit vollständiger TypeScript-Unterstützung.
+`@onruntime/translations` ist eine leichte, typsichere Internationalisierungsbibliothek (i18n), die für React- und Next.js-Anwendungen entwickelt wurde. Sie bietet eine einfache API zum Verwalten von Übersetzungen mit vollständiger TypeScript-Unterstützung.
 
 <Callout type="info" title="Hauptmerkmale">
   - Typsichere Übersetzungen mit TypeScript
   - Unterstützung für React und Next.js (App Router)
   - Namensraum-basierte Organisation
   - Variableninterpolation
-  - Leichtgewichtig und performant
+  - Pluralformen und grammatikalische Übereinstimmung über ICU `plural` und `select`
+  - Leichtgewichtig und leistungsstark
 </Callout>
 
-## Warum es nutzen?
+## Warum es verwenden?
 
 ### Typsicherheit
 
-Erhalte Compile-Zeitfehler, wenn du ungültige Übersetzungsschlüssel verwendest:
+Erhalte Compile-Fehler, wenn ungültige Übersetzungsschlüssel verwendet werden:
 
 ```typescript
 const { t } = useTranslation("common");
@@ -31,7 +32,7 @@ t("invalid_key");     // ❌ TypeScript-Fehler
 
 ### Einfache API
 
-Nur zwei Hooks für all deine Übersetzungsbedürfnisse:
+Nur zwei Hooks für alle deine Übersetzungsbedürfnisse:
 
 ```typescript
 // Client-Komponenten
@@ -60,7 +61,7 @@ Halte deine Übersetzungen mit Namensräumen organisiert:
   </Folder>
 </Files>
 
-## Schnelles Beispiel
+## Schnellbeispiel
 
 ```tsx
 // locales/en/common.json

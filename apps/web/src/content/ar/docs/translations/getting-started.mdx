@@ -1,35 +1,36 @@
 ---
 title: البدء
-description: مكتبة ترجمة خفيفة وآمنة من حيث النوع لReact وNext.js
+description: مكتبة دولية خفيفة الوزن وآمنة من حيث النوع لـ React و Next.js
 ---
 ## ما هو @onruntime/translations؟
 
-`@onruntime/translations` هي مكتبة خفيفة ومؤمنة نوعياً للترجمة (i18n) مصممة لتطبيقات React وNext.js. توفر واجهة برمجة تطبيقات بسيطة لإدارة الترجمات مع دعم كامل لـ TypeScript.
+`@onruntime/translations` هي مكتبة دولية خفيفة الوزن وآمنة من جهة النوع (i18n) مصممة لتطبيقات React و Next.js. توفر واجهة برمجية بسيطة لإدارة الترجمة مع دعم كامل لـ TypeScript.
 
-<Callout type="info" title="المميزات الرئيسية">
-  - ترجمات مؤمنة نوعياً باستخدام TypeScript
-  - دعم لـ React وNext.js (App Router)
-  - تنظيم بناءً على المساحة الاسمية
-  - استبدال المتغيرات
-  - خفيفة وأداء عالي
+<Callout type="info" title="الميزات الأساسية">
+  - ترجمات آمنة من جهة النوع مع TypeScript
+  - دعم لـ React و Next.js (موجه التطبيق)
+  - تنظيم قائم على المساحات الاسمية
+  - إدراج متغيرات
+  - الجمع والموافقة النحوية من خلال ICU `plural` و `select`
+  - خفيفة الوزن وعالية الأداء
 </Callout>
 
-## لماذا تستخدمها؟
+## لماذا ينبغي استخدامه؟
 
-### أمان النوع
+### الأمان من جهة النوع
 
-احصل على أخطاء وقت التجميع عند استخدام مفاتيح ترجمة غير صالحة:
+احصل على أخطاء في وقت التجميع عند استخدام مفاتيح ترجمة غير صحيحة:
 
 ```typescript
 const { t } = useTranslation("common");
 
-t("greeting");        // ✅ مفتاح صالح
-t("invalid_key");     // ❌ خطأ TypeScript
+t("greeting");        // ✅ مفتاح صحيح
+t("invalid_key");     // ❌ خطأ في TypeScript
 ```
 
-### واجهة برمجة تطبيقات بسيطة
+### واجهة برمجية بسيطة
 
-فقط اثنان من الـ hooks لجميع احتياجاتك في الترجمة:
+فقط اثنان من الهوكات لجميع احتياجاتك في الترجمة:
 
 ```typescript
 // مكونات العميل
@@ -39,9 +40,9 @@ const { t } = useTranslation("namespace");
 const { t } = await getTranslation("namespace");
 ```
 
-### تنظيم الترجمات
+### ترجمات منظمة
 
-احتفظ بترجماتك منظمة باستخدام المساحات الاسمية:
+احتفظ بترجماتك منظمة مع المساحات الاسمية:
 
 <Files>
   <Folder name="locales" defaultOpen>
@@ -63,7 +64,7 @@ const { t } = await getTranslation("namespace");
 ```tsx
 // locales/en/common.json
 {
-  "greeting": "مرحبا، {name}!"
+  "greeting": "Hello, {name}!"
 }
 
 // المكون
@@ -76,12 +77,12 @@ function Welcome({ name }) {
 }
 ```
 
-## الخطوات التالية
+## الخطوات القادمة
 
 <Cards>
   <Card
     title="التثبيت"
-    description="ثبت وتهيئة الحزمة"
+    description="تثبيت وتكوين الحزمة"
     href="/docs/translations/installation"
   />
   <Card

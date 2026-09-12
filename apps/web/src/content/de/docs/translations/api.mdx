@@ -1,18 +1,18 @@
 ---
-title: API-Referenz
+title: API-Dokumentation
 description: Vollständige API-Dokumentation für @onruntime/translations
 ---
 ## TranslationsProvider
 
-Die Provider-Komponente, die deine Anwendung umschließt.
+Die Provider-Komponente, die deine Anwendung umgibt.
 
 ```tsx
 import { TranslationsProvider } from "@onruntime/translations/react";
 
 <TranslationsProvider
   locale="de"
-  locales={{ de, fr }}
-  fallbackLocale="de"
+  locales={{ en, fr }}
+  fallbackLocale="en"
 >
   {children}
 </TranslationsProvider>
@@ -22,9 +22,9 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 
 | Prop | Typ | Erforderlich | Beschreibung |
 |------|-----|--------------|--------------|
-| `locale` | `string` | Ja | Aktuelle aktive Locale |
-| `locales` | `Record<string, object>` | Ja | Objekt, das alle Locale-Übersetzungen enthält |
-| `fallbackLocale` | `string` | Nein | Fallback-Locale, wenn der Schlüssel fehlt |
+| `locale` | `string` | Ja | Aktuelle aktive Sprache |
+| `locales` | `Record<string, object>` | Ja | Objekt, das alle Sprachübersetzungen enthält |
+| `fallbackLocale` | `string` | Nein | Fallback-Sprache, wenn der Schlüssel fehlt |
 | `children` | `ReactNode` | Ja | Kind-Komponenten |
 
 ## useTranslation
@@ -39,22 +39,22 @@ const { t, locale, setLocale } = useTranslation("namespace");
 
 | Parameter | Typ | Erforderlich | Beschreibung |
 |-----------|-----|--------------|--------------|
-| `namespace` | `string` | Ja | Zu verwendender Übersetzungs-Namespace |
+| `namespace` | `string` | Ja | Zu verwendender Übersetzungsnamenraum |
 
-### Rückgabewerte
+### Rückgaben
 
 | Eigenschaft | Typ | Beschreibung |
 |-------------|-----|--------------|
 | `t` | `(key: string, vars?: object) => string` | Übersetzungsfunktion |
-| `locale` | `string` | Aktuelle Locale |
-| `setLocale` | `(locale: string) => void` | Funktion zum Ändern der Locale |
+| `locale` | `string` | Aktuelle Sprache |
+| `setLocale` | `(locale: string) => void` | Funktion zum Ändern der Sprache |
 
 ### Beispiel
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("common");
 
-// Grundlegende Nutzung
+// Grundlegende Verwendung
 t("greeting");  // "Hallo"
 
 // Mit Variablen
@@ -63,13 +63,13 @@ t("greeting_name", { name: "John" });  // "Hallo, John!"
 // Verschachtelte Schlüssel
 t("nav.home");  // "Startseite"
 
-// Locale ändern
+// Sprache ändern
 setLocale("fr");
 ```
 
 ## getTranslation
 
-Asynchrone Funktion zum Zugriff auf Übersetzungen in Server-Komponenten (Next.js).
+Async-Funktion zum Zugriff auf Übersetzungen in Server-Komponenten (Next.js).
 
 ```tsx
 const { t } = await getTranslation("namespace");
@@ -79,14 +79,14 @@ const { t } = await getTranslation("namespace");
 
 | Parameter | Typ | Erforderlich | Beschreibung |
 |-----------|-----|--------------|--------------|
-| `namespace` | `string` | Ja | Zu verwendender Übersetzungs-Namespace |
+| `namespace` | `string` | Ja | Zu verwendender Übersetzungsnamenraum |
 
-### Rückgabewerte
+### Rückgaben
 
 | Eigenschaft | Typ | Beschreibung |
 |-------------|-----|--------------|
 | `t` | `(key: string, vars?: object) => string` | Übersetzungsfunktion |
-| `locale` | `string` | Aktuelle Locale |
+| `locale` | `string` | Aktuelle Sprache |
 
 ### Beispiel
 
@@ -101,7 +101,7 @@ export default async function Page() {
 
 ## Link-Komponente
 
-Locale-bewusste Link-Komponente für Next.js.
+Sprachempfindliche Link-Komponente für Next.js.
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
@@ -111,19 +111,19 @@ import { Link } from "@onruntime/translations/next";
 
 ### Props
 
-Alle Props der Next.js `Link`-Komponente, plus:
+Alle Props von der Next.js `Link`-Komponente, plus:
 
 | Prop | Typ | Standard | Beschreibung |
 |------|-----|----------|--------------|
-| `locale` | `string` | Aktuelle Locale | Überschreibt die Link-Locale |
+| `locale` | `string` | Aktuelle Sprache | Überschreibe die Link-Sprache |
 
 ### Beispiel
 
 ```tsx
-// Verwendet die aktuelle Locale
+// Verwendet aktuelle Sprache
 <Link href="/about">Über</Link>
 
-// Bestimmte Locale erzwingen
+// Bestimmte Sprache erzwingen
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
@@ -144,19 +144,79 @@ t(key: string, variables?: Record<string, string | number>): string
 | `key` | `string` | Übersetzungsschlüssel (unterstützt Punktnotation) |
 | `variables` | `object` | Variablen zur Interpolation |
 
-### Variableninterpolation
+### Variablen-Interpolation
 
 ```json
 {
   "greeting": "Hallo, {name}!",
-  "items": "Du hast {count} Artikel"
+  "items": "Du hast {count} Elemente"
 }
 ```
 
 ```tsx
 t("greeting", { name: "Alice" });  // "Hallo, Alice!"
-t("items", { count: 5 });          // "Du hast 5 Artikel"
+t("items", { count: 5 });          // "Du hast 5 Elemente"
 ```
+
+### Pluralformen
+
+Eine Zahl, die die Formulierung ändert, erfolgt über ein `plural`-Argument anstelle eines zweiten Schlüssels:
+
+```json
+{
+  "battles": "{count, plural, one {# Kampf} other {# Kämpfe}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 Kampf"
+t("battles", { count: 4 });  // "4 Kämpfe"
+```
+
+`#` steht für die Anzahl. Der Ast wird durch `Intl.PluralRules` in der zu lesenden Sprache gewählt, sodass jede Sprache die benötigten Äste schreibt:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+Englisch und Französisch benötigen zwei Formen, Polnisch und Russisch drei, Arabisch sechs und Japanisch nur eine. Ein handgeschriebenes Singular/Plural-Paar kann das nicht ausdrücken: es schreibt die 5-und-mehr-Form bei jeder Anzahl von zwei nach oben.
+
+Ein exakter Übereinstimmung hat Vorrang vor seiner Kategorie, was es einer Sprache ermöglicht, "keine" zu sagen, ohne zu behaupten, dass es die Null-Kategorie ist:
+
+```json
+{
+  "messages": "{count, plural, =0 {Keine Nachrichten} one {# Nachricht} other {# Nachrichten}}"
+}
+```
+
+### Auswahl
+
+`select` stimmt mit einem Wert überein und fällt auf `other` zurück. Es trägt grammatikalische Übereinstimmung, wenn deine Daten das Attribut kennen:
+
+```json
+{
+  "invited": "{gender, select, f {Sie} m {Er} other {Sie}} trat dem Team bei"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "Sie trat dem Team bei"
+t("invited", { gender: "x" });  // "Sie trat dem Team bei"
+```
+
+Das Attribut kann nicht aus dem Wort selbst abgeleitet werden, also gib es als Variable an. Für einen dynamischen Eigennamen ist es besser, eine Formulierung zu wählen, die überhaupt keinen Artikel benötigt.
+
+Äste können sich verschachteln, sodass ein `select` ein `plural` enthalten kann und entweder Plain-Variablen enthalten kann.
+
+Nur `plural` und `select` werden unterstützt. Daten und Zahlen werden besser mit `Intl` am Aufrufort formatiert, wo du die Optionen kennst, die du möchtest.
 
 ### Verschachtelte Schlüssel
 
@@ -183,12 +243,12 @@ Erweitere dieses Interface für typensichere Übersetzungen:
 ```tsx
 declare module "@onruntime/translations" {
   interface TranslationNamespaces {
-    common: typeof import("./locales/de/common.json");
-    auth: typeof import("./locales/de/auth.json");
+    common: typeof import("./locales/en/common.json");
+    auth: typeof import("./locales/en/auth.json");
   }
 }
 ```
 
-<Callout type="info" title="Vorteile von TypeScript">
-  Mit den richtigen Typdefinitionen erhältst du Autocomplete für Übersetzungsschlüssel und Kompilierungsfehler für ungültige Schlüssel.
+<Callout type="info" title="TypeScript-Vorteile">
+  Mit den richtigen Typdefinitionen erhältst du Autovervollständigung für Übersetzungsschlüssel und Kompilierungsfehler für ungültige Schlüssel.
 </Callout>

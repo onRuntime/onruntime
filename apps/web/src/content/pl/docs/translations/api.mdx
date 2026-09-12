@@ -4,7 +4,7 @@ description: Pełna dokumentacja API dla @onruntime/translations
 ---
 ## TranslationsProvider
 
-Komponent dostarczający, który owrapuje Twoją aplikację.
+Komponent dostarczający, który owrapuje twoją aplikację.
 
 ```tsx
 import { TranslationsProvider } from "@onruntime/translations/react";
@@ -21,15 +21,15 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 ### Props
 
 | Prop | Typ | Wymagane | Opis |
-|------|-----|----------|------|
-| `locale` | `string` | Tak | Aktualna aktywna lokalizacja |
-| `locales` | `Record<string, object>` | Tak | Obiekt zawierający wszystkie tłumaczenia lokalizacji |
-| `fallbackLocale` | `string` | Nie | Zapasowa lokalizacja, gdy klucz jest brakujący |
-| `children` | `ReactNode` | Tak | Komponenty dzieci |
+|------|------|----------|-------------|
+| `locale` | `string` | Tak | Aktualny aktywny język |
+| `locales` | `Record<string, object>` | Tak | Obiekt zawierający wszystkie tłumaczenia językowe |
+| `fallbackLocale` | `string` | Nie | Język zapasowy, gdy klucz jest brakujący |
+| `children` | `ReactNode` | Tak | Podkomponenty |
 
 ## useTranslation
 
-Hook do uzyskiwania tłumaczeń w komponentach klienckich.
+Hook do uzyskiwania dostępu do tłumaczeń w komponentach klienckich.
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("namespace");
@@ -37,17 +37,17 @@ const { t, locale, setLocale } = useTranslation("namespace");
 
 ### Parametry
 
-| Parameter | Typ | Wymagane | Opis |
-|-----------|-----|----------|------|
+| Parametr | Typ | Wymagane | Opis |
+|-----------|------|----------|-------------|
 | `namespace` | `string` | Tak | Przestrzeń nazw tłumaczenia do użycia |
 
 ### Zwraca
 
-| Właściwość | Typ | Opis |
-|------------|-----|------|
-| `t` | `(key: string, vars?: object) => string` | Funkcja tłumacząca |
-| `locale` | `string` | Aktualna lokalizacja |
-| `setLocale` | `(locale: string) => void` | Funkcja do zmiany lokalizacji |
+| Własność | Typ | Opis |
+|----------|------|-------------|
+| `t` | `(key: string, vars?: object) => string` | Funkcja tłumaczenia |
+| `locale` | `string` | Aktualny język |
+| `setLocale` | `(locale: string) => void` | Funkcja do zmiany języka |
 
 ### Przykład
 
@@ -63,13 +63,13 @@ t("greeting_name", { name: "John" });  // "Cześć, John!"
 // Zagnieżdżone klucze
 t("nav.home");  // "Strona główna"
 
-// Zmień lokalizację
+// Zmień język
 setLocale("fr");
 ```
 
 ## getTranslation
 
-Funkcja asynchroniczna do uzyskiwania tłumaczeń w komponentach serwerowych (Next.js).
+Asynchroniczna funkcja do uzyskiwania dostępu do tłumaczeń w komponentach serwerowych (Next.js).
 
 ```tsx
 const { t } = await getTranslation("namespace");
@@ -77,16 +77,16 @@ const { t } = await getTranslation("namespace");
 
 ### Parametry
 
-| Parameter | Typ | Wymagane | Opis |
-|-----------|-----|----------|------|
+| Parametr | Typ | Wymagane | Opis |
+|-----------|------|----------|-------------|
 | `namespace` | `string` | Tak | Przestrzeń nazw tłumaczenia do użycia |
 
 ### Zwraca
 
-| Właściwość | Typ | Opis |
-|------------|-----|------|
-| `t` | `(key: string, vars?: object) => string` | Funkcja tłumacząca |
-| `locale` | `string` | Aktualna lokalizacja |
+| Własność | Typ | Opis |
+|----------|------|-------------|
+| `t` | `(key: string, vars?: object) => string` | Funkcja tłumaczenia |
+| `locale` | `string` | Aktualny język |
 
 ### Przykład
 
@@ -101,7 +101,7 @@ export default async function Page() {
 
 ## Link Component
 
-Link oświadczający o lokalizacji dla Next.js.
+Komponent Link z uwzględnieniem języka dla Next.js.
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
@@ -114,24 +114,24 @@ import { Link } from "@onruntime/translations/next";
 Wszystkie propsy z komponentu `Link` w Next.js, plus:
 
 | Prop | Typ | Domyślnie | Opis |
-|------|-----|-----------|------|
-| `locale` | `string` | Aktualna lokalizacja | Nadpisuje lokalizację linku |
+|------|------|---------|-------------|
+| `locale` | `string` | Aktualny język | Nadpisuje język linku |
 
 ### Przykład
 
 ```tsx
-// Używa bieżącej lokalizacji
+// Używa aktualnego języka
 <Link href="/about">O nas</Link>
 
-// Wymusza określoną lokalizację
+// Wymusza konkretny język
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
 ## Funkcja Tłumaczenia (t)
 
-Funkcja `t` służy do pobierania przetłumaczonych ciągów.
+Funkcja `t` jest używana do pobierania przetłumaczonych ciągów.
 
-### Podpis
+### Sygnatura
 
 ```tsx
 t(key: string, variables?: Record<string, string | number>): string
@@ -139,8 +139,8 @@ t(key: string, variables?: Record<string, string | number>): string
 
 ### Parametry
 
-| Parameter | Typ | Opis |
-|-----------|-----|------|
+| Parametr | Typ | Opis |
+|-----------|------|-------------|
 | `key` | `string` | Klucz tłumaczenia (obsługuje notację kropkową) |
 | `variables` | `object` | Zmienne do interpolacji |
 
@@ -157,6 +157,66 @@ t(key: string, variables?: Record<string, string | number>): string
 t("greeting", { name: "Alice" });  // "Cześć, Alice!"
 t("items", { count: 5 });          // "Masz 5 przedmiotów"
 ```
+
+### Liczby mnogie
+
+Liczba, która zmienia sformułowanie, przechodzi przez argument `plural` zamiast drugiego klucza:
+
+```json
+{
+  "battles": "{count, plural, one {# walka} other {# walki}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 walka"
+t("battles", { count: 4 });  // "4 walki"
+```
+
+`#` oznacza liczbę. Gałąź jest wybierana przez `Intl.PluralRules` w czytanym języku, więc każdy język pisze swoje potrzebne gałęzie:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitew}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+Angielski i francuski potrzebują dwóch form, polski i rosyjski trzech, arabski sześciu, a japoński tylko jednej. Ręcznie napisany pary liczby pojedynczej/mnogiej nie mogą tego wyrazić: pisze formę od pięciu w górę na każdą liczbę powyżej dwóch.
+
+Dokładne dopasowanie ma pierwszeństwo przed swoją kategorią, co jest sposobem, w jaki język mówi "żaden" bez twierdzenia, że to kategoria zerowa:
+
+```json
+{
+  "messages": "{count, plural, =0 {Brak wiadomości} one {# wiadomość} other {# wiadomości}}"
+}
+```
+
+### Wybór
+
+`select` dopasowuje wartość tak, jak jest napisana i przechodzi do `other`. Nosi zgodność gramatyczną, gdy dane znają atrybut:
+
+```json
+{
+  "invited": "{gender, select, f {Ona} m {On} other {Oni}} dołączył do zespołu"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "Ona dołączyła do zespołu"
+t("invited", { gender: "x" });  // "Oni dołączyli do zespołu"
+```
+
+Atrybut nie może być pochodzony z samego słowa, więc przekaż go jako zmienną. Dla dynamicznej nazwy własnej lepiej jest użyć sformułowania, które nie potrzebuje w ogóle artykułu.
+
+Gałęzie zagnieżdżają się, więc `select` może zawierać `plural`, a każda z nich może zawierać zwykłe zmienne.
+
+Tylko `plural` i `select` są wspierane. Daty i liczby lepiej formatować za pomocą `Intl` w miejscu wywołania, gdzie znasz opcje, które chcesz.
 
 ### Zagnieżdżone Klucze
 
@@ -178,17 +238,17 @@ t("user.profile.title");  // "Profil"
 
 ### TranslationNamespaces
 
-Rozwiń ten interfejs dla bezpiecznych typowo tłumaczeń:
+Rozszerz ten interfejs dla bezpiecznych typowo tłumaczeń:
 
 ```tsx
 declare module "@onruntime/translations" {
   interface TranslationNamespaces {
-    common: typeof import("./locales/en/common.json");
-    auth: typeof import("./locales/en/auth.json");
+    common: typeof import("./locales/pl/common.json");
+    auth: typeof import("./locales/pl/auth.json");
   }
 }
 ```
 
-<Callout type="info" title="Korzyści z TypeScript">
-  Dzięki odpowiednim definicjom typów, uzyskasz autouzupełnianie dla kluczy tłumaczeń oraz błędy kompilacji dla niepoprawnych kluczy.
+<Callout type="info" title="Zalety TypeScript">
+  Dzięki odpowiednim definicjom typów, otrzymasz autouzupełnianie dla kluczy tłumaczeń i błędy kompilacji dla nieprawidłowych kluczy.
 </Callout>

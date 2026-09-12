@@ -21,10 +21,10 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 ### Props
 
 | Prop | Type | Richiesto | Descrizione |
-|------|------|-----------|-------------|
+|------|------|----------|-------------|
 | `locale` | `string` | Sì | Locale attivo corrente |
-| `locales` | `Record<string, object>` | Sì | Oggetto contenente tutte le traduzioni locali |
-| `fallbackLocale` | `string` | No | Locale di riserva quando la chiave è assente |
+| `locales` | `Record<string, object>` | Sì | Oggetto contenente tutte le traduzioni dei locali |
+| `fallbackLocale` | `string` | No | Locale di fallback quando la chiave è mancante |
 | `children` | `ReactNode` | Sì | Componenti figli |
 
 ## useTranslation
@@ -38,23 +38,23 @@ const { t, locale, setLocale } = useTranslation("namespace");
 ### Parametri
 
 | Parametro | Type | Richiesto | Descrizione |
-|-----------|------|-----------|-------------|
-| `namespace` | `string` | Sì | Namespace di traduzione da utilizzare |
+|-----------|------|----------|-------------|
+| `namespace` | `string` | Sì | Namespace di traduzione da usare |
 
 ### Ritorna
 
 | Proprietà | Type | Descrizione |
-|-----------|------|-------------|
+|----------|------|-------------|
 | `t` | `(key: string, vars?: object) => string` | Funzione di traduzione |
 | `locale` | `string` | Locale corrente |
-| `setLocale` | `(locale: string) => void` | Funzione per cambiare il locale |
+| `setLocale` | `(locale: string) => void` | Funzione per cambiare locale |
 
 ### Esempio
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("common");
 
-// Utilizzo di base
+// Uso di base
 t("greeting");  // "Ciao"
 
 // Con variabili
@@ -63,7 +63,7 @@ t("greeting_name", { name: "John" });  // "Ciao, John!"
 // Chiavi annidate
 t("nav.home");  // "Home"
 
-// Cambiare locale
+// Cambia locale
 setLocale("fr");
 ```
 
@@ -78,13 +78,13 @@ const { t } = await getTranslation("namespace");
 ### Parametri
 
 | Parametro | Type | Richiesto | Descrizione |
-|-----------|------|-----------|-------------|
-| `namespace` | `string` | Sì | Namespace di traduzione da utilizzare |
+|-----------|------|----------|-------------|
+| `namespace` | `string` | Sì | Namespace di traduzione da usare |
 
 ### Ritorna
 
 | Proprietà | Type | Descrizione |
-|-----------|------|-------------|
+|----------|------|-------------|
 | `t` | `(key: string, vars?: object) => string` | Funzione di traduzione |
 | `locale` | `string` | Locale corrente |
 
@@ -101,35 +101,35 @@ export default async function Page() {
 
 ## Link Component
 
-Componente Link consapevole del locale per Next.js.
+Componente Link consapevole della locale per Next.js.
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
 
-<Link href="/about">About</Link>
+<Link href="/about">Informazioni</Link>
 ```
 
 ### Props
 
-Tutti i props del componente `Link` di Next.js, più:
+Tutte le props dal componente `Link` di Next.js, più:
 
 | Prop | Type | Default | Descrizione |
 |------|------|---------|-------------|
-| `locale` | `string` | Locale corrente | Sovrascrivi il locale del link |
+| `locale` | `string` | Locale corrente | Override della locale del link |
 
 ### Esempio
 
 ```tsx
-// Usa il locale corrente
-<Link href="/about">About</Link>
+// Usa la locale corrente
+<Link href="/about">Informazioni</Link>
 
-// Forza un locale specifico
+// Forza una locale specifica
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
-## Translation Function (t)
+## Funzione di Traduzione (t)
 
-La funzione `t` viene utilizzata per recuperare stringhe tradotte.
+La funzione `t` viene utilizzata per recuperare le stringhe tradotte.
 
 ### Firma
 
@@ -141,7 +141,7 @@ t(key: string, variables?: Record<string, string | number>): string
 
 | Parametro | Type | Descrizione |
 |-----------|------|-------------|
-| `key` | `string` | Chiave di traduzione (supporta la notazione a punti) |
+| `key` | `string` | Chiave di traduzione (supporta notazione a punto) |
 | `variables` | `object` | Variabili da interpolare |
 
 ### Interpolazione delle Variabili
@@ -149,14 +149,74 @@ t(key: string, variables?: Record<string, string | number>): string
 ```json
 {
   "greeting": "Ciao, {name}!",
-  "items": "Hai {count} articoli"
+  "items": "Hai {count} oggetti"
 }
 ```
 
 ```tsx
 t("greeting", { name: "Alice" });  // "Ciao, Alice!"
-t("items", { count: 5 });          // "Hai 5 articoli"
+t("items", { count: 5 });          // "Hai 5 oggetti"
 ```
+
+### Plurali
+
+Un numero che cambia la formulazione passa attraverso un argomento `plural` piuttosto che una seconda chiave:
+
+```json
+{
+  "battles": "{count, plural, one {# battaglia} other {# battaglie}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 battaglia"
+t("battles", { count: 4 });  // "4 battaglie"
+```
+
+`#` sta per il conteggio. Il ramo è scelto da `Intl.PluralRules` nella locale in lettura, quindi ogni lingua scrive i rami di cui ha bisogno:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+L'inglese e il francese necessitano di due forme, il polacco e il russo tre, l'arabo sei e il giapponese solo una. Una coppia singolare/plurale scritta a mano non può esprimere questo: scrive la forma 5-e-alto su ogni conteggio a partire da due in su.
+
+Una corrispondenza esatta ha la precedenza sulla sua categoria, questo è come una lingua dice "nessuno" senza affermare che è la categoria zero:
+
+```json
+{
+  "messages": "{count, plural, =0 {Nessun messaggio} one {# messaggio} other {# messaggi}}"
+}
+```
+
+### Seleziona
+
+`select` corrisponde a un valore così com'è scritto e torna a `other`. Porta l'accordo grammaticale quando i tuoi dati conoscono l'attributo:
+
+```json
+{
+  "invited": "{gender, select, f {Lei} m {Lui} other {Loro}} si è unito al team"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "Lei si è unita al team"
+t("invited", { gender: "x" });  // "Loro si sono uniti al team"
+```
+
+L'attributo non può essere derivate dalla parola stessa, quindi passalo come variabile. Per un nome proprio dinamico, preferisci una formulazione che non ha bisogno di articolo.
+
+I rami si annidano, così un `select` può contenere un `plural`, e entrambi possono contenere variabili semplici.
+
+Solo `plural` e `select` sono supportati. Date e numeri sono meglio formattati con `Intl` nel punto di chiamata, dove conosci le opzioni che vuoi.
 
 ### Chiavi Annidate
 
@@ -174,21 +234,21 @@ t("items", { count: 5 });          // "Hai 5 articoli"
 t("user.profile.title");  // "Profilo"
 ```
 
-## Type Definitions
+## Definizioni dei Tipi
 
 ### TranslationNamespaces
 
-Estendi questa interfaccia per traduzioni con tipi sicuri:
+Estendi questa interfaccia per traduzioni sicure per il tipo:
 
 ```tsx
 declare module "@onruntime/translations" {
   interface TranslationNamespaces {
-    common: typeof import("./locales/en/common.json");
-    auth: typeof import("./locales/en/auth.json");
+    common: typeof import("./locales/it/common.json");
+    auth: typeof import("./locales/it/auth.json");
   }
 }
 ```
 
-<Callout type="info" title="Vantaggi di TypeScript">
-  Con definizioni di tipo appropriate, otterrai completamento automatico per le chiavi di traduzione e errori in fase di compilazione per chiavi non valide.
+<Callout type="info" title="Benefici di TypeScript">
+  Con definizioni di tipo corrette, avrai il completamento automatico per le chiavi di traduzione e errori in fase di compilazione per chiavi non valide.
 </Callout>

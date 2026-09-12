@@ -1,10 +1,10 @@
 ---
 title: एपीआई संदर्भ
-description: '@onruntime/translations के लिए संपूर्ण एपीआई दस्तावेज़'
+description: '@onruntime/translations के लिए पूर्ण एपीआई दस्तावेज़ीकरण'
 ---
 ## TranslationsProvider
 
-आपके ऐप्लिकेशन को लपेटने वाला प्रोवाइडर कंपोनेंट।
+आपके एप्लिकेशन को लपेटने वाला प्रोवाइडर कंपोनेंट।
 
 ```tsx
 import { TranslationsProvider } from "@onruntime/translations/react";
@@ -22,14 +22,14 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 
 | Prop | Type | Required | Description |
 |------|------|----------|-------------|
-| `locale` | `string` | हाँ | वर्तमान सक्रिय लोकल |
-| `locales` | `Record<string, object>` | हाँ | सभी लोकल अनुवादों को समाहित करने वाला ऑब्जेक्ट |
-| `fallbackLocale` | `string` | नहीं | जब कुंजी गायब हो तब फॉल्बैक लोकल |
-| `children` | `ReactNode` | हाँ | चाइल्ड कंपोनेंट्स |
+| `locale` | `string` | हां | वर्तमान सक्रिय लोकल |
+| `locales` | `Record<string, object>` | हां | सभी लोकल अनुवादों का वस्तु |
+| `fallbackLocale` | `string` | नहीं | जब कुंजी गायब है तो फॉलबैक लोकल |
+| `children` | `ReactNode` | हां | चाइल्ड कंपोनेंट्स |
 
 ## useTranslation
 
-क्लाइंट कंपोनेंट्स में अनुवाद तक पहुंचने का हुक।
+क्लाइंट कंपोनेंट्स में अनुवादों को एक्सेस करने के लिए हुक।
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("namespace");
@@ -39,7 +39,7 @@ const { t, locale, setLocale } = useTranslation("namespace");
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `namespace` | `string` | हाँ | उपयोग करने के लिए अनुवाद नामस्थान |
+| `namespace` | `string` | हां | उपयोग के लिए अनुवाद नामस्थान |
 
 ### Returns
 
@@ -47,7 +47,7 @@ const { t, locale, setLocale } = useTranslation("namespace");
 |----------|------|-------------|
 | `t` | `(key: string, vars?: object) => string` | अनुवाद फ़ंक्शन |
 | `locale` | `string` | वर्तमान लोकल |
-| `setLocale` | `(locale: string) => void` | लोकल बदलने के लिए फ़ंक्शन |
+| `setLocale` | `(locale: string) => void` | लोकल बदलने का फ़ंक्शन |
 
 ### Example
 
@@ -57,10 +57,10 @@ const { t, locale, setLocale } = useTranslation("common");
 // बुनियादी उपयोग
 t("greeting");  // "Hello"
 
-// चर के साथ
+// वेरिएबल्स के साथ
 t("greeting_name", { name: "John" });  // "Hello, John!"
 
-// नेस्टेड कुंजी
+// नेस्टेड कुंजियाँ
 t("nav.home");  // "Home"
 
 // लोकल बदलें
@@ -69,7 +69,7 @@ setLocale("fr");
 
 ## getTranslation
 
-सर्वर कंपोनेंट्स (Next.js) में अनुवादों तक पहुंचने के लिए असिंक्रोनस फ़ंक्शन।
+सर्वर कंपोनेंट्स (Next.js) में अनुवादों को एक्सेस करने के लिए एसिंक्रोनस फ़ंक्शन।
 
 ```tsx
 const { t } = await getTranslation("namespace");
@@ -79,7 +79,7 @@ const { t } = await getTranslation("namespace");
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `namespace` | `string` | हाँ | उपयोग करने के लिए अनुवाद नामस्थान |
+| `namespace` | `string` | हां | उपयोग के लिए अनुवाद नामस्थान |
 
 ### Returns
 
@@ -101,7 +101,7 @@ export default async function Page() {
 
 ## Link Component
 
-Next.js के लिए लोकल-जानकारी वाला लिंक कंपोनेंट।
+Next.js के लिए लोकल-सेवेन Link कंपोनेंट।
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
@@ -111,7 +111,7 @@ import { Link } from "@onruntime/translations/next";
 
 ### Props
 
-Next.js के `Link` कंपोनेंट से सभी प्रोपीज़, प्लस:
+Next.js `Link` कंपोनेंट के सभी प्रोप्स, साथ में:
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
@@ -123,13 +123,13 @@ Next.js के `Link` कंपोनेंट से सभी प्रोप�
 // वर्तमान लोकल का उपयोग करता है
 <Link href="/about">About</Link>
 
-// विशेष लोकल मजबूर करें
+// विशिष्ट लोकल को मजबूर करना
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
 ## Translation Function (t)
 
-`t` फ़ंक्शन अनुवादित स्ट्रिंग्स प्राप्त करने के लिए उपयोग किया जाता है।
+`t` फ़ंक्शन का उपयोग अनुवादित स्ट्रिंग प्राप्त करने के लिए किया जाता है।
 
 ### Signature
 
@@ -142,7 +142,7 @@ t(key: string, variables?: Record<string, string | number>): string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `key` | `string` | अनुवाद कुंजी (डॉट नोटेशन का समर्थन करता है) |
-| `variables` | `object` | इंटरपोलेट करने के लिए चर |
+| `variables` | `object` | इंटरपोलेशन के लिए वेरिएबल्स |
 
 ### Variable Interpolation
 
@@ -157,6 +157,66 @@ t(key: string, variables?: Record<string, string | number>): string
 t("greeting", { name: "Alice" });  // "Hello, Alice!"
 t("items", { count: 5 });          // "You have 5 items"
 ```
+
+### Plurals
+
+एक संख्या जो शब्द परिवर्तन को `plural` तर्क के माध्यम से ले जाती है न कि दूसरे कुंजी के माध्यम से:
+
+```json
+{
+  "battles": "{count, plural, one {# battle} other {# battles}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 battle"
+t("battles", { count: 4 });  // "4 battles"
+```
+
+`#` गणना के लिए खड़ा है। शाखा `Intl.PluralRules` द्वारा पढ़ी जा रही लोकल में चुनी जाती है, इसलिए प्रत्येक भाषा वह शाखाएँ लिखती है जिसकी उसे ज़रूरत है:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+अंग्रेजी और फ्रेंच को दो रूपों की जरूरत होती है, पोलिश और रूसी को तीन, अरबी को छह, और जापानी को केवल एक। एक हाथ से लिखी गई एकल/बहुवचन जोड़ी इसे व्यक्त नहीं कर सकती: यह दो से ऊपर की हर गणना पर 5-and-above फ़ॉर्म लिखती है।
+
+एक सटीक मिलान अपनी श्रेणी पर प्राथमिकता लेता है, यही एक भाषा "कोई नहीं" कहती है बिना यह कहे कि यह शून्य श्रेणी है:
+
+```json
+{
+  "messages": "{count, plural, =0 {No messages} one {# message} other {# messages}}"
+}
+```
+
+### Select
+
+`select` एक मान को जैसा है वैसा मिलाकर और `other` पर वापस जाती है। यह तब ग्राम्य सहमति लेता है जब आपके डेटा को विशेषता के बारे में पता होता है:
+
+```json
+{
+  "invited": "{gender, select, f {She} m {He} other {They}} joined the team"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "She joined the team"
+t("invited", { gender: "x" });  // "They joined the team"
+```
+
+विशेषता स्वयं शब्द से निकाली नहीं जा सकती, इसलिए इसे एक वेरिएबल के रूप में पास करें। एक गतिशील उचित संज्ञा के लिए, ऐसी अभिव्यक्ति चुनें जिसे किसी लेख की आवश्यकता न हो।
+
+शाखाएँ नेस्ट हो सकती हैं, इसलिए `select` एक `plural` रख सकता है, और इनमें से कोई भी सामान्य वेरिएबल्स रख सकता है।
+
+केवल `plural` और `select` का समर्थन किया जाता है। तारीखें और संख्या बेहतर तरीके से `Intl` के साथ फ़ॉर्मेट की जाती हैं जहां आप जानना चाहते हैं कि आप कौन से विकल्प चाहते हैं।
 
 ### Nested Keys
 
@@ -178,7 +238,7 @@ t("user.profile.title");  // "Profile"
 
 ### TranslationNamespaces
 
-टाइप-सेफ अनुवाद के लिए इस इंटरफेस को विस्तारित करें:
+टाइप-सेफ अनुवादों के लिए इस इंटरफ़ेस का विस्तार करें:
 
 ```tsx
 declare module "@onruntime/translations" {
@@ -190,5 +250,5 @@ declare module "@onruntime/translations" {
 ```
 
 <Callout type="info" title="TypeScript Benefits">
-  सही टाइप परिभाषाओं के साथ, आपको अनुवाद कुंजी के लिए ऑटो-कम्पलीट मिलेगा और अमान्य कुंजी के लिए कंपाइल-टाइम त्रुटियाँ।
+  उचित टाइप डिफिनिशन के साथ, आपको अनुवाद कुंजियों के लिए ऑटो-कम्प्लीट मिलेगा और अपरिवर्तनीय कुंजियों के लिए कंपाइल-टाइम एरर्स।
 </Callout>

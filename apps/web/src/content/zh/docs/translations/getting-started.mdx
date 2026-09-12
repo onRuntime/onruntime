@@ -1,16 +1,17 @@
 ---
-title: 开始使用
-description: 一个轻量级、类型安全的国际化库，适用于 React 和 Next.js
+title: 入门
+description: 一个轻量级、类型安全的国际化库，用于 React 和 Next.js
 ---
 ## 什么是 @onruntime/translations?
 
-`@onruntime/translations` 是一个轻量级的，类型安全的国际化（i18n）库，专为 React 和 Next.js 应用设计。它提供了一个简单的 API，用于管理翻译，并支持完整的 TypeScript。
+`@onruntime/translations` 是一个轻量级、类型安全的国际化（i18n）库，专为 React 和 Next.js 应用设计。它提供了一个简单的 API 来管理翻译，完全支持 TypeScript。
 
 <Callout type="info" title="主要特点">
   - 使用 TypeScript 的类型安全翻译
   - 支持 React 和 Next.js（App Router）
   - 基于命名空间的组织
   - 变量插值
+  - 通过 ICU `plural` 和 `select` 实现复数和语法一致性
   - 轻量且高效
 </Callout>
 
@@ -18,18 +19,18 @@ description: 一个轻量级、类型安全的国际化库，适用于 React 和
 
 ### 类型安全
 
-使用无效的翻译键时会获得编译时错误：
+使用无效的翻译键时会在编译时出现错误：
 
 ```typescript
 const { t } = useTranslation("common");
 
-t("greeting");        // ✅ 有效的键
+t("greeting");        // ✅ 有效键
 t("invalid_key");     // ❌ TypeScript 错误
 ```
 
 ### 简单的 API
 
-仅需两个钩子即可满足所有翻译需求：
+仅需两个钩子满足你的翻译需求：
 
 ```typescript
 // 客户端组件
@@ -39,9 +40,9 @@ const { t } = useTranslation("namespace");
 const { t } = await getTranslation("namespace");
 ```
 
-### 有序的翻译
+### 组织良好的翻译
 
-使用命名空间保持翻译的有序性：
+通过命名空间保持翻译井然有序：
 
 <Files>
   <Folder name="locales" defaultOpen>
@@ -81,12 +82,12 @@ function Welcome({ name }) {
 <Cards>
   <Card
     title="安装"
-    description="安装和配置这个包"
+    description="安装和配置该包"
     href="/docs/translations/installation"
   />
   <Card
     title="React 使用"
-    description="了解如何在 React 中使用翻译"
+    description="学习如何在 React 中使用翻译"
     href="/docs/translations/react"
   />
 </Cards>

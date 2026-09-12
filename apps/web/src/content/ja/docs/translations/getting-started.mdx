@@ -1,24 +1,25 @@
 ---
-title: 始めに
+title: はじめに
 description: ReactとNext.js用の軽量で型安全な国際化ライブラリ
 ---
-## @onruntime/translationsとは？
+## @onruntime/translations とは何ですか？
 
-`@onruntime/translations`は、ReactおよびNext.jsアプリケーション向けに設計された軽量で型安全な国際化（i18n）ライブラリです。フルTypeScriptサポートを持つ翻訳管理用のシンプルなAPIを提供します。
+`@onruntime/translations`は、ReactとNext.jsアプリケーションのために設計された軽量で型安全な国際化（i18n）ライブラリです。完全なTypeScriptサポートを提供するシンプルなAPIで翻訳を管理します。
 
 <Callout type="info" title="主な機能">
   - TypeScriptによる型安全な翻訳
-  - ReactとNext.js（App Router）に対応
+  - ReactとNext.js（App Router）をサポート
   - 名前空間ベースの整理
-  - 変数補完
+  - 変数の補間
+  - ICUの`plural`および`select`による複数形と文法的合意
   - 軽量でパフォーマンスが高い
 </Callout>
 
-## なんで使うの？
+## なぜ使うの？
 
-### 型安全
+### 型安全性
 
-無効な翻訳キーを使用したときにコンパイル時エラーが発生します：
+無効な翻訳キーを使用するとコンパイル時エラーが発生します：
 
 ```typescript
 const { t } = useTranslation("common");
@@ -29,7 +30,7 @@ t("invalid_key");     // ❌ TypeScriptエラー
 
 ### シンプルなAPI
 
-翻訳に必要なフックがたった2つです：
+翻訳ニーズに対してたった2つのフックだけ：
 
 ```typescript
 // クライアントコンポーネント
@@ -41,7 +42,7 @@ const { t } = await getTranslation("namespace");
 
 ### 整理された翻訳
 
-名前空間を使って翻訳を整理できます：
+名前空間で翻訳を整理しましょう：
 
 <Files>
   <Folder name="locales" defaultOpen>
@@ -58,7 +59,7 @@ const { t } = await getTranslation("namespace");
   </Folder>
 </Files>
 
-## 簡単な例
+## クイック例
 
 ```tsx
 // locales/en/common.json
@@ -85,7 +86,7 @@ function Welcome({ name }) {
     href="/docs/translations/installation"
   />
   <Card
-    title="Reactの使い方"
+    title="Reactの使用法"
     description="Reactでの翻訳の使い方を学ぶ"
     href="/docs/translations/react"
   />

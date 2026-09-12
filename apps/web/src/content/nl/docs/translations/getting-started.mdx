@@ -4,21 +4,22 @@ description: 'Een lichte, type-veilige internationalisatiebibliotheek voor React
 ---
 ## Wat is @onruntime/translations?
 
-`@onruntime/translations` is een lichte, type-veilige internationalisatie (i18n) bibliotheek ontworpen voor React en Next.js toepassingen. Het biedt een eenvoudige API voor het beheren van vertalingen met volledige TypeScript-ondersteuning.
+`@onruntime/translations` is een lichte, type-veilige internationalisatie (i18n) bibliotheek ontworpen voor React en Next.js applicaties. Het biedt een eenvoudige API voor het beheren van vertalingen met volledige TypeScript-ondersteuning.
 
-<Callout type="info" title="Belangrijke Kenmerken">
+<Callout type="info" title="Belangrijkste Kenmerken">
   - Type-veilige vertalingen met TypeScript
   - Ondersteuning voor React en Next.js (App Router)
   - Namespace-gebaseerde organisatie
   - Variabele interpolatie
+  - Meervouden en grammaticale overeenstemming via ICU `plural` en `select`
   - Lichtgewicht en performant
 </Callout>
 
-## Waarom Het Gebruiken?
+## Waarom het Gebruiken?
 
 ### Type Veiligheid
 
-Krijg compileerfouten bij het gebruik van ongeldige vertalingssleutels:
+Krijg compileertijdfouten bij het gebruik van ongeldige vertaalkeys:
 
 ```typescript
 const { t } = useTranslation("common");

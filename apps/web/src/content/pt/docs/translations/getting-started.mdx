@@ -1,24 +1,25 @@
 ---
 title: Começando
 description: >-
-  Uma biblioteca de internacionalização leve e segura em termos de tipo para
-  React e Next.js
+  Uma biblioteca de internacionalização leve e segura para tipos para React e
+  Next.js
 ---
 ## O que é @onruntime/translations?
 
-`@onruntime/translations` é uma biblioteca de internacionalização (i18n) leve e segura em termos de tipo, projetada para aplicativos React e Next.js. Ela oferece uma API simples para gerenciar traduções com suporte total ao TypeScript.
+`@onruntime/translations` é uma biblioteca leve e segura para internacionalização (i18n) projetada para aplicações React e Next.js. Ela oferece uma API simples para gerenciar traduções com suporte total para TypeScript.
 
 <Callout type="info" title="Principais Recursos">
-  - Traduções seguras em termos de tipo com TypeScript
+  - Traduções seguras com TypeScript
   - Suporte para React e Next.js (App Router)
   - Organização baseada em namespaces
   - Interpolação de variáveis
-  - Leve e com bom desempenho
+  - Plurais e concordância gramatical através do ICU `plural` e `select`
+  - Leve e performática
 </Callout>
 
 ## Por Que Usar?
 
-### Segurança de Tipo
+### Segurança de Tipos
 
 Receba erros em tempo de compilação ao usar chaves de tradução inválidas:
 
@@ -34,10 +35,10 @@ t("invalid_key");     // ❌ Erro de TypeScript
 Apenas dois hooks para todas as suas necessidades de tradução:
 
 ```typescript
-// Componentes de Cliente
+// Componentes do Cliente
 const { t } = useTranslation("namespace");
 
-// Componentes de Servidor (Next.js)
+// Componentes do Servidor (Next.js)
 const { t } = await getTranslation("namespace");
 ```
 
@@ -65,7 +66,7 @@ Mantenha suas traduções organizadas com namespaces:
 ```tsx
 // locales/en/common.json
 {
-  "greeting": "Olá, {name}!"
+  "greeting": "Hello, {name}!"
 }
 
 // Componente
@@ -88,7 +89,7 @@ function Welcome({ name }) {
   />
   <Card
     title="Uso no React"
-    description="Aprenda a usar traduções no React"
+    description="Aprenda como usar traduções no React"
     href="/docs/translations/react"
   />
 </Cards>

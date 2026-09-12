@@ -1,48 +1,50 @@
 ---
-title: Getting Started
-description: A lightweight, type-safe internationalization library for React and Next.js
+title: Commencer
+description: >-
+  Une bibliothèque d'internationalisation légère et sécurisée pour React et
+  Next.js
 ---
+## Qu'est-ce que @onruntime/translations ?
 
-## What is @onruntime/translations?
+`@onruntime/translations` est une bibliothèque légère et sécurisée pour l'internationalisation (i18n) conçue pour les applications React et Next.js. Elle offre une API simple pour gérer les traductions avec un support complet de TypeScript.
 
-`@onruntime/translations` is a lightweight, type-safe internationalization (i18n) library designed for React and Next.js applications. It provides a simple API for managing translations with full TypeScript support.
-
-<Callout type="info" title="Key Features">
-  - Type-safe translations with TypeScript
-  - Support for React and Next.js (App Router)
-  - Namespace-based organization
-  - Variable interpolation
-  - Lightweight and performant
+<Callout type="info" title="Fonctionnalités Clés">
+  - Traductions sécurisées avec TypeScript
+  - Support pour React et Next.js (App Router)
+  - Organisation basée sur les espaces de noms
+  - Interpolation de variables
+  - Pluriels et accords grammaticaux via ICU `plural` et `select`
+  - Léger et performant
 </Callout>
 
-## Why Use It?
+## Pourquoi l'utiliser ?
 
-### Type Safety
+### Sécurité de Type
 
-Get compile-time errors when using invalid translation keys:
+Obtenez des erreurs à la compilation lorsque vous utilisez des clés de traduction invalides :
 
 ```typescript
 const { t } = useTranslation("common");
 
-t("greeting");        // ✅ Valid key
-t("invalid_key");     // ❌ TypeScript error
+t("greeting");        // ✅ Clé valide
+t("invalid_key");     // ❌ Erreur TypeScript
 ```
 
-### Simple API
+### API Simple
 
-Just two hooks for all your translation needs:
+Juste deux hooks pour tous vos besoins de traduction :
 
 ```typescript
-// Client Components
+// Composants Client
 const { t } = useTranslation("namespace");
 
-// Server Components (Next.js)
+// Composants Serveur (Next.js)
 const { t } = await getTranslation("namespace");
 ```
 
-### Organized Translations
+### Traductions Organisées
 
-Keep your translations organized with namespaces:
+Gardez vos traductions organisées avec des espaces de noms :
 
 <Files>
   <Folder name="locales" defaultOpen>
@@ -59,7 +61,7 @@ Keep your translations organized with namespaces:
   </Folder>
 </Files>
 
-## Quick Example
+## Exemple Rapide
 
 ```tsx
 // locales/en/common.json
@@ -67,7 +69,7 @@ Keep your translations organized with namespaces:
   "greeting": "Hello, {name}!"
 }
 
-// Component
+// Composant
 import { useTranslation } from "@onruntime/translations/react";
 
 function Welcome({ name }) {
@@ -77,17 +79,17 @@ function Welcome({ name }) {
 }
 ```
 
-## Next Steps
+## Prochaines Étapes
 
 <Cards>
   <Card
     title="Installation"
-    description="Install and configure the package"
+    description="Installez et configurez le package"
     href="/docs/translations/installation"
   />
   <Card
-    title="React Usage"
-    description="Learn how to use translations in React"
+    title="Utilisation de React"
+    description="Apprenez à utiliser les traductions dans React"
     href="/docs/translations/react"
   />
 </Cards>

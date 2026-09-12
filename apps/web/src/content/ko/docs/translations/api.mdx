@@ -1,10 +1,10 @@
 ---
 title: API 참조
-description: '@onruntime/translations에 대한 완전한 API 문서'
+description: '@onruntime/translations에 대한 완벽한 API 문서'
 ---
 ## TranslationsProvider
 
-애플리케이션을 감싸는 프로바이더 컴포넌트야.
+애플리케이션을 감싸는 프로바이더 컴포넌트.
 
 ```tsx
 import { TranslationsProvider } from "@onruntime/translations/react";
@@ -22,14 +22,14 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 
 | Prop | Type | Required | Description |
 |------|------|----------|-------------|
-| `locale` | `string` | 예 | 현재 활성 로케일 |
-| `locales` | `Record<string, object>` | 예 | 모든 로케일 번역이 담긴 객체 |
-| `fallbackLocale` | `string` | 아니요 | 키가 없을 때 사용할 백업 로케일 |
-| `children` | `ReactNode` | 예 | 자식 컴포넌트들 |
+| `locale` | `string` | Yes | 현재 활성 로케일 |
+| `locales` | `Record<string, object>` | Yes | 모든 로케일 번역을 포함하는 객체 |
+| `fallbackLocale` | `string` | No | 키가 없을 때 사용할 대체 로케일 |
+| `children` | `ReactNode` | Yes | 자식 컴포넌트 |
 
 ## useTranslation
 
-클라이언트 컴포넌트에서 번역에 접근하는 훅이야.
+클라이언트 컴포넌트에서 번역에 접근하기 위한 훅.
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("namespace");
@@ -39,7 +39,7 @@ const { t, locale, setLocale } = useTranslation("namespace");
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `namespace` | `string` | 예 | 사용할 번역 네임스페이스 |
+| `namespace` | `string` | Yes | 사용할 번역 네임스페이스 |
 
 ### Returns
 
@@ -57,7 +57,7 @@ const { t, locale, setLocale } = useTranslation("common");
 // 기본 사용법
 t("greeting");  // "Hello"
 
-// 변수와 함께
+// 변수 사용
 t("greeting_name", { name: "John" });  // "Hello, John!"
 
 // 중첩 키
@@ -69,7 +69,7 @@ setLocale("fr");
 
 ## getTranslation
 
-서버 컴포넌트(Next.js)에서 번역에 접근하는 비동기 함수야.
+서버 컴포넌트(Next.js)에서 번역에 접근하기 위한 비동기 함수.
 
 ```tsx
 const { t } = await getTranslation("namespace");
@@ -79,7 +79,7 @@ const { t } = await getTranslation("namespace");
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `namespace` | `string` | 예 | 사용할 번역 네임스페이스 |
+| `namespace` | `string` | Yes | 사용할 번역 네임스페이스 |
 
 ### Returns
 
@@ -101,7 +101,7 @@ export default async function Page() {
 
 ## Link Component
 
-Next.js를 위한 로케일 인식 Link 컴포넌트야.
+Next.js를 위한 로케일 인식 링크 컴포넌트.
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
@@ -115,7 +115,7 @@ Next.js `Link` 컴포넌트의 모든 props, 추가로:
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `locale` | `string` | 현재 로케일 | 링크 로케일을 재정의해 |
+| `locale` | `string` | 현재 로케일 | 링크 로케일을 재정의 |
 
 ### Example
 
@@ -123,13 +123,13 @@ Next.js `Link` 컴포넌트의 모든 props, 추가로:
 // 현재 로케일 사용
 <Link href="/about">About</Link>
 
-// 특정 로케일 강제 사용
+// 특정 로케일 강제 설정
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
 ## Translation Function (t)
 
-`t` 함수는 번역된 문자열을 가져오는 데 사용돼.
+`t` 함수는 번역된 문자열을 가져오는 데 사용됩니다.
 
 ### Signature
 
@@ -142,7 +142,7 @@ t(key: string, variables?: Record<string, string | number>): string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `key` | `string` | 번역 키 (점 표기법 지원) |
-| `variables` | `object` | 보간할 변수 |
+| `variables` | `object` | 인터폴레이트할 변수 |
 
 ### Variable Interpolation
 
@@ -157,6 +157,66 @@ t(key: string, variables?: Record<string, string | number>): string
 t("greeting", { name: "Alice" });  // "Hello, Alice!"
 t("items", { count: 5 });          // "You have 5 items"
 ```
+
+### Plurals
+
+단어를 변경하는 숫자는 두 번째 키가 아니라 `plural` 인수를 통해 처리됩니다:
+
+```json
+{
+  "battles": "{count, plural, one {# battle} other {# battles}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 battle"
+t("battles", { count: 4 });  // "4 battles"
+```
+
+`#`는 카운트를 나타냅니다. 분기는 읽고 있는 로케일에서 `Intl.PluralRules`에 의해 선택되므로 각 언어는 필요한 분기를 작성합니다:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+영어와 프랑스어는 두 가지 형태가 필요하고, 폴란드어와 러시아어는 세 가지, 아랍어는 여섯 가지, 일본어는 하나만 필요합니다. 손으로 작성된 단수/복수 쌍은 그것을 표현할 수 없습니다: 두 개 이상부터 모든 카운트에서 5개 이상의 형태가 작성됩니다.
+
+정확한 일치는 카테고리보다 우선하며, 이는 언어가 "없음"이라고 말할 수 있는 방법입니다. 이는 제로 카테고리라고 주장하지 않습니다:
+
+```json
+{
+  "messages": "{count, plural, =0 {No messages} one {# message} other {# messages}}"
+}
+```
+
+### Select
+
+`select`는 작성된 값과 일치하며 `other`로 돌아갑니다. 데이터가 속성을 알고 있을 때 문법적 합의가 전달됩니다:
+
+```json
+{
+  "invited": "{gender, select, f {She} m {He} other {They}} joined the team"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "She joined the team"
+t("invited", { gender: "x" });  // "They joined the team"
+```
+
+속성은 단어 자체에서 파생될 수 없으므로 변수로 전달해야 합니다. 동적인 고유명사를 위해서는 기사가 필요 없는 구문을 선호하세요.
+
+분기는 중첩될 수 있으므로 `select`는 `plural`을 포함할 수 있고, 두 가지 모두 일반 변수를 포함할 수 있습니다.
+
+오직 `plural`과 `select`만 지원됩니다. 날짜와 숫자는 호출 지점에서 원하는 옵션을 알고 있으므로 `Intl`로 형식을 지정하는 게 더 좋습니다.
 
 ### Nested Keys
 
@@ -178,7 +238,7 @@ t("user.profile.title");  // "Profile"
 
 ### TranslationNamespaces
 
-타입 안전한 번역을 위해 이 인터페이스를 확장해:
+타입 안전한 번역을 위해 이 인터페이스를 확장하세요:
 
 ```tsx
 declare module "@onruntime/translations" {
@@ -190,5 +250,5 @@ declare module "@onruntime/translations" {
 ```
 
 <Callout type="info" title="TypeScript Benefits">
-  올바른 타입 정의를 제공하면 번역 키에 대한 자동 완성과 잘못된 키에 대한 컴파일 타임 오류를 얻을 수 있어.
+  올바른 타입 정의를 사용하면 번역 키에 대한 자동 완성이 가능하고 잘못된 키에 대한 컴파일 타임 오류를 받을 수 있어요.
 </Callout>

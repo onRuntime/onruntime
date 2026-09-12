@@ -1,17 +1,16 @@
 ---
-title: API Reference
-description: Complete API documentation for @onruntime/translations
+title: Référence API
+description: Documentation complète de l'API pour @onruntime/translations
 ---
-
 ## TranslationsProvider
 
-The provider component that wraps your application.
+Le composant provider qui enveloppe votre application.
 
 ```tsx
 import { TranslationsProvider } from "@onruntime/translations/react";
 
 <TranslationsProvider
-  locale="en"
+  locale="fr"
   locales={{ en, fr }}
   fallbackLocale="en"
 >
@@ -21,78 +20,78 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 
 ### Props
 
-| Prop | Type | Required | Description |
-|------|------|----------|-------------|
-| `locale` | `string` | Yes | Current active locale |
-| `locales` | `Record<string, object>` | Yes | Object containing all locale translations |
-| `fallbackLocale` | `string` | No | Fallback locale when key is missing |
-| `children` | `ReactNode` | Yes | Child components |
+| Prop | Type | Requis | Description |
+|------|------|--------|-------------|
+| `locale` | `string` | Oui | Locale active actuelle |
+| `locales` | `Record<string, object>` | Oui | Objet contenant toutes les traductions de locale |
+| `fallbackLocale` | `string` | Non | Locale de secours lorsque la clé est manquante |
+| `children` | `ReactNode` | Oui | Composants enfants |
 
 ## useTranslation
 
-Hook for accessing translations in client components.
+Hook pour accéder aux traductions dans les composants clients.
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("namespace");
 ```
 
-### Parameters
+### Paramètres
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `namespace` | `string` | Yes | Translation namespace to use |
+| Paramètre | Type | Requis | Description |
+|-----------|------|--------|-------------|
+| `namespace` | `string` | Oui | Espace de noms de traduction à utiliser |
 
-### Returns
+### Retourne
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `t` | `(key: string, vars?: object) => string` | Translation function |
-| `locale` | `string` | Current locale |
-| `setLocale` | `(locale: string) => void` | Function to change locale |
+| Propriété | Type | Description |
+|-----------|------|-------------|
+| `t` | `(key: string, vars?: object) => string` | Fonction de traduction |
+| `locale` | `string` | Locale actuelle |
+| `setLocale` | `(locale: string) => void` | Fonction pour changer de locale |
 
-### Example
+### Exemple
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("common");
 
-// Basic usage
-t("greeting");  // "Hello"
+// Utilisation de base
+t("greeting");  // "Bonjour"
 
-// With variables
-t("greeting_name", { name: "John" });  // "Hello, John!"
+// Avec des variables
+t("greeting_name", { name: "John" });  // "Bonjour, John!"
 
-// Nested keys
-t("nav.home");  // "Home"
+// Clés imbriquées
+t("nav.home");  // "Accueil"
 
-// Change locale
-setLocale("fr");
+// Changer de locale
+setLocale("en");
 ```
 
 ## getTranslation
 
-Async function for accessing translations in server components (Next.js).
+Fonction asynchrone pour accéder aux traductions dans les composants serveur (Next.js).
 
 ```tsx
 const { t } = await getTranslation("namespace");
 ```
 
-### Parameters
+### Paramètres
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `namespace` | `string` | Yes | Translation namespace to use |
+| Paramètre | Type | Requis | Description |
+|-----------|------|--------|-------------|
+| `namespace` | `string` | Oui | Espace de noms de traduction à utiliser |
 
-### Returns
+### Retourne
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `t` | `(key: string, vars?: object) => string` | Translation function |
-| `locale` | `string` | Current locale |
+| Propriété | Type | Description |
+|-----------|------|-------------|
+| `t` | `(key: string, vars?: object) => string` | Fonction de traduction |
+| `locale` | `string` | Locale actuelle |
 
-### Example
+### Exemple
 
 ```tsx
-// Server Component
+// Composant Serveur
 export default async function Page() {
   const { t } = await getTranslation("common");
 
@@ -102,35 +101,35 @@ export default async function Page() {
 
 ## Link Component
 
-Locale-aware Link component for Next.js.
+Composant Link sensible à la locale pour Next.js.
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
 
-<Link href="/about">About</Link>
+<Link href="/about">À propos</Link>
 ```
 
 ### Props
 
-All props from Next.js `Link` component, plus:
+Tous les props du composant `Link` de Next.js, plus :
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `locale` | `string` | Current locale | Override the link locale |
+| Prop | Type | Par défaut | Description |
+|------|------|------------|-------------|
+| `locale` | `string` | Locale actuelle | Remplacer la locale du lien |
 
-### Example
+### Exemple
 
 ```tsx
-// Uses current locale
-<Link href="/about">About</Link>
+// Utilise la locale actuelle
+<Link href="/about">À propos</Link>
 
-// Force specific locale
-<Link href="/about" locale="fr">À propos</Link>
+// Force une locale spécifique
+<Link href="/about" locale="en">About</Link>
 ```
 
-## Translation Function (t)
+## Traduction Function (t)
 
-The `t` function is used to retrieve translated strings.
+La fonction `t` est utilisée pour récupérer des chaînes traduites.
 
 ### Signature
 
@@ -138,58 +137,123 @@ The `t` function is used to retrieve translated strings.
 t(key: string, variables?: Record<string, string | number>): string
 ```
 
-### Parameters
+### Paramètres
 
-| Parameter | Type | Description |
+| Paramètre | Type | Description |
 |-----------|------|-------------|
-| `key` | `string` | Translation key (supports dot notation) |
-| `variables` | `object` | Variables to interpolate |
+| `key` | `string` | Clé de traduction (supporte la notation en point) |
+| `variables` | `object` | Variables à interpoler |
 
-### Variable Interpolation
+### Interpolation de Variables
 
 ```json
 {
-  "greeting": "Hello, {name}!",
-  "items": "You have {count} items"
+  "greeting": "Bonjour, {name} !",
+  "items": "Vous avez {count} articles"
 }
 ```
 
 ```tsx
-t("greeting", { name: "Alice" });  // "Hello, Alice!"
-t("items", { count: 5 });          // "You have 5 items"
+t("greeting", { name: "Alice" });  // "Bonjour, Alice !"
+t("items", { count: 5 });          // "Vous avez 5 articles"
 ```
 
-### Nested Keys
+### Pluriels
+
+Un nombre qui change la formulation passe par un argument `plural` plutôt qu'une
+deuxième clé :
+
+```json
+{
+  "battles": "{count, plural, one {# bataille} other {# batailles}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bataille"
+t("battles", { count: 4 });  // "4 batailles"
+```
+
+`#` représente le count. La branche est choisie par `Intl.PluralRules` dans la
+locale lue, donc chaque langue écrit les branches qu'elle a besoin :
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+L'anglais et le français ont besoin de deux formes, le polonais et le russe trois, l'arabe six, et le japonais uniquement une. Une paire singulier/pluriel écrite à la main ne peut pas exprimer cela : elle écrit la forme "5 et plus" à chaque compte à partir de deux.
+
+Une correspondance exacte a la priorité sur sa catégorie, c'est ainsi qu'une langue dit "aucun" sans prétendre qu'il s'agit de la catégorie zéro :
+
+```json
+{
+  "messages": "{count, plural, =0 {Aucun message} one {# message} other {# messages}}"
+}
+```
+
+### Sélectionner
+
+`select` correspond à une valeur telle qu'elle est écrite et revient à `other`. Elle porte
+l'accord grammatical lorsque vos données connaissent l'attribut :
+
+```json
+{
+  "invited": "{gender, select, f {Elle} m {Lui} other {Ils}} ont rejoint l'équipe"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "Elle a rejoint l'équipe"
+t("invited", { gender: "x" });  // "Ils ont rejoint l'équipe"
+```
+
+L'attribut ne peut pas être dérivé du mot lui-même, alors passez-le comme une variable.
+Pour un nom propre dynamique, préférez une formulation qui n'a pas besoin d'article du tout.
+
+Les branches s'imbriquent, donc un `select` peut contenir un `plural`, et l'un ou l'autre peut contenir des variables simples.
+
+Seul `plural` et `select` sont supportés. Les dates et les nombres sont mieux formatés
+avec `Intl` au point d'appel, où vous connaissez les options que vous voulez.
+
+### Clés Imbriquées
 
 ```json
 {
   "user": {
     "profile": {
-      "title": "Profile"
+      "title": "Profil"
     }
   }
 }
 ```
 
 ```tsx
-t("user.profile.title");  // "Profile"
+t("user.profile.title");  // "Profil"
 ```
 
-## Type Definitions
+## Définitions de Type
 
 ### TranslationNamespaces
 
-Extend this interface for type-safe translations:
+Étendez cette interface pour des traductions en toute sécurité de type :
 
 ```tsx
 declare module "@onruntime/translations" {
   interface TranslationNamespaces {
-    common: typeof import("./locales/en/common.json");
-    auth: typeof import("./locales/en/auth.json");
+    common: typeof import("./locales/fr/common.json");
+    auth: typeof import("./locales/fr/auth.json");
   }
 }
 ```
 
-<Callout type="info" title="TypeScript Benefits">
-  With proper type definitions, you'll get autocomplete for translation keys and compile-time errors for invalid keys.
+<Callout type="info" title="Avantages de TypeScript">
+  Avec de bonnes définitions de type, vous bénéficierez de l'auto-complétion pour les clés de traduction et des erreurs de compilation pour les clés invalides.
 </Callout>

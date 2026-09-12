@@ -1,35 +1,35 @@
 ---
-title: API-referentie
-description: Complete API-documentatie voor @onruntime/translations
+title: API referentie
+description: Complete API documentatie voor @onruntime/translations
 ---
-## VertalingenProvider
+## TranslationsProvider
 
 De provider component die je applicatie omhult.
 
 ```tsx
-import { VertalingenProvider } from "@onruntime/translations/react";
+import { TranslationsProvider } from "@onruntime/translations/react";
 
-<VertalingenProvider
+<TranslationsProvider
   locale="nl"
-  locales={{ nl, fr }}
-  fallbackLocale="nl"
+  locales={{ en, fr }}
+  fallbackLocale="en"
 >
   {children}
-</VertalingenProvider>
+</TranslationsProvider>
 ```
 
 ### Props
 
-| Prop | Type | Verplicht | Beschrijving |
-|------|------|----------|-------------|
+| Prop | Type | Vereist | Beschrijving |
+|------|------|---------|--------------|
 | `locale` | `string` | Ja | Huidige actieve locale |
-| `locales` | `Record<string, object>` | Ja | Object dat alle locale vertalingen bevat |
-| `fallbackLocale` | `string` | Nee | Fallback locale wanneer de sleutel ontbreekt |
+| `locales` | `Record<string, object>` | Ja | Object met alle locale vertalingen |
+| `fallbackLocale` | `string` | Nee | Vervangende locale als sleutel ontbreekt |
 | `children` | `ReactNode` | Ja | Kindcomponenten |
 
 ## useTranslation
 
-Hook voor het verkrijgen van vertalingen in clientcomponenten.
+Hook voor toegang tot vertalingen in client componenten.
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("namespace");
@@ -37,24 +37,24 @@ const { t, locale, setLocale } = useTranslation("namespace");
 
 ### Parameters
 
-| Parameter | Type | Verplicht | Beschrijving |
-|-----------|------|----------|-------------|
+| Parameter | Type | Vereist | Beschrijving |
+|-----------|------|---------|--------------|
 | `namespace` | `string` | Ja | Te gebruiken vertalingsnamespace |
 
 ### Returns
 
-| Eigenschap | Type | Beschrijving |
-|------------|------|-------------|
-| `t` | `(key: string, vars?: object) => string` | Vertalingsfunctie |
+| Property | Type | Beschrijving |
+|----------|------|--------------|
+| `t` | `(key: string, vars?: object) => string` | Vertaalfunctie |
 | `locale` | `string` | Huidige locale |
-| `setLocale` | `(locale: string) => void` | Functie om de locale te veranderen |
+| `setLocale` | `(locale: string) => void` | Functie om locale te wijzigen |
 
 ### Voorbeeld
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("common");
 
-// Basisgebruik
+// Basis gebruikt
 t("greeting");  // "Hallo"
 
 // Met variabelen
@@ -63,13 +63,13 @@ t("greeting_name", { name: "John" });  // "Hallo, John!"
 // Geneste sleutels
 t("nav.home");  // "Home"
 
-// Verander locale
+// Wijzig locale
 setLocale("fr");
 ```
 
 ## getTranslation
 
-Async functie voor het verkrijgen van vertalingen in servercomponenten (Next.js).
+Asynchrone functie voor toegang tot vertalingen in server componenten (Next.js).
 
 ```tsx
 const { t } = await getTranslation("namespace");
@@ -77,22 +77,22 @@ const { t } = await getTranslation("namespace");
 
 ### Parameters
 
-| Parameter | Type | Verplicht | Beschrijving |
-|-----------|------|----------|-------------|
+| Parameter | Type | Vereist | Beschrijving |
+|-----------|------|---------|--------------|
 | `namespace` | `string` | Ja | Te gebruiken vertalingsnamespace |
 
 ### Returns
 
-| Eigenschap | Type | Beschrijving |
-|------------|------|-------------|
-| `t` | `(key: string, vars?: object) => string` | Vertalingsfunctie |
+| Property | Type | Beschrijving |
+|----------|------|--------------|
+| `t` | `(key: string, vars?: object) => string` | Vertaalfunctie |
 | `locale` | `string` | Huidige locale |
 
 ### Voorbeeld
 
 ```tsx
-// Servercomponent
-export default async function Pagina() {
+// Server Component
+export default async function Page() {
   const { t } = await getTranslation("common");
 
   return <h1>{t("title")}</h1>;
@@ -114,8 +114,8 @@ import { Link } from "@onruntime/translations/next";
 Alle props van Next.js `Link` component, plus:
 
 | Prop | Type | Standaard | Beschrijving |
-|------|------|-----------|-------------|
-| `locale` | `string` | Huidige locale | Overschrijf de link locale |
+|------|------|-----------|--------------|
+| `locale` | `string` | Huidige locale | Overschrijven van de link locale |
 
 ### Voorbeeld
 
@@ -140,8 +140,8 @@ t(key: string, variables?: Record<string, string | number>): string
 ### Parameters
 
 | Parameter | Type | Beschrijving |
-|-----------|------|-------------|
-| `key` | `string` | Vertalingssleutel (ondersteunt puntnotatie) |
+|-----------|------|--------------|
+| `key` | `string` | Vertaal sleutel (ondersteunt puntnotatie) |
 | `variables` | `object` | Variabelen om in te voegen |
 
 ### Variabele Invoegen
@@ -157,6 +157,66 @@ t(key: string, variables?: Record<string, string | number>): string
 t("greeting", { name: "Alice" });  // "Hallo, Alice!"
 t("items", { count: 5 });          // "Je hebt 5 items"
 ```
+
+### Meervouden
+
+Een getal dat de formulering verandert gaat via een `plural` argument in plaats van een tweede sleutel:
+
+```json
+{
+  "battles": "{count, plural, one {# battle} other {# battles}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 battle"
+t("battles", { count: 4 });  // "4 battles"
+```
+
+`#` staat voor de telling. De tak wordt gekozen door `Intl.PluralRules` in de gelezen locale, zodat elke taal de takken schrijft die het nodig heeft:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+Engels en Frans hebben twee vormen nodig, Pools en Russisch drie, Arabisch zes, en Japans slechts één. Een handmatige enkelvoud/meervoud paar kan dat niet uitdrukken: het schrijft de 5-en-hoger vorm bij elke telling vanaf twee omhoog.
+
+Een exacte match heeft prioriteit boven zijn categorie, wat is hoe een taal "geen" zegt zonder te claimen dat het de nul-categorie is:
+
+```json
+{
+  "messages": "{count, plural, =0 {Geen berichten} one {# bericht} other {# berichten}}"
+}
+```
+
+### Select
+
+`select` matcht een waarde zoals geschreven en valt terug naar `other`. Het draagt grammaticale overeenstemming wanneer je data de eigenschap kent:
+
+```json
+{
+  "invited": "{gender, select, f {Zij} m {Hij} other {Zij}} sloot zich bij het team aan"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "Zij sloot zich bij het team aan"
+t("invited", { gender: "x" });  // "Zij sloot zich bij het team aan"
+```
+
+De eigenschap kan niet worden afgeleid uit het woord zelf, dus geef het door als een variabele. Voor een dynamische eigennaam, geef de voorkeur aan een formulering die helemaal geen lidwoord nodig heeft.
+
+Takjes zijn genest, zodat een `select` een `plural` kan bevatten, en beide kunnen gewone variabelen bevatten.
+
+Alleen `plural` en `select` worden ondersteund. Data en getallen worden beter geformatteerd met `Intl` op de oproepplaats, waar je de opties kent die je wilt.
 
 ### Geneste Sleutels
 
@@ -183,8 +243,8 @@ Breid deze interface uit voor type-veilige vertalingen:
 ```tsx
 declare module "@onruntime/translations" {
   interface TranslationNamespaces {
-    common: typeof import("./locales/nl/common.json");
-    auth: typeof import("./locales/nl/auth.json");
+    common: typeof import("./locales/en/common.json");
+    auth: typeof import("./locales/en/auth.json");
   }
 }
 ```

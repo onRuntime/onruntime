@@ -6,14 +6,15 @@ description: >-
 ---
 ## ¿Qué es @onruntime/translations?
 
-`@onruntime/translations` es una biblioteca de internacionalización (i18n) ligera y segura en cuanto a tipos, diseñada para aplicaciones de React y Next.js. Proporciona una API simple para gestionar traducciones con soporte completo de TypeScript.
+`@onruntime/translations` es una biblioteca de internacionalización (i18n) liviana y segura en cuanto a tipos, diseñada para aplicaciones de React y Next.js. Proporciona una API simple para gestionar traducciones con soporte completo para TypeScript.
 
 <Callout type="info" title="Características Clave">
   - Traducciones seguras en cuanto a tipos con TypeScript
   - Soporte para React y Next.js (App Router)
-  - Organización basada en namespaces
+  - Organización basada en nombres de espacio
   - Interpolación de variables
-  - Ligera y de alto rendimiento
+  - Plurales y acuerdo gramatical a través de ICU `plural` y `select`
+  - Liviana y de alto rendimiento
 </Callout>
 
 ## ¿Por Qué Usarlo?
@@ -34,16 +35,16 @@ t("invalid_key");     // ❌ Error de TypeScript
 Solo dos hooks para todas tus necesidades de traducción:
 
 ```typescript
-// Client Components
+// Componentes de Cliente
 const { t } = useTranslation("namespace");
 
-// Server Components (Next.js)
+// Componentes de Servidor (Next.js)
 const { t } = await getTranslation("namespace");
 ```
 
 ### Traducciones Organizadas
 
-Mantén tus traducciones organizadas con namespaces:
+Mantén tus traducciones organizadas con nombres de espacio:
 
 <Files>
   <Folder name="locales" defaultOpen>
@@ -78,7 +79,7 @@ function Welcome({ name }) {
 }
 ```
 
-## Próximos Pasos
+## Siguientes Pasos
 
 <Cards>
   <Card
@@ -88,7 +89,7 @@ function Welcome({ name }) {
   />
   <Card
     title="Uso en React"
-    description="Aprende a usar traducciones en React"
+    description="Aprende cómo usar traducciones en React"
     href="/docs/translations/react"
   />
 </Cards>

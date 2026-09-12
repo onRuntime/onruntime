@@ -4,13 +4,13 @@ description: '@onruntime/translations 的完整 API 文档'
 ---
 ## TranslationsProvider
 
-提供者组件用于包装你的应用。
+提供者组件，用于包装你的应用程序。
 
 ```tsx
 import { TranslationsProvider } from "@onruntime/translations/react";
 
 <TranslationsProvider
-  locale="zh"
+  locale="en"
   locales={{ en, fr }}
   fallbackLocale="en"
 >
@@ -22,14 +22,14 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 
 | Prop | Type | Required | Description |
 |------|------|----------|-------------|
-| `locale` | `string` | Yes | 当前活跃的语言环境 |
-| `locales` | `Record<string, object>` | Yes | 包含所有语言环境翻译的对象 |
-| `fallbackLocale` | `string` | No | 当缺少键时的后备语言环境 |
-| `children` | `ReactNode` | Yes | 子组件 |
+| `locale` | `string` | 是 | 当前活动语言 |
+| `locales` | `Record<string, object>` | 是 | 包含所有语言翻译的对象 |
+| `fallbackLocale` | `string` | 否 | 当缺少键时的后备语言 |
+| `children` | `ReactNode` | 是 | 子组件 |
 
 ## useTranslation
 
-在客户端组件中访问翻译的钩子。
+用于在客户端组件中访问翻译的 Hook。
 
 ```tsx
 const { t, locale, setLocale } = useTranslation("namespace");
@@ -39,15 +39,15 @@ const { t, locale, setLocale } = useTranslation("namespace");
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `namespace` | `string` | Yes | 要使用的翻译命名空间 |
+| `namespace` | `string` | 是 | 要使用的翻译命名空间 |
 
 ### Returns
 
 | Property | Type | Description |
 |----------|------|-------------|
 | `t` | `(key: string, vars?: object) => string` | 翻译函数 |
-| `locale` | `string` | 当前语言环境 |
-| `setLocale` | `(locale: string) => void` | 更改语言环境的函数 |
+| `locale` | `string` | 当前语言 |
+| `setLocale` | `(locale: string) => void` | 改变语言的函数 |
 
 ### Example
 
@@ -55,21 +55,21 @@ const { t, locale, setLocale } = useTranslation("namespace");
 const { t, locale, setLocale } = useTranslation("common");
 
 // 基本用法
-t("greeting");  // "你好"
+t("greeting");  // "Hello"
 
 // 带变量
-t("greeting_name", { name: "约翰" });  // "你好, 约翰!"
+t("greeting_name", { name: "John" });  // "Hello, John!"
 
 // 嵌套键
-t("nav.home");  // "首页"
+t("nav.home");  // "Home"
 
-// 更改语言环境
+// 改变语言
 setLocale("fr");
 ```
 
 ## getTranslation
 
-在服务器组件（Next.js）中访问翻译的异步函数。
+用于在服务器组件（Next.js）中访问翻译的异步函数。
 
 ```tsx
 const { t } = await getTranslation("namespace");
@@ -79,14 +79,14 @@ const { t } = await getTranslation("namespace");
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `namespace` | `string` | Yes | 要使用的翻译命名空间 |
+| `namespace` | `string` | 是 | 要使用的翻译命名空间 |
 
 ### Returns
 
 | Property | Type | Description |
 |----------|------|-------------|
 | `t` | `(key: string, vars?: object) => string` | 翻译函数 |
-| `locale` | `string` | 当前语言环境 |
+| `locale` | `string` | 当前语言 |
 
 ### Example
 
@@ -101,7 +101,7 @@ export default async function Page() {
 
 ## Link Component
 
-具备语言环境感知的 Next.js Link 组件。
+支持语言的 Next.js Link 组件。
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
@@ -111,19 +111,19 @@ import { Link } from "@onruntime/translations/next";
 
 ### Props
 
-来自 Next.js `Link` 组件的所有 props，以及：
+来自 Next.js `Link` 组件的所有属性，以及：
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `locale` | `string` | 当前语言环境 | 覆盖链接的语言环境 |
+| `locale` | `string` | 当前语言 | 重写链接语言 |
 
 ### Example
 
 ```tsx
-// 使用当前语言环境
+// 使用当前语言
 <Link href="/about">关于</Link>
 
-// 强制使用特定语言环境
+// 强制使用特定语言
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
@@ -142,21 +142,81 @@ t(key: string, variables?: Record<string, string | number>): string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `key` | `string` | 翻译键（支持点表示法） |
-| `variables` | `object` | 要插入的变量 |
+| `variables` | `object` | 插值变量 |
 
 ### Variable Interpolation
 
 ```json
 {
-  "greeting": "你好, {name}!",
-  "items": "你有 {count} 个物品"
+  "greeting": "Hello, {name}!",
+  "items": "You have {count} items"
 }
 ```
 
 ```tsx
-t("greeting", { name: "爱丽丝" });  // "你好, 爱丽丝!"
-t("items", { count: 5 });          // "你有 5 个物品"
+t("greeting", { name: "Alice" });  // "Hello, Alice!"
+t("items", { count: 5 });          // "You have 5 items"
 ```
+
+### Plurals
+
+一个会改变措辞的数字通过 `plural` 参数而不是第二个键：
+
+```json
+{
+  "battles": "{count, plural, one {# battle} other {# battles}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 battle"
+t("battles", { count: 4 });  // "4 battles"
+```
+
+`#` 代表计数。根据正在读取的语言，分支由 `Intl.PluralRules` 选择，因此每种语言写出所需的分支：
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+英语和法语需要两种形式，波兰语和俄语三种，阿拉伯语六种，而日语只有一种。手写的单数/复数对无法表达这一点：它在从两个以上的每个计数上写出5及以上的形式。
+
+精确匹配优先于其类别，这就是语言如何说“没有”而不声称它是零类别：
+
+```json
+{
+  "messages": "{count, plural, =0 {No messages} one {# message} other {# messages}}"
+}
+```
+
+### Select
+
+`select` 匹配如写入的值，并回退到 `other`。它在你的数据知道属性时携带语法一致性：
+
+```json
+{
+  "invited": "{gender, select, f {She} m {He} other {They}} joined the team"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "She joined the team"
+t("invited", { gender: "x" });  // "They joined the team"
+```
+
+该属性不能从单词本身得出，因此将其作为变量传递。对于动态专有名词，优先选择不需要文章的表达。
+
+分支可以嵌套，所以 `select` 可以包含一个 `plural`，而任一者又可以包含普通变量。
+
+仅支持 `plural` 和 `select`。日期和数字最好在调用位置使用 `Intl` 格式化，在那里你知道你想要的选项。
 
 ### Nested Keys
 
@@ -164,21 +224,21 @@ t("items", { count: 5 });          // "你有 5 个物品"
 {
   "user": {
     "profile": {
-      "title": "个人资料"
+      "title": "Profile"
     }
   }
 }
 ```
 
 ```tsx
-t("user.profile.title");  // "个人资料"
+t("user.profile.title");  // "Profile"
 ```
 
 ## Type Definitions
 
 ### TranslationNamespaces
 
-扩展这个接口以实现类型安全的翻译：
+扩展此接口以实现类型安全的翻译：
 
 ```tsx
 declare module "@onruntime/translations" {
@@ -189,6 +249,6 @@ declare module "@onruntime/translations" {
 }
 ```
 
-<Callout type="info" title="TypeScript 优势">
-  通过正确的类型定义，你将获得翻译键的自动完成功能，以及无效键的编译时错误。
+<Callout type="info" title="TypeScript Benefits">
+  通过正确的类型定义，你将获得翻译键的自动完成以及无效键的编译时错误。
 </Callout>

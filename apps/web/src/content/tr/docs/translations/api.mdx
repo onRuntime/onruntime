@@ -1,6 +1,6 @@
 ---
 title: API Referansı
-description: '@onruntime/çeviriler için tam API belgelendirmesi'
+description: '@onruntime/çeviriler için tam API belgeleri'
 ---
 ## TranslationsProvider
 
@@ -20,11 +20,11 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 
 ### Props
 
-| Prop | Type | Required | Description |
+| Prop | Tip | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | `locale` | `string` | Evet | Geçerli aktif dil |
 | `locales` | `Record<string, object>` | Evet | Tüm dil çevirilerini içeren nesne |
-| `fallbackLocale` | `string` | Hayır | Anahtar yoksa kullanılacak yedelek dil |
+| `fallbackLocale` | `string` | Hayır | Anahtar eksik olduğunda yedek dil |
 | `children` | `ReactNode` | Evet | Çocuk bileşenler |
 
 ## useTranslation
@@ -37,13 +37,13 @@ const { t, locale, setLocale } = useTranslation("namespace");
 
 ### Parametreler
 
-| Parameter | Type | Required | Description |
+| Parametre | Tip | Gerekli | Açıklama |
 |-----------|------|----------|-------------|
 | `namespace` | `string` | Evet | Kullanılacak çeviri ad alanı |
 
-### Dönüş Değerleri
+### Dönüşler
 
-| Property | Type | Description |
+| Özellik | Tip | Açıklama |
 |----------|------|-------------|
 | `t` | `(key: string, vars?: object) => string` | Çeviri fonksiyonu |
 | `locale` | `string` | Geçerli dil |
@@ -63,13 +63,13 @@ t("greeting_name", { name: "John" });  // "Merhaba, John!"
 // İç içe anahtarlar
 t("nav.home");  // "Ana Sayfa"
 
-// Dil değiştir
+// Dili değiştirme
 setLocale("fr");
 ```
 
 ## getTranslation
 
-Sunucu bileşenlerinde çevirilere erişmek için asenkron fonksiyon (Next.js).
+Sunucu bileşenlerinde (Next.js) çevirilere erişmek için asenkron fonksiyon.
 
 ```tsx
 const { t } = await getTranslation("namespace");
@@ -77,13 +77,13 @@ const { t } = await getTranslation("namespace");
 
 ### Parametreler
 
-| Parameter | Type | Required | Description |
+| Parametre | Tip | Gerekli | Açıklama |
 |-----------|------|----------|-------------|
 | `namespace` | `string` | Evet | Kullanılacak çeviri ad alanı |
 
-### Dönüş Değerleri
+### Dönüşler
 
-| Property | Type | Description |
+| Özellik | Tip | Açıklama |
 |----------|------|-------------|
 | `t` | `(key: string, vars?: object) => string` | Çeviri fonksiyonu |
 | `locale` | `string` | Geçerli dil |
@@ -99,9 +99,9 @@ export default async function Page() {
 }
 ```
 
-## Link Component
+## Link Bileşeni
 
-Next.js için dil bilincine sahip Link bileşeni.
+Next.js için dil farkındalığı olan Link bileşeni.
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
@@ -111,11 +111,11 @@ import { Link } from "@onruntime/translations/next";
 
 ### Props
 
-Next.js `Link` bileşeninden tüm props'lar, artı:
+Next.js `Link` bileşeninden tüm props'lar, ayrıca:
 
-| Prop | Type | Default | Description |
+| Prop | Tip | Varsayılan | Açıklama |
 |------|------|---------|-------------|
-| `locale` | `string` | Geçerli dil | Link dilini geçersiz kıl |
+| `locale` | `string` | Geçerli dil | Bağlantı dilini geçersiz kıl |
 
 ### Örnek
 
@@ -127,9 +127,9 @@ Next.js `Link` bileşeninden tüm props'lar, artı:
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
-## Translation Function (t)
+## Çeviri Fonksiyonu (t)
 
-`t` fonksiyonu çevrilmiş stringleri almak için kullanılır.
+`t` fonksiyonu, çevrilmiş dizeleri almak için kullanılır.
 
 ### İmza
 
@@ -139,24 +139,84 @@ t(key: string, variables?: Record<string, string | number>): string
 
 ### Parametreler
 
-| Parameter | Type | Description |
+| Parametre | Tip | Açıklama |
 |-----------|------|-------------|
-| `key` | `string` | Çeviri anahtarı (nokta notasyonu destekler) |
-| `variables` | `object` | Yerine konulacak değişkenler |
+| `key` | `string` | Çeviri anahtarı (nokta notasyonu desteklenir) |
+| `variables` | `object` | Değişkenleri yerleştirmek için |
 
-### Değişken Yerine Geçme
+### Değişken Yerleştirme
 
 ```json
 {
   "greeting": "Merhaba, {name}!",
-  "items": "Toplam {count} ürününüz var"
+  "items": "Elinizde {count} öğe var"
 }
 ```
 
 ```tsx
 t("greeting", { name: "Alice" });  // "Merhaba, Alice!"
-t("items", { count: 5 });          // "Toplam 5 ürününüz var"
+t("items", { count: 5 });          // "Elinizde 5 öğe var"
 ```
+
+### Çoğullar
+
+Sözcüğün değiştiği bir sayı `plural` argümanından geçiyor, ikinci anahtar yerine:
+
+```json
+{
+  "battles": "{count, plural, one {# savaş} other {# savaşlar}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 savaş"
+t("battles", { count: 4 });  // "4 savaşlar"
+```
+
+`#` sayıyı temsil eder. Dallanma, okunan dildeki `Intl.PluralRules` tarafından seçilir, böylece her dil ihtiyaç duyduğu dalları yazar:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+İngilizce ve Fransızca iki form, Lehçe ve Rusça üç, Arapça altı, ve Japonca sadece bir form istiyor. El yazısı tekil/çoğul çifti bunu ifade edemez: iki ve üzerindeki her sayıda 5 ve üzeri formunu yazar.
+
+Kesin bir eşleşme, kategorisini önceliklendirir. Bu da bir dilin "hiç" dediğinde bunu sıfır kategorisi olduğunu iddia etmeden nasıl söylediğidir:
+
+```json
+{
+  "messages": "{count, plural, =0 {Hiç mesaj yok} one {# mesaj} other {# mesajlar}}"
+}
+```
+
+### Seç
+
+`select`, bir değeri yazıldığı gibi eşleştirir ve `other`'a geri döner. Veriniz özellikleri bildiğinde dil bilgisel uyumu taşır:
+
+```json
+{
+  "invited": "{gender, select, f {O} m {O} other {Onlar}} takıma katıldı"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "O takıma katıldı"
+t("invited", { gender: "x" });  // "Onlar takıma katıldı"
+```
+
+Özellik kelimeden türetilemez, bu yüzden bir değişken olarak geçirin. Dinamik bir özel isim için, hiç makale gerektirmeyen bir ifadeyi tercih edin.
+
+Dallar iç içe geçebilir, yani bir `select` bir `plural` tutabilir ve biri basit değişkenler tutabilir.
+
+Yalnızca `plural` ve `select` desteklenmektedir. Tarihler ve sayılar, istediğiniz seçenekleri bildiğiniz yerlerde `Intl` ile daha iyi biçimlendirilir.
 
 ### İç İçe Anahtarlar
 
@@ -174,7 +234,7 @@ t("items", { count: 5 });          // "Toplam 5 ürününüz var"
 t("user.profile.title");  // "Profil"
 ```
 
-## Type Definitions
+## Tip Tanımları
 
 ### TranslationNamespaces
 
@@ -190,5 +250,5 @@ declare module "@onruntime/translations" {
 ```
 
 <Callout type="info" title="TypeScript Faydaları">
-  Uygun tip tanımları ile çeviri anahtarları için otomatik tamamlama ve geçersiz anahtarlar için derleme zamanı hataları alırsınız.
+  Uygun tip tanımları ile çeviri anahtarları için otomatik tamamlama ve geçersiz anahtarlar için derleme zamanı hataları alacaksınız.
 </Callout>

@@ -22,9 +22,9 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 
 | Prop | Type | Required | Description |
 |------|------|----------|-------------|
-| `locale` | `string` | はい | 現在アクティブなロケール |
+| `locale` | `string` | はい | 現在のアクティブなロケール |
 | `locales` | `Record<string, object>` | はい | すべてのロケール翻訳を含むオブジェクト |
-| `fallbackLocale` | `string` | いいえ | キーが見つからないときのフォールバックロケール |
+| `fallbackLocale` | `string` | いいえ | キーが欠落している時のフォールバックロケール |
 | `children` | `ReactNode` | はい | 子コンポーネント |
 
 ## useTranslation
@@ -39,7 +39,7 @@ const { t, locale, setLocale } = useTranslation("namespace");
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `namespace` | `string` | はい | 使用する翻訳のネームスペース |
+| `namespace` | `string` | はい | 使用する翻訳名前空間 |
 
 ### Returns
 
@@ -47,7 +47,7 @@ const { t, locale, setLocale } = useTranslation("namespace");
 |----------|------|-------------|
 | `t` | `(key: string, vars?: object) => string` | 翻訳関数 |
 | `locale` | `string` | 現在のロケール |
-| `setLocale` | `(locale: string) => void` | ロケールを変更する関数 |
+| `setLocale` | `(locale: string) => void` | ロケールを変更するための関数 |
 
 ### Example
 
@@ -55,13 +55,13 @@ const { t, locale, setLocale } = useTranslation("namespace");
 const { t, locale, setLocale } = useTranslation("common");
 
 // 基本的な使い方
-t("greeting");  // "こんにちは"
+t("greeting");  // "Hello"
 
-// 変数を使った場合
-t("greeting_name", { name: "John" });  // "こんにちは、John！"
+// 変数を使う
+t("greeting_name", { name: "John" });  // "Hello, John!"
 
 // ネストされたキー
-t("nav.home");  // "ホーム"
+t("nav.home");  // "Home"
 
 // ロケールを変更
 setLocale("fr");
@@ -79,7 +79,7 @@ const { t } = await getTranslation("namespace");
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `namespace` | `string` | はい | 使用する翻訳のネームスペース |
+| `namespace` | `string` | はい | 使用する翻訳名前空間 |
 
 ### Returns
 
@@ -111,11 +111,11 @@ import { Link } from "@onruntime/translations/next";
 
 ### Props
 
-Next.jsの`Link`コンポーネントからのすべてのpropsに加えて：
+Next.jsの`Link`コンポーネントからのすべてのプロパティに加えて：
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `locale` | `string` | 現在のロケール | リンクのロケールを上書き |
+| `locale` | `string` | 現在のロケール | リンクのロケールをオーバーライド |
 
 ### Example
 
@@ -123,13 +123,13 @@ Next.jsの`Link`コンポーネントからのすべてのpropsに加えて：
 // 現在のロケールを使用
 <Link href="/about">About</Link>
 
-// 特定のロケールで強制
+// 特定のロケールを強制
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
 ## Translation Function (t)
 
-`t`関数は翻訳された文字列を取得するために使用されます。
+`t`関数は翻訳された文字列を取得するために使われる。
 
 ### Signature
 
@@ -141,22 +141,82 @@ t(key: string, variables?: Record<string, string | number>): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `key` | `string` | 翻訳キー（ドット表記に対応） |
-| `variables` | `object` | 補間するための変数 |
+| `key` | `string` | 翻訳キー（ドット表記をサポート） |
+| `variables` | `object` | 補完するための変数 |
 
 ### Variable Interpolation
 
 ```json
 {
-  "greeting": "こんにちは、{name}！",
-  "items": "{count}個のアイテムがあります"
+  "greeting": "Hello, {name}!",
+  "items": "You have {count} items"
 }
 ```
 
 ```tsx
-t("greeting", { name: "Alice" });  // "こんにちは、Alice！"
-t("items", { count: 5 });          // "5個のアイテムがあります"
+t("greeting", { name: "Alice" });  // "Hello, Alice!"
+t("items", { count: 5 });          // "You have 5 items"
 ```
+
+### Plurals
+
+文言が変わる数は、2番目のキーではなく`plural`引数を通します：
+
+```json
+{
+  "battles": "{count, plural, one {# battle} other {# battles}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 battle"
+t("battles", { count: 4 });  // "4 battles"
+```
+
+`#`はカウントを表します。この枝は、読み込まれているロケールの`Intl.PluralRules`によって選ばれ、そのため各言語は必要な枝を記述します：
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+英語とフランス語は2つの形式を必要とし、ポーランド語とロシア語は3つ、アラビア語は6つで、日本語は1つだけ必要です。手書きの単数/複数ペアではそれを表現できず、2以上のカウントはすべて5以上の形式になります。
+
+完全な一致はそのカテゴリーよりも優先され、言語が「none」と言う時に0のカテゴリーであると主張せずに表現します：
+
+```json
+{
+  "messages": "{count, plural, =0 {No messages} one {# message} other {# messages}}"
+}
+```
+
+### Select
+
+`select`は書かれた値に一致し、`other`にフォールバックします。あなたのデータが属性を知っているときに文法的な一致を持ちます：
+
+```json
+{
+  "invited": "{gender, select, f {She} m {He} other {They}} joined the team"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "She joined the team"
+t("invited", { gender: "x" });  // "They joined the team"
+```
+
+属性は単語自体から導き出せないので、変数として渡します。動的な固有名詞の場合、記事を必要としない言い回しを好みます。
+
+枝は入れ子になり、`select`は`plural`を持つことができ、どちらもプレーンな変数を持つことができます。
+
+サポートされているのは`plural`と`select`のみです。日付と数字は、取得したいオプションが分かっている呼び出し位置で`Intl`を使ってフォーマットする方が良いです。
 
 ### Nested Keys
 
@@ -178,7 +238,7 @@ t("user.profile.title");  // "プロフィール"
 
 ### TranslationNamespaces
 
-型安全な翻訳のためにこのインターフェースを拡張：
+型安全な翻訳のためにこのインターフェースを拡張してください：
 
 ```tsx
 declare module "@onruntime/translations" {
@@ -190,5 +250,5 @@ declare module "@onruntime/translations" {
 ```
 
 <Callout type="info" title="TypeScriptの利点">
-  適切な型定義を用いることで、翻訳キーのオートコンプリートや不正なキーに対するコンパイル時エラーが得られます。
+  適切な型定義があれば、翻訳キーのオートコンプリートや無効なキーに対するコンパイル時エラーが得られます。
 </Callout>

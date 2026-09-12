@@ -6,17 +6,18 @@ description: >-
 ---
 ## Cos'è @onruntime/translations?
 
-`@onruntime/translations` è una libreria leggera e sicura per i tipi che gestisce l'internazionalizzazione (i18n) progettata per applicazioni React e Next.js. Fornisce una semplice API per gestire le traduzioni con pieno supporto per TypeScript.
+`@onruntime/translations` è una libreria leggera e type-safe per l'internazionalizzazione (i18n) progettata per applicazioni React e Next.js. Fornisce un'API semplice per gestire le traduzioni con supporto completo per TypeScript.
 
-<Callout type="info" title="Caratteristiche Principali">
-  - Traduzioni sicure per i tipi con TypeScript
+<Callout type="info" title="Caratteristiche principali">
+  - Traduzioni type-safe con TypeScript
   - Supporto per React e Next.js (App Router)
   - Organizzazione basata su namespace
   - Interpolazione di variabili
+  - Plurali e accordo grammaticale tramite ICU `plural` e `select`
   - Leggera e performante
 </Callout>
 
-## Perché Usarlo?
+## Perché usarlo?
 
 ### Sicurezza dei Tipi
 
@@ -78,7 +79,7 @@ function Welcome({ name }) {
 }
 ```
 
-## Passi Successivi
+## Prossimi Passi
 
 <Cards>
   <Card
@@ -88,7 +89,7 @@ function Welcome({ name }) {
   />
   <Card
     title="Utilizzo in React"
-    description="Scopri come usare le traduzioni in React"
+    description="Scopri come utilizzare le traduzioni in React"
     href="/docs/translations/react"
   />
 </Cards>

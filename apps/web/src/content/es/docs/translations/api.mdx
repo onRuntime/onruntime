@@ -1,5 +1,5 @@
 ---
-title: Referencia de la API
+title: Referencia de API
 description: Documentación completa de la API para @onruntime/translations
 ---
 ## TranslationsProvider
@@ -10,7 +10,7 @@ El componente proveedor que envuelve tu aplicación.
 import { TranslationsProvider } from "@onruntime/translations/react";
 
 <TranslationsProvider
-  locale="es"
+  locale="en"
   locales={{ en, fr }}
   fallbackLocale="en"
 >
@@ -20,12 +20,12 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 
 ### Props
 
-| Prop | Type | Required | Description |
-|------|------|----------|-------------|
-| `locale` | `string` | Sí | Localización activa actual |
-| `locales` | `Record<string, object>` | Sí | Objeto que contiene todas las traducciones de localización |
-| `fallbackLocale` | `string` | No | Localización de respaldo cuando falta una clave |
-| `children` | `ReactNode` | Sí | Componentes secundarios |
+| Prop | Tipo | Requerido | Descripción |
+|------|------|-----------|-------------|
+| `locale` | `string` | Sí | Locale activa actual |
+| `locales` | `Record<string, object>` | Sí | Objeto que contiene todas las traducciones de locales |
+| `fallbackLocale` | `string` | No | Locale de respaldo cuando falta una clave |
+| `children` | `ReactNode` | Sí | Componentes hijos |
 
 ## useTranslation
 
@@ -37,17 +37,17 @@ const { t, locale, setLocale } = useTranslation("namespace");
 
 ### Parámetros
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `namespace` | `string` | Sí | Espacio de nombres de traducción a usar |
+| Parámetro | Tipo | Requerido | Descripción |
+|-----------|------|-----------|-------------|
+| `namespace` | `string` | Sí | Espacio de nombres de traducción a utilizar |
 
 ### Retornos
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Propiedad | Tipo | Descripción |
+|-----------|------|-------------|
 | `t` | `(key: string, vars?: object) => string` | Función de traducción |
-| `locale` | `string` | Localización actual |
-| `setLocale` | `(locale: string) => void` | Función para cambiar la localización |
+| `locale` | `string` | Locale actual |
+| `setLocale` | `(locale: string) => void` | Función para cambiar el locale |
 
 ### Ejemplo
 
@@ -55,15 +55,15 @@ const { t, locale, setLocale } = useTranslation("namespace");
 const { t, locale, setLocale } = useTranslation("common");
 
 // Uso básico
-t("greeting");  // "¡Hola!"
+t("greeting");  // "Hello"
 
 // Con variables
-t("greeting_name", { name: "John" });  // "¡Hola, John!"
+t("greeting_name", { name: "John" });  // "Hello, John!"
 
 // Claves anidadas
-t("nav.home");  // "Inicio"
+t("nav.home");  // "Home"
 
-// Cambiar localización
+// Cambiar locale
 setLocale("fr");
 ```
 
@@ -77,21 +77,21 @@ const { t } = await getTranslation("namespace");
 
 ### Parámetros
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `namespace` | `string` | Sí | Espacio de nombres de traducción a usar |
+| Parámetro | Tipo | Requerido | Descripción |
+|-----------|------|-----------|-------------|
+| `namespace` | `string` | Sí | Espacio de nombres de traducción a utilizar |
 
 ### Retornos
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Propiedad | Tipo | Descripción |
+|-----------|------|-------------|
 | `t` | `(key: string, vars?: object) => string` | Función de traducción |
-| `locale` | `string` | Localización actual |
+| `locale` | `string` | Locale actual |
 
 ### Ejemplo
 
 ```tsx
-// Componente del Servidor
+// Componente del servidor
 export default async function Page() {
   const { t } = await getTranslation("common");
 
@@ -101,29 +101,29 @@ export default async function Page() {
 
 ## Link Component
 
-Componente Link consciente de la localización para Next.js.
+Componente Link consciente del locale para Next.js.
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
 
-<Link href="/about">Acerca de</Link>
+<Link href="/about">About</Link>
 ```
 
 ### Props
 
-Todos los props del componente `Link` de Next.js, más:
+Todos los props del componente `Link` de Next.js, además de:
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `locale` | `string` | Localización actual | Sobrescribir la localización del link |
+| Prop | Tipo | Predeterminado | Descripción |
+|------|------|----------------|-------------|
+| `locale` | `string` | Locale actual | Sobrescribir el locale del enlace |
 
 ### Ejemplo
 
 ```tsx
-// Usa la localización actual
-<Link href="/about">Acerca de</Link>
+// Usa el locale actual
+<Link href="/about">About</Link>
 
-// Forzar una localización específica
+// Forzar un locale específico
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
@@ -139,24 +139,84 @@ t(key: string, variables?: Record<string, string | number>): string
 
 ### Parámetros
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 |-----------|------|-------------|
-| `key` | `string` | Clave de traducción (soporta notación de punto) |
+| `key` | `string` | Clave de traducción (soporta notación por puntos) |
 | `variables` | `object` | Variables para interpolar |
 
 ### Interpolación de Variables
 
 ```json
 {
-  "greeting": "¡Hola, {name}!",
-  "items": "Tienes {count} artículos"
+  "greeting": "Hello, {name}!",
+  "items": "You have {count} items"
 }
 ```
 
 ```tsx
-t("greeting", { name: "Alice" });  // "¡Hola, Alice!"
-t("items", { count: 5 });          // "Tienes 5 artículos"
+t("greeting", { name: "Alice" });  // "Hello, Alice!"
+t("items", { count: 5 });          // "You have 5 items"
 ```
+
+### Plurales
+
+Un número que cambia la redacción pasa por un argumento `plural` en lugar de una segunda clave:
+
+```json
+{
+  "battles": "{count, plural, one {# battle} other {# battles}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 battle"
+t("battles", { count: 4 });  // "4 battles"
+```
+
+`#` representa el conteo. La rama se elige por `Intl.PluralRules` en el locale que se está leyendo, así que cada idioma escribe las ramas que necesita:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+El inglés y el francés necesitan dos formas, el polaco y el ruso tres, el árabe seis, y el japonés solo una. Un par singular/plural escrito a mano no puede expresar eso: escribe la forma de 5 y superiores en cada conteo de dos hacia arriba.
+
+Una coincidencia exacta tiene prioridad sobre su categoría, que es como un idioma dice "ninguno" sin reclamar que es la categoría cero:
+
+```json
+{
+  "messages": "{count, plural, =0 {No messages} one {# message} other {# messages}}"
+}
+```
+
+### Select
+
+`select` coincide con un valor tal como está escrito y vuelve a `other`. Tiene concordancia gramatical cuando tus datos conocen el atributo:
+
+```json
+{
+  "invited": "{gender, select, f {She} m {He} other {They}} joined the team"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "She joined the team"
+t("invited", { gender: "x" });  // "They joined the team"
+```
+
+El atributo no puede derivarse de la palabra misma, así que pásalo como una variable. Para un nombre propio dinámico, prefiere una frase que no necesite artículo en absoluto.
+
+Las ramas se anidan, así que un `select` puede contener un `plural`, y cualquiera de ellos puede contener variables simples.
+
+Solo se admiten `plural` y `select`. Las fechas y los números son mejor formateados con `Intl` en el sitio de llamada, donde conoces las opciones que deseas.
 
 ### Claves Anidadas
 
@@ -164,17 +224,17 @@ t("items", { count: 5 });          // "Tienes 5 artículos"
 {
   "user": {
     "profile": {
-      "title": "Perfil"
+      "title": "Profile"
     }
   }
 }
 ```
 
 ```tsx
-t("user.profile.title");  // "Perfil"
+t("user.profile.title");  // "Profile"
 ```
 
-## Type Definitions
+## Definiciones de Tipos
 
 ### TranslationNamespaces
 
@@ -183,12 +243,12 @@ Extiende esta interfaz para traducciones seguras en tipo:
 ```tsx
 declare module "@onruntime/translations" {
   interface TranslationNamespaces {
-    common: typeof import("./locales/es/common.json");
-    auth: typeof import("./locales/es/auth.json");
+    common: typeof import("./locales/en/common.json");
+    auth: typeof import("./locales/en/auth.json");
   }
 }
 ```
 
 <Callout type="info" title="Beneficios de TypeScript">
-  Con definiciones de tipo adecuadas, obtendrás autocompletado para claves de traducción y errores de compilación para claves inválidas.
+  Con definiciones de tipos adecuadas, obtendrás autocompletado para claves de traducción y errores en tiempo de compilación para claves inválidas.
 </Callout>

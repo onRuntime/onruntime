@@ -1,10 +1,10 @@
 ---
-title: مرجع API
-description: وثائق API كاملة لـ @onruntime/translations
+title: مرجع واجهة برمجة التطبيقات
+description: وثائق واجهة برمجة التطبيقات الكاملة لـ @onruntime/translations
 ---
 ## TranslationsProvider
 
-مكون المزود الذي يلتف حول تطبيقك.
+مكون المزود الذي يلف تطبيقك.
 
 ```tsx
 import { TranslationsProvider } from "@onruntime/translations/react";
@@ -23,8 +23,8 @@ import { TranslationsProvider } from "@onruntime/translations/react";
 | Prop | Type | Required | Description |
 |------|------|----------|-------------|
 | `locale` | `string` | نعم | اللغة النشطة الحالية |
-| `locales` | `Record<string, object>` | نعم | كائن يحتوي على جميع ترجمات اللغة |
-| `fallbackLocale` | `string` | لا | اللغة الاحتياطية عند غياب المفتاح |
+| `locales` | `Record<string, object>` | نعم | كائن يحتوي على جميع ترجمات اللغات |
+| `fallbackLocale` | `string` | لا | اللغة الاحتياطية عند فقدان المفتاح |
 | `children` | `ReactNode` | نعم | مكونات الأطفال |
 
 ## useTranslation
@@ -54,13 +54,13 @@ const { t, locale, setLocale } = useTranslation("namespace");
 ```tsx
 const { t, locale, setLocale } = useTranslation("common");
 
-// الاستخدام الأساسي
+// استخدام أساسي
 t("greeting");  // "مرحبا"
 
-// مع المتغيرات
+// مع متغيرات
 t("greeting_name", { name: "جون" });  // "مرحبا، جون!"
 
-// المفاتيح المتداخلة
+// مفاتيح متداخلة
 t("nav.home");  // "الرئيسية"
 
 // تغيير اللغة
@@ -69,7 +69,7 @@ setLocale("fr");
 
 ## getTranslation
 
-دالة غير متزامنة للوصول إلى الترجمات في مكونات الخادم (Next.js).
+وظيفة غير متزامنة للوصول إلى الترجمات في مكونات الخادم (Next.js).
 
 ```tsx
 const { t } = await getTranslation("namespace");
@@ -101,7 +101,7 @@ export default async function Page() {
 
 ## Link Component
 
-مكون رابط يدعم اللغة لـ Next.js.
+مكون Link الواعي للغة لـ Next.js.
 
 ```tsx
 import { Link } from "@onruntime/translations/next";
@@ -123,13 +123,13 @@ import { Link } from "@onruntime/translations/next";
 // يستخدم اللغة الحالية
 <Link href="/about">حول</Link>
 
-// فرض لغة معينة
+// قوة لغة معينة
 <Link href="/about" locale="fr">À propos</Link>
 ```
 
 ## Translation Function (t)
 
-دالة `t` تُستخدم لاسترجاع السلاسل المترجمة.
+تستخدم دالة `t` لاسترجاع السلاسل المترجمة.
 
 ### Signature
 
@@ -141,8 +141,8 @@ t(key: string, variables?: Record<string, string | number>): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `key` | `string` | مفتاح الترجمة (يدعم ترميز النقاط) |
-| `variables` | `object` | المتغيرات للتداخل |
+| `key` | `string` | مفتاح الترجمة (يدعم التنسيق النقطي) |
+| `variables` | `object` | متغيرات للإدماج |
 
 ### Variable Interpolation
 
@@ -157,6 +157,66 @@ t(key: string, variables?: Record<string, string | number>): string
 t("greeting", { name: "أليس" });  // "مرحبا، أليس!"
 t("items", { count: 5 });          // "لديك 5 عناصر"
 ```
+
+### Plurals
+
+رقم يغير صياغة الكلمات يمر عبر حجة `plural` بدلاً من مفتاح ثانٍ:
+
+```json
+{
+  "battles": "{count, plural, one {# معركة} other {# معارك}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 معركة"
+t("battles", { count: 4 });  // "4 معارك"
+```
+
+`#` يرمز إلى العدد. يتم اختيار الفرع بواسطة `Intl.PluralRules` في اللغة التي تتم قراءتها، لذلك كل لغة تكتب الفروع التي تحتاجها:
+
+```json
+{
+  "battles": "{count, plural, one {# bitwa} few {# bitwy} many {# bitew} other {# bitwy}}"
+}
+```
+
+```tsx
+t("battles", { count: 1 });  // "1 bitwa"
+t("battles", { count: 3 });  // "3 bitwy"
+t("battles", { count: 5 });  // "5 bitew"
+```
+
+الإنجليزية والفرنسية تحتاج إلى شكلين، البولندية والروسية ثلاثة، العربية ستة، واليابانية واحدة فقط. لا يمكن لزوج المفرد/الجمع المكتوب يدويًا التعبير عن ذلك: يكتب الشكل 5 وما فوق على كل عدد من اثنين فصاعدًا.
+
+تأخذ المطابقة الدقيقة الأولوية على فئتها، وهذا هو كيف تقول لغة "لا شيء" دون الادعاء أنها فئة صفر:
+
+```json
+{
+  "messages": "{count, plural, =0 {لا رسائل} one {# رسالة} other {# رسائل}}"
+}
+```
+
+### Select
+
+`select` يطابق قيمة مكتوبة ويعود إلى `other`. يحمل اتفاقًا نحويًا عندما تعرف بياناتك السمة:
+
+```json
+{
+  "invited": "{gender, select, f {هي} m {هو} other {هم}} انضم إلى الفريق"
+}
+```
+
+```tsx
+t("invited", { gender: "f" });  // "هي انضمت إلى الفريق"
+t("invited", { gender: "x" });  // "هم انضموا إلى الفريق"
+```
+
+لا يمكن اشتقاق السمة من الكلمة نفسها، لذا تمررها كمتغير. بالنسبة لاسم علم ديناميكي، يفضل عبارة لا تحتاج إلى أداة على الإطلاق.
+
+تتداخل الفروع، لذا قد يحمل `select` `plural`، وأي منهما قد يحمل متغيرات عادية.
+
+فقط `plural` و `select` مدعومة. من الأفضل تنسيق التواريخ والأرقام مع `Intl` في موقع الاتصال، حيث تعرف الخيارات التي تريدها.
 
 ### Nested Keys
 
@@ -178,7 +238,7 @@ t("user.profile.title");  // "الملف الشخصي"
 
 ### TranslationNamespaces
 
-قم بتوسيع هذه الواجهة لتكون آمنة من حيث النوع للترجمات:
+قم بتمديد هذه الواجهة من أجل ترجمات آمنة من حيث النوع:
 
 ```tsx
 declare module "@onruntime/translations" {
@@ -190,5 +250,5 @@ declare module "@onruntime/translations" {
 ```
 
 <Callout type="info" title="فوائد TypeScript">
-  مع التعريفات الصحيحة للنوع، ستحصل على إكمال تلقائي لمفاتيح الترجمة وأخطاء في وقت التجميع لمفاتيح غير صالحة.
+  مع تعريفات النوع الصحيحة، ستحصل على الإكمال التلقائي لمفاتيح الترجمة وأخطاء في وقت الترجمة للمفاتيح غير الصالحة.
 </Callout>

@@ -4,21 +4,22 @@ description: 'React ve Next.js için hafif, tip güvenli bir uluslararasılaşt�
 ---
 ## @onruntime/translations Nedir?
 
-`@onruntime/translations`, React ve Next.js uygulamaları için tasarlanmış hafif, tür güvenli bir uluslararasılaştırma (i18n) kütüphanesidir. Tam TypeScript desteği ile çevirileri yönetmek için basit bir API sağlar.
+`@onruntime/translations`, React ve Next.js uygulamaları için tasarlanmış hafif, tip güvenli uluslararasılaştırma (i18n) kütüphanesidir. Tam TypeScript desteğiyle çevirileri yönetmek için basit bir API sunar.
 
 <Callout type="info" title="Ana Özellikler">
-  - TypeScript ile tür güvenli çeviriler
+  - TypeScript ile tip güvenli çeviriler
   - React ve Next.js (App Router) desteği
-  - İsim alanına dayalı organizasyon
-  - Değişken interpolasyonu
+  - İsim alanı tabanlı organizasyon
+  - Değişken yerleştirme
+  - ICU `plural` ve `select` aracılığıyla çoğullar ve dil bilgisel uyum
   - Hafif ve performanslı
 </Callout>
 
 ## Neden Kullanmalı?
 
-### Tür Güvenliği
+### Tip Güvenliği
 
-Geçersiz çeviri anahtarları kullanırken derleme zamanı hataları alın:
+Geçersiz çeviri anahtarlarını kullanırken derleme zamanı hataları alın:
 
 ```typescript
 const { t } = useTranslation("common");
@@ -41,7 +42,7 @@ const { t } = await getTranslation("namespace");
 
 ### Düzenli Çeviriler
 
-Çevirilerinizi isim alanları ile düzenli tutun:
+Çevirilerinizi isim alanlarıyla düzenli tutun:
 
 <Files>
   <Folder name="locales" defaultOpen>
@@ -81,7 +82,7 @@ function Welcome({ name }) {
 <Cards>
   <Card
     title="Kurulum"
-    description="Paketi yükleyin ve yapılandırın"
+    description="Paketin kurulumu ve yapılandırması"
     href="/docs/translations/installation"
   />
   <Card

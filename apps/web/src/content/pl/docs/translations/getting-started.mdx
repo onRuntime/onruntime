@@ -1,24 +1,25 @@
 ---
-title: Rozpoczynając
-description: 'Lekka, bezpieczna typowo biblioteka do internacjonalizacji dla React i Next.js'
+title: Zaczynamy
+description: 'Lekka, typowo bezpieczna biblioteka do internacjonalizacji dla React i Next.js'
 ---
 ## Czym jest @onruntime/translations?
 
-`@onruntime/translations` to lekka, typowo bezpieczna biblioteka międzynarodowa (i18n) zaprojektowana dla aplikacji React i Next.js. Oferuje prosty API do zarządzania tłumaczeniami z pełnym wsparciem dla TypeScript.
+`@onruntime/translations` to lekkiej wagi, bezpieczna dla typów biblioteka internacjonalizacji (i18n) zaprojektowana do aplikacji React i Next.js. Oferuje prosty interfejs API do zarządzania tłumaczeniami z pełnym wsparciem TypeScript.
 
-<Callout type="info" title="Kluczowe cechy">
-  - Typowo bezpieczne tłumaczenia z TypeScript
+<Callout type="info" title="Kluczowe Funkcje">
+  - Tłumaczenia bezpieczne dla typów z TypeScript
   - Wsparcie dla React i Next.js (App Router)
   - Organizacja oparta na przestrzeniach nazw
   - Interpolacja zmiennych
+  - Liczby mnogie i zgodność gramatyczna dzięki ICU `plural` i `select`
   - Lekka i wydajna
 </Callout>
 
-## Czemu warto z tego skorzystać?
+## Dlaczego warto to używać?
 
-### Typowa bezpieczeństwo
+### Bezpieczeństwo Typów
 
-Uzyskaj błędy w czasie kompilacji, gdy używasz nieprawidłowych kluczy tłumaczeń:
+Uzyskaj błędy w czasie kompilacji, gdy używasz nieważnych kluczy tłumaczeń:
 
 ```typescript
 const { t } = useTranslation("common");
@@ -27,21 +28,21 @@ t("greeting");        // ✅ Prawidłowy klucz
 t("invalid_key");     // ❌ Błąd TypeScript
 ```
 
-### Proste API
+### Prosty Interfejs API
 
-Tylko dwa haki do wszystkich twoich potrzeb tłumaczeniowych:
+Tylko dwa hooki do wszystkich Twoich potrzeb tłumaczeniowych:
 
 ```typescript
-// Komponenty Klienta
+// Komponenty Klientów
 const { t } = useTranslation("namespace");
 
 // Komponenty Serwera (Next.js)
 const { t } = await getTranslation("namespace");
 ```
 
-### Zorganizowane tłumaczenia
+### Zorganizowane Tłumaczenia
 
-Utrzymuj swoje tłumaczenia zorganizowane w przestrzeniach nazw:
+Utrzymuj swoje tłumaczenia zorganizowane z przestrzeniami nazw:
 
 <Files>
   <Folder name="locales" defaultOpen>
@@ -58,12 +59,12 @@ Utrzymuj swoje tłumaczenia zorganizowane w przestrzeniach nazw:
   </Folder>
 </Files>
 
-## Szybki przykład
+## Szybki Przykład
 
 ```tsx
 // locales/en/common.json
 {
-  "greeting": "Cześć, {name}!"
+  "greeting": "Hello, {name}!"
 }
 
 // Komponent
@@ -76,7 +77,7 @@ function Welcome({ name }) {
 }
 ```
 
-## Następne kroki
+## Kolejne Kroki
 
 <Cards>
   <Card
