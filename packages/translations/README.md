@@ -2,6 +2,8 @@
 
 Lightweight i18n library for React, Next.js, and React Native.
 
+**[Documentation](https://onruntime.com/docs/translations)**
+
 ## Examples
 
 - [Next.js App Router](https://github.com/onRuntime/onruntime/tree/master/examples/translations/next-app)

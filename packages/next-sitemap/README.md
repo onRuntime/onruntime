@@ -2,6 +2,8 @@
 
 Dynamic sitemap generation for Next.js with automatic route discovery.
 
+**[Documentation](https://onruntime.com/docs/next-sitemap)**
+
 ## Example
 
 - [Next.js App Router](https://github.com/onRuntime/onruntime/tree/master/examples/next-sitemap/app)
