@@ -19,7 +19,15 @@ interface GoogleAdsConversionLinkProps {
 }
 
 /**
- * Component that triggers Google Ads conversion when clicked
+ * Link that reports a Google Ads conversion on click.
+ *
+ * The conversion is sent alongside the navigation rather than before it. An
+ * earlier version called `preventDefault` and waited for `event_callback`,
+ * falling back to a 1000 ms timer: visitors stared at a frozen button for up to
+ * a second on the main call to action, and cmd+click could no longer open the
+ * link in a new tab because the default was cancelled. `beacon` transport is
+ * built to outlive the page it was fired from, so blocking buys nothing.
+ *
  * @param href - The destination URL
  * @param sendTo - The Google Ads conversion ID (format: AW-XXXXXXXXX/XXXXXXXXXX)
  */
@@ -28,23 +36,14 @@ export const GoogleAdsConversionLink: React.FC<GoogleAdsConversionLinkProps> = (
   sendTo,
   children,
 }) => {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Only trigger in production
-    if (process.env.NODE_ENV === "production" && typeof window.gtag === "function") {
-      e.preventDefault();
+  const handleClick = () => {
+    // Guarded so local and preview clicks never reach the live conversion.
+    if (process.env.NODE_ENV !== "production") return;
 
-      window.gtag("event", "conversion", {
-        send_to: sendTo,
-        event_callback: () => {
-          window.location.href = href;
-        },
-      });
-
-      // Fallback timeout in case callback doesn't fire
-      setTimeout(() => {
-        window.location.href = href;
-      }, 1000);
-    }
+    window.gtag?.("event", "conversion", {
+      send_to: sendTo,
+      transport_type: "beacon",
+    });
   };
 
   return (
