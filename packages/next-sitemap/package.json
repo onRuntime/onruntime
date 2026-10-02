@@ -52,7 +52,7 @@
     "next": ">=14.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
+    "@types/node": "^24.0.0",
     "@types/react": "^19.2.7",
     "next": "^16.1.1",
     "tsup": "^8",
