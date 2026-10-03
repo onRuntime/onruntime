@@ -1,29 +1,28 @@
 ---
-title: Pour commencer
-description: Apprendre notre convention de commits
+title: Démarrer
+description: Apprenez notre convention de commit
 ---
-
-Nous aimons avoir un historique de projet propre. Notre convention de commits est inspiree de [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) mais personnalisee avec [gitmoji](https://gitmoji.dev) pour la rendre plus visuelle et fun.
+Nous aimons avoir un historique de projet propre. Notre convention de commits est inspirée par [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) mais personnalisée avec [gitmoji](https://gitmoji.dev) pour rendre ça plus visuel et amusant.
 
 ## Structure
 
-Le message de commit doit etre structure ainsi et **en minuscules** :
+Le message de commit doit être structuré comme suit et **en minuscules** :
 
 ```
-<gitmoji> <type> <description> [(#<numero issue>)]
+<gitmoji> <type> <description> [(#<numéro de l'incident>)]
 
-[body optionnel]
+[corps optionnel]
 
-[footer(s) optionnel(s)]
+[pied(s) optionnel(s)]
 ```
 
 ### Exemple
 
 ```bash
-📝 update documentation contributors
+📝 mettre à jour les contributeurs de la documentation
 
-- Add @jerembdn as a contributor
-- Add @younesbessa as a contributor
+- Ajouter @jerembdn comme contributeur
+- Ajouter @younesbessa comme contributeur
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
@@ -31,7 +30,7 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 La plupart du temps, une simple ligne suffit :
 
 ```bash
-📝 update documentation contributors
+📝 mettre à jour les contributeurs de la documentation
 ```
 
 ## Types
@@ -40,53 +39,63 @@ Nous utilisons les types de commits suivants :
 
 | Type | Description |
 | --- | --- |
-| `add` | Ajouter une nouvelle fonctionnalite |
+| `add` | Ajouter une nouvelle fonctionnalité |
 | `fix` | Corriger un bug |
-| `improve` | Ameliorer quelque chose |
-| `update` | Mettre a jour quelque chose |
+| `improve` | Améliorer quelque chose |
+| `update` | Mettre à jour quelque chose |
 | `remove` | Supprimer quelque chose |
 | `refactor` | Refactoriser quelque chose |
 | `rename` | Renommer quelque chose |
-| `move` | Deplacer un fichier ou dossier |
-| `upgrade` | Mettre a jour les dependances |
-| `downgrade` | Retrograder les dependances |
+| `move` | Déplacer un fichier ou un dossier |
+| `upgrade` | Mettre à niveau les dépendances |
+| `downgrade` | Rétrograder les dépendances |
+| `initial` | Commit initial d'un dépôt |
+| `release` | Release / tag de version |
+
+Le premier commit d'un dépôt utilise `initial`, et un tag de version utilise
+`release` :
+
+```bash
+🎉 commit initial
+🔖 release @onruntime/translations v0.3.0
+```
 
 ## Description
 
-Ecrivez les descriptions en **mode imperatif** et en **minuscules** :
+Écrivez des descriptions à l'**impératif** et **en minuscules** :
 
 ```bash
 # Bien
-📝 update documentation contributors
+📝 mettre à jour les contributeurs de la documentation
 
 # Mal
-📝 updated documentation contributors
+📝 mis à jour les contributeurs de la documentation
 
 # Mal
-📝 Update documentation contributors
+📝 Mettre à jour les contributeurs de la documentation
 ```
 
-## Numero d'issue
+## Numéro d'incident
 
-Liez les commits aux issues en ajoutant le numero :
+Liez les commits aux incidents en ajoutant le numéro d'incident :
 
 ```bash
-📝 update documentation contributors (#123)
+📝 mettre à jour les contributeurs de la documentation (#123)
 ```
 
-## Body
+## Corps
 
-Utilisez le body pour le contexte et la motivation :
+Utilisez le corps pour le contexte et la motivation :
 
 ```bash
-📝 update documentation contributors
+📝 mettre à jour les contributeurs de la documentation
 
-- Add @jerembdn as a contributor
-- Add @younesbessa as a contributor
+- Ajouter @jerembdn comme contributeur
+- Ajouter @younesbessa comme contributeur
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="Un commit, un objectif">
-  Chaque commit doit representer un seul changement logique. Ne melangez pas les changements non lies.
+<Callout type="info" title="Un Commit, Un But">
+  Chaque commit doit représenter un changement logique unique. Ne mélangez pas les changements non liés.
 </Callout>

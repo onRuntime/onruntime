@@ -2,7 +2,7 @@
 title: 시작하기
 description: 우리의 커밋 규칙을 배워보세요
 ---
-우리는 깔끔한 프로젝트 기록을 유지하는 걸 좋아해. 우리의 커밋 규칙은 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0)에서 영감을 받았지만 시각적으로 더 재미있게 보이도록 [gitmoji](https://gitmoji.dev)로 커스터마이즈했어.
+우리는 깔끔한 프로젝트 히스토리를 좋아해. 우리의 커밋 규칙은 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0)에서 영감을 받았지만, 더 시각적이고 재미있게 만들기 위해 [gitmoji](https://gitmoji.dev)로 커스터마이즈했어.
 
 ## 구조
 
@@ -45,29 +45,38 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 | `update` | 무언가 업데이트 |
 | `remove` | 무언가 제거 |
 | `refactor` | 무언가 리팩토링 |
-| `rename` | 무언가 이름 바꾸기 |
+| `rename` | 무언가 이름 변경 |
 | `move` | 파일이나 폴더 이동 |
 | `upgrade` | 의존성 업그레이드 |
 | `downgrade` | 의존성 다운그레이드 |
+| `initial` | 레포지토리의 초기 커밋 |
+| `release` | 릴리스 / 버전 태그 |
+
+레포지토리의 첫 번째 커밋은 `initial`을 사용하고, 버전 태그는 `release`를 사용해:
+
+```bash
+🎉 initial commit
+🔖 release @onruntime/translations v0.3.0
+```
 
 ## 설명
 
-설명은 **명령형**으로 **소문자**로 작성해:
+설명을 **명령문**으로 작성하고 **소문자**로 해:
 
 ```bash
-# 좋은 예
+# 좋음
 📝 update documentation contributors
 
-# 나쁜 예
+# 나쁨
 📝 updated documentation contributors
 
-# 나쁜 예
+# 나쁨
 📝 Update documentation contributors
 ```
 
 ## 이슈 번호
 
-커밋을 이슈에 연결하려면 이슈 번호를 추가해:
+이슈 번호를 추가하여 커밋을 이슈에 연결해:
 
 ```bash
 📝 update documentation contributors (#123)
@@ -75,7 +84,7 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 
 ## 본문
 
-본문은 맥락과 동기를 위해 사용해:
+본문은 맥락과 동기를 설명하는 데 사용해:
 
 ```bash
 📝 update documentation contributors
@@ -86,6 +95,6 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="한 커밋, 한 목적">
-  각 커밋은 하나의 논리적 변경을 나타내야 해. 관련 없는 변경사항은 섞지 마.
+<Callout type="info" title="하나의 커밋, 하나의 목적">
+  각 커밋은 하나의 논리적인 변화를 나타내야 해. 관련 없는 변화는 섞지 마.
 </Callout>

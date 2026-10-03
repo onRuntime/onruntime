@@ -2,14 +2,14 @@
 title: Aan de slag
 description: Leer onze commitconventie
 ---
-We vinden het belangrijk om een schone projectgeschiedenis te hebben. Onze commit-conventie is geïnspireerd door [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) maar aangepast met [gitmoji](https://gitmoji.dev) om het visueler en leuker te maken.
+We houden ervan om een schone projectgeschiedenis te hebben. Onze commits conventie is geïnspireerd op [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) maar aangepakt met [gitmoji](https://gitmoji.dev) om het visueler en leuker te maken.
 
 ## Structuur
 
-De commit-bericht moet als volgt gestructureerd zijn en **in kleine letters**:
+Het commitbericht moet als volgt gestructureerd zijn en **in kleine letters**:
 
 ```
-<gitmoji> <type> <beschrijving> [(#<issue nummer>)]
+<gitmoji> <type> <description> [(#<issue nummer>)]
 
 [optionele body]
 
@@ -27,7 +27,7 @@ De commit-bericht moet als volgt gestructureerd zijn en **in kleine letters**:
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-De meeste tijd is een eenvoudige one-liner genoeg:
+De meeste tijd is een simpele one-liner voldoende:
 
 ```bash
 📝 update documentatie bijdragers
@@ -49,10 +49,20 @@ We gebruiken de volgende commit types:
 | `move` | Verplaats een bestand of map |
 | `upgrade` | Upgrade afhankelijkheden |
 | `downgrade` | Downgrade afhankelijkheden |
+| `initial` | Eerste commit van een repository |
+| `release` | Release / versie tag |
+
+De eerste commit van een repository gebruikt `initial`, en een versie tag gebruikt 
+`release`:
+
+```bash
+🎉 initial commit
+🔖 release @onruntime/translations v0.3.0
+```
 
 ## Beschrijving
 
-Schrijf beschrijvingen in **imperatieve vorm** en **kleine letters**:
+Schrijf beschrijvingen in **imperatieve wijs** en **kleine letters**:
 
 ```bash
 # Goed
@@ -86,6 +96,6 @@ Gebruik de body voor context en motivatie:
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="Eén Commit, Één Doel">
-  Elke commit moet een enkele logische wijziging vertegenwoordigen. Meng geen niet-gerelateerde wijzigingen.
+<Callout type="info" title="Eén Commit, Eén Doel">
+  Elke commit zou een enkele logische verandering moeten vertegenwoordigen. Meng geen ongelijksoortige wijzigingen.
 </Callout>

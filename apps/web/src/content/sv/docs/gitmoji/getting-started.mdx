@@ -1,19 +1,19 @@
 ---
-title: Kom igång
-description: Lär dig vår commit-konvention
+title: Börja här
+description: Lär dig vår kommittékonvention
 ---
-Vi gillar att ha en ren projektlogg. Vår commit-konvention är inspirerad av [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) men anpassad med [gitmoji](https://gitmoji.dev) för att göra den mer visuell och rolig.
+Vi gillar att ha en ren projektlogg. Vår commit-konvention är inspirerad av [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) men anpassad med [gitmoji](https://gitmoji.dev) för att göra det mer visuellt och roligt.
 
 ## Struktur
 
-Commit-meddelandet bör struktureras som följande och **i gemener**:
+Commit-meddelandet ska struktureras enligt följande och **i gemener**:
 
 ```
 <gitmoji> <typ> <beskrivning> [(#<ärendenummer>)]
 
 [valfritt brödtext]
 
-[valfria fotnot(er)]
+[valfria fotnoter]
 ```
 
 ### Exempel
@@ -21,13 +21,13 @@ Commit-meddelandet bör struktureras som följande och **i gemener**:
 ```bash
 📝 uppdatera dokumentation bidragsgivare
 
-- Lägg till @jerembdn som bidragsgivare
-- Lägg till @younesbessa som bidragsgivare
+- Lägg till @jerembdn som en bidragsgivare
+- Lägg till @younesbessa som en bidragsgivare
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-Det mesta av tiden är en enkel rad tillräcklig:
+Mestadels av tiden räcker det med en enkel rad:
 
 ```bash
 📝 uppdatera dokumentation bidragsgivare
@@ -40,15 +40,25 @@ Vi använder följande commit-typer:
 | Typ | Beskrivning |
 | --- | --- |
 | `add` | Lägg till en ny funktion |
-| `fix` |Åtgärda en bugg |
+| `fix` | Fixa en bugg |
 | `improve` | Förbättra något |
 | `update` | Uppdatera något |
 | `remove` | Ta bort något |
-| `refactor` | Refaktorisera något |
+| `refactor` | Refaktorera något |
 | `rename` | Byt namn på något |
 | `move` | Flytta en fil eller mapp |
 | `upgrade` | Uppgradera beroenden |
 | `downgrade` | Nedgradera beroenden |
+| `initial` | Första commit av ett repository |
+| `release` | Release / versionsetikett |
+
+Den första commit av ett repository använder `initial`, och en versionsetikett använder
+`release`:
+
+```bash
+🎉 första commit
+🔖 release @onruntime/translations v0.3.0
+```
 
 ## Beskrivning
 
@@ -75,17 +85,17 @@ Länka commits till ärenden genom att lägga till ärendenumret:
 
 ## Brödtext
 
-Använd brödtexten för sammanhang och motivation:
+Använd brödtexten för kontext och motivation:
 
 ```bash
 📝 uppdatera dokumentation bidragsgivare
 
-- Lägg till @jerembdn som bidragsgivare
-- Lägg till @younesbessa som bidragsgivare
+- Lägg till @jerembdn som en bidragsgivare
+- Lägg till @younesbessa som en bidragsgivare
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="En Commit, En Syfte">
+<Callout type="info" title="En Commit, Ett Syfte">
   Varje commit bör representera en enda logisk förändring. Blanda inte orelaterade förändringar.
 </Callout>

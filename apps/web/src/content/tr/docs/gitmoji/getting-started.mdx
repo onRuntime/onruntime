@@ -1,36 +1,35 @@
 ---
 title: Başlarken
-description: Taahhüt kuralımızı öğrenin
+description: Taahhüt kurallarımızı öğren
 ---
-Projelerimizin temiz bir geçmişe sahip olmasını seviyoruz. Komutlarımıza dair convention'ımız, [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0)'tan ilham alınarak oluşturuldu ama daha görsel ve eğlenceli hale getirmek için [gitmoji](https://gitmoji.dev) ile uyumlu bir şekilde düzenlendi.
+We like to have a clean project history. Our commits convention is inspired by [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) but customized with [gitmoji](https://gitmoji.dev) to make it more visual and fun.
 
 ## Yapı
 
-Commit mesajı aşağıdaki gibi yapılandırılmalı ve **küçük harfle** olmalı:
+Commit mesajı aşağıdaki gibi yapılandırılmalı ve **küçük harfle** yazılmalıdır:
 
 ```
 <gitmoji> <type> <description> [(#<issue number>)]
 
-[isteğe bağlı gövde]
+[opsiyonel gövde]
 
-[isteğe bağlı alt bilgiler]
+[opsiyonel ayak (lar)]
 ```
 
 ### Örnek
 
 ```bash
-📝 belge katkılarını güncelle
-
-- @jerembdn'i katkıcı olarak ekle
-- @younesbessa'yı katkıcı olarak ekle
+📝 belgeleri güncelle
+- @jerembdn katkıcı olarak ekle
+- @younesbessa katkıcı olarak ekle
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-Çoğu zaman, basit bir satır yeterli:
+Çoğu zaman, basit bir tek satır yeterlidir:
 
 ```bash
-📝 belge katkılarını güncelle
+📝 belgeleri güncelle
 ```
 
 ## Türler
@@ -49,43 +48,52 @@ Aşağıdaki commit türlerini kullanıyoruz:
 | `move` | Bir dosyayı veya klasörü taşı |
 | `upgrade` | Bağımlılıkları güncelle |
 | `downgrade` | Bağımlılıkları düşür |
+| `initial` | Bir depodaki ilk commit |
+| `release` | Sürüm / versiyon etiketi |
+
+Bir reposunun ilk commit'i `initial` kullanırken, bir versiyon etiketi `release` kullanıyor:
+
+```bash
+🎉 ilk commit
+🔖 release @onruntime/translations v0.3.0
+```
 
 ## Açıklama
 
-Açıklamaları **emir kipinde** ve **küçük harfle** yaz:
+Açıklamaları **emir kipiyle** ve **küçük harfle** yazın:
 
 ```bash
 # İyi
-📝 belge katkılarını güncelle
+📝 belgeleri güncelle
 
 # Kötü
-📝 belgeleri güncelledim
+📝 belgeleri güncelledi
 
 # Kötü
-📝 Belge katkılarını güncelle
+📝 Belgeleri güncelle
 ```
 
-## Sorun Numarası
+## Issue Numarası
 
-Commit'leri sorunlara bağlamak için sorun numarasını ekleyin:
+Commit'leri issue'lara bağlamak için issue numarasını ekleyin:
 
 ```bash
-📝 belge katkılarını güncelle (#123)
+📝 belgeleri güncelle (#123)
 ```
 
 ## Gövde
 
-Gövdeyi bağlam ve motivasyon için kullan:
+Gövdeyi bağlam ve motivasyon için kullanın:
 
 ```bash
-📝 belge katkılarını güncelle
+📝 belgeleri güncelle
 
-- @jerembdn'i katkıcı olarak ekle
-- @younesbessa'yı katkıcı olarak ekle
+- @jerembdn katkıcı olarak ekle
+- @younesbessa katkıcı olarak ekle
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
 <Callout type="info" title="Bir Commit, Bir Amaç">
-  Her commit, tek bir mantıksal değişikliği temsil etmelidir. İlgisiz değişiklikleri karıştırmayın.
+  Her commit tek bir mantıksal değişikliği temsil etmelidir. İlgisiz değişiklikleri birleştirmeyin.
 </Callout>

@@ -1,25 +1,25 @@
 ---
-title: Empezando
+title: Introducción
 description: Aprende nuestra convención de commits
 ---
-Nos gusta tener un historial de proyecto limpio. Nuestra convención de commits se inspira en [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) pero se personaliza con [gitmoji](https://gitmoji.dev) para hacerlo más visual y divertido.
+Nos gusta tener un historial de proyecto limpio. Nuestra convención de commits está inspirada en [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) pero personalizada con [gitmoji](https://gitmoji.dev) para hacerlo más visual y divertido.
 
 ## Estructura
 
-El mensaje del commit debería estar estructurado de la siguiente manera y **en minúsculas**:
+El mensaje del commit debe estar estructurado de la siguiente manera y **en minúsculas**:
 
 ```
 <gitmoji> <tipo> <descripción> [(#<número de issue>)]
 
 [cuerpo opcional]
 
-[fondo(s) opcional(es)]
+[pie opcional(s)]
 ```
 
 ### Ejemplo
 
 ```bash
-📝 actualizar contribuciones de documentación
+📝 actualizar contribuyentes de la documentación
 
 - Agregar @jerembdn como contribuyente
 - Agregar @younesbessa como contribuyente
@@ -27,15 +27,15 @@ El mensaje del commit debería estar estructurado de la siguiente manera y **en 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-La mayoría de las veces, una línea sencilla es suficiente:
+La mayoría de las veces, una simple línea es suficiente:
 
 ```bash
-📝 actualizar contribuciones de documentación
+📝 actualizar contribuyentes de la documentación
 ```
 
 ## Tipos
 
-Usamos los siguientes tipos de commits:
+Usamos los siguientes tipos de commit:
 
 | Tipo | Descripción |
 | --- | --- |
@@ -49,20 +49,30 @@ Usamos los siguientes tipos de commits:
 | `move` | Mover un archivo o carpeta |
 | `upgrade` | Actualizar dependencias |
 | `downgrade` | Degradar dependencias |
+| `initial` | Primer commit de un repositorio |
+| `release` | Lanzar / etiqueta de versión |
+
+El primer commit de un repositorio usa `initial`, y una etiqueta de versión usa
+`release`:
+
+```bash
+🎉 primer commit
+🔖 lanzamiento @onruntime/translations v0.3.0
+```
 
 ## Descripción
 
-Escribe descripciones en **modo imperativo** y **en minúsculas**:
+Escribe descripciones en **modo imperativo** y **minúsculas**:
 
 ```bash
 # Bueno
-📝 actualizar contribuciones de documentación
+📝 actualizar contribuyentes de la documentación
 
 # Malo
-📝 actualizado contribuciones de documentación
+📝 actualizados contribuyentes de la documentación
 
 # Malo
-📝 Actualizar contribuciones de documentación
+📝 Actualizar contribuyentes de la documentación
 ```
 
 ## Número de Issue
@@ -70,7 +80,7 @@ Escribe descripciones en **modo imperativo** y **en minúsculas**:
 Vincula commits a issues agregando el número de issue:
 
 ```bash
-📝 actualizar contribuciones de documentación (#123)
+📝 actualizar contribuyentes de la documentación (#123)
 ```
 
 ## Cuerpo
@@ -78,7 +88,7 @@ Vincula commits a issues agregando el número de issue:
 Usa el cuerpo para contexto y motivación:
 
 ```bash
-📝 actualizar contribuciones de documentación
+📝 actualizar contribuyentes de la documentación
 
 - Agregar @jerembdn como contribuyente
 - Agregar @younesbessa como contribuyente
@@ -87,5 +97,5 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
 <Callout type="info" title="Un Commit, Un Propósito">
-  Cada commit debería representar un único cambio lógico. No mezcles cambios no relacionados.
+  Cada commit debería representar un cambio lógico único. No mezcles cambios no relacionados.
 </Callout>

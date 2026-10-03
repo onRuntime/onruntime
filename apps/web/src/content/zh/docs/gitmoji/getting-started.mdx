@@ -1,19 +1,19 @@
 ---
-title: 开始使用
+title: 入门
 description: 了解我们的提交规范
 ---
-我们喜欢保持项目历史的干净。我们的提交规范受到 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) 的启发，但结合了 [gitmoji](https://gitmoji.dev)，让它更具视觉效果和乐趣。
+我们喜欢保持一个干净的项目历史。我们的提交规范受到 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) 的启发，并结合 [gitmoji](https://gitmoji.dev) 进行了定制，这样更具视觉效果和趣味性。
 
 ## 结构
 
-提交信息应按以下格式结构化，并且**使用小写**：
+提交信息应按照以下结构编写并**使用小写**：
 
 ```
 <gitmoji> <type> <description> [(#<issue number>)]
 
-[可选正文]
+[可选的主体]
 
-[可选页脚]
+[可选的附注]
 ```
 
 ### 示例
@@ -24,10 +24,10 @@ description: 了解我们的提交规范
 - 添加 @jerembdn 作为贡献者
 - 添加 @younesbessa 作为贡献者
 
-共同撰写者: Younes Bessa <younes@onruntime.com>
+共同作者：Younes Bessa <younes@onruntime.com>
 ```
 
-大多数时候，一个简单的一行就足够了：
+大多数情况下，一个简单的一行就足够了：
 
 ```bash
 📝 更新文档贡献者
@@ -40,19 +40,28 @@ description: 了解我们的提交规范
 | 类型 | 描述 |
 | --- | --- |
 | `add` | 添加新功能 |
-| `fix` | 修复一个错误 |
-| `improve` | 改善某些东西 |
-| `update` | 更新某些东西 |
-| `remove` | 移除某些东西 |
-| `refactor` | 重构某些东西 |
-| `rename` | 重命名某些东西 |
+| `fix` | 修复一个bug |
+| `improve` | 改进某个东西 |
+| `update` | 更新某个东西 |
+| `remove` | 移除某个东西 |
+| `refactor` | 重构某个东西 |
+| `rename` | 重命名某个东西 |
 | `move` | 移动文件或文件夹 |
 | `upgrade` | 升级依赖 |
 | `downgrade` | 降级依赖 |
+| `initial` | 一个仓库的初始提交 |
+| `release` | 发布 / 版本标签 |
+
+仓库的第一次提交使用 `initial`，版本标签使用 `release`：
+
+```bash
+🎉 初始提交
+🔖 发布 @onruntime/translations v0.3.0
+```
 
 ## 描述
 
-用**命令式语气**和**小写**来写描述：
+用**命令语气**和**小写**写描述：
 
 ```bash
 # 好
@@ -73,9 +82,9 @@ description: 了解我们的提交规范
 📝 更新文档贡献者 (#123)
 ```
 
-## 正文
+## 主体
 
-正文用于提供上下文和动机：
+使用主体提供上下文和动机：
 
 ```bash
 📝 更新文档贡献者
@@ -83,9 +92,9 @@ description: 了解我们的提交规范
 - 添加 @jerembdn 作为贡献者
 - 添加 @younesbessa 作为贡献者
 
-共同撰写者: Younes Bessa <younes@onruntime.com>
+共同作者：Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="一次提交，一个目的">
-  每个提交应代表一个单一的逻辑变更。不要混合不相关的变更。
+<Callout type="info" title="一个提交，一个目的">
+  每个提交应代表一个单一的逻辑变化。不要混合无关的更改。
 </Callout>

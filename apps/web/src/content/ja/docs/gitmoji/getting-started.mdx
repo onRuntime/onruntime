@@ -1,12 +1,12 @@
 ---
 title: 始めに
-description: コミットのルールについて学ぼう
+description: 私たちのコミット規約を学ぶ
 ---
-私たちはクリーンなプロジェクト履歴を持ちたいと思っています。私たちのコミット規約は [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) からインスパイアを受けていますが、[gitmoji](https://gitmoji.dev) を使ってもっと視覚的で楽しいものにカスタマイズしています。
+私たちはクリーンなプロジェクト履歴を大事にしています。私たちのコミット規約は[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0)にインスパイアされていますが、より視覚的で楽しいものにするために[gitmoji](https://gitmoji.dev)でカスタマイズされています。
 
 ## 構造
 
-コミットメッセージは以下のように構成され、**小文字**であるべきです：
+コミットメッセージは以下のように構成され、**小文字**で書くべきです：
 
 ```
 <gitmoji> <type> <description> [(#<issue number>)]
@@ -21,8 +21,8 @@ description: コミットのルールについて学ぼう
 ```bash
 📝 update documentation contributors
 
-- Add @jerembdn as a contributor
-- Add @younesbessa as a contributor
+- @jerembdnを貢献者として追加
+- @younesbessaを貢献者として追加
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
@@ -35,24 +35,33 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 
 ## タイプ
 
-私たちは以下のコミットタイプを使用します：
+私たちは以下のコミットタイプを使用しています：
 
-| Type | Description |
+| タイプ | 説明 |
 | --- | --- |
-| `add` | 新しい機能を追加 |
+| `add` | 新機能を追加 |
 | `fix` | バグを修正 |
 | `improve` | 何かを改善 |
 | `update` | 何かを更新 |
 | `remove` | 何かを削除 |
 | `refactor` | 何かをリファクタリング |
 | `rename` | 何かの名前を変更 |
-| `move` | ファイルやフォルダを移動 |
+| `move` | ファイルやフォルダーを移動 |
 | `upgrade` | 依存関係をアップグレード |
 | `downgrade` | 依存関係をダウングレード |
+| `initial` | リポジトリの初回コミット |
+| `release` | リリース / バージョンタグ |
+
+リポジトリの最初のコミットでは`initial`を使用し、バージョンタグでは`release`を使用します：
+
+```bash
+🎉 initial commit
+🔖 release @onruntime/translations v0.3.0
+```
 
 ## 説明
 
-説明は**命令形**で**小文字**で書いてください：
+説明は**命令形**かつ**小文字**で書いてください：
 
 ```bash
 # 良い
@@ -67,7 +76,7 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 
 ## イシュー番号
 
-コミットをイシューにリンクさせるためにイシュー番号を追加します：
+コミットにイシュー番号を追加して関連付けます：
 
 ```bash
 📝 update documentation contributors (#123)
@@ -75,13 +84,13 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 
 ## 本文
 
-本文はコンテキストと動機のために使います：
+本文はコンテキストとモチベーションのために使ってください：
 
 ```bash
 📝 update documentation contributors
 
-- Add @jerembdn as a contributor
-- Add @younesbessa as a contributor
+- @jerembdnを貢献者として追加
+- @younesbessaを貢献者として追加
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```

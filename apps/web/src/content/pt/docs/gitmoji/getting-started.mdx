@@ -1,17 +1,17 @@
 ---
 title: Começando
-description: Aprenda nossa convenção de commit
+description: Saiba sobre nossa convenção de commits
 ---
-Gostamos de ter um histórico de projeto limpo. Nossa convenção de commits é inspirada por [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) mas personalizada com [gitmoji](https://gitmoji.dev) para torná-la mais visual e divertida.
+Nós gostamos de ter um histórico de projeto limpo. Nossa convenção de commits é inspirada por [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0), mas personalizada com [gitmoji](https://gitmoji.dev) para torná-la mais visual e divertida.
 
 ## Estrutura
 
-A mensagem de commit deve ser estruturada da seguinte forma e **em letras minúsculas**:
+A mensagem do commit deve ser estruturada da seguinte forma e **em letras minúsculas**:
 
 ```
 <gitmoji> <tipo> <descrição> [(#<número do problema>)]
 
-[cuerpo opcional]
+[corpo opcional]
 
 [rodapé(s) opcional(is)]
 ```
@@ -19,27 +19,27 @@ A mensagem de commit deve ser estruturada da seguinte forma e **em letras minús
 ### Exemplo
 
 ```bash
-📝 atualizar colaboradores da documentação
+📝 atualizar os colaboradores da documentação
 
 - Adicionar @jerembdn como colaborador
 - Adicionar @younesbessa como colaborador
 
-Co-authored-by: Younes Bessa <younes@onruntime.com>
+Co-autora: Younes Bessa <younes@onruntime.com>
 ```
 
 Na maioria das vezes, uma linha simples é suficiente:
 
 ```bash
-📝 atualizar colaboradores da documentação
+📝 atualizar os colaboradores da documentação
 ```
 
 ## Tipos
 
-Usamos os seguintes tipos de commit:
+Nós usamos os seguintes tipos de commit:
 
 | Tipo | Descrição |
 | --- | --- |
-| `add` | Adicionar uma nova funcionalidade |
+| `add` | Adicionar um novo recurso |
 | `fix` | Corrigir um bug |
 | `improve` | Melhorar algo |
 | `update` | Atualizar algo |
@@ -48,7 +48,17 @@ Usamos os seguintes tipos de commit:
 | `rename` | Renomear algo |
 | `move` | Mover um arquivo ou pasta |
 | `upgrade` | Atualizar dependências |
-| `downgrade` | Retornar dependências |
+| `downgrade` | Reverter dependências |
+| `initial` | Commit inicial de um repositório |
+| `release` | Release / tag de versão |
+
+O primeiro commit de um repositório usa `initial`, e uma tag de versão usa
+`release`:
+
+```bash
+🎉 commit inicial
+🔖 release @onruntime/translations v0.3.0
+```
 
 ## Descrição
 
@@ -56,21 +66,21 @@ Escreva descrições no **modo imperativo** e **em letras minúsculas**:
 
 ```bash
 # Bom
-📝 atualizar colaboradores da documentação
+📝 atualizar os colaboradores da documentação
 
 # Ruim
-📝 atualizou colaboradores da documentação
+📝 atualizou os colaboradores da documentação
 
 # Ruim
-📝 Atualizar colaboradores da documentação
+📝 Atualizar os colaboradores da documentação
 ```
 
 ## Número do Problema
 
-Linke commits a problemas adicionando o número do problema:
+Vincule commits a problemas adicionando o número do problema:
 
 ```bash
-📝 atualizar colaboradores da documentação (#123)
+📝 atualizar os colaboradores da documentação (#123)
 ```
 
 ## Corpo
@@ -78,14 +88,14 @@ Linke commits a problemas adicionando o número do problema:
 Use o corpo para contexto e motivação:
 
 ```bash
-📝 atualizar colaboradores da documentação
+📝 atualizar os colaboradores da documentação
 
 - Adicionar @jerembdn como colaborador
 - Adicionar @younesbessa como colaborador
 
-Co-authored-by: Younes Bessa <younes@onruntime.com>
+Co-autora: Younes Bessa <younes@onruntime.com>
 ```
 
 <Callout type="info" title="Um Commit, Um Propósito">
-  Cada commit deve representar uma única alteração lógica. Não misture alterações não relacionadas.
+  Cada commit deve representar uma única mudança lógica. Não misture mudanças não relacionadas.
 </Callout>

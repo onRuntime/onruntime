@@ -1,12 +1,12 @@
 ---
-title: Rozpoczęcie pracy
-description: Poznaj nasze zasady dotyczące commitów
+title: Zaczynamy
+description: Poznaj naszą konwencję commitów
 ---
-Lubimy mieć czystą historię projektu. Nasza konwencja commitów jest inspirowana [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0), ale dostosowana z użyciem [gitmoji](https://gitmoji.dev), żeby była bardziej wizualna i zabawna.
+Lubimy mieć czystą historię projektu. Nasza konwencja commitów jest inspirowana [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0), ale dostosowana z [gitmoji](https://gitmoji.dev), żeby była bardziej wizualna i zabawna.
 
 ## Struktura
 
-Wiadomość commit powinna być skonstruowana w następujący sposób i **ma być zapisana małymi literami**:
+Wiadomość o commicie powinna być ustrukturyzowana w następujący sposób i **ma być napisana małymi literami**:
 
 ```
 <gitmoji> <type> <description> [(#<issue number>)]
@@ -19,18 +19,18 @@ Wiadomość commit powinna być skonstruowana w następujący sposób i **ma by�
 ### Przykład
 
 ```bash
-📝 zaktualizuj współautorów dokumentacji
+📝 update documentation contributors
 
-- Dodaj @jerembdn jako współautora
-- Dodaj @younesbessa jako współautora
+- Dodaj @jerembdn jako współtwórcę
+- Dodaj @younesbessa jako współtwórcę
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-Najczęściej wystarczy prosty jednolinijkowiec:
+W większości przypadków wystarczy prosta, jednozdaniowa wiadomość:
 
 ```bash
-📝 zaktualizuj współautorów dokumentacji
+📝 update documentation contributors
 ```
 
 ## Typy
@@ -40,15 +40,25 @@ Używamy następujących typów commitów:
 | Typ | Opis |
 | --- | --- |
 | `add` | Dodaj nową funkcję |
-| `fix` | Napraw błąd |
+| `fix` | Popraw błąd |
 | `improve` | Popraw coś |
 | `update` | Zaktualizuj coś |
 | `remove` | Usuń coś |
 | `refactor` | Refaktoryzuj coś |
 | `rename` | Zmień nazwę czegoś |
 | `move` | Przenieś plik lub folder |
-| `upgrade` | Uaktualnij zależności |
+| `upgrade` | Zaktualizuj zależności |
 | `downgrade` | Obniż wersję zależności |
+| `initial` | Początkowy commit repozytorium |
+| `release` | Wydanie / tag wersji |
+
+Pierwszy commit repozytorium używa `initial`, a tag wersji używa
+`release`:
+
+```bash
+🎉 initial commit
+🔖 release @onruntime/translations v0.3.0
+```
 
 ## Opis
 
@@ -56,36 +66,36 @@ Pisanie opisów w **trybie rozkazującym** i **małymi literami**:
 
 ```bash
 # Dobrze
-📝 zaktualizuj współautorów dokumentacji
+📝 update documentation contributors
 
 # Źle
-📝 zaktualizowane współautorzy dokumentacji
+📝 updated documentation contributors
 
 # Źle
-📝 Zaktualizuj współautorów dokumentacji
+📝 Update documentation contributors
 ```
 
-## Numer Zgłoszenia
+## Numer problemu
 
-Połącz commit z zgłoszeniem, dodając numer zgłoszenia:
+Linkuj commity do problemów, dodając numer problemu:
 
 ```bash
-📝 zaktualizuj współautorów dokumentacji (#123)
+📝 update documentation contributors (#123)
 ```
 
-## Body
+## Treść
 
-Użyj body dla kontekstu i motywacji:
+Użyj treści do podania kontekstu i motywacji:
 
 ```bash
-📝 zaktualizuj współautorów dokumentacji
+📝 update documentation contributors
 
-- Dodaj @jerembdn jako współautora
-- Dodaj @younesbessa jako współautora
+- Dodaj @jerembdn jako współtwórcę
+- Dodaj @younesbessa jako współtwórcę
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
 <Callout type="info" title="Jeden Commit, Jeden Cel">
-  Każdy commit powinien reprezentować jedną logiczną zmianę. Nie mieszaj niepowiązanych zmian.
+  Każdy commit powinien reprezentować jedną logiczną zmianę. Nie mieszaj niezwiązanych zmian.
 </Callout>

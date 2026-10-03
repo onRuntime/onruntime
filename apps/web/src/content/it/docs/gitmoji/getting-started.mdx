@@ -1,41 +1,41 @@
 ---
 title: Iniziare
-description: Impara la nostra convenzione di commit
+description: Scopri la nostra convenzione di commit
 ---
-Ci piace avere una cronologia dei progetti pulita. La nostra convenzione per i commit è ispirata da [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) ma personalizzata con [gitmoji](https://gitmoji.dev) per renderla più visiva e divertente.
+Ci piace avere una storia di progetto pulita. La nostra convenzione sui commit è ispirata da [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) ma personalizzata con [gitmoji](https://gitmoji.dev) per renderla più visiva e divertente.
 
 ## Struttura
 
 Il messaggio del commit dovrebbe essere strutturato come segue e **in minuscolo**:
 
 ```
-<gitmoji> <tipo> <descrizione> [(#<numero dell'issue>)]
+<gitmoji> <type> <description> [(#<issue number>)]
 
 [corpo opzionale]
 
-[footer(e) opzionali]
+[footer(s) opzionale(i)]
 ```
 
 ### Esempio
 
 ```bash
-📝 aggiorna i contributori della documentazione
+📝 update documentation contributors
 
-- Aggiungi @jerembdn come contributore
-- Aggiungi @younesbessa come contributore
+- Add @jerembdn as a contributor
+- Add @younesbessa as a contributor
 
-Co-autore: Younes Bessa <younes@onruntime.com>
+Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
 La maggior parte delle volte, una semplice riga è sufficiente:
 
 ```bash
-📝 aggiorna i contributori della documentazione
+📝 update documentation contributors
 ```
 
 ## Tipi
 
-Usiamo i seguenti tipi di commit:
+Utilizziamo i seguenti tipi di commit:
 
 | Tipo | Descrizione |
 | --- | --- |
@@ -48,44 +48,53 @@ Usiamo i seguenti tipi di commit:
 | `rename` | Rinomina qualcosa |
 | `move` | Sposta un file o una cartella |
 | `upgrade` | Aggiorna le dipendenze |
-| `downgrade` | Declassa le dipendenze |
+| `downgrade` | Riduci le dipendenze |
+| `initial` | Commit iniziale di un repository |
+| `release` | Rilascia / tag versione |
+
+Il primo commit di un repository utilizza `initial`, e un tag di versione utilizza `release`:
+
+```bash
+🎉 initial commit
+🔖 release @onruntime/translations v0.3.0
+```
 
 ## Descrizione
 
-Scrivi le descrizioni in **modo imperativo** e **minuscolo**:
+Scrivi le descrizioni in **modo imperativo** e **in minuscolo**:
 
 ```bash
 # Buono
-📝 aggiorna i contributori della documentazione
+📝 update documentation contributors
 
 # Cattivo
-📝 aggiornato i contributori della documentazione
+📝 updated documentation contributors
 
 # Cattivo
-📝 Aggiorna i contributori della documentazione
+📝 Update documentation contributors
 ```
 
 ## Numero dell'Issue
 
-Collega i commit alle issue aggiungendo il numero dell'issue:
+Collega i commit alle issues aggiungendo il numero dell'issue:
 
 ```bash
-📝 aggiorna i contributori della documentazione (#123)
+📝 update documentation contributors (#123)
 ```
 
 ## Corpo
 
-Usa il corpo per contesto e motivazione:
+Usa il corpo per il contesto e la motivazione:
 
 ```bash
-📝 aggiorna i contributori della documentazione
+📝 update documentation contributors
 
-- Aggiungi @jerembdn come contributore
-- Aggiungi @younesbessa come contributore
+- Add @jerembdn as a contributor
+- Add @younesbessa as a contributor
 
-Co-autore: Younes Bessa <younes@onruntime.com>
+Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
 <Callout type="info" title="Un Commit, Un Obiettivo">
-  Ogni commit dovrebbe rappresentare un singolo cambiamento logico. Non mescolare cambiamenti non correlate.
+  Ogni commit dovrebbe rappresentare un singolo cambiamento logico. Non mescolare cambiamenti non correlati.
 </Callout>
