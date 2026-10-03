@@ -1,27 +1,9 @@
-import { unstable_cache } from "next/cache";
+import { gitmojis } from "gitmojis";
 
-interface Gitmoji {
-  emoji: string;
-  code: string;
-  description: string;
-  name: string;
-}
-
-const getGitmojis = unstable_cache(
-  async (): Promise<Gitmoji[]> => {
-    const response = await fetch(
-      "https://raw.githubusercontent.com/carloscuesta/gitmoji/master/packages/gitmojis/src/gitmojis.json"
-    );
-    const data = await response.json();
-    return data.gitmojis;
-  },
-  ["gitmojis"],
-  { revalidate: 86400 } // Cache for 24 hours
-);
-
-export async function GitmojiList() {
-  const gitmojis = await getGitmojis();
-
+// The published list, the same version the gitmoji plugin pins, so a reader
+// never picks an emoji the commit hook would refuse. Reading `master` instead
+// showed emojis that are merged but not released yet.
+export function GitmojiList() {
   return (
     <div className="overflow-x-auto mb-4">
       <table className="w-full border-collapse border border-border">
