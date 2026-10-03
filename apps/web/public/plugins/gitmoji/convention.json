@@ -1,0 +1,91 @@
+{
+  "structure": "<gitmoji> <type> <description> [(#<issue number>)]\n\n[optional body]\n\n[optional footer(s)]",
+  "types": [
+    {
+      "name": "add",
+      "description": "Add a new feature"
+    },
+    {
+      "name": "fix",
+      "description": "Fix a bug"
+    },
+    {
+      "name": "improve",
+      "description": "Improve something"
+    },
+    {
+      "name": "update",
+      "description": "Update something"
+    },
+    {
+      "name": "remove",
+      "description": "Remove something"
+    },
+    {
+      "name": "refactor",
+      "description": "Refactor something"
+    },
+    {
+      "name": "rename",
+      "description": "Rename something"
+    },
+    {
+      "name": "move",
+      "description": "Move a file or folder"
+    },
+    {
+      "name": "upgrade",
+      "description": "Upgrade dependencies"
+    },
+    {
+      "name": "downgrade",
+      "description": "Downgrade dependencies"
+    },
+    {
+      "name": "initial",
+      "description": "Initial commit of a repository"
+    },
+    {
+      "name": "release",
+      "description": "Release / version tag"
+    }
+  ],
+  "rules": [
+    "Write the subject in lowercase",
+    "Use imperative mood (\"add\" not \"added\")",
+    "One logical change per commit",
+    "Keep the description concise",
+    "Pick the gitmoji from the official list, and pick the type from the types above. They are independent choices: never derive the type from the gitmoji's name or description. When no type obviously fits, collapse to the nearest general one",
+    "Never sign a commit as an agent: no Co-Authored-By for the agent, no \"Generated with\" line, no robot-emoji attribution. A human co-author is welcome, an agent is not"
+  ],
+  "forbiddenFooters": [
+    {
+      "label": "an agent credited as co-author, named with no surname",
+      "pattern": "co-authored-by:\\s*(claude|chatgpt|gpt|copilot|codex|cursor|devin|gemini)\\s+<",
+      "flags": "i"
+    },
+    {
+      "label": "a Co-Authored-By footer pointing at an agent's domain",
+      "pattern": "co-authored-by:[^\\n]*<[^>]*@(anthropic|openai|cursor|cognition)\\.(com|ai)>",
+      "flags": "i"
+    },
+    {
+      "label": "a \"Generated with\" footer",
+      "pattern": "generated with \\[?(claude|chatgpt|copilot|cursor|codex)",
+      "flags": "i"
+    },
+    {
+      "label": "a robot-emoji attribution footer",
+      "pattern": "🤖\\s*(generated|co-authored|created)",
+      "flags": "i"
+    }
+  ],
+  "examples": [
+    "🐛 fix stop the conversion link from delaying the click",
+    "✨ add icu plural and select arguments to messages",
+    "♻️ refactor extract the footer links into a constant",
+    "📝 add documentation links to the package readmes",
+    "🔖 release @onruntime/translations v0.3.0",
+    "🎉 initial commit"
+  ]
+}

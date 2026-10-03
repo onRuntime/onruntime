@@ -1,0 +1,10 @@
+{
+  "name": "@onruntime/claude-plugin-gitmoji",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Dependencies of the gitmoji Claude Code plugin",
+  "license": "MIT",
+  "dependencies": {
+    "gitmojis": "^3.15.0"
+  }
+}
