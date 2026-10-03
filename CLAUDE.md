@@ -10,7 +10,7 @@ pnpm dev          # Start dev server with Turbopack
 pnpm build        # Build all packages
 pnpm type-check   # Run TypeScript checks
 pnpm lint         # Run linting
-pnpm test         # Run tests (validates locales)
+pnpm test         # Run tests (validates locales and the gitmoji convention)
 
 # Translation (only modify en/ files, CI auto-generates others)
 pnpm --filter @onruntime/web translate        # Generate missing translations
