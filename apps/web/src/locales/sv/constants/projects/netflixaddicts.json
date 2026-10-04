@@ -1,0 +1,74 @@
+{
+  "short-description": "Discord-community kring Netflix-serier, byggd kring en bot med en gemenskapsbaserad show-encyklopedi.",
+  "description": "En Discord-community för Netflix-tittare, serverad av en TypeScript-bot som svarade på showfrågor från en katalog som medlemmarna själva fortsatte att fylla i, tillsammans med en Bootstrap-visningssida och en kortlivad Go-API.",
+  "long-description": "NetflixAddicts började som en Discord-server för folk som ser mycket serier och växte en bot för att följa med. Ency-kommandot sökte i en katalog av program efter titel eller genre och returnerade paginerade embeds, medan ett förslagskommando lät medlemmarna föreslå poster som saknades. Katalogen skrapades aldrig från någonstans: den var vad gemenskapen hade brytt sig om att lägga till.\n\nRunt boten kom den vanliga gemenskapsinfrastrukturen: privata röstkanaler skapade på begäran och rivna ner när de var tomma, ljuduppspelning, närvarohantering och en Twitter-brygga för meddelanden. Boten skrevs i TypeScript på discord.js och publicerades under Apache 2.0.\n\nEn visningssida designades vid sidan av. Hem sidan lades upp, encyklopedisidan kom aldrig längre än till en wireframe, och hela grejen förblev ett prototyp. En Go-API påbörjades för att stödja det och övergavs tre dagar senare.\n\nTvå omskrivningar planerades och skrevs aldrig: en klient/server-split i slutet av 2020, och en Next.js-front i början av 2021. Båda repositories innehöll fortfarande inget annat än en README. De sex repositories arkiverades och projektet står som en påminnelse om att en gemenskap kan överleva mjukvaran som skrivits för den.",
+  "features": {
+    "series-encyclopedia": {
+      "title": "Show-encyklopedi",
+      "description": "Sök efter titel eller genre från Discord, med paginerade resultat som renderas som embeds"
+    },
+    "community-suggestions": {
+      "title": "Gemenskapsbaserad katalog",
+      "description": "Medlemmar föreslog de program som saknades, så katalogen växte tillsammans med servern"
+    },
+    "private-voice-channels": {
+      "title": "Privata röstkanaler",
+      "description": "Kanaler skapade på begäran för en grupp och borttagna när alla hade lämnat"
+    },
+    "audio-playback": {
+      "title": "Ljuduppspelning",
+      "description": "Uppspelning av röstkanal hanteras genom ffmpeg, med gå med och lämna kommandon"
+    },
+    "showcase-website": {
+      "title": "Visningssida",
+      "description": "En hemsida och en encyklopedi-layout, designad och prototypad men aldrig färdigställd"
+    }
+  },
+  "technologies": {
+    "typescript": {
+      "description": "Botens källa, typad end till end"
+    },
+    "discordjs": {
+      "description": "Discord-klient, kommandoanalys och paginerade embeds"
+    },
+    "golang": {
+      "description": "Kortlivad API-försök"
+    },
+    "bootstrap": {
+      "description": "Visningssida-layout"
+    }
+  },
+  "metrics": {
+    "commands": {
+      "value": "11",
+      "label": "Botkommandon",
+      "description": "Från encyklopedi-frågor till kanalhantering"
+    },
+    "repositories": {
+      "value": "6",
+      "label": "Repositories",
+      "description": "Bot, webbplats, design, API och två omskrivningar"
+    },
+    "lifespan": {
+      "value": "2 år",
+      "label": "Livslängd",
+      "description": "Från den första gemenskapen till den sista arkiverade repositoryn"
+    }
+  },
+  "screenshots": {},
+  "challenges": {
+    "discord-pagination": "Att presentera en katalog inuti Discord, där den enda layouten som finns är en paginerad embed",
+    "community-sourced-catalog": "Att hålla en katalog användbar när dess innehåll helt beror på medlemmarnas inskickningar",
+    "voice-channel-lifecycle": "Att skapa och riva ner röstkanaler utan att lämna tomma rum bakom",
+    "scattered-codebases": "Sex repositories för ett projekt, där boten, webbplatsen, designen och API:t alla lever separat"
+  },
+  "learnings": {
+    "ship-one-surface-first": "Boten användes dagligen, hemsidan levererades aldrig: den yta som folk redan lever i vinner",
+    "community-before-product": "Discord-servern hade värdet, mjukvaran var bara ett sätt att tjäna det",
+    "rewrites-need-a-reason": "Två omskrivningar påbörjades från ett tomt repository och ingen av dem blev färdig",
+    "third-party-brand-limits": "Att bygga en gemenskap kring någon annans märke begränsar hur långt projektet kan nå"
+  },
+  "future-plans": {
+    "archived-repositories": "Alla sex repositories är arkiverade och skrivskyddade"
+  }
+}

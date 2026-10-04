@@ -1,0 +1,74 @@
+{
+  "short-description": "围绕Netflix系列的Discord社区，建立在一个由社区共同维护的节目信息库的机器人基础上。",
+  "description": "一个为Netflix观众服务的Discord社区，由一个TypeScript机器人提供节目信息查询，成员们自己维护了一个目录，还有一个Bootstrap展示网站和一个短命的Go API。",
+  "long-description": "NetflixAddicts起初是一个供喜欢看系列剧的人们的Discord服务器，并逐渐成长出一个配套的机器人。ency命令通过标题或类型搜索节目目录，并返回分页的嵌入结果，而suggest命令让成员们提议缺失的条目。这个目录并不是从任何地方抓取的，而是社区所添加的内容。\n\n围绕这个机器人的还有通常的社区基础设施：按需创建的私人语音频道，在没人时被删除，音频播放，在线状态管理，以及用于公告的Twitter桥接。这个机器人用TypeScript和discord.js编写，并以Apache 2.0的许可发布。\n\n一个展示网站也同时设计了出来。主页设计布局完成，但百科页面从未超过线框设计，这整个东西只停留在原型阶段。为了支持这个项目，一个Go API被启动并在三天后被放弃。\n\n计划了两个重写，但都没有完成：2020年底的客户端/服务器拆分和2021年初的Next.js前端。两个代码库仍然只保存着一个README。这六个代码库已被归档，这个项目成为了一个提醒，社区可以超越为其编写的软件。",
+  "features": {
+    "series-encyclopedia": {
+      "title": "节目百科",
+      "description": "通过Discord按标题或类型搜索，带有分页结果的嵌入显示"
+    },
+    "community-suggestions": {
+      "title": "社区共同维护的目录",
+      "description": "成员们提出缺失的节目，因此目录伴随着服务器的增长而扩大"
+    },
+    "private-voice-channels": {
+      "title": "私人语音频道",
+      "description": "为群组按需创建的频道，所有人离开后会被删除"
+    },
+    "audio-playback": {
+      "title": "音频播放",
+      "description": "通过ffmpeg处理的语音频道播放，包含加入和退出命令"
+    },
+    "showcase-website": {
+      "title": "展示网站",
+      "description": "一个主页和百科布局，设计并原型化但从未完成"
+    }
+  },
+  "technologies": {
+    "typescript": {
+      "description": "机器人源代码，端到端类型化"
+    },
+    "discordjs": {
+      "description": "Discord客户端、命令解析和分页嵌入"
+    },
+    "golang": {
+      "description": "短暂的API尝试"
+    },
+    "bootstrap": {
+      "description": "展示网站布局"
+    }
+  },
+  "metrics": {
+    "commands": {
+      "value": "11",
+      "label": "机器人命令",
+      "description": "从百科查询到频道管理的命令"
+    },
+    "repositories": {
+      "value": "6",
+      "label": "代码库",
+      "description": "机器人、网站、设计、API和两个重写项目"
+    },
+    "lifespan": {
+      "value": "2年",
+      "label": "生命周期",
+      "description": "从第一个社区到最后一个被归档的代码库"
+    }
+  },
+  "screenshots": {},
+  "challenges": {
+    "discord-pagination": "在Discord内部展示目录，而唯一的布局方式是分页嵌入",
+    "community-sourced-catalog": "当内容完全依赖成员提交时，保持目录的实用性",
+    "voice-channel-lifecycle": "创建和销毁语音频道而不留下空房间",
+    "scattered-codebases": "一个项目有六个代码库，机器人、网站、设计和API各自独立"
+  },
+  "learnings": {
+    "ship-one-surface-first": "这个机器人被日常使用，网站从未发布：人们已经生活的表面才是胜利",
+    "community-before-product": "Discord服务器持有了价值，软件只是提供这种价值的一种方式",
+    "rewrites-need-a-reason": "两个重写从空白代码库开始，都没有完成",
+    "third-party-brand-limits": "围绕他人的品牌建立社区限制了项目的发展空间"
+  },
+  "future-plans": {
+    "archived-repositories": "所有六个代码库都已归档并设为只读"
+  }
+}

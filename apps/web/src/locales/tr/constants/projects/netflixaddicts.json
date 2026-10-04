@@ -1,0 +1,74 @@
+{
+  "short-description": "Netflix dizileri etrafında inşa edilmiş, topluluk kaynaklı bir gösteri ansiklopedisi olan Discord topluluğu.",
+  "description": "Netflix izleyicileri için bir Discord topluluğu, üyelerin doldurduğu bir katalogdan gösteri sorgularını yanıtlayan TypeScript botu tarafından hizmet veriliyor, yanında Bootstrap ile tasarlanmış bir tanıtım sitesi ve kısa süreli bir Go API var.",
+  "long-description": "NetflixAddicts, dizi izlemeyi seven insanlar için bir Discord sunucusu olarak başladı ve beraberinde bir bot geliştirdi. Ency komutu başlık veya türe göre bir gösteri kataloğunda arama yapıyor ve sayfalandırılmış içerikler döndürüyor, öneri komutu ise üyelerin eksik entries önermesine izin veriyordu. Katalog, hiçbir yerden grab edilmedi: topluluğun eklemeyi umursadığı her şeydi.\n\nBotun etrafında, talep üzerine oluşturulan ve boşaldığında kaldırılan özel ses kanalları, ses oynatma, katılım yönetimi ve duyurular için bir Twitter köprüsü gibi alışıldık topluluk altyapısı vardı. Bot, TypeScript ile discord.js kullanılarak yazıldı ve Apache 2.0 altında yayınlandı.\n\nAynı zamanda bir tanıtım sitesi tasarlandı. Ana sayfa oluşturuldu, ansiklopedik sayfa taslak aşamasını geçemedi ve her şey bir prototip olarak kaldı. Bunu desteklemek için bir Go API başlatıldı fakat üç gün sonra terk edildi.\n\nİki yeniden yazım planlandı ancak asla yazılmadı: 2020 yılının sonlarında bir istemci/servis ayrımı ve 2021 yılının başlarında bir Next.js arayüzü. Her iki depoda da sadece bir README var. Altı depo arşivlendi ve proje, bir topluluğun onun için yazılan yazılımdan daha uzun süre yaşayabileceğinin bir hatırlatıcısı olarak duruyor.",
+  "features": {
+    "series-encyclopedia": {
+      "title": "Gösteri ansiklopedisi",
+      "description": "Discord'dan başlık veya tür ile arama yapın, sayfalanmış sonuçlar embed olarak gösteriliyor"
+    },
+    "community-suggestions": {
+      "title": "Topluluk kaynaklı katalog",
+      "description": "Üyeler eksik olan gösterileri önerdi, böylece katalog sunucuyla büyüdü"
+    },
+    "private-voice-channels": {
+      "title": "Özel ses kanalları",
+      "description": "Bir grup için taleple oluşturulan kanallar, herkes ayrıldıktan sonra kaldırılıyor"
+    },
+    "audio-playback": {
+      "title": "Ses oynatma",
+      "description": "Ses kanalı oynatımı ffmpeg üzerinden yönetiliyor, katılma ve ayrılma komutlarıyla gerçekleştiriliyor"
+    },
+    "showcase-website": {
+      "title": "Tanıtım sitesi",
+      "description": "Bir ana sayfa ve bir ansiklopedi düzeni, tasarlandı ve prototip aşamasına geçildi ama asla bitirilmedi"
+    }
+  },
+  "technologies": {
+    "typescript": {
+      "description": "Bot kaynağı, uçtan uca yazılı olarak"
+    },
+    "discordjs": {
+      "description": "Discord istemcisi, komut ayrıştırma ve sayfalanmış içerikler"
+    },
+    "golang": {
+      "description": "Kısa ömürlü API denemesi"
+    },
+    "bootstrap": {
+      "description": "Tanıtım sitesi taslağı"
+    }
+  },
+  "metrics": {
+    "commands": {
+      "value": "11",
+      "label": "Bot komutları",
+      "description": "Ansiklopedik sorgulamalardan kanal yönetimine kadar"
+    },
+    "repositories": {
+      "value": "6",
+      "label": "Depolar",
+      "description": "Bot, site, tasarım, API ve iki yeniden yazım"
+    },
+    "lifespan": {
+      "value": "2 yıl",
+      "label": "Ömrü",
+      "description": "İlk topluluktan son arşivlenmiş depoya kadar"
+    }
+  },
+  "screenshots": {},
+  "challenges": {
+    "discord-pagination": "Discord içinde bir kataloğu sunma, mevcut tek düzen sayfalanmış bir embed olduğu için",
+    "community-sourced-catalog": "İçeriği tamamen üyelerin katkısına bağlı olan bir katalogu kullanışlı tutma",
+    "voice-channel-lifecycle": "Ses kanallarını oluşturmada ve yok etmede arka odalar bırakmamak",
+    "scattered-codebases": "Bir proje için altı deponun olması, botun, sitenin, tasarımın ve API’nin ayrı ayrı yaşaması"
+  },
+  "learnings": {
+    "ship-one-surface-first": "Bot her gün kullanılıyordu, web sitesi asla yayımlanmadı: insanların zaten mevcut olduğu yüzey kazanıyor",
+    "community-before-product": "Discord sunucusu değer taşıyordu, yazılım sadece bunu sağlamanın bir yoluydu",
+    "rewrites-need-a-reason": "İki yeniden yazım boş bir depodan başlatıldı ve hiçbiri bitirilmedi",
+    "third-party-brand-limits": "Başka birinin markası etrafında bir topluluk oluşturmak, projenin ne kadar ileri gidebileceği konusunda sınırlama getiriyor"
+  },
+  "future-plans": {
+    "archived-repositories": "Tüm altı depo arşivlendi ve okunamaz durumda"
+  }
+}

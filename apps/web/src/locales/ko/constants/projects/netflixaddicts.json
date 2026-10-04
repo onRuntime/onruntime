@@ -1,0 +1,74 @@
+{
+  "short-description": "넷플릭스 시리즈에 대한 디스코드 커뮤니티, 커뮤니티 기여로 만든 쇼 백과사전이 있는 봇을 중심으로 구성됨.",
+  "description": "넷플릭스 시청자를 위한 디스코드 커뮤니티로, 구성원들이 직접 채운 카탈로그의 쇼 조회에 답하는 TypeScript 봇이 제공되어요. 여기에 Bootstrap 쇼케이스 사이트와 짧게 유지된 Go API도 있어요.",
+  "long-description": "NetflixAddicts는 많은 시리즈를 보는 사람들을 위한 디스코드 서버로 시작했어요. 그리고 그에 맞춰 봇을 발전시켰죠. ency 명령어는 제목이나 장르 별로 쇼 카탈로그를 검색하고 페이지 나누기 방식으로 결과를 반환했어요. 또한 suggest 명령어를 통해 회원들이 빠진 항목을 제안할 수 있었죠. 카탈로그는 어느 곳에서 긁혀온 게 아니에요. 커뮤니티가 추가한 것들로만 구성된 거죠.\n\n봇 주변에는 보통의 커뮤니티 기능들이 구축되었어요. 필요할 때 만들어지고 비어 있으면 없애는 개인 음성 채널, 오디오 재생, 존재 상태 관리, 알림용 트위터 브릿지 등이 포함되었죠. 봇은 discord.js를 사용해 TypeScript로 작성되었고 Apache 2.0으로 배포됐어요.\n\n그 옆에는 쇼케이스 사이트도 디자인되었어요. 홈페이지는 레이아웃이 마련되었고, 백과사전 페이지는 와이어프레임을 넘지 못했으며, 전체가 프로토타입 상태로 남아 있었어요. 그것을 지원하는 Go API도 시작됐지만 3일 만에 포기되었죠.\n\n두 번의 리라이팅이 계획되었으나 실행되지는 않았어요: 2020년 말의 클라이언트/서버 분리와 2021년 초의 Next.js 프론트. 두 리포지토리에는 아직 README만 있어요. 여섯 개의 리포지토리는 아카이브 되었고, 이 프로젝트는 커뮤니티가 그를 위해 쓰여진 소프트웨어보다 더 오래 지속될 수 있다는 것을 상기시켜 줘요.",
+  "features": {
+    "series-encyclopedia": {
+      "title": "쇼 백과사전",
+      "description": "제목이나 장르로 디스코드에서 검색 가능, 페이지 나누기 결과를 임베드로 제공"
+    },
+    "community-suggestions": {
+      "title": "커뮤니티 기여 카탈로그",
+      "description": "회원이 빠진 쇼를 제안하여 서버와 함께 카탈로그가 성장했어요"
+    },
+    "private-voice-channels": {
+      "title": "개인 음성 채널",
+      "description": "그룹을 위해 필요할 때 만들어지고 모두 나가면 삭제되는 채널"
+    },
+    "audio-playback": {
+      "title": "오디오 재생",
+      "description": "ffmpeg를 통한 음성 채널 재생, 참여 및 나가기 명령어 포함"
+    },
+    "showcase-website": {
+      "title": "쇼케이스 사이트",
+      "description": "홈페이지와 백과사전 레이아웃, 디자인과 프로토타입은 했지만 완성되지는 않았어요"
+    }
+  },
+  "technologies": {
+    "typescript": {
+      "description": "봇 소스, 처음부터 끝까지 타입화된 코드"
+    },
+    "discordjs": {
+      "description": "디스코드 클라이언트, 명령어 파싱, 페이지 나누기 임베드"
+    },
+    "golang": {
+      "description": "짧은 기간 지속된 API 시도"
+    },
+    "bootstrap": {
+      "description": "쇼케이스 사이트 레이아웃"
+    }
+  },
+  "metrics": {
+    "commands": {
+      "value": "11",
+      "label": "봇 명령어",
+      "description": "백과사전 조회부터 채널 관리까지"
+    },
+    "repositories": {
+      "value": "6",
+      "label": "리포지토리",
+      "description": "봇, 사이트, 디자인, API, 그리고 두 번의 리라이팅"
+    },
+    "lifespan": {
+      "value": "2년",
+      "label": "수명",
+      "description": "첫 커뮤니티부터 마지막 아카이브된 리포지토리까지"
+    }
+  },
+  "screenshots": {},
+  "challenges": {
+    "discord-pagination": "디스코드 안에서 카탈로그를 제공하는 것, 오직 페이지 나누기 임베드가 가능한 레이아웃뿐인 곳에서",
+    "community-sourced-catalog": "멤버의 제출 내용에 전적으로 의존하는 카탈로그를 유용하게 유지하기",
+    "voice-channel-lifecycle": "비어있는 방을 남기지 않고 음성 채널을 만들고 제거하기",
+    "scattered-codebases": "하나의 프로젝트에 여섯 개의 리포지토리, 봇, 사이트, 디자인, API가 각각 떨어져 살아있어요"
+  },
+  "learnings": {
+    "ship-one-surface-first": "봇은 매일 사용됐지만 웹사이트는 출시되지 않았어요: 사람들이 이미 사용하고 있는 환경이 이겨요",
+    "community-before-product": "디스코드 서버가 가치를 담고 있었고, 소프트웨어는 그것을 제공하는 한 방법에 불과했어요",
+    "rewrites-need-a-reason": "두 번의 리라이팅이 빈 리포지토리에서 시작되었지만 둘 다 끝내지 못했어요",
+    "third-party-brand-limits": "남의 브랜드 주변에 커뮤니티를 구축하면 프로젝트의 가능성이 제한돼요"
+  },
+  "future-plans": {
+    "archived-repositories": "여섯 개의 리포지토리는 모두 아카이브되었고 읽기 전용이에요."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "short-description": "Comunidade no Discord sobre séries da Netflix, construída em torno de um bot com uma enciclopédia de os programas criada pela comunidade.",
+  "description": "Uma comunidade no Discord para espectadores da Netflix, atendida por um bot em TypeScript que respondia a buscas de programas de um catálogo que os membros mesmos continuavam a atualizar, junto com um site de vitrine em Bootstrap e uma API em Go de curta duração.",
+  "long-description": "NetflixAddicts começou como um servidor no Discord para pessoas que assistem muitas séries, e cresceu junto com um bot. O comando ency pesquisava um catálogo de shows por título ou gênero e retornava resultados em embeds paginados, enquanto um comando de sugestão permitia que os membros propusessem as entradas que estavam faltando. O catálogo nunca foi extraído de lugar algum: era tudo o que a comunidade se preocupava em adicionar.\n\nEm torno do bot tinha a infraestrutura comunitária de sempre: canais de voz privados criados sob demanda e destruídos quando estavam vazios, reprodução de áudio, gerenciamento de presença e uma ponte do Twitter para anúncios. O bot foi escrito em TypeScript usando discord.js e publicado sob a licença Apache 2.0.\n\nUm site de vitrine foi projetado ao mesmo tempo. A página inicial foi organizada, a página da enciclopédia nunca passou de um wireframe, e tudo ficou como um protótipo. Uma API em Go foi iniciada para apoiar isso e abandonada três dias depois.\n\nDuas reescritas foram planejadas e nunca escritas: uma separação cliente/servidor no final de 2020 e um front-end em Next.js no início de 2021. Ambos os repositórios ainda não têm nada além de um README. Os seis repositórios foram arquivados, e o projeto se mantém como um lembrete de que uma comunidade pode sobreviver ao software criado para ela.",
+  "features": {
+    "series-encyclopedia": {
+      "title": "Enciclopédia de séries",
+      "description": "Pesquise por título ou gênero no Discord, com resultados paginados apresentados como embeds"
+    },
+    "community-suggestions": {
+      "title": "Catálogo criado pela comunidade",
+      "description": "Os membros propuseram os shows que estavam faltando, então o catálogo cresceu junto com o servidor"
+    },
+    "private-voice-channels": {
+      "title": "Canais de voz privados",
+      "description": "Canais criados sob demanda para um grupo e removidos assim que todos saíram"
+    },
+    "audio-playback": {
+      "title": "Reprodução de áudio",
+      "description": "Reprodução de áudio em canal de voz gerenciada através de ffmpeg, com comandos de entrar e sair"
+    },
+    "showcase-website": {
+      "title": "Site de vitrine",
+      "description": "Uma página inicial e um layout de enciclopédia, projetados e prototipados, mas nunca finalizados"
+    }
+  },
+  "technologies": {
+    "typescript": {
+      "description": "Fonte do bot, tipada de ponta a ponta"
+    },
+    "discordjs": {
+      "description": "Cliente do Discord, análise de comandos e embeds paginados"
+    },
+    "golang": {
+      "description": "Tentativa de API de curta duração"
+    },
+    "bootstrap": {
+      "description": "Layout do site de vitrine"
+    }
+  },
+  "metrics": {
+    "commands": {
+      "value": "11",
+      "label": "Comandos do bot",
+      "description": "Desde buscas na enciclopédia até gerenciamento de canais"
+    },
+    "repositories": {
+      "value": "6",
+      "label": "Repositórios",
+      "description": "Bot, site, design, API e duas reescritas"
+    },
+    "lifespan": {
+      "value": "2 anos",
+      "label": "Vida útil",
+      "description": "Desde a primeira comunidade até o último repositório arquivado"
+    }
+  },
+  "screenshots": {},
+  "challenges": {
+    "discord-pagination": "Apresentar um catálogo dentro do Discord, onde o único layout disponível é um embed paginado",
+    "community-sourced-catalog": "Manter um catálogo útil quando seu conteúdo depende inteiramente das submissões dos membros",
+    "voice-channel-lifecycle": "Criar e destruir canais de voz sem deixar salas vazias para trás",
+    "scattered-codebases": "Seis repositórios para um projeto, com o bot, o site, o design e a API vivendo separados"
+  },
+  "learnings": {
+    "ship-one-surface-first": "O bot era usado diariamente, o site nunca foi lançado: a superfície onde as pessoas já vivem vence",
+    "community-before-product": "O servidor do Discord mantinha o valor, o software era apenas uma forma de servi-lo",
+    "rewrites-need-a-reason": "Duas reescritas foram iniciadas a partir de um repositório em branco e nenhuma foi finalizada",
+    "third-party-brand-limits": "Construir uma comunidade em torno da marca de outra pessoa limita até onde o projeto pode ir"
+  },
+  "future-plans": {
+    "archived-repositories": "Todos os seis repositórios estão arquivados e somente leitura"
+  }
+}

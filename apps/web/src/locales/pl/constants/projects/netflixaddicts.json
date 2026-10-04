@@ -1,0 +1,74 @@
+{
+  "short-description": "Społeczność Discord wokół seriali Netflixa, zbudowana wokół bota z encyklopedią wystawianą przez społeczność.",
+  "description": "Społeczność Discord dla widzów Netflixa, z obsługą bota w TypeScript, który odpowiadał na zapytania o seriale z katalogu, który członkowie sami uzupełniali, obok witryny wyświetlającej w Bootstrapie i krótkotrwałego API w Go.",
+  "long-description": "NetflixAddicts zaczęło jako serwer Discord dla osób oglądających dużo seriali i rozwinęło bota, który towarzyszył mu. Komenda ency przeszukiwała katalog seriali według tytułu lub gatunku i zwracała paginowane embedy, podczas gdy komenda proponuj umożliwiała członkom zgłaszanie brakujących pozycji. Katalog nigdy nie był zeskrobany z żadnego miejsca: był tym, co społeczność zechciała dodać.<br><br>Wokół bota powstała standardowa infrastruktura społeczności: prywatne kanały głosowe tworzone na żądanie i usuwane, gdy były puste, odtwarzanie dźwięku, zarządzanie obecnością i mostek z Twittera do ogłoszeń. Bot został napisany w TypeScript na discord.js i opublikowany na licencji Apache 2.0.<br><br>Witryna pokazowa została zaprojektowana obok. Strona główna została rozplanowana, strona encyklopedyczna nigdy nie wyszła poza etapy wstępne, a całość pozostała prototypem. Rozpoczęto tworzenie API w Go, które porzucono trzy dni później.<br><br>Planowano dwa przepisywania, które nigdy nie zostały napisane: podział klienta/serwera na koniec 2020 roku oraz front w Next.js na początku 2021 roku. Oba repozytoria nie zawierają nic poza README. Sześć repozytoriów zostało zarchiwizowanych, a projekt służy jako przypomnienie, że społeczność może przetrwać swoją technologię.",
+  "features": {
+    "series-encyclopedia": {
+      "title": "Encyklopedia seriali",
+      "description": "Szukaj według tytułu lub gatunku na Discordzie, z paginowanymi wynikami w formie embedów"
+    },
+    "community-suggestions": {
+      "title": "Katalog społecznościowy",
+      "description": "Członkowie proponowali brakujące seriale, dzięki czemu katalog rósł wraz z serwerem"
+    },
+    "private-voice-channels": {
+      "title": "Prywatne kanały głosowe",
+      "description": "Kanały tworzone na żądanie dla grupy i usuwane po opuszczeniu ich przez wszystkich"
+    },
+    "audio-playback": {
+      "title": "Odtwarzanie dźwięku",
+      "description": "Odtwarzanie na kanale głosowym realizowane przez ffmpeg, z komendami do przyłączenia i opuszczenia"
+    },
+    "showcase-website": {
+      "title": "Witryna pokazowa",
+      "description": "Strona główna i układ encyklopedii, zaprojektowane i prototypowane, ale nigdy nie ukończone"
+    }
+  },
+  "technologies": {
+    "typescript": {
+      "description": "Źródło bota, typowane od końca do końca"
+    },
+    "discordjs": {
+      "description": "Klient Discord, analiza komend i paginowane embedy"
+    },
+    "golang": {
+      "description": "Krótkotrwała próba API"
+    },
+    "bootstrap": {
+      "description": "Układ witryny pokazowej"
+    }
+  },
+  "metrics": {
+    "commands": {
+      "value": "11",
+      "label": "Komendy bota",
+      "description": "Od zapytań encyklopedycznych po zarządzanie kanałami"
+    },
+    "repositories": {
+      "value": "6",
+      "label": "Repozytoria",
+      "description": "Bot, witryna, projekt, API oraz dwa przepisywania"
+    },
+    "lifespan": {
+      "value": "2 lata",
+      "label": "Czas życia",
+      "description": "Od pierwszej społeczności do ostatniego zarchiwizowanego repozytorium"
+    }
+  },
+  "screenshots": {},
+  "challenges": {
+    "discord-pagination": "Prezentacja katalogu w Discordzie, gdzie jedynym dostępnym układem jest paginowany embed",
+    "community-sourced-catalog": "Utrzymanie katalogu użytecznego, gdy jego zawartość zależy całkowicie od zgłoszeń członków",
+    "voice-channel-lifecycle": "Tworzenie i niszczenie kanałów głosowych bez pozostawiania pustych pokoi",
+    "scattered-codebases": "Sześć repozytoriów dla jednego projektu, w którym bot, witryna, projekt i API żyją oddzielnie"
+  },
+  "learnings": {
+    "ship-one-surface-first": "Bot był używany codziennie, strona internetowa nigdy nie została wydana: wygrywa powierzchnia, w której ludzie już żyją",
+    "community-before-product": "Serwer Discord miał wartość, oprogramowanie było tylko jednym ze sposobów jej realizacji",
+    "rewrites-need-a-reason": "Dwa przepisywania rozpoczęto z pustego repozytorium i ani jedno nie zostało ukończone",
+    "third-party-brand-limits": "Budowanie społeczności wokół marki innej osoby ogranicza, jak daleko projekt może zostać rozwinięty"
+  },
+  "future-plans": {
+    "archived-repositories": "Wszystkie sześć repozytoriów zostało zarchiwizowanych i jest w trybie tylko do odczytu"
+  }
+}

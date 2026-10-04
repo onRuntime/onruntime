@@ -1,0 +1,74 @@
+{
+  "short-description": "Discord-community rondom Netflix-series, gebouwd rond een bot met een door de community onderhouden show-encyclopedie.",
+  "description": "Een Discord-community voor Netflix-kijkers, bediend door een TypeScript-bot die show-opzoekingen deed vanuit een catalogus die de leden zelf bleven aanvullen, daarnaast een Bootstrap-showcase site en een kortlevende Go API.",
+  "long-description": "NetflixAddicts begon als een Discord-server voor mensen die veel series kijken, en groeide uit tot een bot die daarbij hoorde. De ency-opdracht zocht in een catalogus van shows op titel of genre en gaf gepagineerde embeds terug, terwijl een suggest-opdracht leden liet voorstellen wat er nog ontbrak. De catalogus was nooit ergens van gekopieerd: het was gewoon wat de community had toegevoegd.\n\nRond de bot kwam de gebruikelijke community-infrastructuur: privé spraakkanalen die op aanvraag werden aangemaakt en verwijderd zodra ze leeg waren, audioweergave, aanwezigheidbeheer en een Twitter-koppeling voor aankondigingen. De bot was geschreven in TypeScript op discord.js en gepubliceerd onder Apache 2.0.\n\nEen showcase-site werd tegelijkertijd ontworpen. De startpagina was opgezet, de encyclopediepagina kwam nooit verder dan een wireframe, en het geheel bleef een prototype. Een Go API werd gestart om het te ondersteunen maar werd drie dagen later weer verlaten.\n\nTwee herschrijvingen waren gepland maar nooit geschreven: een client/server-splitsing eind 2020, en een Next.js front eind 2021. Beide repositories bevatten nog niets anders dan een README. De zes repositories zijn gearchiveerd, en het project staat als een herinnering dat een community langer kan meegaan dan de software die voor haar is geschreven.",
+  "features": {
+    "series-encyclopedia": {
+      "title": "Show-encyclopedie",
+      "description": "Zoek op titel of genre vanuit Discord, met gepagineerde resultaten weergegeven als embeds"
+    },
+    "community-suggestions": {
+      "title": "Community-geproduceerde catalogus",
+      "description": "Leden stelden de shows voor die ontbraken, zodat de catalogus meegroeide met de server"
+    },
+    "private-voice-channels": {
+      "title": "Privé spraakkanalen",
+      "description": "Kanalen die op aanvraag voor een groep werden aangemaakt en verwijderd zodra iedereen weg was"
+    },
+    "audio-playback": {
+      "title": "Audioweergave",
+      "description": "Weergave in spraakkanalen geregeld via ffmpeg, met join- en leave-opdrachten"
+    },
+    "showcase-website": {
+      "title": "Showcase-site",
+      "description": "Een startpagina en een lay-out voor de encyclopedie, ontworpen en geprototypeerd maar nooit afgemaakt"
+    }
+  },
+  "technologies": {
+    "typescript": {
+      "description": "Bot bron, getypt van begin tot eind"
+    },
+    "discordjs": {
+      "description": "Discord-client, opdracht parsing en gepagineerde embeds"
+    },
+    "golang": {
+      "description": "Korte levensduur van een API-poging"
+    },
+    "bootstrap": {
+      "description": "Lay-out voor de showcase-site"
+    }
+  },
+  "metrics": {
+    "commands": {
+      "value": "11",
+      "label": "Bot-opdrachten",
+      "description": "Van encyclopedie-opzoekingen tot kanaalbeheer"
+    },
+    "repositories": {
+      "value": "6",
+      "label": "Repositories",
+      "description": "Bot, site, ontwerp, API en twee herschrijvingen"
+    },
+    "lifespan": {
+      "value": "2 jaar",
+      "label": "Levensduur",
+      "description": "Van de eerste community tot de laatste gearchiveerde repository"
+    }
+  },
+  "screenshots": {},
+  "challenges": {
+    "discord-pagination": "Een catalogus presenteren in Discord, waar de enige beschikbare lay-out een gepagineerde embed is",
+    "community-sourced-catalog": "Een catalogus nuttig houden wanneer de inhoud geheel afhankelijk is van bijdragen van leden",
+    "voice-channel-lifecycle": "Spraakkanalen creëren en vernietigen zonder lege kamers achter te laten",
+    "scattered-codebases": "Zes repositories voor één project, met de bot, de site, het ontwerp en de API allemaal apart"
+  },
+  "learnings": {
+    "ship-one-surface-first": "De bot werd dagelijks gebruikt, de website werd nooit gelanceerd: de ruimte waar mensen al gebruik van maken wint",
+    "community-before-product": "De Discord-server had de waarde, de software was slechts één manier om deze te bieden",
+    "rewrites-need-a-reason": "Twee herschrijvingen werden gestart vanuit een lege repository en geen daarvan werd afgemaakt",
+    "third-party-brand-limits": "Een community bouwen rond het merk van iemand anders beperkt hoe ver het project kan gaan"
+  },
+  "future-plans": {
+    "archived-repositories": "Alle zes repositories zijn gearchiveerd en alleen-lezen."
+  }
+}
