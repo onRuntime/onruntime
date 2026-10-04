@@ -189,14 +189,16 @@ const ProjectPage: React.FC<ProjectPageProps> = async ({ project }) => {
           </div>
         )}
 
-        <div className="w-full">
-          <Safari
-            width={1200}
-            height={750}
-            imageSrc={project.showcaseUrl}
-            url={getHostname(project.website)}
-          />
-        </div>
+        {project.website && (
+          <div className="w-full">
+            <Safari
+              width={1200}
+              height={750}
+              imageSrc={project.showcaseUrl}
+              url={getHostname(project.website)}
+            />
+          </div>
+        )}
 
         <div className="grid md:grid-cols-3 gap-6">
           <div className="flex items-center gap-3 p-6 rounded-lg border bg-card">
