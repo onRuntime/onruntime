@@ -1,0 +1,87 @@
+{
+  "short-description": "Een in-house kledinglabel gericht op het luxe segment, met een eigen identiteit, een capsulecollectie en een aangepaste winkel.",
+  "description": "Een kledingmerk dat we zelf zijn gestart in 2020: een faceted gem voor een logo, een Astronomy capsulecollectie en een online winkel waarvan het thema vanaf scratch is opgebouwd, eerst op Sylius en daarna op PrestaShop.",
+  "long-description": "RVBY was onze eigen poging voor een kledinglabel gericht op het luxe segment. De naam leest als ruby, en de identiteit volgde: een faceted gem getekend in één lijngewicht, in zwart-wit zonder andere kleur, en een winkelinrichting gebouwd rond HOMME, FEMME, en COLLECTIES.\n\nDe eerste capsule heette Astronomy. De artwork doorstreepte het woord met een rode lijn en signeerde het met de coördinaten van Parijs, 48°51'12\"N 2°20'55\"E, klein gedrukt op sportkleding.\n\nDe winkel is twee keer gebouwd. Het begon in mei 2020 op Sylius, het Symfony-gebaseerde e-commerce framework, met een RvbyTheme dat 207 aangepaste Twig-sjablonen bevatte in het accountgebied, het adresboek, het winkelwagentje, de afrekenpagina, de bestelgeschiedenis, en elke transactie-e-mail. Drie weken later verhuisde alles naar PrestaShop 1.7, met een tweede aangepast thema dat 32 modules overschreef en zijn eigen webpack en postcss build had.\n\nHet merk heeft nooit een product verzonden. De repositories zijn gearchiveerd in november 2020, zes maanden na de eerste commit, en wat overblijft is een identiteit, één collectie en twee complete e-commerce thema's die nooit aan een klant zijn getoond.",
+  "features": {
+    "brand-identity": {
+      "title": "Merkidentiteit",
+      "description": "Een faceted gem die leest als een ruby, getekend in één lijngewicht, strikt zwart-wit"
+    },
+    "capsule-collection": {
+      "title": "Astronomy capsule",
+      "description": "Een collectie waarvan de artwork het woord doorkruist in het rood en signatuur geeft met de coördinaten van Parijs"
+    },
+    "storefront": {
+      "title": "Winkelinrichting",
+      "description": "Een winkel georganiseerd rond herenmode, damesmode en collecties, met zoekfunctie, account en winkelwagentje"
+    },
+    "custom-theme": {
+      "title": "Aangepaste thema's",
+      "description": "Twee volledige e-commerce thema's die vanaf scratch zijn geschreven in plaats van gekocht en aangepast"
+    },
+    "checkout-flow": {
+      "title": "Afrekenen en account",
+      "description": "Winkelwagentje, afrekenstappen, bestelgeschiedenis, adresboek en transactie-e-mails, allemaal in thema"
+    }
+  },
+  "technologies": {
+    "sylius": {
+      "description": "Eerste winkelinrichting, met de RvbyTheme erbovenop"
+    },
+    "symfony": {
+      "description": "Framework onder Sylius, met Doctrine"
+    },
+    "prestashop": {
+      "description": "Tweede winkelinrichting, 1.7, met 32 overschreven modules"
+    },
+    "twig": {
+      "description": "Template-taal van het Sylius-thema"
+    },
+    "docker": {
+      "description": "Lokale omgeving, naast Travis CI"
+    }
+  },
+  "metrics": {
+    "templates": {
+      "value": "207",
+      "label": "Twig-sjablonen",
+      "description": "Aangepaste weergaven in het Sylius-thema alleen"
+    },
+    "platforms": {
+      "value": "2",
+      "label": "Platformen",
+      "description": "Sylius en daarna PrestaShop, drie weken uit elkaar"
+    },
+    "lifespan": {
+      "value": "6 maanden",
+      "label": "Levensduur",
+      "description": "Van eerste commit tot gearchiveerde repositories"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "caption": "Startpagina van de winkelinrichting, met de edelsteen onder de woordmerk"
+    },
+    "collection-artwork": {
+      "caption": "Artwork van de Astronomy capsule, getekend met de coördinaten van Parijs"
+    },
+    "products": {
+      "caption": "Capsule stukken op mockups"
+    }
+  },
+  "challenges": {
+    "platform-switch": "De hele winkelinrichting opnieuw opbouwen op een tweede platform drie weken na de eerste",
+    "luxury-positioning": "Een luxe register behouden met een logo, twee kleuren en geen fotografie budget",
+    "theme-depth": "Een e-commerce suite in thematiek van begin tot eind, tot aan adresformulieren en transactie-e-mails",
+    "no-inventory": "Een winkel ontwerpen voor een collectie die nooit is geproduceerd"
+  },
+  "learnings": {
+    "pick-the-stack-once": "Overschakelen naar e-commerce platformen kost het hele thema, en de tweede build is niet sneller dan de eerste",
+    "brand-before-storefront": "De identiteit en de capsule hielden stand, de winkel ervoor had niets te verkopen",
+    "ecommerce-theming-cost": "Een geloofwaardige winkel betekent honderden sjablonen, de meeste pagina's waar niemand aan denkt",
+    "side-project-momentum": "Een merk dat naast klantwerk wordt gerund, heeft iemand nodig wiens taak het merk is"
+  },
+  "future-plans": {
+    "archived-repositories": "Beide repositories zijn gearchiveerd, en het merk is nooit opnieuw gelanceerd"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "short-description": "Marka odzieżowa z aspiracjami do luksusowego segmentu, z własną tożsamością, kolekcją kapsułową i dostosowanym sklepem internetowym.",
+  "description": "Marka odzieżowa, którą sami założyliśmy w 2020 roku: facetowany klejnot jako logo, kolekcja kapsułowa Astronomia, oraz sklep internetowy, którego temat został zbudowany od podstaw, najpierw na Sylius, a potem na PrestaShop.",
+  "long-description": "RVBY to nasza własna próba stworzenia marki odzieżowej z aspiracjami do luksusu. Nazwa wymawia się jak rubin, a tożsamość podążała za tym: facetowany klejnot narysowany jednym ciężarem linii, w czerni i bieli bez innych kolorów, oraz sklep zorganizowany wokół HOMME, FEMME i KOLEKCJI.\n\nPierwsza kolekcja kapsułowa nosiła nazwę Astronomia. Jej grafika przekreślała słowo czerwoną linią, a na mniejszych ubraniach sportowych podpisano ją współrzędnymi Paryża, 48°51'12\"N 2°20'55\"E.\n\nSklep był budowany dwukrotnie. Rozpoczął się w maju 2020 roku na Sylius, opartym na Symfony frameworku e-commerce, z RvbyTheme zawierającym 207 dostosowanych szablonów Twig w obszarze konta, książce adresowej, koszyku, kasy, historii zamówień i każdym e-mailu transakcyjnym. Trzy tygodnie później całość przeniosła się na PrestaShop 1.7, z drugą, dostosowaną tematyka zastępującą 32 moduły oraz własny build webpack i postcss.\n\nMarka nigdy nie wysłała produktu. Repozytoria zostały zarchiwizowane w listopadzie 2020 roku, sześć miesięcy po pierwszym commicie, a to, co pozostało, to tożsamość, jedna kolekcja oraz dwa całkowicie wykonane motywy e-commerce, które nigdy nie stanęły przed klientem.",
+  "features": {
+    "brand-identity": {
+      "title": "Tożsamość marki",
+      "description": "Facetowany klejnot przypominający rubin, narysowany jedną linią, wyłącznie w czerni i bieli"
+    },
+    "capsule-collection": {
+      "title": "Kolekcja kapsułowa Astronomia",
+      "description": "Kolekcja, której grafika przekreśla słowo na czerwono i podpisuje ją współrzędnymi Paryża"
+    },
+    "storefront": {
+      "title": "Sklep internetowy",
+      "description": "Sklep zorganizowany wokół odzieży męskiej, damskiej i kolekcji, z wyszukiwarką, kontem i koszykiem"
+    },
+    "custom-theme": {
+      "title": "Dostosowane motywy",
+      "description": "Dwa pełne motywy e-commerce napisane od podstaw, zamiast kupione i dostosowane"
+    },
+    "checkout-flow": {
+      "title": "Proces zakupu i konto",
+      "description": "Koszyk, kroki zakupu, historia zamówień, książka adresowa oraz e-maile transakcyjne, wszystko z motywem"
+    }
+  },
+  "technologies": {
+    "sylius": {
+      "description": "Pierwszy sklep, z RvbyTheme na szczycie"
+    },
+    "symfony": {
+      "description": "Framework używany pod Sylius, z Doctrine"
+    },
+    "prestashop": {
+      "description": "Drugi sklep, 1.7, z 32 nadpisanymi modułami"
+    },
+    "twig": {
+      "description": "Język szablonów motywu Sylius"
+    },
+    "docker": {
+      "description": "Środowisko lokalne, obok Travis CI"
+    }
+  },
+  "metrics": {
+    "templates": {
+      "value": "207",
+      "label": "Szablony Twig",
+      "description": "Dostosowane widoki tylko w motywie Sylius"
+    },
+    "platforms": {
+      "value": "2",
+      "label": "Platformy",
+      "description": "Sylius, a następnie PrestaShop, z trzema tygodniami różnicy"
+    },
+    "lifespan": {
+      "value": "6 miesięcy",
+      "label": "Czas życia",
+      "description": "Od pierwszego commita do zarchiwizowanych repozytoriów"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "caption": "Strona główna sklepu internetowego, z klejnotem umieszczonym pod znakiem firmowym"
+    },
+    "collection-artwork": {
+      "caption": "Grafika kolekcji Astronomia, podpisana współrzędnymi Paryża"
+    },
+    "products": {
+      "caption": "Kawałki kapsuły na makietach"
+    }
+  },
+  "challenges": {
+    "platform-switch": "Przebudowa całego sklepu na drugiej platformie trzy tygodnie po pierwszej",
+    "luxury-positioning": "Utrzymanie luksusowego wizerunku z logo, dwoma kolorami i brakiem budżetu na zdjęcia",
+    "theme-depth": "Tematyzowanie całego zestawu e-commerce od początku do końca, aż po formularze adresowe i e-maile transakcyjne",
+    "no-inventory": "Projektowanie sklepu dla kolekcji, która nigdy nie została wyprodukowana"
+  },
+  "learnings": {
+    "pick-the-stack-once": "Przełączenie platform e-commerce kosztuje cały motyw, a drugi build nie jest szybszy od pierwszego",
+    "brand-before-storefront": "Tożsamość i kolekcja wytrzymały, sklep wokół nich nie miał nic do sprzedaży",
+    "ecommerce-theming-cost": "Wiarygodny sklep oznacza setki szablonów, z których większość to strony, o których nikt nie myśli",
+    "side-project-momentum": "Marka prowadzona obok pracy dla klientów potrzebuje kogoś, kto zajmie się marką"
+  },
+  "future-plans": {
+    "archived-repositories": "Obydwa repozytoria są zarchiwizowane, a marka nigdy nie została ponownie uruchomiona."
+  }
+}

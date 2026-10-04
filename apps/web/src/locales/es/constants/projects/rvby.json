@@ -1,0 +1,87 @@
+{
+  "short-description": "Etiqueta de ropa interna con enfoque en el lujo, con su propia identidad, una colección cápsula y una tienda personalizada.",
+  "description": "Una marca de ropa que comenzamos nosotros mismos en 2020: una gema facetada como logo, una colección cápsula de Astronomía y una tienda en línea cuyo tema fue reconstruido desde cero, primero en Sylius y luego en PrestaShop.",
+  "long-description": "RVBY fue nuestro propio intento de crear una etiqueta de ropa posicionada en el lujo. El nombre se lee como ruby, y la identidad lo siguió: una gema facetada dibujada en un solo peso de línea, en blanco y negro sin ningún otro color, y una tienda construida alrededor de HOMME, FEMME y COLLECTIONS.\n\nLa primera cápsula se llamó Astronomía. Su arte tachó la palabra con una línea roja y la firmó con las coordenadas de París, 48°51'12\"N 2°20'55\"E, impresas en pequeño en ropa deportiva.\n\nLa tienda se construyó dos veces. Comenzó en mayo de 2020 en Sylius, el marco de comercio electrónico basado en Symfony, con un RvbyTheme que llevaba 207 plantillas Twig personalizadas en el área de cuenta, el libro de direcciones, el carrito, el proceso de pago, el historial de pedidos y cada correo electrónico transaccional. Tres semanas después, todo se trasladó a PrestaShop 1.7, con un segundo tema personalizado que sobrescribía 32 módulos y su propia construcción de webpack y postcss.\n\nLa marca nunca envió un producto. Los repositorios fueron archivados en noviembre de 2020, seis meses después del primer commit, y lo que queda es una identidad, una colección y dos temas completos de comercio electrónico que nunca se presentaron a un cliente.",
+  "features": {
+    "brand-identity": {
+      "title": "Identidad de la marca",
+      "description": "Una gema facetada que se lee como un ruby, dibujada en un peso de línea, estrictamente en blanco y negro"
+    },
+    "capsule-collection": {
+      "title": "Colección cápsula de Astronomía",
+      "description": "Una colección cuyo arte tacha la palabra en rojo y la firma con las coordenadas de París"
+    },
+    "storefront": {
+      "title": "Tienda online",
+      "description": "Una tienda organizada en torno a ropa de hombre, ropa de mujer y colecciones, con búsqueda, cuenta y carrito"
+    },
+    "custom-theme": {
+      "title": "Temas personalizados",
+      "description": "Dos temas completos de comercio electrónico escritos desde cero en lugar de comprados y ajustados"
+    },
+    "checkout-flow": {
+      "title": "Pago y cuenta",
+      "description": "Carrito, pasos de pago, historial de pedidos, libro de direcciones y correos electrónicos transaccionales, todo tematizado"
+    }
+  },
+  "technologies": {
+    "sylius": {
+      "description": "Primera tienda, con el RvbyTheme encima"
+    },
+    "symfony": {
+      "description": "Marco bajo Sylius, con Doctrine"
+    },
+    "prestashop": {
+      "description": "Segunda tienda, 1.7, con 32 módulos sobrescritos"
+    },
+    "twig": {
+      "description": "Lenguaje de plantilla del tema de Sylius"
+    },
+    "docker": {
+      "description": "Entorno local, junto a Travis CI"
+    }
+  },
+  "metrics": {
+    "templates": {
+      "value": "207",
+      "label": "Plantillas Twig",
+      "description": "Vistas personalizadas solo en el tema de Sylius"
+    },
+    "platforms": {
+      "value": "2",
+      "label": "Plataformas",
+      "description": "Sylius y luego PrestaShop, a tres semanas de diferencia"
+    },
+    "lifespan": {
+      "value": "6 meses",
+      "label": "Duración de vida",
+      "description": "Desde el primer commit hasta los repositorios archivados"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "caption": "Página de inicio de la tienda, con la gema situada debajo de la marca de palabra"
+    },
+    "collection-artwork": {
+      "caption": "Arte de la cápsula de Astronomía, firmado con las coordenadas de París"
+    },
+    "products": {
+      "caption": "Piezas de la cápsula en maquetas"
+    }
+  },
+  "challenges": {
+    "platform-switch": "Reconstruir toda la tienda en una segunda plataforma tres semanas después de la primera",
+    "luxury-positioning": "Mantener un registro de lujo con un logo, dos colores y sin presupuesto para fotografía",
+    "theme-depth": "Tematizar una suite de comercio electrónico de extremo a extremo, hasta los formularios de direcciones y correos electrónicos transaccionales",
+    "no-inventory": "Diseñar una tienda para una colección que nunca se fabricó"
+  },
+  "learnings": {
+    "pick-the-stack-once": "Cambiar de plataforma de comercio electrónico cuesta todo el tema, y la segunda construcción no es más rápida que la primera",
+    "brand-before-storefront": "La identidad y la cápsula se mantuvieron, la tienda a su alrededor no tenía nada que vender",
+    "ecommerce-theming-cost": "Una tienda creíble significa cientos de plantillas, la mayoría de ellas páginas en las que nadie piensa",
+    "side-project-momentum": "Una marca gestionada junto al trabajo del cliente necesita a alguien cuyo trabajo sea la marca"
+  },
+  "future-plans": {
+    "archived-repositories": "Ambos repositorios están archivados, y la marca nunca fue relanzada"
+  }
+}

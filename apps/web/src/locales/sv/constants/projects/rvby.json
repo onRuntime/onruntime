@@ -1,0 +1,87 @@
+{
+  "short-description": "In-house klädmärke som siktar på lyxsegmentet, med sin egen identitet, en kapselkollektion och en egen butik.",
+  "description": "Ett klädmärke vi startade själva 2020: en facetterad juvel som logga, en Astronomy kapselkollektion och en webbutik vars tema byggdes om från grunden, först på Sylius och sedan på PrestaShop.",
+  "long-description": "RVBY var vårt eget försök till ett klädmärke positionerat i lyxsegmentet. Namnet läses som ruby, och identiteten följde: en facetterad juvel tecknad i en enda linjetjocklek, satt i svart och vitt utan någon annan färg, och en butik byggd kring HOMME, FEMME och KOLLEKTIONER.\n\nDen första kapseln kallades Astronomy. Dess konst verkade stryka över ordet med en röd linje och signera med koordinaterna till Paris, 48°51'12\"N 2°20'55\"E, tryckt litet på sportkläder.\n\nButiken byggdes två gånger. Den började i maj 2020 på Sylius, det Symfony-baserade e-handelsramverket, med ett RvbyTheme som hade 207 anpassade Twig-mallar i kontosidan, adressboken, kundvagnen, kassan, orderhistoriken, och varje transaktions-email. Tre veckor senare flyttades hela grejen till PrestaShop 1.7, med ett andra anpassat tema som överskrev 32 moduler och hade sin egen webpack och postcss bygg.",
+  "features": {
+    "brand-identity": {
+      "title": "Varumärkesidentitet",
+      "description": "En facetterad juvel som läses som en ruby, tecknad i en linjetjocklek, strikt svart och vitt"
+    },
+    "capsule-collection": {
+      "title": "Astronomy kapsel",
+      "description": "En kollektion vars konst stryker över ordet i röd och signerar med koordinaterna till Paris"
+    },
+    "storefront": {
+      "title": "Butik",
+      "description": "En butik organiserad kring herrmode, dammode och kollektioner, med sök, konto och kundvagn"
+    },
+    "custom-theme": {
+      "title": "Anpassade teman",
+      "description": "Två fullständiga e-handels teman skrivna från grunden istället för köpta och justerade"
+    },
+    "checkout-flow": {
+      "title": "Kassa och konto",
+      "description": "Kundvagn, kassasteg, orderhistorik, adressbok och transaktionsmail, allt tematiserat"
+    }
+  },
+  "technologies": {
+    "sylius": {
+      "description": "Första butiken, med RvbyTheme överst"
+    },
+    "symfony": {
+      "description": "Ramverk under Sylius, med Doctrine"
+    },
+    "prestashop": {
+      "description": "Andra butiken, 1.7, med 32 överskrivna moduler"
+    },
+    "twig": {
+      "description": "Mall språk för Sylius-temat"
+    },
+    "docker": {
+      "description": "Lokal miljö, tillsammans med Travis CI"
+    }
+  },
+  "metrics": {
+    "templates": {
+      "value": "207",
+      "label": "Twig-mallar",
+      "description": "Anpassade vyer i Sylius-temat ensamt"
+    },
+    "platforms": {
+      "value": "2",
+      "label": "Plattformar",
+      "description": "Sylius och sedan PrestaShop, med tre veckors mellanrum"
+    },
+    "lifespan": {
+      "value": "6 månader",
+      "label": "Livslängd",
+      "description": "Från första commit till arkiverade repositorier"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "caption": "Butikens startsida, med juvelen placerad under varumärket"
+    },
+    "collection-artwork": {
+      "caption": "Astronomy kapselkonst, signerad med koordinaterna till Paris"
+    },
+    "products": {
+      "caption": "Kapselprodukter på mockups"
+    }
+  },
+  "challenges": {
+    "platform-switch": "Att bygga om hela butiken på en andra plattform tre veckor efter den första",
+    "luxury-positioning": "Att hålla en lyxig position med en logotyp, två färger och utan budget för fotografering",
+    "theme-depth": "Tematisera en e-handelslösning från början till slut, ner till adressformer och transaktionsmail",
+    "no-inventory": "Att designa en butik för en kollektion som aldrig tillverkades"
+  },
+  "learnings": {
+    "pick-the-stack-once": "Att byta e-handelsplattform kostar hela temat, och den andra byggnaden är inte snabbare än den första",
+    "brand-before-storefront": "Identiteten och kapseln höll, men butiken runt dem hade inget att sälja",
+    "ecommerce-theming-cost": "En trovärdig butik betyder hundratals mallar, de flesta är sidor ingen tänker på",
+    "side-project-momentum": "Ett varumärke som drivs vid sidan av kundarbete behöver någon vars jobb är varumärket"
+  },
+  "future-plans": {
+    "archived-repositories": "Båda repositorierna är arkiverade, och varumärket har aldrig återlanserats"
+  }
+}

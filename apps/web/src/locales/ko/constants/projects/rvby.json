@@ -1,0 +1,87 @@
+{
+  "short-description": "자체 정체성을 가진 고급 의류 브랜드로, 캡슐 컬렉션과 맞춤형 스토어가 있습니다.",
+  "description": "2020년에 우리가 시작한 의류 브랜드로, 로고는 다면체 보석, 천문학 테마의 캡슐 컬렉션과 처음부터 다시 만든 온라인 상점이 있습니다. 처음에는 Sylius를 사용하다가 나중에 PrestaShop으로 이전했어요.",
+  "long-description": "RVBY는 우리가 럭셔리 시장을 겨냥해 만든 의류 브랜드입니다. 이름은 루비로 읽고, 정체성 또한 그에 맞춰 다면체 보석을 선으로 그려서 흑백으로 표현했습니다. 상점은 남성복, 여성복, 그리고 컬렉션으로 구성되었습니다.\n\n첫 번째 캡슐은 천문학이라고 불렸습니다. 그 아트워크는 빨간 선으로 단어를 가로 막고 파리의 좌표인 48°51'12\"N 2°20'55\"E를 작게 기재한 스포츠웨어에 인쇄되었습니다.\n\n스토어는 두 번 만들어졌습니다. 처음은 2020년 5월, Symfony 기반의 전자상거래 프레임워크인 Sylius에서 시작되었고, RvbyTheme은 계정 영역, 주소록, 장바구니, 체크아웃, 주문 기록, 모든 거래 이메일에서 207개의 커스텀 Twig 템플릿을 사용하였습니다. 3주 후에 전체가 PrestaShop 1.7로 이전되었고, 두 번째 맞춤형 테마는 32개의 모듈을 재정의하고 자체 webpack과 postcss 빌드를 사용했습니다.\n\n브랜드는 제품을 한 번도 배송하지 않았습니다. 보관소는 첫 번째 커밋 후 6개월인 2020년 11월에 아카이브되었고, 남아있는 것은 하나의 정체성, 하나의 컬렉션, 그리고 고객 앞에 내보내지 않은 두 개의 완전한 전자상거래 테마입니다.",
+  "features": {
+    "brand-identity": {
+      "title": "브랜드 정체성",
+      "description": "루비처럼 읽히는 다면체 보석으로, 한 선의 두께로 그려지고 엄격하게 흑백입니다."
+    },
+    "capsule-collection": {
+      "title": "천문학 캡슐",
+      "description": "빨간색으로 단어를 가로막고 파리의 좌표로 서명한 아트워크를 가진 컬렉션입니다."
+    },
+    "storefront": {
+      "title": "스토어 표면",
+      "description": "남성복, 여성복, 컬렉션으로 구성된 쇼핑몰로 검색, 계정, 장바구니 기능이 있습니다."
+    },
+    "custom-theme": {
+      "title": "맞춤형 테마",
+      "description": "구매하거나 조정된 것이 아니라 처음부터 작성된 두 개의 완전한 전자상거래 테마입니다."
+    },
+    "checkout-flow": {
+      "title": "체크아웃 및 계정",
+      "description": "장바구니, 체크아웃 단계, 주문 기록, 주소록, 거래용 이메일 모두 테마가 적용되었습니다."
+    }
+  },
+  "technologies": {
+    "sylius": {
+      "description": "최초의 스토어, RvbyTheme가 위에 있습니다."
+    },
+    "symfony": {
+      "description": "Sylius 아래에 있는 프레임워크, Doctrine과 함께합니다."
+    },
+    "prestashop": {
+      "description": "두 번째 스토어, 1.7 버전, 32개의 모듈이 오버라이드되었습니다."
+    },
+    "twig": {
+      "description": "Sylius 테마의 템플릿 언어입니다."
+    },
+    "docker": {
+      "description": "로컬 환경, Travis CI와 함께합니다."
+    }
+  },
+  "metrics": {
+    "templates": {
+      "value": "207",
+      "label": "Twig 템플릿",
+      "description": "Sylius 테마에서 커스텀 뷰 수입니다."
+    },
+    "platforms": {
+      "value": "2",
+      "label": "플랫폼",
+      "description": "Sylius와 나중에 PrestaShop, 3주 간격으로 입니다."
+    },
+    "lifespan": {
+      "value": "6개월",
+      "label": "수명",
+      "description": "첫 커밋부터 아카이브된 리포지토리까지입니다."
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "caption": "스토어프론트 홈페이지, 보석이 로고 아래에 위치해 있습니다."
+    },
+    "collection-artwork": {
+      "caption": "천문학 캡슐 아트워크, 파리 좌표로 서명되었습니다."
+    },
+    "products": {
+      "caption": "모형에 캡슐 조각들입니다."
+    }
+  },
+  "challenges": {
+    "platform-switch": "첫 번째 플랫폼에서 3주 후에 전체 스토어를 두 번째 플랫폼으로 재구축하는 것.",
+    "luxury-positioning": "로고, 두 가지 색상, 사진 예산 없이 럭셔리한 등록을 유지하는 것.",
+    "theme-depth": "주소 양식과 거래 이메일까지 포함된 전자상거래 스위트를 완전히 테마화하는 것.",
+    "no-inventory": "결코 생산되지 않은 컬렉션을 위한 상점을 설계하는 것."
+  },
+  "learnings": {
+    "pick-the-stack-once": "전자상거래 플랫폼을 전환하면 전체 테마가 사라지며, 두 번째 빌드는 첫 번째보다 빠르지 않다.",
+    "brand-before-storefront": "정체성과 캡슐은 유지되었지만, 그 주위의 상점은 아무것도 판매할 수 없었다.",
+    "ecommerce-theming-cost": "신뢰할 수 있는 매장은 수백 개의 템플릿을 의미한다. 대부분은 사람들이 생각하지 않는 페이지들이다.",
+    "side-project-momentum": "클라이언트 작업과 함께 운영되는 브랜드는 브랜드를 관리하는 사람이 필요하다."
+  },
+  "future-plans": {
+    "archived-repositories": "두 리포지토리는 아카이브되었고, 브랜드는 다시 시작된 적이 없습니다."
+  }
+}

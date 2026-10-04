@@ -1,0 +1,87 @@
+{
+  "short-description": "Une marque de vêtements en interne visant le segment luxe, avec sa propre identité, une collection capsule, et une boutique personnalisée.",
+  "description": "Une marque de vêtements que nous avons lancée en 2020 : un bijou facetté pour un logo, une collection capsule Astronomie, et une boutique en ligne dont le thème a été reconstruit depuis zéro, d'abord sur Sylius puis sur PrestaShop.",
+  "long-description": "RVBY était notre propre tentative de créer une marque de vêtements positionnée dans le segment luxe. Le nom se prononce comme ruby, et l'identité a suivi : un bijou facetté dessiné avec une seule épaisseur de ligne, en noir et blanc sans autre couleur, et une vitrine construite autour de HOMME, FEMME, et COLLECTIONS.\n\nLa première capsule s'appelait Astronomie. Son artwork a barré le mot avec une ligne rouge et l'a signé avec les coordonnées de Paris, 48°51'12\"N 2°20'55\"E, imprimé en petit sur des vêtements de sport.\n\nLa boutique a été construite deux fois. Elle a commencé en mai 2020 sur Sylius, le framework e-commerce basé sur Symfony, avec un RvbyTheme portant 207 modèles Twig personnalisés dans la zone de compte, le carnet d'adresses, le panier, le paiement, l'historique des commandes, et chaque email transactionnel. Trois semaines plus tard, tout a déménagé sur PrestaShop 1.7, avec un deuxième thème personnalisé remplaçant 32 modules et son propre build webpack et postcss.\n\nLa marque n'a jamais expédié de produit. Les dépôts ont été archivés en novembre 2020, six mois après le premier commit, et ce qui reste est une identité, une collection, et deux thèmes e-commerce complets qui n'ont jamais été présentés à un client.",
+  "features": {
+    "brand-identity": {
+      "title": "Identité de marque",
+      "description": "Un bijou facetté qui se lit comme un ruby, dessiné en une seule épaisseur de ligne, strictement en noir et blanc"
+    },
+    "capsule-collection": {
+      "title": "Collection capsule Astronomie",
+      "description": "Une collection dont l'artwork barre le mot en rouge et le signe avec les coordonnées de Paris"
+    },
+    "storefront": {
+      "title": "Vitrine",
+      "description": "Une boutique organisée autour de vêtements pour hommes, femmes, et collections, avec recherche, compte, et panier"
+    },
+    "custom-theme": {
+      "title": "Thèmes personnalisés",
+      "description": "Deux thèmes e-commerce complets écrits de zéro plutôt qu'achetés et ajustés"
+    },
+    "checkout-flow": {
+      "title": "Paiement et compte",
+      "description": "Panier, étapes de paiement, historique des commandes, carnet d'adresses, et emails transactionnels, tous avec un thème"
+    }
+  },
+  "technologies": {
+    "sylius": {
+      "description": "Première vitrine, avec le RvbyTheme au-dessus"
+    },
+    "symfony": {
+      "description": "Framework sous Sylius, avec Doctrine"
+    },
+    "prestashop": {
+      "description": "Deuxième vitrine, 1.7, avec 32 modules remplacés"
+    },
+    "twig": {
+      "description": "Langage de template du thème Sylius"
+    },
+    "docker": {
+      "description": "Environnement local, avec Travis CI"
+    }
+  },
+  "metrics": {
+    "templates": {
+      "value": "207",
+      "label": "Modèles Twig",
+      "description": "Vues personnalisées dans le thème Sylius uniquement"
+    },
+    "platforms": {
+      "value": "2",
+      "label": "Plateformes",
+      "description": "Sylius puis PrestaShop, avec trois semaines d'écart"
+    },
+    "lifespan": {
+      "value": "6 mois",
+      "label": "Durée de vie",
+      "description": "Du premier commit aux dépôts archivés"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "caption": "Page d'accueil de la vitrine, avec le bijou placé sous le logo"
+    },
+    "collection-artwork": {
+      "caption": "Artwork de la capsule Astronomie, signé avec les coordonnées de Paris"
+    },
+    "products": {
+      "caption": "Pièces de la capsule sur des maquettes"
+    }
+  },
+  "challenges": {
+    "platform-switch": "Reconstruire l'ensemble de la vitrine sur une deuxième plateforme trois semaines après la première",
+    "luxury-positioning": "Maintenir un registre de luxe avec un logo, deux couleurs, et aucun budget photo",
+    "theme-depth": "Thématiser une suite e-commerce de A à Z, jusqu'aux formulaires d'adresse et emails transactionnels",
+    "no-inventory": "Concevoir une boutique pour une collection qui n'a jamais été fabriquée"
+  },
+  "learnings": {
+    "pick-the-stack-once": "Changer de plateformes e-commerce coûte tout le thème, et la deuxième construction n'est pas plus rapide que la première",
+    "brand-before-storefront": "L'identité et la capsule ont tenu, la boutique qui les entourait n'avait rien à vendre",
+    "ecommerce-theming-cost": "Une boutique crédible signifie des centaines de modèles, dont la plupart sont des pages auxquelles personne ne pense",
+    "side-project-momentum": "Une marque gérée parallèlement à un travail client a besoin de quelqu'un dont le travail est la marque"
+  },
+  "future-plans": {
+    "archived-repositories": "Les deux dépôts sont archivés, et la marque n'a jamais été relancée"
+  }
+}

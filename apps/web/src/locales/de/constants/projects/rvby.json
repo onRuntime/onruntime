@@ -1,0 +1,87 @@
+{
+  "short-description": "In-house Kleidungsmarke, die auf den Luxusbereich abzielt, mit eigener Identität, einer Kapselkollektion und einem individuellen Onlineshop.",
+  "description": "Eine Kleidungsmarke, die wir 2020 selbst gegründet haben: ein facettierter Edelstein als Logo, eine Astronomie-Kapselkollektion und einen Onlineshop, dessen Thema von Grund auf neu aufgebaut wurde, zuerst auf Sylius und dann auf PrestaShop.",
+  "long-description": "RVBY war unser eigener Versuch, eine Kleidungsmarke im Luxusbereich zu positionieren. Der Name wird wie Rubin ausgesprochen, und die Identität folgte: ein facettierter Edelstein, gezeichnet in einer einzigen Linienstärke, in Schwarz und Weiß ohne andere Farben, und ein Shop, der um HOMME, FEMME und KOLLEKTIONEN aufgebaut ist.\n\nDie erste Kapsel hieß Astronomie. Ihre Gestaltung strich das Wort mit einer roten Linie durch und signierte es mit den Koordinaten von Paris, 48°51'12\"N 2°20'55\"E, Druck klein auf Sportbekleidung.\n\nDer Shop wurde zweimal erstellt. Er begann im Mai 2020 auf Sylius, dem Symfony-basierten E-Commerce-Framework, mit einem RvbyTheme, das 207 benutzerdefinierte Twig-Templates im Kundenbereich, im Adressbuch, im Warenkorb, im Checkout, in der Bestellhistorie und in jeder Transaktions-E-Mail enthielt. Drei Wochen später wechselte alles zu PrestaShop 1.7, mit einem zweiten benutzerdefinierten Theme, das 32 Module übersteuerte und seinen eigenen Webpack- und PostCSS-Build hatte.\n\nDie Marke hat nie ein Produkt ausgeliefert. Die Repositories wurden im November 2020 archiviert, sechs Monate nach dem ersten Commit, und was übrig bleibt, ist eine Identität, eine Kollektion und zwei vollständige E-Commerce-Themen, die nie einem Kunden präsentiert wurden.",
+  "features": {
+    "brand-identity": {
+      "title": "Markenidentität",
+      "description": "Ein facettierter Edelstein, der als Rubin gelesen wird, in einer Linienstärke gezeichnet, strikt schwarz und weiß"
+    },
+    "capsule-collection": {
+      "title": "Astronomie-Kapsel",
+      "description": "Eine Kollektion, deren Artwork das Wort in Rot durchstreicht und mit den Koordinaten von Paris signiert"
+    },
+    "storefront": {
+      "title": "Onlineshop",
+      "description": "Ein Shop, der um Herrenmode, Damenmode und Kollektionen organisiert ist, mit Suche, Konto und Warenkorb"
+    },
+    "custom-theme": {
+      "title": "Benutzerdefinierte Themen",
+      "description": "Zwei vollständige E-Commerce-Themen, die von Grund auf neu geschrieben wurden, anstatt gekauft und angepasst zu werden"
+    },
+    "checkout-flow": {
+      "title": "Checkout und Konto",
+      "description": "Warenkorb, Checkout-Schritte, Bestellhistorie, Adressbuch und Transaktions-E-Mails, alles thematisiert"
+    }
+  },
+  "technologies": {
+    "sylius": {
+      "description": "Erster Shop mit dem RvbyTheme obendrauf"
+    },
+    "symfony": {
+      "description": "Framework unter Sylius, mit Doctrine"
+    },
+    "prestashop": {
+      "description": "Zweiter Shop, 1.7, mit 32 überschriebenen Modulen"
+    },
+    "twig": {
+      "description": "Template-Sprache des Sylius-Themes"
+    },
+    "docker": {
+      "description": "Lokale Umgebung, neben Travis CI"
+    }
+  },
+  "metrics": {
+    "templates": {
+      "value": "207",
+      "label": "Twig-Templates",
+      "description": "Benutzerdefinierte Ansichten nur im Sylius-Theme"
+    },
+    "platforms": {
+      "value": "2",
+      "label": "Plattformen",
+      "description": "Sylius, dann PrestaShop, drei Wochen auseinander"
+    },
+    "lifespan": {
+      "value": "6 Monate",
+      "label": "Lebensdauer",
+      "description": "Vom ersten Commit bis zu archivierten Repositories"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "caption": "Startseite des Onlineshops, mit dem Edelstein unter dem Logo"
+    },
+    "collection-artwork": {
+      "caption": "Artwork der Astronomie-Kapsel, signiert mit den Koordinaten von Paris"
+    },
+    "products": {
+      "caption": "Kapselstücke in Mockups"
+    }
+  },
+  "challenges": {
+    "platform-switch": "Den gesamten Onlineshop auf einer zweiten Plattform drei Wochen nach der ersten neu aufbauen",
+    "luxury-positioning": "Eine Luxuspitch mit einem Logo, zwei Farben und ohne Fotobudget halten",
+    "theme-depth": "Die Gestaltung einer E-Commerce-Suite von Anfang bis Ende, bis hin zu Adressformularen und Transaktions-E-Mails",
+    "no-inventory": "Einen Shop für eine Kollektion entwerfen, die nie hergestellt wurde"
+  },
+  "learnings": {
+    "pick-the-stack-once": "Der Wechsel der E-Commerce-Plattform kostet das gesamte Thema, und der zweite Build ist nicht schneller als der erste",
+    "brand-before-storefront": "Die Identität und die Kapsel hielten stand, der Shop darum herum hatte nichts zu verkaufen",
+    "ecommerce-theming-cost": "Ein glaubwürdiger Shop bedeutet Hunderte von Templates, die meisten davon Seiten, über die niemand nachdenkt",
+    "side-project-momentum": "Eine Marke, die neben Kundenarbeit läuft, braucht jemanden, dessen Aufgabe die Marke ist"
+  },
+  "future-plans": {
+    "archived-repositories": "Beide Repositories sind archiviert, und die Marke wurde nie neu gestartet"
+  }
+}

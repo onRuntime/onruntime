@@ -1,0 +1,87 @@
+{
+  "short-description": "Marca de roupa própria que visa o segmento de luxo, com sua própria identidade, uma coleção cápsula e uma loja personalizada.",
+  "description": "Uma marca de roupa que começamos em 2020: uma gema facetada como logotipo, uma coleção cápsula de Astronomia e uma loja online cujo tema foi reconstruído do zero, primeiro no Sylius e depois no PrestaShop.",
+  "long-description": "A RVBY foi nossa própria tentativa de criar uma marca de roupas posicionada no segmento de luxo. O nome é lido como ruby, e a identidade seguiu: uma gema facetada desenhada em um único peso de linha, em preto e branco sem outras cores, e uma loja construída em torno de HOMME, FEMME e COLEÇÕES.\n\nA primeira cápsula se chamava Astronomia. Sua obra cortou a palavra com uma linha vermelha e a assinou com as coordenadas de Paris, 48°51'12\"N 2°20'55\"E, impressas pequenas em roupas esportivas.\n\nA loja foi construída duas vezes. Começou em maio de 2020 no Sylius, o framework de e-commerce baseado em Symfony, com um RvbyTheme que carregava 207 templates Twig customizados na área da conta, no catálogo de endereços, no carrinho, no checkout, no histórico de pedidos e em todos os e-mails transacionais. Três semanas depois, tudo foi transferido para o PrestaShop 1.7, com um segundo tema customizado sobrepondo 32 módulos e sua própria construção de webpack e postcss.\n\nA marca nunca enviou um produto. Os repositórios foram arquivados em novembro de 2020, seis meses após o primeiro commit, e o que sobrevive é uma identidade, uma coleção e dois temas completos de e-commerce que nunca foram apresentados a um cliente.",
+  "features": {
+    "brand-identity": {
+      "title": "Identidade da marca",
+      "description": "Uma gema facetada lida como um ruby, desenhada em um peso de linha, estritamente preto e branco"
+    },
+    "capsule-collection": {
+      "title": "Coleção cápsula de Astronomia",
+      "description": "Uma coleção cuja arte corta a palavra em vermelho e a assina com as coordenadas de Paris"
+    },
+    "storefront": {
+      "title": "Loja",
+      "description": "Uma loja organizada em torno de roupas masculinas, femininas e coleções, com pesquisa, conta e carrinho"
+    },
+    "custom-theme": {
+      "title": "Temas personalizados",
+      "description": "Dois temas completos de e-commerce escritos do zero em vez de comprados e ajustados"
+    },
+    "checkout-flow": {
+      "title": "Checkout e conta",
+      "description": "Carrinho, passos de checkout, histórico de pedidos, lista de endereços e e-mails transacionais, tudo temático"
+    }
+  },
+  "technologies": {
+    "sylius": {
+      "description": "Primeira loja, com o RvbyTheme no topo"
+    },
+    "symfony": {
+      "description": "Framework sob Sylius, com Doctrine"
+    },
+    "prestashop": {
+      "description": "Segunda loja, 1.7, com 32 módulos sobrepostos"
+    },
+    "twig": {
+      "description": "Linguagem de template do tema Sylius"
+    },
+    "docker": {
+      "description": "Ambiente local, ao lado do Travis CI"
+    }
+  },
+  "metrics": {
+    "templates": {
+      "value": "207",
+      "label": "Templates Twig",
+      "description": "Visões personalizadas apenas no tema Sylius"
+    },
+    "platforms": {
+      "value": "2",
+      "label": "Plataformas",
+      "description": "Sylius depois PrestaShop, com três semanas de diferença"
+    },
+    "lifespan": {
+      "value": "6 meses",
+      "label": "Duração",
+      "description": "Do primeiro commit até os repositórios arquivados"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "caption": "Página inicial da loja, com a gema posicionada abaixo do logotipo"
+    },
+    "collection-artwork": {
+      "caption": "Arte da cápsula de Astronomia, assinada com as coordenadas de Paris"
+    },
+    "products": {
+      "caption": "Peças da cápsula em mockups"
+    }
+  },
+  "challenges": {
+    "platform-switch": "Reconstruir toda a loja em uma segunda plataforma três semanas após a primeira",
+    "luxury-positioning": "Manter um registro de luxo com um logotipo, duas cores e sem orçamento para fotografia",
+    "theme-depth": "Tematizar uma suíte de e-commerce do início ao fim, até formulários de endereços e e-mails transacionais",
+    "no-inventory": "Projetar uma loja para uma coleção que nunca foi fabricada"
+  },
+  "learnings": {
+    "pick-the-stack-once": "Trocar plataformas de e-commerce custa todo o tema, e a segunda construção não é mais rápida que a primeira",
+    "brand-before-storefront": "A identidade e a cápsula se mantiveram, a loja em torno delas não tinha nada para vender",
+    "ecommerce-theming-cost": "Uma loja credível significa centenas de templates, a maioria deles páginas que ninguém pensa",
+    "side-project-momentum": "Uma marca administrada ao lado do trabalho com clientes precisa de alguém cujo trabalho seja a marca"
+  },
+  "future-plans": {
+    "archived-repositories": "Ambos os repositórios estão arquivados, e a marca nunca foi relançada"
+  }
+}

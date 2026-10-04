@@ -1,0 +1,87 @@
+{
+  "short-description": "Kendi kimliği, bir kapsül koleksiyonu ve özel bir vitrinle lüks tarafta yer alan iç tasarım kıyafet markası.",
+  "description": "2020'de kendimizin başlattığı bir kıyafet markası: bir logo için çok yüzlü bir elmas, Astronomi kapsül koleksiyonu ve sıfırdan yeniden inşa edilen bir çevrimiçi mağaza. Önce Sylius sonra PrestaShop üzerinde.",
+  "long-description": "RVBY, lüks tarafta konumlanan kendi kıyafet markamıza yaptığımız bir girişimdi. İsim ruby olarak okunuyor ve kimlik de ona bağlı kalıyordu: tek bir çizgi kalınlığıyla çizilen çok yüzlü bir elmas, siyah beyaz olarak tasarlandı ve başka bir renk kullanılmadı, vitrin HOMME, FEMME ve COLLECTIONS etrafında inşa edildi.\n\nİlk kapsül Astronomi olarak adlandırıldı. Sanatı kelimeyi kırmızı bir çizgiyle çarpılayarak, Paris'in koordinatlarıyla imzaladı; 48°51'12\"K 2°20'55\"D, spor giyimde küçük olarak basıldı.\n\nMağaza iki defa inşa edildi. Mayıs 2020'de Sylius üzerinde başladı, Symfony tabanlı e-ticaret çerçevesi, 207 özel Twig şablonu taşıyan bir RvbyTheme ile hesaptan adres defterine, sepete, kasaya, sipariş geçmişine ve her işlem e-postasına kadar her alanda.\nÜç hafta sonra her şey PrestaShop 1.7’ye taşındı; 32 modülü geçersiz kılan ikinci bir özel tema ve kendi webpack ve postcss yapısıyla.\n\nMarka hiçbir ürün göndermedi. Depolar Kasım 2020'de arşivlendi, ilk taahhütten altı ay sonra; geriye kalan bir kimlik, bir koleksiyon ve hiçbir müşteri önüne çıkarılmayan iki tam e-ticaret teması.",
+  "features": {
+    "brand-identity": {
+      "title": "Marka kimliği",
+      "description": "Bir ruby olarak okunan çok yüzlü bir elmas, tek bir çizgi kalınlığında, sıkı bir şekilde siyah ve beyaz"
+    },
+    "capsule-collection": {
+      "title": "Astronomi kapsülü",
+      "description": "Sanatı kırmızıyla kelimeyi çizen bir koleksiyon ve Paris'in koordinatlarıyla imzalanmış"
+    },
+    "storefront": {
+      "title": "Vitrin",
+      "description": "Erkek giyimi, kadın giyimi ve koleksiyonlar etrafında düzenlenmiş bir mağaza; arama, hesap ve sepet ile birlikte"
+    },
+    "custom-theme": {
+      "title": "Özel temalar",
+      "description": "Alınmadı ve ayarlanmadı, sıfırdan yazılan iki tam e-ticaret teması"
+    },
+    "checkout-flow": {
+      "title": "Ödeme ve hesap",
+      "description": "Sepet, ödeme aşamaları, sipariş geçmişi, adres defteri ve işlem e-postaları; hepsi temalı"
+    }
+  },
+  "technologies": {
+    "sylius": {
+      "description": "İlk vitrin, üstünde RvbyTheme ile"
+    },
+    "symfony": {
+      "description": "Sylius altındaki çerçeve, Doctrine ile"
+    },
+    "prestashop": {
+      "description": "İkinci vitrin, 1.7, 32 geçersiz kılınan modülle birlikte"
+    },
+    "twig": {
+      "description": "Sylius temasının şablon dili"
+    },
+    "docker": {
+      "description": "Travis CI ile birlikte yerel ortam"
+    }
+  },
+  "metrics": {
+    "templates": {
+      "value": "207",
+      "label": "Twig şablonları",
+      "description": "Sadece Sylius temasındaki özel görünümler"
+    },
+    "platforms": {
+      "value": "2",
+      "label": "Platformlar",
+      "description": "Önce Sylius sonra PrestaShop, üç hafta arayla"
+    },
+    "lifespan": {
+      "value": "6 ay",
+      "label": "Ömür",
+      "description": "İlk taahhütten arşivlenen deponun kapanışına kadar"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "caption": "Vitrinin ana sayfası, elmas kelime işaretinin altında yer alıyor"
+    },
+    "collection-artwork": {
+      "caption": "Astronomi kapsül sanat çalışması, Paris'in koordinatlarıyla imzalanmış"
+    },
+    "products": {
+      "caption": "Kapsül parçaları mockuplarda"
+    }
+  },
+  "challenges": {
+    "platform-switch": "İlk platformdan üç hafta sonra ikinci bir platformda tüm vitrini yeniden inşa etmek",
+    "luxury-positioning": "Bir logo, iki renk ve fotoğraf bütçesi olmadan lüks sınıfı sürdürmek",
+    "theme-depth": "E-ticaret paketinin uçtan uca temalandırılması, adres formları ve işlem e-postalarına kadar",
+    "no-inventory": "Hiç üretilmemiş bir koleksiyon için bir mağaza tasarlamak"
+  },
+  "learnings": {
+    "pick-the-stack-once": "E-ticaret platformlarını değiştirmek tüm temayı gerektirir, ikinci inşaat birincisinden daha hızlı değildir",
+    "brand-before-storefront": "Kimlik ve kapsül sürdü, etrafında herhangi bir şey satmak için mağaza yoktu",
+    "ecommerce-theming-cost": "Kredibiliteye sahip bir mağaza yüzlerce şablon gerektirir, bunların çoğu kimsenin düşünmediği sayfalardır",
+    "side-project-momentum": "Müşteri işinin yanında yürütülen bir marka için o işin sahibine ihtiyaç vardır"
+  },
+  "future-plans": {
+    "archived-repositories": "Her iki depo da arşivlenmiştir ve marka asla yeniden başlatılmamıştır."
+  }
+}

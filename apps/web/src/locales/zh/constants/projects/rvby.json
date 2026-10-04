@@ -1,0 +1,87 @@
+{
+  "short-description": "自家服装品牌，专注于奢侈品市场，拥有独特的身份、胶囊系列和定制店面.",
+  "description": "我们在2020年自主创立的服装品牌：一个多面体宝石作为标志，一个天文学胶囊系列，以及一个从头开始重建主题的在线商店，最初在Sylius上，然后转到PrestaShop上.",
+  "long-description": "RVBY是我们尝试创建的一个奢侈品牌服装标签。这个名字读作ruby（红宝石），它的身份也是如此：一个用单一线条绘制的多面宝石，采用黑白色调，不加其他颜色，店面围绕着HOMME(男士)、FEMME(女士)和COLLECTIONS(系列)构建。\n\n第一个胶囊系列叫做天文学。它的艺术作品用红线划掉单词，并用巴黎的坐标签名，48°51'12\"N 2°20'55\"E，印在运动服上小字。\n\n商店构建了两次。它于2020年5月开始在Sylius上，基于Symfony的电子商务框架，使用了RvbyTheme，包含207个自定义Twig模板，涵盖账户区域、通讯录、购物车、结账过程、订单历史和每一封交易邮件。三周后，整个事情迁移到了PrestaShop 1.7，采用第二个覆盖了32个模块的自定义主题，以及自己的webpack和postcss构建。\n\n该品牌从未发货过任何产品。所有代码库在2020年11月被归档，在第一次提交后的六个月内，剩下的就是一个身份、一系列和两个从未展现在客户面前的完整电子商务主题.",
+  "features": {
+    "brand-identity": {
+      "title": "品牌身份",
+      "description": "一个多面宝石看起来像红宝石，采用单一线条粗细，严格的黑白色调"
+    },
+    "capsule-collection": {
+      "title": "天文学胶囊",
+      "description": "一系列艺术作品用红色划掉单词，并签到巴黎的坐标"
+    },
+    "storefront": {
+      "title": "店面",
+      "description": "一个围绕男士服装、女士服装和系列组织的商店，配有搜索、账户和购物车功能"
+    },
+    "custom-theme": {
+      "title": "自定义主题",
+      "description": "两个从零开始编写的完整电子商务主题，而不是购买再调整的"
+    },
+    "checkout-flow": {
+      "title": "结账和账户",
+      "description": "购物车、结账步骤、订单历史、通讯录和交易邮件，所有都有主题设计"
+    }
+  },
+  "technologies": {
+    "sylius": {
+      "description": "第一个店面，顶部是RvbyTheme"
+    },
+    "symfony": {
+      "description": "Sylius下的框架，使用Doctrine."
+    },
+    "prestashop": {
+      "description": "第二个店面，1.7版本，覆盖了32个模块"
+    },
+    "twig": {
+      "description": "Sylius主题的模板语言"
+    },
+    "docker": {
+      "description": "本地环境，以及Travis CI."
+    }
+  },
+  "metrics": {
+    "templates": {
+      "value": "207",
+      "label": "Twig模板",
+      "description": "仅在Sylius主题中的自定义视图"
+    },
+    "platforms": {
+      "value": "2",
+      "label": "平台",
+      "description": "首先是Sylius，然后是PrestaShop，相隔三周"
+    },
+    "lifespan": {
+      "value": "6个月",
+      "label": "使用寿命",
+      "description": "从第一次提交到归档的代码库"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "caption": "店面首页，宝石放在标志下方"
+    },
+    "collection-artwork": {
+      "caption": "天文学胶囊艺术作品，上面签名了巴黎的坐标"
+    },
+    "products": {
+      "caption": "胶囊系列的产品展示在模型上"
+    }
+  },
+  "challenges": {
+    "platform-switch": "在第一次上线三周后，在第二个平台上重建整个店面",
+    "luxury-positioning": "在没有摄影预算的情况下，保持奢侈品牌的形象，拥有一个标志和两种颜色",
+    "theme-depth": "对电子商务套件进行全面主题设计，涵盖地址表单和交易邮件",
+    "no-inventory": "设计一个从未生产的系列的商店"
+  },
+  "learnings": {
+    "pick-the-stack-once": "切换电子商务平台意味着整个主题都需要重做，第二次构建并不比第一次快",
+    "brand-before-storefront": "品牌和胶囊系列成立了，围绕它们的商店没有东西可卖",
+    "ecommerce-theming-cost": "一个可信的商店意味着数百个模板，大多数是没人考虑到的页面",
+    "side-project-momentum": "与客户工作的品牌需要一个专注于品牌的人"
+  },
+  "future-plans": {
+    "archived-repositories": "两个代码库都已归档，品牌从未重新上线"
+  }
+}
