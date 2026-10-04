@@ -1,0 +1,59 @@
+{
+  "short-description": "In-house clothing label aiming at the luxury end, with its own identity, a capsule collection, and a custom storefront.",
+  "description": "A clothing brand we started ourselves in 2020: a faceted gem for a logo, an Astronomy capsule collection, and an online store whose theme was rebuilt from scratch, first on Sylius then on PrestaShop.",
+  "long-description": "RVBY was our own attempt at a clothing label positioned at the luxury end. The name reads as ruby, and the identity followed: a faceted gem drawn in a single weight of line, set in black and white with no other colour, and a storefront built around HOMME, FEMME, and COLLECTIONS.\n\nThe first capsule was called Astronomy. Its artwork crossed out the word with a red line and signed it with the coordinates of Paris, 48°51'12\"N 2°20'55\"E, printed small on sportswear.\n\nThe store was built twice. It started in May 2020 on Sylius, the Symfony-based e-commerce framework, with a RvbyTheme carrying 207 custom Twig templates across the account area, the address book, the cart, the checkout, order history, and every transactional email. Three weeks later the whole thing moved to PrestaShop 1.7, with a second custom theme overriding 32 modules and its own webpack and postcss build.\n\nThe brand never shipped a product. The repositories were archived in November 2020, six months after the first commit, and what survives is an identity, one collection, and two complete e-commerce themes that were never put in front of a customer.",
+  "features": {
+    "brand-identity": {
+      "title": "Brand identity",
+      "description": "A faceted gem reading as a ruby, drawn in one line weight, strictly black and white"
+    },
+    "capsule-collection": {
+      "title": "Astronomy capsule",
+      "description": "A collection whose artwork crosses the word out in red and signs it with the coordinates of Paris"
+    },
+    "storefront": {
+      "title": "Storefront",
+      "description": "A shop organised around menswear, womenswear, and collections, with search, account, and cart"
+    },
+    "custom-theme": {
+      "title": "Custom themes",
+      "description": "Two full e-commerce themes written from scratch rather than bought and adjusted"
+    },
+    "checkout-flow": {
+      "title": "Checkout and account",
+      "description": "Cart, checkout steps, order history, address book, and transactional emails, all themed"
+    }
+  },
+  "technologies": {
+    "sylius": { "description": "First storefront, with the RvbyTheme on top" },
+    "symfony": { "description": "Framework under Sylius, with Doctrine" },
+    "prestashop": { "description": "Second storefront, 1.7, with 32 overridden modules" },
+    "twig": { "description": "Template language of the Sylius theme" },
+    "docker": { "description": "Local environment, alongside Travis CI" }
+  },
+  "metrics": {
+    "templates": { "value": "207", "label": "Twig templates", "description": "Custom views in the Sylius theme alone" },
+    "platforms": { "value": "2", "label": "Platforms", "description": "Sylius then PrestaShop, three weeks apart" },
+    "lifespan": { "value": "6 months", "label": "Lifespan", "description": "From first commit to archived repositories" }
+  },
+  "screenshots": {
+    "homepage": { "caption": "Storefront home page, with the gem set under the wordmark" },
+    "collection-artwork": { "caption": "Astronomy capsule artwork, signed with the coordinates of Paris" },
+    "products": { "caption": "Capsule pieces on mockups" }
+  },
+  "challenges": {
+    "platform-switch": "Rebuilding the entire storefront on a second platform three weeks after the first",
+    "luxury-positioning": "Holding a luxury register with a logo, two colours, and no photography budget",
+    "theme-depth": "Theming an e-commerce suite end to end, down to address forms and transactional emails",
+    "no-inventory": "Designing a shop for a collection that was never manufactured"
+  },
+  "learnings": {
+    "pick-the-stack-once": "Switching e-commerce platforms costs the whole theme, and the second build is not faster than the first",
+    "brand-before-storefront": "The identity and the capsule held up, the shop around them had nothing to sell",
+    "ecommerce-theming-cost": "A credible store means hundreds of templates, most of them pages nobody thinks about",
+    "side-project-momentum": "A brand run alongside client work needs someone whose job is the brand"
+  },
+  "future-plans": {
+    "archived-repositories": "Both repositories are archived, and the brand was never relaunched"
+  }
+}

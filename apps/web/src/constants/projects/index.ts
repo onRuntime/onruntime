@@ -7,6 +7,7 @@ import { shadowbonusProject } from "./shadowbonus";
 import { expatFacilitiesProject } from "./expatfacilities";
 import { immobilierBrianconProject } from "./immobilier-briancon";
 import { netflixaddictsProject } from "./netflixaddicts";
+import { rvbyProject } from "./rvby";
 
 const Projects: Project[] = [
 	tonightpassProject,
@@ -16,7 +17,8 @@ const Projects: Project[] = [
 	shadowbonusProject,
 	expatFacilitiesProject,
 	immobilierBrianconProject,
-	netflixaddictsProject
+	netflixaddictsProject,
+	rvbyProject
 ];
 
 export default Projects;

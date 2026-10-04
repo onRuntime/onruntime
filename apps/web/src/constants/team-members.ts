@@ -122,6 +122,10 @@ const TeamMembers: Record<string, TeamMember> = {
   "ralph": {
     name: "Ralph",
     roles: [TeamRole.PRODUCT_MANAGER],
+  },
+  "romain": {
+    name: "Romain",
+    roles: [TeamRole.DESIGNER],
   }
 };
 
