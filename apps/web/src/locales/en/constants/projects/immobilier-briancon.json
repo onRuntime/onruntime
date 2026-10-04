@@ -1,0 +1,71 @@
+{
+  "short-description": "Showcase website for a real estate agency in Briançon, with a property catalogue, online valuation, and lead capture.",
+  "description": "Next.js website built for IMMOBILIER BRIANÇON Géraldine JULLIEN, a real estate agency in the French Alps, combining a synced property catalogue, a free online valuation form, and several lead capture paths.",
+  "long-description": "IMMOBILIER BRIANÇON Géraldine JULLIEN has been selling property in Briançon, Serre Chevalier, and Montgenèvre since 1993. The agency needed a website that matched the quality of its listings: professional photography, 360° virtual tours, drone footage, 2D and 3D floor plans, and virtual staging are at the heart of its sales pitch, so the site had to show that work rather than describe it.\n\nWe built the site with Next.js and Tailwind CSS on the App Router. The property catalogue is served by internal API routes that read from the agency's real estate software, so the sales team keeps publishing from the tool it already uses and the website stays in sync without a second back office. A separate route aggregates the agency's Google reviews, displayed on the homepage with the overall rating.\n\nSeveral paths lead to a conversation with an agent: a free online pre-valuation form, an e-mail alert for new listings, a newsletter, a referral programme for business introducers, and a contact page with a map. Metadata, Open Graph tags, and a dynamic sitemap cover the local search queries the agency competes on.\n\nThe site was delivered and handed over to the agency, which has since moved its public website to a no-code platform it can edit without a developer.",
+  "features": {
+    "property-catalog": {
+      "title": "Property catalogue",
+      "description": "Listings for sale with detail pages, served from the agency's real estate software through internal API routes"
+    },
+    "online-valuation": {
+      "title": "Free online valuation",
+      "description": "A short form that gives sellers a pre-valuation of their house or flat and opens a conversation with an agent"
+    },
+    "property-alerts": {
+      "title": "E-mail alerts and newsletter",
+      "description": "Buyers subscribe to be told about new listings, sellers to the agency's yearly newsletter"
+    },
+    "google-reviews": {
+      "title": "Google reviews",
+      "description": "Reviews aggregated through a dedicated API route and shown on the homepage with the overall rating"
+    },
+    "referral-program": {
+      "title": "Referral programme",
+      "description": "A dedicated page and form for business introducers, who are paid when a referral turns into a sale"
+    },
+    "team-showcase": {
+      "title": "Team pages",
+      "description": "Profiles for each agent with credentials and contact details, alongside the agency's video content"
+    }
+  },
+  "technologies": {
+    "nextjs": { "description": "App Router, server components, and API routes" },
+    "react": { "description": "User interface components" },
+    "typescript": { "description": "Type-safe development" },
+    "tailwindcss": { "description": "Styling and design system" },
+    "vercel": { "description": "Hosting and continuous deployment" },
+    "la-boite-immo": { "description": "The agency's real estate software, source of the listings" }
+  },
+  "metrics": {
+    "google-reviews": { "value": "147", "label": "Google reviews", "description": "Aggregated on the site, rated 5 out of 5" },
+    "pages": { "value": "7", "label": "Pages", "description": "From the catalogue to the referral form" },
+    "team-size": { "value": "2 people", "label": "Team", "description": "A compact design and development duo" }
+  },
+  "screenshots": {
+    "services": { "caption": "The agency's media services, from drone footage to virtual staging" },
+    "estimation": { "caption": "Free online pre-valuation form" },
+    "reviews": { "caption": "Google reviews aggregated on the homepage" },
+    "team": { "caption": "Agent profiles with credentials and contact details" },
+    "referral": { "caption": "Referral form for business introducers" },
+    "contact": { "caption": "Contact page with the agency location" }
+  },
+  "challenges": {
+    "listings-sync": "Keeping the catalogue in sync with the agency's real estate software so the sales team only publishes once",
+    "local-seo": "Competing on local search for Briançon, Serre Chevalier, and Montgenèvre against national property portals",
+    "valuation-funnel": "Designing a valuation form short enough to be filled in, honest enough to send sellers to a real expert",
+    "media-heavy-content": "Serving photography, virtual tours, and video without wrecking load times on mountain mobile connections",
+    "strict-csp": "Running a strict Content Security Policy while embedding third-party media and listing data",
+    "mountain-market-positioning": "Addressing both year-round residents and second-home buyers on the same pages"
+  },
+  "learnings": {
+    "local-seo-wins": "A local agency wins on neighbourhood and resort queries, not on generic property searches",
+    "third-party-data-dependency": "When listings come from an external tool, every failure mode of that tool becomes a failure mode of the site",
+    "lead-capture-paths": "Sellers and buyers convert on different pages, so each needs its own call to action",
+    "content-ownership": "Clients who produce their own photos and videos need a way to publish them without a deployment",
+    "performance-with-media": "Image formats and lazy loading do more for a media-heavy site than any other optimisation"
+  },
+  "future-plans": {
+    "client-handover": "The site was delivered and handed over to the agency",
+    "no-code-migration": "The agency has since moved its public website to a no-code platform it edits itself"
+  }
+}
