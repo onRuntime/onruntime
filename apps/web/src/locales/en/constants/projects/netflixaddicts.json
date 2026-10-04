@@ -1,0 +1,54 @@
+{
+  "short-description": "Discord community around Netflix series, built around a bot with a community-sourced show encyclopedia.",
+  "description": "A Discord community for Netflix viewers, served by a TypeScript bot that answered show lookups from a catalogue the members themselves kept filling, alongside a Bootstrap showcase site and a short-lived Go API.",
+  "long-description": "NetflixAddicts started as a Discord server for people who watch a lot of series, and grew a bot to go with it. The ency command searched a catalogue of shows by title or by genre and returned paginated embeds, while a suggest command let members propose the entries that were missing. The catalogue was never scraped from anywhere: it was whatever the community had bothered to add.\n\nAround the bot came the usual community plumbing: private voice channels created on demand and torn down when empty, audio playback, presence management, and a Twitter bridge for announcements. The bot was written in TypeScript on discord.js and published under Apache 2.0.\n\nA showcase site was designed alongside it. The home page was laid out, the encyclopedia page never got past a wireframe, and the whole thing stayed a prototype. A Go API was started to back it and abandoned three days later.\n\nTwo rewrites were planned and never written: a client/server split in late 2020, and a Next.js front in early 2021. Both repositories still hold nothing but a README. The six repositories were archived, and the project stands as a reminder that a community can outlive the software written for it.",
+  "features": {
+    "series-encyclopedia": {
+      "title": "Show encyclopedia",
+      "description": "Search by title or genre from Discord, with paginated results rendered as embeds"
+    },
+    "community-suggestions": {
+      "title": "Community-sourced catalogue",
+      "description": "Members proposed the shows that were missing, so the catalogue grew with the server"
+    },
+    "private-voice-channels": {
+      "title": "Private voice channels",
+      "description": "Channels created on demand for a group and removed once everyone had left"
+    },
+    "audio-playback": {
+      "title": "Audio playback",
+      "description": "Voice channel playback handled through ffmpeg, with join and leave commands"
+    },
+    "showcase-website": {
+      "title": "Showcase site",
+      "description": "A home page and an encyclopedia layout, designed and prototyped but never finished"
+    }
+  },
+  "technologies": {
+    "typescript": { "description": "Bot source, typed end to end" },
+    "discordjs": { "description": "Discord client, command parsing, and paginated embeds" },
+    "golang": { "description": "Short-lived API attempt" },
+    "bootstrap": { "description": "Showcase site layout" }
+  },
+  "metrics": {
+    "commands": { "value": "11", "label": "Bot commands", "description": "From encyclopedia lookups to channel management" },
+    "repositories": { "value": "6", "label": "Repositories", "description": "Bot, site, design, API, and two rewrites" },
+    "lifespan": { "value": "2 years", "label": "Lifespan", "description": "From the first community to the last archived repository" }
+  },
+  "screenshots": {},
+  "challenges": {
+    "discord-pagination": "Presenting a catalogue inside Discord, where the only layout available is a paginated embed",
+    "community-sourced-catalog": "Keeping a catalogue useful when its content depends entirely on member submissions",
+    "voice-channel-lifecycle": "Creating and destroying voice channels without leaving empty rooms behind",
+    "scattered-codebases": "Six repositories for one project, with the bot, the site, the design, and the API all living apart"
+  },
+  "learnings": {
+    "ship-one-surface-first": "The bot was used daily, the website never shipped: the surface people already live in wins",
+    "community-before-product": "The Discord server held the value, the software was only one way of serving it",
+    "rewrites-need-a-reason": "Two rewrites were started from a blank repository and neither was finished",
+    "third-party-brand-limits": "Building a community around someone else's brand caps how far the project can be taken"
+  },
+  "future-plans": {
+    "archived-repositories": "All six repositories are archived and read-only"
+  }
+}

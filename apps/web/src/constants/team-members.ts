@@ -118,6 +118,10 @@ const TeamMembers: Record<string, TeamMember> = {
     website: "https://soullikeplayer.github.io/e-portfolio/",
     github: "https://github.com/SoulLikePlayer",
     linkedin: "https://www.linkedin.com/in/louis-lazare-51057b266/",
+  },
+  "ralph": {
+    name: "Ralph",
+    roles: [TeamRole.PRODUCT_MANAGER],
   }
 };
 

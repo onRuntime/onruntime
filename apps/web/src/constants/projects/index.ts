@@ -6,6 +6,7 @@ import { darkThemeForInstagram } from "./dark-theme-instagram";
 import { shadowbonusProject } from "./shadowbonus";
 import { expatFacilitiesProject } from "./expatfacilities";
 import { immobilierBrianconProject } from "./immobilier-briancon";
+import { netflixaddictsProject } from "./netflixaddicts";
 
 const Projects: Project[] = [
 	tonightpassProject,
@@ -14,7 +15,8 @@ const Projects: Project[] = [
 	darkThemeForInstagram,
 	shadowbonusProject,
 	expatFacilitiesProject,
-	immobilierBrianconProject
+	immobilierBrianconProject,
+	netflixaddictsProject
 ];
 
 export default Projects;
