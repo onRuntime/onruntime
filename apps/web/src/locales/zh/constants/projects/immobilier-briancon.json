@@ -1,0 +1,107 @@
+{
+  "short-description": "位于布里昂松的房地产代理机构展示网站，包含房产目录、在线评估和客户获取功能。",
+  "description": "使用 Next.js 构建的网站，为位于法国阿尔卑斯山的房地产代理机构 IMMOBILIER BRIANÇON Géraldine JULLIEN 提供服务，结合了同步的房产目录、免费的在线估值表单和多条客户获取路径。",
+  "long-description": "自 1993 年以来，IMMOBILIER BRIANÇON Géraldine JULLIEN 在布里昂松、塞尔切瓦利耶和蒙让弗勒卖房。该代理机构需要一个与其房源质量相匹配的网站：专业摄影、360° 虚拟导览、无人机拍摄、2D 和 3D 平面图以及虚拟布置是其销售的核心内容，因此网站必须展示这些工作，而不是单纯描述。\n\n我们使用 Next.js 和 Tailwind CSS 在应用路由器上构建了网站。房产目录通过内部 API 路由从代理机构的房地产软件中服务，因此销售团队可以继续使用他们已经在使用的工具进行发布，网站保持同步，无需第二个后台。一个单独的路由汇总了代理机构的 Google 评论，并在主页上显示总体评分。\n\n有几条路径可以与代理商进行对话：免费在线预估表单、获取新房源的电子邮件提醒、新闻通讯、为业务介绍者设立的推荐计划，以及带有地图的联系页面。元数据、Open Graph 标签和动态网站地图覆盖了代理机构竞争的本地搜索查询。\n\n该网站已经交付并移交给代理机构，自那以后，该机构已将其公共网站迁移到一个无代码平台，使其无需开发人员即可进行编辑。",
+  "features": {
+    "property-catalog": {
+      "title": "房产目录",
+      "description": "销售清单及详细页面，通过内部 API 路由从代理机构的房地产软件提供"
+    },
+    "online-valuation": {
+      "title": "免费在线估值",
+      "description": "一个简短的表单，让卖家获得他们房子或公寓的预估值，并与代理商开启对话"
+    },
+    "property-alerts": {
+      "title": "电子邮件提醒和新闻通讯",
+      "description": "买家订阅以获取新房源信息，卖家订阅代理机构的年度新闻通讯"
+    },
+    "google-reviews": {
+      "title": "Google 评论",
+      "description": "通过专用 API 路由聚合的评论，并在主页上显示总体评分"
+    },
+    "referral-program": {
+      "title": "推荐计划",
+      "description": "为业务介绍者提供的专用页面和表单，介绍成功转化为销售时会获得报酬"
+    },
+    "team-showcase": {
+      "title": "团队页面",
+      "description": "每位代理商的简介，包含资历和联系信息，以及代理机构的视频内容"
+    }
+  },
+  "technologies": {
+    "nextjs": {
+      "description": "应用路由器、服务组件和 API 路由"
+    },
+    "react": {
+      "description": "用户界面组件"
+    },
+    "typescript": {
+      "description": "类型安全的开发"
+    },
+    "tailwindcss": {
+      "description": "样式和设计系统"
+    },
+    "vercel": {
+      "description": "托管和持续部署"
+    },
+    "la-boite-immo": {
+      "description": "代理机构的房地产软件，房源的来源"
+    }
+  },
+  "metrics": {
+    "google-reviews": {
+      "value": "147",
+      "label": "Google 评论",
+      "description": "聚合在网站上，评分为 5 分中的 5 分"
+    },
+    "pages": {
+      "value": "7",
+      "label": "页面",
+      "description": "从目录到推荐表单"
+    },
+    "team-size": {
+      "value": "2 人",
+      "label": "团队",
+      "description": "紧凑的设计和开发组合"
+    }
+  },
+  "screenshots": {
+    "services": {
+      "caption": "代理机构的媒体服务，从无人机拍摄到虚拟布置"
+    },
+    "estimation": {
+      "caption": "免费的在线预估表单"
+    },
+    "reviews": {
+      "caption": "在主页上聚合的 Google 评论"
+    },
+    "team": {
+      "caption": "带有资历和联系信息的代理商资料"
+    },
+    "referral": {
+      "caption": "为业务介绍者准备的推荐表单"
+    },
+    "contact": {
+      "caption": "带有代理机构位置的联系页面"
+    }
+  },
+  "challenges": {
+    "listings-sync": "保持目录与代理机构房地产软件同步，让销售团队只需发布一次",
+    "local-seo": "在布里昂松、塞尔切瓦利耶和蒙让弗勒与全国物业门户竞争地方搜索",
+    "valuation-funnel": "设计一个足够简短的估值表单，易于填写，同时能够诚实地将卖家引导到真实的专家",
+    "media-heavy-content": "在不影响山区移动连接载入时间的情况下提供摄影、虚拟导览和视频",
+    "strict-csp": "在嵌入第三方媒体和房源数据的同时运行严格的内容安全政策",
+    "mountain-market-positioning": "在同一页面上同时面向全年居民和第二户住宅买家"
+  },
+  "learnings": {
+    "local-seo-wins": "本地代理在邻里和度假村搜索中获胜，而不是在一般的物业搜索中",
+    "third-party-data-dependency": "当房源来自外部工具时，该工具的每种故障模式都会成为网站的故障模式",
+    "lead-capture-paths": "卖家和买家在不同页面上转换，因此每个页面需要自己的行动号召",
+    "content-ownership": "自己制作照片和视频的客户需要能够在不经过部署的情况下发布内容的方式",
+    "performance-with-media": "图像格式和延迟加载对重媒体网站的提升效果胜过任何其他优化"
+  },
+  "future-plans": {
+    "client-handover": "该网站已交付并移交给代理机构",
+    "no-code-migration": "该机构随后已将其公共网站迁移到无代码平台，能够自我编辑"
+  }
+}

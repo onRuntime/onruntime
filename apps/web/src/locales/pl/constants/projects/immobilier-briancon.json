@@ -1,0 +1,107 @@
+{
+  "short-description": "Strona prezentacyjna dla agencji nieruchomości w Briançon, z katalogiem nieruchomości, wyceną online i pozyskiwaniem leadów.",
+  "description": "Strona internetowa Next.js stworzona dla IMMOBILIER BRIANÇON Géraldine JULLIEN, agencji nieruchomości w Alpach Francuskich, łącząca zsynchronizowany katalog nieruchomości, darmowy formularz wyceny online i kilka ścieżek do pozyskiwania leadów.",
+  "long-description": "IMMOBILIER BRIANÇON Géraldine JULLIEN sprzedaje nieruchomości w Briançon, Serre Chevalier i Montgenèvre od 1993 roku. Agencja potrzebowała strony internetowej, która odpowiadałaby jakością jej ofert: profesjonalne zdjęcia, wirtualne spacery 360°, ujęcia z drona, plany 2D i 3D oraz wirtualne aranżacje są sercem jej oferty sprzedażowej, więc strona musiała pokazywać tę pracę zamiast ją opisywać.\n\nZbudowaliśmy stronę za pomocą Next.js i Tailwind CSS w App Router. Katalog nieruchomości jest zasilany przez wewnętrzne trasy API, które odczytują dane z oprogramowania agencji nieruchomości, więc zespół sprzedażowy może publikować z narzędzia, które już stosuje, a strona internetowa pozostaje zsynchronizowana bez potrzeby drugiego back office. Oddzielna trasa agreguje oceny Google agencji, wyświetlane na stronie głównej z ogólną oceną.\n\nKilka ścieżek prowadzi do rozmowy z agentem: darmowy formularz wstępnej wyceny online, alert e-mailowy o nowych ofertach, biuletyn, program poleceń dla osób wprowadzających biznes oraz strona kontaktowa z mapą. Metadane, tagi Open Graph i dynamiczna mapa witryny obejmują lokalne zapytania, na które agencja konkuruje.\n\nStrona została dostarczona i przekazana agencji, która od tego czasu przeniosła swoją publiczną witrynę na platformę no-code, którą może edytować bez programisty.",
+  "features": {
+    "property-catalog": {
+      "title": "Katalog nieruchomości",
+      "description": "Oferty na sprzedaż z kartami szczegółów, dostarczane z oprogramowania agencji nieruchomości przez wewnętrzne trasy API"
+    },
+    "online-valuation": {
+      "title": "Darmowa wycena online",
+      "description": "Krótki formularz, który daje sprzedawcom wstępną wycenę ich domu lub mieszkania i otwiera rozmowę z agentem"
+    },
+    "property-alerts": {
+      "title": "Alerty e-mailowe i biuletyn",
+      "description": "Kupujący subskrybują, aby być informowanymi o nowych ofertach, sprzedawcy o rocznym biuletynie agencji"
+    },
+    "google-reviews": {
+      "title": "Opinie Google",
+      "description": "Opinie agregowane przez dedykowaną trasę API i wyświetlane na stronie głównej z ogólną oceną"
+    },
+    "referral-program": {
+      "title": "Program poleceń",
+      "description": "Dedykowana strona i formularz dla osób wprowadzających biznes, które otrzymują wynagrodzenie, gdy polecenie zamienia się w sprzedaż"
+    },
+    "team-showcase": {
+      "title": "Strony zespołu",
+      "description": "Profile każdego agenta z kwalifikacjami i danymi kontaktowymi, obok treści wideo agencji"
+    }
+  },
+  "technologies": {
+    "nextjs": {
+      "description": "App Router, komponenty serwerowe i trasy API"
+    },
+    "react": {
+      "description": "Komponenty interfejsu użytkownika"
+    },
+    "typescript": {
+      "description": "Rozwój z zachowaniem typów"
+    },
+    "tailwindcss": {
+      "description": "System stylizacji i designu"
+    },
+    "vercel": {
+      "description": "Hosting i ciągłe wdrażanie"
+    },
+    "la-boite-immo": {
+      "description": "Oprogramowanie agencji nieruchomości, źródło ofert"
+    }
+  },
+  "metrics": {
+    "google-reviews": {
+      "value": "147",
+      "label": "Opinie Google",
+      "description": "Zebrane na stronie, ocenione na 5 na 5"
+    },
+    "pages": {
+      "value": "7",
+      "label": "Strony",
+      "description": "Od katalogu do formularza polecenia"
+    },
+    "team-size": {
+      "value": "2 osoby",
+      "label": "Zespół",
+      "description": "Kompaktowy duet projektowy i programistyczny"
+    }
+  },
+  "screenshots": {
+    "services": {
+      "caption": "Usługi medialne agencji, od ujęć z drona po wirtualne aranżacje"
+    },
+    "estimation": {
+      "caption": "Darmowy formularz wstępnej wyceny online"
+    },
+    "reviews": {
+      "caption": "Opinie Google zebrane na stronie głównej"
+    },
+    "team": {
+      "caption": "Profile agentów z kwalifikacjami i danymi kontaktowymi"
+    },
+    "referral": {
+      "caption": "Formularz polecenia dla osób wprowadzających biznes"
+    },
+    "contact": {
+      "caption": "Strona kontaktowa z lokalizacją agencji"
+    }
+  },
+  "challenges": {
+    "listings-sync": "Utrzymywanie katalogu w synchronizacji z oprogramowaniem agencji nieruchomości, aby zespół sprzedażowy publikował tylko raz",
+    "local-seo": "Konkurencja w lokalnym wyszukiwaniu dla Briançon, Serre Chevalier i Montgenèvre z krajowymi portalami nieruchomości",
+    "valuation-funnel": "Zapewnienie, że formularz wyceny jest wystarczająco krótki, by go wypełnić, a jednocześnie wystarczająco szczery, aby skierować sprzedawców do prawdziwego eksperta",
+    "media-heavy-content": "Dostarczanie zdjęć, wirtualnych spacerów i wideo bez psucia czasów ładowania w górskich połączeniach mobilnych",
+    "strict-csp": "Utrzymanie ścisłej Polityki Bezpieczeństwa Treści podczas osadzania mediów i danych ofertowych zewnętrznych",
+    "mountain-market-positioning": "Docieranie zarówno do mieszkańców przez cały rok, jak i do kupujących drugie domy na tych samych stronach"
+  },
+  "learnings": {
+    "local-seo-wins": "Lokalna agencja wygrywa w zapytaniach związanych z sąsiedztwem i kurortem, a nie w ogólnych wyszukiwaniach nieruchomości",
+    "third-party-data-dependency": "Gdy oferty pochodzą z zewnętrznego narzędzia, każda awaria tego narzędzia staje się awarią witryny",
+    "lead-capture-paths": "Sprzedawcy i kupujący konwertują na różnych stronach, więc każda potrzebuje swojego wezwania do działania",
+    "content-ownership": "Klienci, którzy produkują swoje własne zdjęcia i wideo, potrzebują sposobu na ich publikowanie bez wdrożenia",
+    "performance-with-media": "Formaty obrazów i leniwe ładowanie mają większy wpływ na witrynę bogatą w media niż jakiekolwiek inne optymalizacje"
+  },
+  "future-plans": {
+    "client-handover": "Strona została dostarczona i przekazana agencji",
+    "no-code-migration": "Agencja od tego czasu przeniosła swoją publiczną stronę na platformę no-code, którą edytuje sama"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "short-description": "Briançon'daki bir emlak ajansı için bir vitrini web sitesi, bir mülk kataloğu, çevrimiçi değerleme ve müşteri toplama ile.",
+  "description": "IMMOBILIER BRIANÇON Géraldine JULLIEN için inşa edilmiş bir Next.js web sitesi, Fransız Alpleri'ndeki bir emlak ajansı, senkronize bir mülk kataloğu, ücretsiz çevrimiçi değerleme formu ve birkaç müşteri toplama yolu kombinasyonu sunuyor.",
+  "long-description": "IMMOBILIER BRIANÇON Géraldine JULLIEN, 1993'ten beri Briançon, Serre Chevalier ve Montgenèvre'de emlak satışı yapıyor. Ajans, listelerinin kalitesine uyum sağlayan bir web sitesine ihtiyaç duyuyordu: profesyonel fotoğrafçılık, 360° sanal turlar, drone görüntüleri, 2D ve 3D kat planları ve sanal sahneleme, satış stratejilerinin merkezindeydi, bu yüzden site bu çalışmayı göstermek zorundaydı, tanımlamak değil.\n\nSiteyi Next.js ve Tailwind CSS ile App Router üzerinde inşa ettik. Mülk kataloğu, ajansın emlak yazılımından okunan iç API rotaları sayesinde sunuluyor, böylece satış ekibi zaten kullandığı araçtan yayını sürdürmeye devam ediyor ve web sitesi ikinci bir arka ofis olmadan senkron kalıyor. Ayrı bir rota, ajansın Google incelemelerini bir araya getiriyor ve bunlar ana sayfada genel puanla birlikte gösteriliyor.\n\nBir ajanla sohbet etmek için birkaç yol var: ücretsiz çevrimiçi ön değerleme formu, yeni listelemeler için e-posta uyarısı, bir bülten, iş tanıtıcıları için bir yönlendirme programı ve harita ile birlikte bir iletişim sayfası. Metadata, Open Graph etiketleri ve dinamik bir site haritası, ajansın rekabet ettiği yerel arama sorgularını kapsıyor.\n\nSite tamamlandı ve ajansa teslim edildi. Ajans bu tarihten itibaren kamu web sitesini bir geliştirici olmadan düzenleyebileceği bir kodsuz platforma taşıdı.",
+  "features": {
+    "property-catalog": {
+      "title": "Mülk kataloğu",
+      "description": "Ajansın emlak yazılımından iç API rotaları aracılığıyla sunulan detay sayfaları ile satışta olan listelemeler"
+    },
+    "online-valuation": {
+      "title": "Ücretsiz çevrimiçi değerleme",
+      "description": "Satıcılara ev ya da dairelerinin ön değerlemesini veren kısa bir form ve bir ajan ile sohbet açıyor"
+    },
+    "property-alerts": {
+      "title": "E-posta uyarıları ve bülten",
+      "description": "Alıcılar yeni listelemeler hakkında bilgilendirilmek için abone olur, satıcılar ajansın yıllık bültenine abone olur"
+    },
+    "google-reviews": {
+      "title": "Google incelemeleri",
+      "description": "Ana sayfada genel puan ile gösterilen özel bir API rotası aracılığıyla toplanan incelemeler"
+    },
+    "referral-program": {
+      "title": "Yönlendirme programı",
+      "description": "Bir yönlendirme satışa dönüşünce ödeme alan iş tanıtıcıları için özel bir sayfa ve form"
+    },
+    "team-showcase": {
+      "title": "Ekip sayfaları",
+      "description": "Ajansın video içerikleri ile birlikte her ajan için kimlik bilgileri ve iletişim detayları ile profiller"
+    }
+  },
+  "technologies": {
+    "nextjs": {
+      "description": "App Router, sunucu bileşenleri ve API rotaları"
+    },
+    "react": {
+      "description": "Kullanıcı arayüzü bileşenleri"
+    },
+    "typescript": {
+      "description": "Tip güvenli geliştirme"
+    },
+    "tailwindcss": {
+      "description": "Stil ve tasarım sistemi"
+    },
+    "vercel": {
+      "description": "Barındırma ve sürekli dağıtım"
+    },
+    "la-boite-immo": {
+      "description": "Listelemelerin kaynağı olan ajansın emlak yazılımı"
+    }
+  },
+  "metrics": {
+    "google-reviews": {
+      "value": "147",
+      "label": "Google incelemeleri",
+      "description": "Sitede toplanmış, 5 üzerinden 5 puan almış"
+    },
+    "pages": {
+      "value": "7",
+      "label": "Sayfalar",
+      "description": "Katalogdan yönlendirme formuna kadar"
+    },
+    "team-size": {
+      "value": "2 kişi",
+      "label": "Ekip",
+      "description": "Kompakt bir tasarım ve geliştirme ikilisi"
+    }
+  },
+  "screenshots": {
+    "services": {
+      "caption": "Ajansın medya hizmetleri, drone görüntülerinden sanal sahnelemeye kadar"
+    },
+    "estimation": {
+      "caption": "Ücretsiz çevrimiçi ön değerleme formu"
+    },
+    "reviews": {
+      "caption": "Ana sayfada toplanan Google incelemeleri"
+    },
+    "team": {
+      "caption": "Kimlik bilgileri ve iletişim detayları ile ajan profilleri"
+    },
+    "referral": {
+      "caption": "İş tanıtıcıları için yönlendirme formu"
+    },
+    "contact": {
+      "caption": "Ajans konumuyla iletişim sayfası"
+    }
+  },
+  "challenges": {
+    "listings-sync": "Katalogu ajansın emlak yazılımı ile senkron tutmak, böylece satış ekibi sadece bir kez yayın yapabiliyor",
+    "local-seo": "Briançon, Serre Chevalier ve Montgenèvre'de yerel arama yaparken ulusal emlak portallarına karşı rekabet etmek",
+    "valuation-funnel": "Satıcıları gerçek bir uzmana yönlendirecek kadar dürüst, doldurulması yeterince kısa bir değerleme formu tasarlamak",
+    "media-heavy-content": "Yüksek medya içeriği olan fotoğraf, sanal turlar ve videoları sunarken dağ mobil bağlantılarında yükleme sürelerini bozmamak",
+    "strict-csp": "Üçüncü taraf medya ve listeleme verilerini yerleştirirken katı bir İçerik Güvenlik Politikası uygulamak",
+    "mountain-market-positioning": "Yıl boyu yaşayanlar ile ikinci ev alıcılarını aynı sayfalarda hedeflemek"
+  },
+  "learnings": {
+    "local-seo-wins": "Yerel bir ajans, mahalle ve tatil beldesi sorgularında başarılı olup, genel mülk aramalarında değil",
+    "third-party-data-dependency": "Listelemeler dış bir araçtan geldiyse, o aracın her hata modu sitenin bir hata modu haline gelir",
+    "lead-capture-paths": "Satıcılar ve alıcılar farklı sayfalarda dönüşüm sağlıyor, bu yüzden her biri kendi eylem çağrısına ihtiyaç duyar",
+    "content-ownership": "Kendi fotoğraflarını ve videolarını üreten müşterilerin, dağıtım olmadan yayınlayabilmesi için bir yol ihtiyacı var",
+    "performance-with-media": "Görüntü formatları ve tembel yükleme, yüksek medya içeriği olan bir site için diğer optimizasyonlardan daha fazlasını yapar"
+  },
+  "future-plans": {
+    "client-handover": "Site teslim edildi ve ajansa devredildi",
+    "no-code-migration": "Ajans, o tarihten bu yana kamu web sitesini kendisinin düzenleyebileceği bir kodsuz platforma taşıdı"
+  }
+}

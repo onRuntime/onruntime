@@ -1,0 +1,107 @@
+{
+  "short-description": "Visningswebbplats för en fastighetsbyrå i Briançon, med en fastighetskatalog, onlinevärdering och fångst av leads.",
+  "description": "Next.js-webbplats byggd för IMMOBILIER BRIANÇON Géraldine JULLIEN, en fastighetsbyrå i de franska Alperna, som kombinerar en synkroniserad fastighetskatalog, ett gratis onlinevärderingsformulär och flera sätt att fånga leads.",
+  "long-description": "IMMOBILIER BRIANÇON Géraldine JULLIEN har sålt fastigheter i Briançon, Serre Chevalier och Montgenèvre sedan 1993. Byrån behövde en webbplats som matchade kvaliteten på sina listor: professionell fotografering, 360° virtuella turer, drönaräggningar, 2D- och 3D-planlösningar och virtuell styling står i centrum för dess försäljningsargument, så webbplatsen var tvungen att visa detta arbete istället för att beskriva det.\n\nVi byggde webbplatsen med Next.js och Tailwind CSS på App Router. Fastighetskatalogen serveras av interna API-rutter som läser från byråns fastighetsprogramvara, så att försäljningsteamet fortsätter att publicera från det verktyg det redan använder och webbplatsen hålls i synk utan en andra bakgrundsserver. En separat rutt aggregerar byråns Google-recensioner och visas på startsidan med en totalbedömning.\n\nFlera vägar leder till en konversation med en agent: ett gratis onlineförvärderingsformulär, en e-postavisering för nya listor, ett nyhetsbrev, ett referensprogram för affärsintroduktörer och en kontaktsida med en karta. Metadata, Open Graph-taggar och en dynamisk sitemap täcker de lokala sökfrågor som byrån tävlar om.\n\nWebbplatsen levererades och överlämnades till byrån, som sedan har flyttat sin offentliga webbplats till en plattform utan kod som den kan redigera utan en utvecklare.",
+  "features": {
+    "property-catalog": {
+      "title": "Fastighetskatalog",
+      "description": "Listor till salu med detaljsidor, serverade från byråns fastighetsprogramvara genom interna API-rutter"
+    },
+    "online-valuation": {
+      "title": "Gratis onlinevärdering",
+      "description": "Ett kort formulär som ger säljare en förvärdering av deras hus eller lägenhet och öppnar en konversation med en agent"
+    },
+    "property-alerts": {
+      "title": "E-postaviseringar och nyhetsbrev",
+      "description": "Köpare prenumererar för att få veta om nya listor, säljare på byråns årliga nyhetsbrev"
+    },
+    "google-reviews": {
+      "title": "Google-recensioner",
+      "description": "Recensioner som aggregerats genom en dedikerad API-rutt och visas på startsidan med den totala bedömningen"
+    },
+    "referral-program": {
+      "title": "Referensprogram",
+      "description": "En dedikerad sida och formulär för affärsintroduktörer, som får betalt när en hänvisning blir en försäljning"
+    },
+    "team-showcase": {
+      "title": "Teampresentationer",
+      "description": "Profiler för varje agent med meriter och kontaktinformation, tillsammans med byråns videoinnehåll"
+    }
+  },
+  "technologies": {
+    "nextjs": {
+      "description": "App Router, serverkomponenter och API-rutter"
+    },
+    "react": {
+      "description": "Användargränssnittskomponenter"
+    },
+    "typescript": {
+      "description": "Typ-säker utveckling"
+    },
+    "tailwindcss": {
+      "description": "Styling och designsystem"
+    },
+    "vercel": {
+      "description": "Hosting och kontinuerlig distribution"
+    },
+    "la-boite-immo": {
+      "description": "Byråns fastighetsprogramvara, källa till listorna"
+    }
+  },
+  "metrics": {
+    "google-reviews": {
+      "value": "147",
+      "label": "Google-recensioner",
+      "description": "Aggregerade på webbplatsen, bedömda till 5 av 5"
+    },
+    "pages": {
+      "value": "7",
+      "label": "Sidor",
+      "description": "Från katalogen till referensformuläret"
+    },
+    "team-size": {
+      "value": "2 personer",
+      "label": "Team",
+      "description": "Ett kompakt design- och utvecklingsteam"
+    }
+  },
+  "screenshots": {
+    "services": {
+      "caption": "Byråns mediatjänster, från drönaräggningar till virtuell styling"
+    },
+    "estimation": {
+      "caption": "Gratis onlineförvärderingsformulär"
+    },
+    "reviews": {
+      "caption": "Google-recensioner aggregerade på startsidan"
+    },
+    "team": {
+      "caption": "Agentprofiler med meriter och kontaktinformation"
+    },
+    "referral": {
+      "caption": "Referensformulär för affärsintroduktörer"
+    },
+    "contact": {
+      "caption": "Kontaktsida med byråns plats"
+    }
+  },
+  "challenges": {
+    "listings-sync": "Hålla katalogen synkroniserad med byråns fastighetsprogramvara så att försäljningsteamet bara publicerar en gång",
+    "local-seo": "Tävla om lokal sökning för Briançon, Serre Chevalier och Montgenèvre mot nationella fastighetsportaler",
+    "valuation-funnel": "Designa ett värderingsformulär som är tillräckligt kort för att fyllas i, ärligt nog för att skicka säljare till en riktig expert",
+    "media-heavy-content": "Servering av fotografier, virtuella turer och videor utan att förstöra laddtider på bergens mobila förbindelser",
+    "strict-csp": "Köra en strikt Content Security Policy medan man bäddar in tredjeparts media och listdata",
+    "mountain-market-positioning": "Rikta sig till både helårsboende och köpare av sommarstuga på samma sidor"
+  },
+  "learnings": {
+    "local-seo-wins": "En lokal byrå vinner på grannskaps- och resortsökningar, inte på generiska fastighetssökningar",
+    "third-party-data-dependency": "När listor kommer från ett externt verktyg blir varje fel på det verktyget ett fel på webbplatsen",
+    "lead-capture-paths": "Säljare och köpare konverterar på olika sidor, så varje behöver sin egen uppmaning till handling",
+    "content-ownership": "Kunder som producerar sina egna foton och videor behöver ett sätt att publicera dem utan distribution",
+    "performance-with-media": "Bildformat och lat laddning gör mer för en media-tung webbplats än någon annan optimering"
+  },
+  "future-plans": {
+    "client-handover": "Webbplatsen levererades och överlämnades till byrån",
+    "no-code-migration": "Byrån har sedan flyttat sin offentliga webbplats till en plattform utan kod som den redigerar själv"
+  }
+}

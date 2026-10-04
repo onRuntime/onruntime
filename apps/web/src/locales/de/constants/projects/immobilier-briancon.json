@@ -1,0 +1,107 @@
+{
+  "short-description": "Vitrine-Website für eine Immobilienagentur in Briançon, mit einem Immobilienkatalog, einer Online-Bewertung und der Erfassung von Interessenten.",
+  "description": "Next.js Website erstellt für IMMOBILIER BRIANÇON Géraldine JULLIEN, eine Immobilienagentur in den französischen Alpen, die einen synchronisierten Immobilienkatalog, ein kostenloses Online-Bewertungsformular und mehrere Wege zur Erfassung von Interessenten kombiniert.",
+  "long-description": "IMMOBILIER BRIANÇON Géraldine JULLIEN verkauft seit 1993 Immobilien in Briançon, Serre Chevalier und Montgenèvre. Die Agentur benötigte eine Website, die der Qualität ihrer Angebote entspricht: professionelle Fotografie, 360°-Virtuelle Rundgänge, Drohnenaufnahmen, 2D- und 3D-Grundrisse sowie virtuelle Staging stehen im Mittelpunkt ihres Verkaufsangebots, daher musste die Website diese Arbeiten zeigen und nicht nur beschreiben.\n\nWir haben die Website mit Next.js und Tailwind CSS im App Router erstellt. Der Immobilienkatalog wird über interne API-Routen bereitgestellt, die aus der Immobilien-Software der Agentur lesen, sodass das Verkaufsteam weiterhin mit dem Tool arbeiten kann, das es bereits nutzt und die Website bleibt ohne einen zweiten Backoffice synchron. Eine separate Route aggregiert die Google-Bewertungen der Agentur, die auf der Homepage mit der Gesamtbewertung angezeigt werden.\n\nMehrere Wege führen zu einem Gespräch mit einem Agenten: ein kostenloses Online-Vorbewertungsformular, ein E-Mail-Alert für neue Angebote, einen Newsletter, ein Empfehlungsprogramm für Geschäftseinführungen und eine Kontaktseite mit einer Karte. Metadaten, Open Graph-Tags und eine dynamische Sitemap decken die lokalen Suchanfragen ab, auf die die Agentur konkurriert.\n\nDie Website wurde geliefert und der Agentur übergeben, die seitdem ihre öffentliche Website auf eine No-Code-Plattform migriert hat, die sie selbst ohne Entwickler bearbeiten kann.",
+  "features": {
+    "property-catalog": {
+      "title": "Immobilienkatalog",
+      "description": "Angebote zum Verkauf mit Detailseiten, bereitgestellt aus der Immobilien-Software der Agentur über interne API-Routen"
+    },
+    "online-valuation": {
+      "title": "Kostenlose Online-Bewertung",
+      "description": "Ein kurzes Formular, das Verkäufern eine Vorbewertung ihrer Wohnung oder ihres Hauses gibt und ein Gespräch mit einem Agenten öffnet"
+    },
+    "property-alerts": {
+      "title": "E-Mail-Infos und Newsletter",
+      "description": "Käufer abonnieren, um über neue Angebote informiert zu werden, Verkäufer abonnieren den jährlichen Newsletter der Agentur"
+    },
+    "google-reviews": {
+      "title": "Google-Bewertungen",
+      "description": "Bewertungen, die über eine dedizierte API-Route aggregiert und auf der Homepage mit der Gesamtbewertung angezeigt werden"
+    },
+    "referral-program": {
+      "title": "Empfehlungsprogramm",
+      "description": "Eine dedizierte Seite und ein Formular für Geschäftseinführungen, die bezahlt werden, wenn eine Empfehlung zu einem Verkauf wird"
+    },
+    "team-showcase": {
+      "title": "Teampages",
+      "description": "Profile für jeden Agenten mit Qualifikationen und Kontaktdaten, zusammen mit den Video-Inhalten der Agentur"
+    }
+  },
+  "technologies": {
+    "nextjs": {
+      "description": "App Router, Serverkomponenten und API-Routen"
+    },
+    "react": {
+      "description": "Benutzerschnittstellenkomponenten"
+    },
+    "typescript": {
+      "description": "Typensichere Entwicklung"
+    },
+    "tailwindcss": {
+      "description": "Styling und Designsystem"
+    },
+    "vercel": {
+      "description": "Hosting und kontinuierliche Bereitstellung"
+    },
+    "la-boite-immo": {
+      "description": "Die Immobilien-Software der Agentur, Quelle der Angebote"
+    }
+  },
+  "metrics": {
+    "google-reviews": {
+      "value": "147",
+      "label": "Google-Bewertungen",
+      "description": "Auf der Website aggregiert, bewertet mit 5 von 5"
+    },
+    "pages": {
+      "value": "7",
+      "label": "Seiten",
+      "description": "Vom Katalog bis zum Empfehlungsformular"
+    },
+    "team-size": {
+      "value": "2 Personen",
+      "label": "Team",
+      "description": "Ein kompaktes Design- und Entwicklungsteam"
+    }
+  },
+  "screenshots": {
+    "services": {
+      "caption": "Die Medienangebote der Agentur, von Drohnenaufnahmen bis zu virtuellem Staging"
+    },
+    "estimation": {
+      "caption": "Kostenloses Online-Vorbewertungsformular"
+    },
+    "reviews": {
+      "caption": "Google-Bewertungen auf der Homepage aggregiert"
+    },
+    "team": {
+      "caption": "Agentenprofile mit Qualifikationen und Kontaktdaten"
+    },
+    "referral": {
+      "caption": "Empfehlungsformular für Geschäftseinführungen"
+    },
+    "contact": {
+      "caption": "Kontaktseite mit dem Standort der Agentur"
+    }
+  },
+  "challenges": {
+    "listings-sync": "Den Katalog mit der Immobilien-Software der Agentur synchron zu halten, damit das Verkaufsteam nur einmal veröffentlicht",
+    "local-seo": "Im lokalen Suchranking für Briançon, Serre Chevalier und Montgenèvre gegen nationale Immobilienportale zu konkurrieren",
+    "valuation-funnel": "Ein Bewertungsformular zu gestalten, das kurz genug ist, um ausgefüllt zu werden und ehrlich genug, um Verkäufer zu einem echten Experten zu schicken",
+    "media-heavy-content": "Fotografie, virtuelle Touren und Videos bereitzustellen, ohne die Ladezeiten bei mobilen Verbindungen in den Bergen zu ruinieren",
+    "strict-csp": "Eine strenge Content-Sicherheitsrichtlinie zu befolgen, während man Drittanbieter-Medien und Angebotsdaten einbindet",
+    "mountain-market-positioning": "Sowohl ganzjährige Bewohner als auch Zweitwohnungsbesitzer auf denselben Seiten anzusprechen"
+  },
+  "learnings": {
+    "local-seo-wins": "Eine lokale Agentur gewinnt bei Anfragen nach Nachbarschaften und Resorts, nicht bei generischen Immobiliensuchen",
+    "third-party-data-dependency": "Wenn Angebote von einem externen Tool kommen, wird jeder Ausfallmodus dieses Tools auch zu einem Ausfallmodus der Website",
+    "lead-capture-paths": "Verkäufer und Käufer konvertieren auf unterschiedlichen Seiten, sodass jede ihre eigene Handlungsaufforderung benötigt",
+    "content-ownership": "Kunden, die ihre eigenen Fotos und Videos produzieren, benötigen eine Möglichkeit, diese ohne ein Deployment zu veröffentlichen",
+    "performance-with-media": "Bildformate und Lazy Loading bringen mehr für eine inhaltsreiche Website als jede andere Optimierung"
+  },
+  "future-plans": {
+    "client-handover": "Die Website wurde geliefert und der Agentur übergeben",
+    "no-code-migration": "Die Agentur hat seitdem ihre öffentliche Website auf eine No-Code-Plattform migriert, die sie selbst bearbeitet"
+  }
+}

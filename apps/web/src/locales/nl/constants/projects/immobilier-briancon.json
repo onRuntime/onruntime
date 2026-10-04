@@ -1,0 +1,107 @@
+{
+  "short-description": "Showcase-website voor een vastgoedbureau in Briançon, met een eigendommencatalogus, online waardering en het vastleggen van leads.",
+  "description": "Next.js-website gebouwd voor IMMOBILIER BRIANÇON Géraldine JULLIEN, een vastgoedbureau in de Franse Alpen, die een gesynchroniseerde eigendommencatalogus, een gratis online waarderingsformulier en verschillende manieren om leads vast te leggen, combineert.",
+  "long-description": "IMMOBILIER BRIANÇON Géraldine JULLIEN verkoopt al vastgoed in Briançon, Serre Chevalier en Montgenèvre sinds 1993. Het bureau had een website nodig die overeenkwam met de kwaliteit van de aanbiedingen: professionele fotografie, 360° virtuele rondleidingen, dronebeelden, 2D- en 3D-vloerplannen en virtuele staging staan centraal in hun verkoopstrategie, dus de site moest dat werk laten zien in plaats van het te beschrijven.\n\nWe hebben de site gebouwd met Next.js en Tailwind CSS op de App Router. De eigendommencatalogus wordt geleverd via interne API-routes die informatie ophalen uit de vastgoedsoftware van het bureau, zodat het verkoopteam blijft publiceren vanuit de tool die het al gebruikt en de website in sync blijft zonder een tweede backoffice. Een aparte route aggregeert de Google-reviews van het bureau, die op de startpagina worden weergegeven met de algemene beoordeling.\n\nVerschillende paden leiden naar een gesprek met een agent: een gratis online pre-waarderingsformulier, een e-mailalert voor nieuwe aanbiedingen, een nieuwsbrief, een doorverwijsprogramma voor zakelijke introducers en een contactpagina met een kaart. Metadata, Open Graph-tags en een dynamische sitemap dekken de lokale zoekopdrachten waar het bureau op concurreert.\n\nDe site is opgeleverd en overhandigd aan het bureau, dat sindsdien zijn publieke website heeft verplaatst naar een no-code platform dat ze zelf kunnen bewerken.",
+  "features": {
+    "property-catalog": {
+      "title": "Eigenschappencatalogus",
+      "description": "Aanbiedingen te koop met detailpagina's, geleverd vanuit de vastgoedsoftware van het bureau via interne API-routes"
+    },
+    "online-valuation": {
+      "title": "Gratis online waardering",
+      "description": "Een kort formulier dat verkopers een pre-waardering van hun huis of appartement geeft en een gesprek met een agent opent"
+    },
+    "property-alerts": {
+      "title": "E-mailalerts en nieuwsbrief",
+      "description": "Kopers abonneren zich om op de hoogte te worden gebracht van nieuwe aanbiedingen, verkopers op de jaarlijkse nieuwsbrief van het bureau"
+    },
+    "google-reviews": {
+      "title": "Google-reviews",
+      "description": "Reviews geaggregeerd via een speciale API-route en weergegeven op de startpagina met de algemene beoordeling"
+    },
+    "referral-program": {
+      "title": "Doorverwijsprogramma",
+      "description": "Een speciale pagina en formulier voor zakelijke introducers, die betaald worden wanneer een doorverwijzing leidt tot een verkoop"
+    },
+    "team-showcase": {
+      "title": "Team pagina's",
+      "description": "Profielen voor elke agent met bevoegdheden en contactdetails, naast de videoinhoud van het bureau"
+    }
+  },
+  "technologies": {
+    "nextjs": {
+      "description": "App Router, servercomponenten en API-routes"
+    },
+    "react": {
+      "description": "Gebruikersinterfacecomponenten"
+    },
+    "typescript": {
+      "description": "Type-veilige ontwikkeling"
+    },
+    "tailwindcss": {
+      "description": "Styling en ontwerpsysteem"
+    },
+    "vercel": {
+      "description": "Hosting en continue implementatie"
+    },
+    "la-boite-immo": {
+      "description": "De vastgoedsoftware van het bureau, bron van de aanbiedingen"
+    }
+  },
+  "metrics": {
+    "google-reviews": {
+      "value": "147",
+      "label": "Google-reviews",
+      "description": "Geaggregeerd op de site, beoordeeld met 5 uit 5"
+    },
+    "pages": {
+      "value": "7",
+      "label": "Pagina's",
+      "description": "Van de catalogus tot het doorverwijsformulier"
+    },
+    "team-size": {
+      "value": "2 mensen",
+      "label": "Team",
+      "description": "Een compact ontwerp- en ontwikkelingsteam"
+    }
+  },
+  "screenshots": {
+    "services": {
+      "caption": "De media-services van het bureau, van dronebeelden tot virtuele staging"
+    },
+    "estimation": {
+      "caption": "Gratis online pre-waarderingsformulier"
+    },
+    "reviews": {
+      "caption": "Google-reviews geaggregeerd op de startpagina"
+    },
+    "team": {
+      "caption": "Agentprofielen met bevoegdheden en contactdetails"
+    },
+    "referral": {
+      "caption": "Doorverwijsformulier voor zakelijke introducers"
+    },
+    "contact": {
+      "caption": "Contactpagina met de locatie van het bureau"
+    }
+  },
+  "challenges": {
+    "listings-sync": "De catalogus synchroniseren met de vastgoedsoftware van het bureau, zodat het verkoopteam maar één keer publiceert",
+    "local-seo": "Concureren op lokale zoekopdrachten voor Briançon, Serre Chevalier en Montgenèvre tegen nationale vastgoedportals",
+    "valuation-funnel": "Een waarderingsformulier ontwerpen dat kort genoeg is om in te vullen en eerlijk genoeg om verkopers naar een echte expert te sturen",
+    "media-heavy-content": "Fotografie, virtuele rondleidingen en video leveren zonder de laadtijden op bergverbindingen te verstoren",
+    "strict-csp": "Een strenge Content Security Policy uitvoeren terwijl media en gegevens van derden worden ingesloten",
+    "mountain-market-positioning": "Zowel jaarrond bewoners als tweedehuiskopers op dezelfde pagina's aanspreken"
+  },
+  "learnings": {
+    "local-seo-wins": "Een lokaal bureau wint op buurt- en resort zoekopdrachten, niet op algemene vastgoedzoekopdrachten",
+    "third-party-data-dependency": "Wanneer aanbiedingen afkomstig zijn van een externe tool, wordt elke foutmodus van die tool een foutmodus van de site",
+    "lead-capture-paths": "Verkopers en kopers converteren op verschillende pagina's, dus elke pagina heeft zijn eigen oproep tot actie nodig",
+    "content-ownership": "Klanten die hun eigen foto's en video's maken, hebben een manier nodig om ze te publiceren zonder een implementatie",
+    "performance-with-media": "Afbeeldingsformaten en lazy loading doen meer voor een media-rijke site dan welke andere optimalisatie dan ook"
+  },
+  "future-plans": {
+    "client-handover": "De site is opgeleverd en overhandigd aan het bureau.",
+    "no-code-migration": "Het bureau heeft sindsdien zijn publieke website verplaatst naar een no-code platform dat ze zelf bewerken."
+  }
+}

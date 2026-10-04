@@ -1,0 +1,107 @@
+{
+  "short-description": "Sito di presentazione per un'agenzia immobiliare a Briançon, con un catalogo di proprietà, valutazione online e acquisizione contatti.",
+  "description": "Sito web Next.js realizzato per IMMOBILIER BRIANÇON Géraldine JULLIEN, un'agenzia immobiliare nelle Alpi Francesi, che combina un catalogo di proprietà sincronizzato, un modulo di valutazione online gratuito e diversi percorsi per l'acquisizione di contatti.",
+  "long-description": "IMMOBILIER BRIANÇON Géraldine JULLIEN vende proprietà a Briançon, Serre Chevalier e Montgenèvre dal 1993. L'agenzia aveva bisogno di un sito web che rispecchiasse la qualità dei suoi annunci: fotografie professionali, tour virtuali a 360°, riprese con drone, planimetrie 2D e 3D e allestimenti virtuali sono al centro della sua proposta commerciale, quindi il sito doveva mostrare quel lavoro piuttosto che descriverlo.\n\nAbbiamo costruito il sito con Next.js e Tailwind CSS utilizzando l'App Router. Il catalogo delle proprietà è servito da percorsi API interni che leggono dal software immobiliare dell'agenzia, quindi il team di vendita continua a pubblicare dallo strumento che già utilizza e il sito web rimane sincronizzato senza un secondo back office. Un percorso separato raccoglie le recensioni di Google dell'agenzia, visualizzate sulla homepage con la valutazione complessiva.\n\nDiversi percorsi portano a una conversazione con un agente: un modulo di pre-valutazione online gratuito, un'email di avviso per nuovi annunci, una newsletter, un programma di referral per introduttori d'affari e una pagina di contatto con una mappa. I metadati, i tag Open Graph e una mappa del sito dinamica coprono le ricerche locali su cui l'agenzia compete.\n\nIl sito è stato consegnato e passato all'agenzia, che da allora ha spostato il suo sito web pubblico su una piattaforma no-code che può modificare senza uno sviluppatore.",
+  "features": {
+    "property-catalog": {
+      "title": "Catalogo delle proprietà",
+      "description": "Annunci in vendita con pagine di dettaglio, serviti dal software immobiliare dell'agenzia attraverso percorsi API interni"
+    },
+    "online-valuation": {
+      "title": "Valutazione online gratuita",
+      "description": "Un modulo breve che fornisce ai venditori una pre-valutazione della loro casa o appartamento e apre una conversazione con un agente"
+    },
+    "property-alerts": {
+      "title": "Avvisi via e-mail e newsletter",
+      "description": "Gli acquirenti si iscrivono per essere avvisati su nuovi annunci, i venditori alla newsletter annuale dell'agenzia"
+    },
+    "google-reviews": {
+      "title": "Recensioni Google",
+      "description": "Recensioni aggregate tramite un percorso API dedicato e visualizzate sulla homepage con la valutazione complessiva"
+    },
+    "referral-program": {
+      "title": "Programma di referral",
+      "description": "Una pagina e un modulo dedicati per gli introduttori d'affari, che vengono pagati quando un referral si trasforma in una vendita"
+    },
+    "team-showcase": {
+      "title": "Pagine del team",
+      "description": "Profili di ciascun agente con credenziali e dettagli di contatto, insieme ai contenuti video dell'agenzia"
+    }
+  },
+  "technologies": {
+    "nextjs": {
+      "description": "App Router, componenti server e percorsi API"
+    },
+    "react": {
+      "description": "Componenti dell'interfaccia utente"
+    },
+    "typescript": {
+      "description": "Sviluppo a tipi sicuri"
+    },
+    "tailwindcss": {
+      "description": "Stilizzazione e sistema di design"
+    },
+    "vercel": {
+      "description": "Hosting e distribuzione continua"
+    },
+    "la-boite-immo": {
+      "description": "Il software immobiliare dell'agenzia, fonte degli annunci"
+    }
+  },
+  "metrics": {
+    "google-reviews": {
+      "value": "147",
+      "label": "Recensioni Google",
+      "description": "Aggregate sul sito, valutate 5 su 5"
+    },
+    "pages": {
+      "value": "7",
+      "label": "Pagine",
+      "description": "Dal catalogo al modulo di referral"
+    },
+    "team-size": {
+      "value": "2 persone",
+      "label": "Team",
+      "description": "Un duo di design e sviluppo compatto"
+    }
+  },
+  "screenshots": {
+    "services": {
+      "caption": "I servizi media dell'agenzia, dalle riprese con drone agli allestimenti virtuali"
+    },
+    "estimation": {
+      "caption": "Modulo di pre-valutazione online gratuito"
+    },
+    "reviews": {
+      "caption": "Recensioni Google aggregate sulla homepage"
+    },
+    "team": {
+      "caption": "Profili degli agenti con credenziali e dettagli di contatto"
+    },
+    "referral": {
+      "caption": "Modulo di referral per introduttori d'affari"
+    },
+    "contact": {
+      "caption": "Pagina di contatto con la posizione dell'agenzia"
+    }
+  },
+  "challenges": {
+    "listings-sync": "Mantenere il catalogo sincronizzato con il software immobiliare dell'agenzia in modo che il team di vendita pubblichi solo una volta",
+    "local-seo": "Competere per ricerche locali per Briançon, Serre Chevalier e Montgenèvre contro portali immobiliari nazionali",
+    "valuation-funnel": "Progettare un modulo di valutazione sufficientemente breve da essere compilato, onesto da portare i venditori a un vero esperto",
+    "media-heavy-content": "Servire fotografie, tour virtuali e video senza compromettere i tempi di caricamento su connessioni mobili montane",
+    "strict-csp": "Eseguire una rigida Content Security Policy mentre si integrano media e dati sugli annunci di terze parti",
+    "mountain-market-positioning": "Rivolgersi sia ai residenti tutto l'anno che ai compratori di seconde case sulle stesse pagine"
+  },
+  "learnings": {
+    "local-seo-wins": "Un'agenzia locale vince sulle ricerche di quartieri e resort, non su ricerche generiche di proprietà",
+    "third-party-data-dependency": "Quando gli annunci provengono da uno strumento esterno, ogni possibile errore di quello strumento diventa un errore del sito",
+    "lead-capture-paths": "I venditori e gli acquirenti si convertono su pagine diverse, quindi ciascuna ha bisogno del proprio invito all'azione",
+    "content-ownership": "I clienti che producono le proprie foto e video hanno bisogno di un modo per pubblicarli senza una distribuzione",
+    "performance-with-media": "I formati immagine e il caricamento pigro fanno più per un sito ricco di media di qualsiasi altra ottimizzazione"
+  },
+  "future-plans": {
+    "client-handover": "Il sito è stato consegnato e passato all'agenzia",
+    "no-code-migration": "L'agenzia ha da allora spostato il suo sito web pubblico su una piattaforma no-code che modifica da sola"
+  }
+}

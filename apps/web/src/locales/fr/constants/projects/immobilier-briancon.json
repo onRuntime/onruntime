@@ -1,0 +1,107 @@
+{
+  "short-description": "Site vitrine pour une agence immobilière à Briançon, avec un catalogue de biens, une estimation en ligne et un recueil de prospects.",
+  "description": "Site Next.js créé pour IMMOBILIER BRIANÇON Géraldine JULLIEN, une agence immobilière dans les Alpes françaises, combinant un catalogue de biens synchronisé, un formulaire d'estimation en ligne gratuit et plusieurs moyens de recueillir des prospects.",
+  "long-description": "IMMOBILIER BRIANÇON Géraldine JULLIEN vend des propriétés à Briançon, Serre Chevalier et Montgenèvre depuis 1993. L'agence avait besoin d'un site qui corresponde à la qualité de ses annonces : photographie professionnelle, visites virtuelles à 360°, vidéos par drone, plans 2D et 3D, et mise en scène virtuelle sont au cœur de sa proposition de vente, donc le site devait montrer ce travail plutôt que le décrire.\n\nNous avons construit le site avec Next.js et Tailwind CSS sur l'App Router. Le catalogue de biens est servi par des routes API internes qui lisent à partir du logiciel immobilier de l'agence, donc l'équipe de vente continue de publier à partir de l'outil qu'elle utilise déjà et le site reste en synchronisation sans un second bureau de back-office. Une route distincte agrège les avis Google de l'agence, affichés sur la page d'accueil avec la note globale.\n\nPlusieurs chemins mènent à une conversation avec un agent : un formulaire d'estimation en ligne gratuit, une alerte par e-mail pour les nouvelles annonces, une newsletter, un programme de parrainage pour les introduits commerciaux, et une page de contact avec une carte. Les métadonnées, les balises Open Graph, et un plan du site dynamique couvrent les requêtes de recherche locales sur lesquelles l'agence est en compétition.\n\nLe site a été livré et remis à l'agence, qui a depuis déplacé son site public sur une plateforme sans code qu'elle peut modifier sans développeur.",
+  "features": {
+    "property-catalog": {
+      "title": "Catalogue de biens",
+      "description": "Annonces à vendre avec des pages de détails, servies par le logiciel immobilier de l'agence via des routes API internes"
+    },
+    "online-valuation": {
+      "title": "Estimation en ligne gratuite",
+      "description": "Un court formulaire qui donne aux vendeurs une pré-estimation de leur maison ou appartement et ouvre une conversation avec un agent"
+    },
+    "property-alerts": {
+      "title": "Alertes par e-mail et newsletter",
+      "description": "Les acheteurs s'abonnent pour être informés des nouvelles annonces, les vendeurs pour la newsletter annuelle de l'agence"
+    },
+    "google-reviews": {
+      "title": "Avis Google",
+      "description": "Avis agrégés via une route API dédiée et affichés sur la page d'accueil avec la note globale"
+    },
+    "referral-program": {
+      "title": "Programme de parrainage",
+      "description": "Une page et un formulaire dédiés pour les introduits commerciaux, qui sont rémunérés quand une recommandation se transforme en vente"
+    },
+    "team-showcase": {
+      "title": "Pages d'équipe",
+      "description": "Profils de chaque agent avec références et coordonnées, aux côtés du contenu vidéo de l'agence"
+    }
+  },
+  "technologies": {
+    "nextjs": {
+      "description": "App Router, composants serveur, et routes API"
+    },
+    "react": {
+      "description": "Composants d'interface utilisateur"
+    },
+    "typescript": {
+      "description": "Développement typé"
+    },
+    "tailwindcss": {
+      "description": "Système de design et de style"
+    },
+    "vercel": {
+      "description": "Hébergement et déploiement continu"
+    },
+    "la-boite-immo": {
+      "description": "Le logiciel immobilier de l'agence, source des annonces"
+    }
+  },
+  "metrics": {
+    "google-reviews": {
+      "value": "147",
+      "label": "Avis Google",
+      "description": "Agrégés sur le site, notés 5 sur 5"
+    },
+    "pages": {
+      "value": "7",
+      "label": "Pages",
+      "description": "Du catalogue au formulaire de parrainage"
+    },
+    "team-size": {
+      "value": "2 personnes",
+      "label": "Équipe",
+      "description": "Un duo compact de design et développement"
+    }
+  },
+  "screenshots": {
+    "services": {
+      "caption": "Les services médias de l'agence, des vidéos par drone à la mise en scène virtuelle"
+    },
+    "estimation": {
+      "caption": "Formulaire d'estimation préliminaire en ligne gratuit"
+    },
+    "reviews": {
+      "caption": "Avis Google agrégés sur la page d'accueil"
+    },
+    "team": {
+      "caption": "Profils des agents avec références et coordonnées"
+    },
+    "referral": {
+      "caption": "Formulaire de parrainage pour les introduits commerciaux"
+    },
+    "contact": {
+      "caption": "Page de contact avec l'emplacement de l'agence"
+    }
+  },
+  "challenges": {
+    "listings-sync": "Maintenir le catalogue synchronisé avec le logiciel immobilier de l'agence pour que l'équipe de vente publie seulement une fois",
+    "local-seo": "Compétition sur la recherche locale pour Briançon, Serre Chevalier et Montgenèvre contre des portails immobiliers nationaux",
+    "valuation-funnel": "Concevoir un formulaire d'estimation assez court pour être rempli, honnête assez pour diriger les vendeurs vers un véritable expert",
+    "media-heavy-content": "Servir de la photographie, des visites virtuelles et des vidéos sans dégrader les temps de chargement sur des connexions mobiles en montagne",
+    "strict-csp": "Exécuter une politique de sécurité de contenu stricte tout en intégrant des médias et des données d'annonces tiers",
+    "mountain-market-positioning": "S'adresser à la fois aux résidents toute l'année et aux acheteurs de résidences secondaires sur les mêmes pages"
+  },
+  "learnings": {
+    "local-seo-wins": "Une agence locale se distingue sur les requêtes de quartier et de station, pas sur des recherches immobilières génériques",
+    "third-party-data-dependency": "Quand les annonces proviennent d'un outil externe, chaque mode de défaillance de cet outil devient un mode de défaillance du site",
+    "lead-capture-paths": "Les vendeurs et les acheteurs se convertissent sur différentes pages, donc chacun a besoin de son propre appel à l'action",
+    "content-ownership": "Les clients qui produisent leurs propres photos et vidéos ont besoin d'un moyen de les publier sans déploiement",
+    "performance-with-media": "Les formats d'image et le chargement paresseux apportent plus à un site riche en médias que toute autre optimisation"
+  },
+  "future-plans": {
+    "client-handover": "Le site a été livré et remis à l'agence",
+    "no-code-migration": "L'agence a depuis déplacé son site public sur une plateforme sans code qu'elle édite elle-même"
+  }
+}
