@@ -6,7 +6,6 @@ export const netflixaddictsProject: Project = {
   name: "NetflixAddicts",
   tags: [Tag.OPEN_SOURCE],
   iconUrl: "/static/images/projects/netflixaddicts/icon.png",
-  showcaseUrl: "/static/images/projects/netflixaddicts/showcase.webp",
   thumbnailUrl: "/static/images/projects/netflixaddicts/thumbnail.webp",
   website: undefined,
   repository: "https://github.com/onRuntime/netflixaddicts-bot",

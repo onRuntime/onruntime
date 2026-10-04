@@ -189,13 +189,13 @@ const ProjectPage: React.FC<ProjectPageProps> = async ({ project }) => {
           </div>
         )}
 
-        {project.website && (
+        {project.showcaseUrl && (
           <div className="w-full">
             <Safari
               width={1200}
               height={750}
               imageSrc={project.showcaseUrl}
-              url={getHostname(project.website)}
+              url={project.website ? getHostname(project.website) : undefined}
             />
           </div>
         )}

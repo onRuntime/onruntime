@@ -53,7 +53,7 @@ export interface Project {
   name: string;
   tags: Tag[];
   iconUrl: string;
-  showcaseUrl: string;
+  showcaseUrl?: string;
   thumbnailUrl: string;
 
   website?: string;

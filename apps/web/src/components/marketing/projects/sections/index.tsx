@@ -28,7 +28,7 @@ const FeaturedProjectCard = ({ project }: { project: (typeof Projects)[number] }
       <Link href={Routes.project(project.id)} className="block">
         <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-4">
           <Image
-            src={project.showcaseUrl}
+            src={project.showcaseUrl || project.thumbnailUrl}
             alt={project.name}
             className="object-cover transition-transform duration-300 group-hover:scale-105"
             fill
