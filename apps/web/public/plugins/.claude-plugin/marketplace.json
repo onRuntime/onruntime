@@ -14,7 +14,7 @@
         "path": "apps/web/public/plugins/gitmoji"
       },
       "description": "Generate git commits following the gitmoji conventional commits convention",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": {
         "name": "onRuntime Studio",
         "url": "https://onruntime.com"
