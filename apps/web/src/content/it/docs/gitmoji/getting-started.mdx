@@ -2,45 +2,45 @@
 title: Iniziare
 description: Scopri la nostra convenzione di commit
 ---
-Ci piace avere una storia di progetto pulita. La nostra convenzione sui commit è ispirata da [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) ma personalizzata con [gitmoji](https://gitmoji.dev) per renderla più visiva e divertente.
+Vogliamo avere una cronologia del progetto pulita. La nostra convenzione sui commit è ispirata da [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) ma personalizzata con [gitmoji](https://gitmoji.dev) per renderla più visiva e divertente.
 
 ## Struttura
 
 Il messaggio del commit dovrebbe essere strutturato come segue e **in minuscolo**:
 
 ```
-<gitmoji> <type> <description> [(#<issue number>)]
+<gitmoji> <tipo> <descrizione> [(#<numero dell'issue>)]
 
-[corpo opzionale]
+[corpo facoltativo]
 
-[footer(s) opzionale(i)]
+[footer(e) facoltativi]
 ```
 
 ### Esempio
 
 ```bash
-📝 update documentation contributors
+📝 aggiorna i contributori della documentazione
 
-- Add @jerembdn as a contributor
-- Add @younesbessa as a contributor
+- Aggiungi @jerembdn come contributore
+- Aggiungi @younesbessa come contributore
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-La maggior parte delle volte, una semplice riga è sufficiente:
+Nella maggior parte dei casi, una semplice riga è sufficiente:
 
 ```bash
-📝 update documentation contributors
+📝 aggiorna i contributori della documentazione
 ```
 
 ## Tipi
 
-Utilizziamo i seguenti tipi di commit:
+Usiamo i seguenti tipi di commit:
 
 | Tipo | Descrizione |
 | --- | --- |
 | `add` | Aggiungi una nuova funzionalità |
-| `fix` | Risolvi un bug |
+| `fix` | Correggi un bug |
 | `improve` | Migliora qualcosa |
 | `update` | Aggiorna qualcosa |
 | `remove` | Rimuovi qualcosa |
@@ -48,53 +48,77 @@ Utilizziamo i seguenti tipi di commit:
 | `rename` | Rinomina qualcosa |
 | `move` | Sposta un file o una cartella |
 | `upgrade` | Aggiorna le dipendenze |
-| `downgrade` | Riduci le dipendenze |
+| `downgrade` | Downgrada le dipendenze |
 | `initial` | Commit iniziale di un repository |
-| `release` | Rilascia / tag versione |
+| `release` | Rilascio / tag di versione |
 
-Il primo commit di un repository utilizza `initial`, e un tag di versione utilizza `release`:
+Il primo commit di un repository usa `initial`, e un tag di versione usa
+`release`:
 
 ```bash
-🎉 initial commit
-🔖 release @onruntime/translations v0.3.0
+🎉 commit iniziale
+🔖 rilascio @onruntime/translations v0.3.0
 ```
 
 ## Descrizione
 
-Scrivi le descrizioni in **modo imperativo** e **in minuscolo**:
+Il `<tipo>` è il verbo del soggetto, e la descrizione lo completa. Letti insieme, formano **una frase**:
 
 ```bash
 # Buono
-📝 update documentation contributors
-
-# Cattivo
-📝 updated documentation contributors
-
-# Cattivo
-📝 Update documentation contributors
+📝 aggiorna i contributori della documentazione
 ```
+
+Quindi non aprire la descrizione con un secondo verbo. Il tipo è già uno, e
+il soggetto finisce per accumulare due frasi, che è ciò che porta un prefisso `fix:`. Elimina il verbo e mantieni ciò su cui ha agito:
+
+```bash
+# Cattivo
+💄 migliora riduci la gemma sulla sua scheda
+🐛 correggi fermati per evitare che il footer si avvolga
+
+# Buono
+💄 migliora la dimensione della gemma sulla sua scheda
+🐛 correggi il footer che si avvolge
+```
+
+Scrivilo in **modo imperativo** e **minuscolo**:
+
+```bash
+# Cattivo
+📝 aggiornato i contributori della documentazione
+
+# Cattivo
+📝 Aggiorna i contributori della documentazione
+```
+
+<Callout type="info" title="Un Verbo Che È un Sostantivo">
+  Alcune parole sono entrambe, e quella che intendi è il sostantivo: `✨ add open graph image`
+  va bene. Quando si legge come un verbo, un articolo lo rende di nuovo un'espressione nominale:
+  `✨ add a show more button`.
+</Callout>
 
 ## Numero dell'Issue
 
-Collega i commit alle issues aggiungendo il numero dell'issue:
+Collega i commit alle issue aggiungendo il numero dell'issue:
 
 ```bash
-📝 update documentation contributors (#123)
+📝 aggiorna i contributori della documentazione (#123)
 ```
 
 ## Corpo
 
-Usa il corpo per il contesto e la motivazione:
+Usa il corpo per fornire contesto e motivazione:
 
 ```bash
-📝 update documentation contributors
+📝 aggiorna i contributori della documentazione
 
-- Add @jerembdn as a contributor
-- Add @younesbessa as a contributor
+- Aggiungi @jerembdn come contributore
+- Aggiungi @younesbessa come contributore
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="Un Commit, Un Obiettivo">
-  Ogni commit dovrebbe rappresentare un singolo cambiamento logico. Non mescolare cambiamenti non correlati.
+<Callout type="info" title="Un Commit, Un Scopo">
+  Ogni commit dovrebbe rappresentare una singola modifica logica. Non mescolare modifiche non correlate.
 </Callout>

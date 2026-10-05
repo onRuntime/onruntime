@@ -1,19 +1,19 @@
 ---
-title: 始めに
-description: 私たちのコミット規約を学ぶ
+title: はじめに
+description: 私たちのコミット規約を学ぼう
 ---
-私たちはクリーンなプロジェクト履歴を大事にしています。私たちのコミット規約は[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0)にインスパイアされていますが、より視覚的で楽しいものにするために[gitmoji](https://gitmoji.dev)でカスタマイズされています。
+私たちはクリーンなプロジェクト履歴を持つのが好きです。私たちのコミット規約は [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) に触発されていますが、もっと視覚的で楽しくするために [gitmoji](https://gitmoji.dev) でカスタマイズされています。
 
 ## 構造
 
-コミットメッセージは以下のように構成され、**小文字**で書くべきです：
+コミットメッセージは以下のように構造化されていて、**小文字**で書くべきです：
 
 ```
 <gitmoji> <type> <description> [(#<issue number>)]
 
-[optional body]
+[任意の本文]
 
-[optional footer(s)]
+[任意のフッター]
 ```
 
 ### 例
@@ -21,13 +21,13 @@ description: 私たちのコミット規約を学ぶ
 ```bash
 📝 update documentation contributors
 
-- @jerembdnを貢献者として追加
-- @younesbessaを貢献者として追加
+- Add @jerembdn as a contributor
+- Add @younesbessa as a contributor
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-ほとんどの場合、シンプルなワンライナーで十分です：
+大抵の場合、シンプルなワンライナーで十分です：
 
 ```bash
 📝 update documentation contributors
@@ -35,7 +35,7 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 
 ## タイプ
 
-私たちは以下のコミットタイプを使用しています：
+私たちは以下のコミットタイプを使用します：
 
 | タイプ | 説明 |
 | --- | --- |
@@ -49,10 +49,10 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 | `move` | ファイルやフォルダーを移動 |
 | `upgrade` | 依存関係をアップグレード |
 | `downgrade` | 依存関係をダウングレード |
-| `initial` | リポジトリの初回コミット |
+| `initial` | リポジトリの初期コミット |
 | `release` | リリース / バージョンタグ |
 
-リポジトリの最初のコミットでは`initial`を使用し、バージョンタグでは`release`を使用します：
+リポジトリの最初のコミットは `initial` を使用し、バージョンタグは `release` を使います：
 
 ```bash
 🎉 initial commit
@@ -61,22 +61,42 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 
 ## 説明
 
-説明は**命令形**かつ**小文字**で書いてください：
+`<type>` は主語の動詞で、説明がそれを補完します。一緒に読むと、**一文**になります：
 
 ```bash
-# 良い
+# Good
 📝 update documentation contributors
+```
 
-# 悪い
+だから、説明を第二の動詞で始めないでください。タイプはすでに一つあり、主語が二つの文を重ねてしまいます。これは `fix:` プレフィックスがもたらすものです。動詞を省いて、何に作用したのかを残してください：
+
+```bash
+# Bad
+💄 improve scale down the gem on its card
+🐛 fix stop the footer from wrapping
+
+# Good
+💄 improve the gem size on its card
+🐛 fix the footer wrapping
+```
+
+**命令形** と **小文字** で書いてください：
+
+```bash
+# Bad
 📝 updated documentation contributors
 
-# 悪い
+# Bad
 📝 Update documentation contributors
 ```
 
+<Callout type="info" title="名詞としての動詞">
+  一部の単語は動詞と名詞の両方ですが、あなたが指しているのは名詞です： `✨ add open graph image` は大丈夫です。動詞として読むと、冠詞が名詞句に戻ります： `✨ add a show more button`。
+</Callout>
+
 ## イシュー番号
 
-コミットにイシュー番号を追加して関連付けます：
+コミットをイシューにリンクさせるには、イシュー番号を追加します：
 
 ```bash
 📝 update documentation contributors (#123)
@@ -84,17 +104,17 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 
 ## 本文
 
-本文はコンテキストとモチベーションのために使ってください：
+本文はコンテキストと動機のために使用します：
 
 ```bash
 📝 update documentation contributors
 
-- @jerembdnを貢献者として追加
-- @younesbessaを貢献者として追加
+- Add @jerembdn as a contributor
+- Add @younesbessa as a contributor
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
 <Callout type="info" title="一つのコミット、一つの目的">
-  各コミットは単一の論理的変更を表すべきです。無関係な変更を混ぜないでください。
+  各コミットは単一の論理的変更を表すべきです。無関係な変更を混ぜるべきではありません。
 </Callout>

@@ -4,7 +4,7 @@ description: Użyj gitmoji z Claude Code
 ---
 Zainstaluj naszą wtyczkę gitmoji dla [Claude Code](https://claude.ai/code), aby generować commity zgodnie z konwencją.
 
-## Zainstaluj Wtyczkę
+## Zainstaluj wtyczkę
 
 Dodaj rynek onRuntime i zainstaluj wtyczkę:
 
@@ -21,11 +21,11 @@ Lub zainstaluj bezpośrednio z menu:
 1. Uruchom `/plugin` w Claude Code
 2. Przejdź do zakładki **Discover**
 3. Dodaj rynek: `https://onruntime.com/plugins`
-4. Wyszukaj "gitmoji" i zainstaluj
+4. Szukaj "gitmoji" i zainstaluj
 
-## Użycie
+## Użytkowanie
 
-Uruchom komendę `/commit`, aby stworzyć commit:
+Uruchom polecenie `/commit`, aby stworzyć commit:
 
 ```
 /commit
@@ -35,20 +35,20 @@ Uruchom komendę `/commit`, aby stworzyć commit:
 /commit fix the login bug
 ```
 
-Claude Code przeanalizuje twoje zmiany i stworzy commit zgodny z konwencją gitmoji.
+Claude Code przeanalizuje Twoje zmiany i stworzy commit zgodnie z konwencją gitmoji.
 
-<Callout type="info" title="Komenda Wtyczki">
-  Komenda `/commit` automatycznie pobiera twój status git i różnice, aby wygenerować odpowiednią wiadomość commit.
+<Callout type="info" title="Polecenie Wtyczki">
+  Polecenie `/commit` automatycznie pobiera Twój status git i różnice, aby wygenerować właściwą wiadomość commit.
 </Callout>
 
 ## Alternatywa: CLAUDE.md
 
-Jeśli wolisz nie instalować wtyczki, dodaj to do swojego projektu `CLAUDE.md`:
+Jeśli wolisz nie instalować wtyczki, dodaj to do `CLAUDE.md` swojego projektu:
 
 ````markdown
 ## Konwencja Commitów
 
-Użyj gitmoji conventional commits:
+Używaj konwencjonalnych commitów gitmoji:
 
 ```
 <gitmoji> <typ> <opis>
@@ -58,6 +58,9 @@ Typy: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgr
 
 Zasady:
 - Pisz małymi literami
-- Używaj trybu rozkazującego ("add" nie "added")
+- Typ to czasownik podmiotu, a opis uzupełnia go w jedno
+  zdanie. Utrzymuj to w trybie rozkazującym ("add" nie "added")
+- Nigdy nie zaczynaj opisu od drugiego czasownika: "fix the footer wrapping", nie
+  "fix stop the footer from wrapping"
 - Jedna logiczna zmiana na commit
 ````

@@ -1,13 +1,12 @@
 ---
 title: Avec l'IA
-description: Utiliser gitmoji avec Claude Code
+description: Utilisez gitmoji avec Claude Code
 ---
-
-Installez notre plugin gitmoji pour [Claude Code](https://claude.ai/code) pour generer des commits suivant la convention.
+Installe notre plugin gitmoji pour [Claude Code](https://claude.ai/code) afin de générer des commits suivant la convention.
 
 ## Installer le Plugin
 
-Ajoutez le marketplace onRuntime et installez le plugin :
+Ajoute le marketplace onRuntime et installe le plugin :
 
 ```bash
 # Ajouter le marketplace onRuntime
@@ -17,39 +16,39 @@ Ajoutez le marketplace onRuntime et installez le plugin :
 /plugin install gitmoji@onruntime
 ```
 
-Ou installez directement depuis le menu :
+Ou installe directement depuis le menu :
 
-1. Lancez `/plugin` dans Claude Code
-2. Allez dans l'onglet **Discover**
-3. Ajoutez le marketplace : `https://onruntime.com/plugins`
-4. Cherchez "gitmoji" et installez
+1. Exécute `/plugin` dans Claude Code
+2. Va dans l’onglet **Découvrir**
+3. Ajoute le marketplace : `https://onruntime.com/plugins`
+4. Cherche "gitmoji" et installe
 
 ## Utilisation
 
-Lancez la commande `/commit` pour creer un commit :
+Exécute la commande `/commit` pour créer un commit :
 
 ```
 /commit
 ```
 
 ```
-/commit corriger le bug de login
+/commit fix le bug de connexion
 ```
 
-Claude Code analysera vos changements et creera un commit suivant la convention gitmoji.
+Claude Code analysera tes changements et créera un commit suivant la convention gitmoji.
 
-<Callout type="info" title="Commande Plugin">
-  La commande `/commit` recupere automatiquement votre git status et diff pour generer le message de commit approprie.
+<Callout type="info" title="Commande du Plugin">
+  La commande `/commit` récupère automatiquement ton statut git et le diff pour générer le message de commit approprié.
 </Callout>
 
 ## Alternative : CLAUDE.md
 
-Si vous preferez ne pas installer le plugin, ajoutez ceci au `CLAUDE.md` de votre projet :
+Si tu préfères ne pas installer le plugin, ajoute ceci à ton `CLAUDE.md` de projet :
 
 ````markdown
 ## Convention de Commit
 
-Utiliser les gitmoji conventional commits :
+Utilise les commits conventionnels gitmoji :
 
 ```
 <gitmoji> <type> <description>
@@ -57,8 +56,11 @@ Utiliser les gitmoji conventional commits :
 
 Types : add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
 
-Regles :
-- Ecrire en minuscules
-- Utiliser le mode imperatif ("add" pas "added")
-- Un seul changement logique par commit
+Règles :
+- Écris en minuscules
+- Le type est le verbe du sujet et la description le complète en une
+  phrase. Reste à l'impératif ("add" pas "added")
+- N'ouvre jamais la description avec un second verbe : "fixe le footer qui se plie", pas
+  "fixe arrêter le footer de se plier"
+- Un changement logique par commit
 ````

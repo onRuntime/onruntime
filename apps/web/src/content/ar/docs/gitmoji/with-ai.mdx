@@ -2,30 +2,30 @@
 title: مع الذكاء الاصطناعي
 description: استخدم gitmoji مع Claude Code
 ---
-قم بتثبيت ملحق gitmoji الخاص بنا لـ [Claude Code](https://claude.ai/code) لتوليد Commits وفقًا للاتفاقية.
+ثبت الملحق gitmoji الخاص بنا لـ [Claude Code](https://claude.ai/code) لإنشاء التزامات تتبع الاتفاقية.
 
 ## تثبيت الملحق
 
-أضف سوق onRuntime وقم بتثبيت الملحق:
+أضف سوق onRuntime وثبت الملحق:
 
 ```bash
-# إضافة سوق onRuntime
+# أضف سوق onRuntime
 /plugin marketplace add https://onruntime.com/plugins
 
-# تثبيت ملحق gitmoji
+# ثبت ملحق gitmoji
 /plugin install gitmoji@onruntime
 ```
 
-أو قم بالتثبيت مباشرة من القائمة:
+أو ثبته مباشرة من القائمة:
 
-1. قم بتشغيل `/plugin` في Claude Code
-2. انتقل إلى علامة التبويب **Discover**
+1. شغل `/plugin` في Claude Code
+2. انتقل إلى علامة **Discover**
 3. أضف السوق: `https://onruntime.com/plugins`
-4. ابحث عن "gitmoji" وقم بالتثبيت
+4. ابحث عن "gitmoji" وثبته
 
 ## الاستخدام
 
-قم بتشغيل الأمر `/commit` لإنشاء Commit:
+شغل الأمر `/commit` لإنشاء التزام:
 
 ```
 /commit
@@ -35,29 +35,30 @@ description: استخدم gitmoji مع Claude Code
 /commit fix the login bug
 ```
 
-سيقوم Claude Code بتحليل تغييراتك وإنشاء Commit وفقًا لاتفاقية gitmoji.
+Claude Code سيحلل تغييراتك وينشئ التزامًا يتبع اتفاقية gitmoji.
 
 <Callout type="info" title="أمر الملحق">
-  يقوم الأمر `/commit` تلقائيًا بجلب حالة git والتغيير لإنشاء رسالة Commit المناسبة.
+  الأمر `/commit` يحصل تلقائيًا على حالة git الخاصة بك والاختلاف لإنشاء رسالة الالتزام المناسبة.
 </Callout>
 
 ## بديل: CLAUDE.md
 
-إذا كنت تفضل عدم تثبيت الملحق، أضف هذا إلى ملف `CLAUDE.md` الخاص بمشروعك:
+إذا كنت تفضل عدم تثبيت الملحق، أضف هذا إلى `CLAUDE.md` الخاص بمشروعك:
 
 ````markdown
-## اتفاقية Commit
+## اتفاقية الالتزام
 
-استخدم Commits التقليدية الخاصة بـ gitmoji:
+استخدم التزامات gitmoji التقليدية:
 
 ```
 <gitmoji> <type> <description>
 ```
 
-الأنواع: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
+أنواع: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
 
 القواعد:
-- اكتب بحروف صغيرة
-- استخدم صيغة الأمر ("add" وليس "added")
-- تغيير منطقي واحد لكل Commit
+- اكتب بالأحرف الصغيرة
+- النوع هو الفعل للموضوع، والوصف يكمله في جملة واحدة. احتفظ به أمرًا ("add" ليس "added")
+- لا تبدأ الوصف بفعل ثانٍ: "fix the footer wrapping" وليس "fix stop the footer from wrapping"
+- تعديل منطقي واحد لكل التزام
 ````

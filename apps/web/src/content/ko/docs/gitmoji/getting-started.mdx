@@ -2,11 +2,11 @@
 title: 시작하기
 description: 우리의 커밋 규칙을 배워보세요
 ---
-우리는 깔끔한 프로젝트 히스토리를 좋아해. 우리의 커밋 규칙은 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0)에서 영감을 받았지만, 더 시각적이고 재미있게 만들기 위해 [gitmoji](https://gitmoji.dev)로 커스터마이즈했어.
+우리는 깔끔한 프로젝트 이력을 갖는 걸 좋아해. 우리의 커밋 규칙은 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0)에서 영감을 받았지만, 더 시각적이고 재밌게 만들기 위해 [gitmoji](https://gitmoji.dev)로 커스터마이즈했어.
 
 ## 구조
 
-커밋 메시지는 다음과 같이 **소문자**로 구조화되어야 해:
+커밋 메시지는 다음과 같이 구조화되어야 해, 그리고 **소문자로** 작성해야 해:
 
 ```
 <gitmoji> <type> <description> [(#<issue number>)]
@@ -33,26 +33,26 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 📝 update documentation contributors
 ```
 
-## 유형
+## 타입
 
-우리는 다음의 커밋 유형을 사용해:
+우리는 다음과 같은 커밋 타입을 사용해:
 
 | Type | Description |
 | --- | --- |
 | `add` | 새로운 기능 추가 |
 | `fix` | 버그 수정 |
-| `improve` | 무언가 개선 |
-| `update` | 무언가 업데이트 |
-| `remove` | 무언가 제거 |
-| `refactor` | 무언가 리팩토링 |
-| `rename` | 무언가 이름 변경 |
+| `improve` | 뭔가 개선 |
+| `update` | 뭔가 업데이트 |
+| `remove` | 뭔가 제거 |
+| `refactor` | 뭔가 리팩토링 |
+| `rename` | 뭔가 이름 변경 |
 | `move` | 파일이나 폴더 이동 |
 | `upgrade` | 의존성 업그레이드 |
 | `downgrade` | 의존성 다운그레이드 |
-| `initial` | 레포지토리의 초기 커밋 |
-| `release` | 릴리스 / 버전 태그 |
+| `initial` | 저장소의 초기 커밋 |
+| `release` | 릴리즈 / 버전 태그 |
 
-레포지토리의 첫 번째 커밋은 `initial`을 사용하고, 버전 태그는 `release`를 사용해:
+저장소의 첫 번째 커밋은 `initial`을 사용하고, 버전 태그는 `release`를 사용해:
 
 ```bash
 🎉 initial commit
@@ -61,22 +61,42 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 
 ## 설명
 
-설명을 **명령문**으로 작성하고 **소문자**로 해:
+`<type>`은 주어의 동사이고, 설명이 그것을 완성해. 함께 읽으면 **한 문장**이 돼:
 
 ```bash
-# 좋음
+# 좋은 예
 📝 update documentation contributors
+```
 
-# 나쁨
+그래서 설명을 두 번째 동사로 열지 마. 타입이 이미 하나 있고, 주어가 두 문장을 쌓이게 만드는 게 `fix:` 접두사로 이어져. 동사를 빼고 그것이 작용한 것을 유지해:
+
+```bash
+# 나쁜 예
+💄 improve scale down the gem on its card
+🐛 fix stop the footer from wrapping
+
+# 좋은 예
+💄 improve the gem size on its card
+🐛 fix the footer wrapping
+```
+
+**명령형**과 **소문자**로 작성해:
+
+```bash
+# 나쁜 예
 📝 updated documentation contributors
 
-# 나쁨
+# 나쁜 예
 📝 Update documentation contributors
 ```
 
+<Callout type="info" title="명사가 되는 동사">
+  어떤 단어는 둘 다 될 수 있어, 네가 의도하는 건 명사야: `✨ add open graph image`는 괜찮아. 동사로 읽히면, 관사가 다시 명사 구로 만들어: `✨ add a show more button`.
+</Callout>
+
 ## 이슈 번호
 
-이슈 번호를 추가하여 커밋을 이슈에 연결해:
+이슈 번호를 추가해 커밋을 이슈에 연결해:
 
 ```bash
 📝 update documentation contributors (#123)
@@ -84,7 +104,7 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 
 ## 본문
 
-본문은 맥락과 동기를 설명하는 데 사용해:
+상황과 동기를 위해 본문을 사용해:
 
 ```bash
 📝 update documentation contributors
@@ -95,6 +115,6 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="하나의 커밋, 하나의 목적">
-  각 커밋은 하나의 논리적인 변화를 나타내야 해. 관련 없는 변화는 섞지 마.
+<Callout type="info" title="한 커밋, 한 목적">
+  각 커밋은 하나의 논리적 변화를 나타내야 해. 관련이 없는 변화를 섞지 마.
 </Callout>

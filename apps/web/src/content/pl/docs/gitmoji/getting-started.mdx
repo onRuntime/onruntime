@@ -2,18 +2,18 @@
 title: Zaczynamy
 description: Poznaj naszą konwencję commitów
 ---
-Lubimy mieć czystą historię projektu. Nasza konwencja commitów jest inspirowana [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0), ale dostosowana z [gitmoji](https://gitmoji.dev), żeby była bardziej wizualna i zabawna.
+Lubimy mieć czystą historię projektu. Nasza konwencja commitów jest inspirowana [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0), ale dostosowana z użyciem [gitmoji](https://gitmoji.dev), żeby było to bardziej wizualne i zabawne.
 
 ## Struktura
 
-Wiadomość o commicie powinna być ustrukturyzowana w następujący sposób i **ma być napisana małymi literami**:
+Wiadomość commit powinna być zbudowana w następujący sposób i **ma być napisana małymi literami**:
 
 ```
 <gitmoji> <type> <description> [(#<issue number>)]
 
-[opcjonalne body]
+[opcjonalne ciało]
 
-[opcjonalne footer(y)]
+[opcjonalne stopki]
 ```
 
 ### Przykład
@@ -21,13 +21,13 @@ Wiadomość o commicie powinna być ustrukturyzowana w następujący sposób i *
 ```bash
 📝 update documentation contributors
 
-- Dodaj @jerembdn jako współtwórcę
-- Dodaj @younesbessa jako współtwórcę
+- Dodaj @jerembdn jako współautora
+- Dodaj @younesbessa jako współautora
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-W większości przypadków wystarczy prosta, jednozdaniowa wiadomość:
+Najczęściej prosta linia wystarczy:
 
 ```bash
 📝 update documentation contributors
@@ -40,11 +40,11 @@ Używamy następujących typów commitów:
 | Typ | Opis |
 | --- | --- |
 | `add` | Dodaj nową funkcję |
-| `fix` | Popraw błąd |
+| `fix` | Napraw błąd |
 | `improve` | Popraw coś |
 | `update` | Zaktualizuj coś |
 | `remove` | Usuń coś |
-| `refactor` | Refaktoryzuj coś |
+| `refactor` | Zrefaktoryzuj coś |
 | `rename` | Zmień nazwę czegoś |
 | `move` | Przenieś plik lub folder |
 | `upgrade` | Zaktualizuj zależności |
@@ -52,8 +52,7 @@ Używamy następujących typów commitów:
 | `initial` | Początkowy commit repozytorium |
 | `release` | Wydanie / tag wersji |
 
-Pierwszy commit repozytorium używa `initial`, a tag wersji używa
-`release`:
+Pierwszy commit repozytorium używa `initial`, a tag wersji używa `release`:
 
 ```bash
 🎉 initial commit
@@ -62,18 +61,38 @@ Pierwszy commit repozytorium używa `initial`, a tag wersji używa
 
 ## Opis
 
-Pisanie opisów w **trybie rozkazującym** i **małymi literami**:
+`<type>` to czasownik tematu, a opis go uzupełnia. Razem tworzą **jedno zdanie**:
 
 ```bash
 # Dobrze
 📝 update documentation contributors
+```
 
+Więc nie zaczynaj opisu od drugiego czasownika. Typ już jest jednym czasownikiem, a temat kończy się układaniem dwóch zdań, co prowadzi do prefiksu `fix:`. Porzuć czasownik i zachowaj to, na co miał wpływ:
+
+```bash
+# Źle
+💄 improve scale down the gem on its card
+🐛 fix stop the footer from wrapping
+
+# Dobrze
+💄 improve the gem size on its card
+🐛 fix the footer wrapping
+```
+
+Pisz to w **trybie rozkazującym** i **małymi literami**:
+
+```bash
 # Źle
 📝 updated documentation contributors
 
 # Źle
 📝 Update documentation contributors
 ```
+
+<Callout type="info" title="Czasownik, który jest rzeczownikiem">
+  Niektóre słowa są jednocześnie tymi dwoma, a to, co masz na myśli, to rzeczownik: `✨ add open graph image` jest w porządku. Kiedy czyta się to jako czasownik, artykuł znów czyni to frazą rzeczownikową: `✨ add a show more button`.
+</Callout>
 
 ## Numer problemu
 
@@ -83,19 +102,19 @@ Linkuj commity do problemów, dodając numer problemu:
 📝 update documentation contributors (#123)
 ```
 
-## Treść
+## Ciało
 
-Użyj treści do podania kontekstu i motywacji:
+Użyj ciała w celu kontekstu i motywacji:
 
 ```bash
 📝 update documentation contributors
 
-- Dodaj @jerembdn jako współtwórcę
-- Dodaj @younesbessa jako współtwórcę
+- Dodaj @jerembdn jako współautora
+- Dodaj @younesbessa jako współautora
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="Jeden Commit, Jeden Cel">
-  Każdy commit powinien reprezentować jedną logiczną zmianę. Nie mieszaj niezwiązanych zmian.
+<Callout type="info" title="Jeden commit, jeden cel">
+  Każdy commit powinien reprezentować pojedynczą logiczną zmianę. Nie mieszaj niepowiązanych zmian.
 </Callout>

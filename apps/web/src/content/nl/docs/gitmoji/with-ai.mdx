@@ -6,58 +6,61 @@ Installeer onze gitmoji-plugin voor [Claude Code](https://claude.ai/code) om com
 
 ## Installeer de Plugin
 
-Voeg de onRuntime marketplace toe en installeer de plugin:
+Voeg de onRuntime-marktplaats toe en installeer de plugin:
 
 ```bash
-# Voeg de onRuntime marketplace toe
+# Voeg de onRuntime-marktplaats toe
 /plugin marketplace add https://onruntime.com/plugins
 
-# Installeer de gitmoji plugin
+# Installeer de gitmoji-plugin
 /plugin install gitmoji@onruntime
 ```
 
-Of installeer direct vanuit het menu:
+Of installeer rechtstreeks vanuit het menu:
 
-1. Voer `/plugin` in Claude Code uit
+1. Voer `/plugin` uit in Claude Code
 2. Ga naar het tabblad **Ontdekken**
-3. Voeg de marketplace toe: `https://onruntime.com/plugins`
+3. Voeg marktplaats toe: `https://onruntime.com/plugins`
 4. Zoek naar "gitmoji" en installeer
 
 ## Gebruik
 
-Voer het `/commit` commando uit om een commit te maken:
+Voer de `/commit`-opdracht uit om een commit te maken:
 
 ```
 /commit
 ```
 
 ```
-/commit fix de inlogbug
+/commit fix the login bug
 ```
 
-Claude Code zal je wijzigingen analyseren en een commit maken volgens de gitmoji conventie.
+Claude Code analyseert je wijzigingen en maakt een commit volgens de gitmoji-conventie.
 
-<Callout type="info" title="Plugin Commando">
-  Het `/commit` commando haalt automatisch je git status en diff op om de juiste commitboodschap te genereren.
+<Callout type="info" title="Plugin Command">
+  De `/commit`-opdracht haalt automatisch je git-status en diff op om de juiste commitboodschap te genereren.
 </Callout>
 
 ## Alternatief: CLAUDE.md
 
-Als je liever de plugin niet installeert, voeg dit toe aan je project `CLAUDE.md`:
+Als je de plugin liever niet installeert, voeg dit toe aan je project `CLAUDE.md`:
 
 ````markdown
 ## Commit Conventie
 
-Gebruik gitmoji conventionele commits:
+Gebruik gitmoji-conventionele commits:
 
 ```
-<gitmoji> <type> <beschrijving>
+<gitmoji> <type> <description>
 ```
 
 Typen: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
 
 Regels:
 - Schrijf in kleine letters
-- Gebruik de gebiedende wijs ("add" niet "added")
+- Het type is het werkwoord van het onderwerp, en de beschrijving maakt het compleet in één
+  zin. Houd het imperatief ("add" niet "added")
+- Begin de beschrijving nooit met een tweede werkwoord: "fix the footer wrapping", niet
+  "fix stop the footer from wrapping"
 - Eén logische wijziging per commit
 ````

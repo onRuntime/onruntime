@@ -1,19 +1,19 @@
 ---
-title: Introducción
+title: Empezando
 description: Aprende nuestra convención de commits
 ---
 Nos gusta tener un historial de proyecto limpio. Nuestra convención de commits está inspirada en [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) pero personalizada con [gitmoji](https://gitmoji.dev) para hacerlo más visual y divertido.
 
 ## Estructura
 
-El mensaje del commit debe estar estructurado de la siguiente manera y **en minúsculas**:
+El mensaje del commit debe estructurarse de la siguiente manera y **en minúsculas**:
 
 ```
-<gitmoji> <tipo> <descripción> [(#<número de issue>)]
+<gitmoji> <type> <description> [(#<número de issue>)]
 
 [cuerpo opcional]
 
-[pie opcional(s)]
+[footer(s) opcionales]
 ```
 
 ### Ejemplo
@@ -21,13 +21,13 @@ El mensaje del commit debe estar estructurado de la siguiente manera y **en min�
 ```bash
 📝 actualizar contribuyentes de la documentación
 
-- Agregar @jerembdn como contribuyente
-- Agregar @younesbessa como contribuyente
+- Agregar a @jerembdn como contribuyente
+- Agregar a @younesbessa como contribuyente
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-La mayoría de las veces, una simple línea es suficiente:
+La mayor parte del tiempo, una línea simple es suficiente:
 
 ```bash
 📝 actualizar contribuyentes de la documentación
@@ -35,12 +35,12 @@ La mayoría de las veces, una simple línea es suficiente:
 
 ## Tipos
 
-Usamos los siguientes tipos de commit:
+Usamos los siguientes tipos de commits:
 
 | Tipo | Descripción |
 | --- | --- |
-| `add` | Agregar una nueva característica |
-| `fix` | Arreglar un bug |
+| `add` | Agregar una nueva función |
+| `fix` | Corregir un error |
 | `improve` | Mejorar algo |
 | `update` | Actualizar algo |
 | `remove` | Eliminar algo |
@@ -49,25 +49,43 @@ Usamos los siguientes tipos de commit:
 | `move` | Mover un archivo o carpeta |
 | `upgrade` | Actualizar dependencias |
 | `downgrade` | Degradar dependencias |
-| `initial` | Primer commit de un repositorio |
+| `initial` | Commit inicial de un repositorio |
 | `release` | Lanzar / etiqueta de versión |
 
 El primer commit de un repositorio usa `initial`, y una etiqueta de versión usa
 `release`:
 
 ```bash
-🎉 primer commit
-🔖 lanzamiento @onruntime/translations v0.3.0
+🎉 commit inicial
+🔖 release @onruntime/translations v0.3.0
 ```
 
 ## Descripción
 
-Escribe descripciones en **modo imperativo** y **minúsculas**:
+El `<type>` es el verbo del sujeto, y la descripción lo completa. Juntos,
+forman **una oración**:
 
 ```bash
 # Bueno
 📝 actualizar contribuyentes de la documentación
+```
 
+Así que no abras la descripción con un segundo verbo. El tipo ya es uno, y
+el sujeto termina apilando dos oraciones, que es lo que lleva un prefijo `fix:`. Elimina el verbo y mantén lo que actúa sobre:
+
+```bash
+# Malo
+💄 mejorar reducir la escala de la gema en su tarjeta
+🐛 corregir detener el pie de página de envolverse
+
+# Bueno
+💄 mejorar el tamaño de la gema en su tarjeta
+🐛 corregir el pie de página envolviéndose
+```
+
+Escríbelo en **modo imperativo** y **en minúsculas**:
+
+```bash
 # Malo
 📝 actualizados contribuyentes de la documentación
 
@@ -75,9 +93,13 @@ Escribe descripciones en **modo imperativo** y **minúsculas**:
 📝 Actualizar contribuyentes de la documentación
 ```
 
+<Callout type="info" title="Un verbo que es un sustantivo">
+  Algunas palabras son ambas, y la que quieres es el sustantivo: `✨ agregar imagen de gráfico abierto` está bien. Cuando se lee como un verbo, un artículo lo convierte en una frase nominal nuevamente: `✨ agregar un botón de mostrar más`.
+</Callout>
+
 ## Número de Issue
 
-Vincula commits a issues agregando el número de issue:
+Vincula los commits a los issues añadiendo el número del issue:
 
 ```bash
 📝 actualizar contribuyentes de la documentación (#123)
@@ -90,12 +112,12 @@ Usa el cuerpo para contexto y motivación:
 ```bash
 📝 actualizar contribuyentes de la documentación
 
-- Agregar @jerembdn como contribuyente
-- Agregar @younesbessa como contribuyente
+- Agregar a @jerembdn como contribuyente
+- Agregar a @younesbessa como contribuyente
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="Un Commit, Un Propósito">
-  Cada commit debería representar un cambio lógico único. No mezcles cambios no relacionados.
+<Callout type="info" title="Un commit, un propósito">
+  Cada commit debe representar un cambio lógico único. No mezcles cambios no relacionados.
 </Callout>

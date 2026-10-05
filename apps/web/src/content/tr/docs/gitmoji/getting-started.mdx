@@ -1,35 +1,36 @@
 ---
 title: Başlarken
-description: Taahhüt kurallarımızı öğren
+description: Tavir kurallarımızı öğrenin
 ---
-We like to have a clean project history. Our commits convention is inspired by [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) but customized with [gitmoji](https://gitmoji.dev) to make it more visual and fun.
+Biz temiz bir proje tarihini seviyoruz. Commits geleneklerimiz, [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) ilham almış ama [gitmoji](https://gitmoji.dev) ile özelleştirilmiş, bu da daha görsel ve eğlenceli hale getiriyor.
 
 ## Yapı
 
-Commit mesajı aşağıdaki gibi yapılandırılmalı ve **küçük harfle** yazılmalıdır:
+Commit mesajı aşağıdaki gibi yapılandırılmalı ve **küçük harfle** yazılmalı:
 
 ```
 <gitmoji> <type> <description> [(#<issue number>)]
 
-[opsiyonel gövde]
+[isteğe bağlı gövde]
 
-[opsiyonel ayak (lar)]
+[isteğe bağlı footer'lar]
 ```
 
 ### Örnek
 
 ```bash
-📝 belgeleri güncelle
-- @jerembdn katkıcı olarak ekle
-- @younesbessa katkıcı olarak ekle
+📝 belge katkılarını güncelle
 
-Co-authored-by: Younes Bessa <younes@onruntime.com>
+- @jerembdn'yi katkıda bulunan olarak ekle
+- @younesbessa'yı katkıda bulunan olarak ekle
+
+Ko-yazar: Younes Bessa <younes@onruntime.com>
 ```
 
-Çoğu zaman, basit bir tek satır yeterlidir:
+Çoğu zaman, basit bir satır yeterlidir:
 
 ```bash
-📝 belgeleri güncelle
+📝 belge katkılarını güncelle
 ```
 
 ## Türler
@@ -43,42 +44,62 @@ Aşağıdaki commit türlerini kullanıyoruz:
 | `improve` | Bir şeyi geliştir |
 | `update` | Bir şeyi güncelle |
 | `remove` | Bir şeyi kaldır |
-| `refactor` | Bir şeyi yeniden yapılandır |
+| `refactor` | Bir şeyi yeniden düzenle |
 | `rename` | Bir şeyi yeniden adlandır |
 | `move` | Bir dosyayı veya klasörü taşı |
-| `upgrade` | Bağımlılıkları güncelle |
+| `upgrade` | Bağımlılıkları yükselt |
 | `downgrade` | Bağımlılıkları düşür |
-| `initial` | Bir depodaki ilk commit |
-| `release` | Sürüm / versiyon etiketi |
+| `initial` | Bir depo için ilk commit |
+| `release` | Yayın / sürüm etiketi |
 
-Bir reposunun ilk commit'i `initial` kullanırken, bir versiyon etiketi `release` kullanıyor:
+Bir deponun ilk commit'i `initial` kullanır ve bir sürüm etiketi `release` kullanır:
 
 ```bash
 🎉 ilk commit
-🔖 release @onruntime/translations v0.3.0
+🔖 yayın @onruntime/translations v0.3.0
 ```
 
 ## Açıklama
 
-Açıklamaları **emir kipiyle** ve **küçük harfle** yazın:
+`<type>`, konunun fiilidir ve açıklama bunu tamamlar. Birlikte okunduğunda, **tek bir cümle** oluştururlar:
 
 ```bash
 # İyi
-📝 belgeleri güncelle
-
-# Kötü
-📝 belgeleri güncelledi
-
-# Kötü
-📝 Belgeleri güncelle
+📝 belge katkılarını güncelle
 ```
 
-## Issue Numarası
-
-Commit'leri issue'lara bağlamak için issue numarasını ekleyin:
+Bu yüzden açıklamayı ikinci bir fiil ile açmayın. Tür zaten bir tanedir ve konu iki cümle birleştirilmiş gibi olur ki bu da `fix:` ön ekinin sonucudur. Fiili bırakın ve eylemin uygulandığı şeyi koruyun:
 
 ```bash
-📝 belgeleri güncelle (#123)
+# Kötü
+💄 kartında mücevheri ölçeklendirin
+🐛 altbilgiyi sarmayı durdur
+
+# İyi
+💄 kartında mücevherin boyutunu geliştir
+🐛 altbilgi sarmasını düzelt
+```
+
+Bunu **emredici modda** ve **küçük harfle** yazın:
+
+```bash
+# Kötü
+📝 belge katkılarını güncelledim
+
+# Kötü
+📝 Belge katkılarını güncelle
+```
+
+<Callout type="info" title="Bir Fiil ki İsimdir">
+  Bazı kelimeler hem fiil hem de isimdir ve kastettiğiniz isimdir: `✨ açık grafik resmi ekle` iyidir. Fiil gibi okunursa, bir tanımlık onu tekrar isim ifadesi yapar: `✨ daha fazla göster butonu ekle`.
+</Callout>
+
+## Sorun Numarası
+
+Commit'leri sorunlara bağlamak için sorun numarasını ekleyin:
+
+```bash
+📝 belge katkılarını güncelle (#123)
 ```
 
 ## Gövde
@@ -86,14 +107,14 @@ Commit'leri issue'lara bağlamak için issue numarasını ekleyin:
 Gövdeyi bağlam ve motivasyon için kullanın:
 
 ```bash
-📝 belgeleri güncelle
+📝 belge katkılarını güncelle
 
-- @jerembdn katkıcı olarak ekle
-- @younesbessa katkıcı olarak ekle
+- @jerembdn'yi katkıda bulunan olarak ekle
+- @younesbessa'yı katkıda bulunan olarak ekle
 
-Co-authored-by: Younes Bessa <younes@onruntime.com>
+Ko-yazar: Younes Bessa <younes@onruntime.com>
 ```
 
 <Callout type="info" title="Bir Commit, Bir Amaç">
-  Her commit tek bir mantıksal değişikliği temsil etmelidir. İlgisiz değişiklikleri birleştirmeyin.
+  Her commit, tek bir mantıksal değişikliği temsil etmelidir. İlişkisiz değişiklikleri karıştırmayın.
 </Callout>

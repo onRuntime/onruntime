@@ -1,6 +1,6 @@
 ---
-title: Démarrer
-description: Apprenez notre convention de commit
+title: Commencer
+description: Découvrez notre convention de commit
 ---
 Nous aimons avoir un historique de projet propre. Notre convention de commits est inspirée par [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) mais personnalisée avec [gitmoji](https://gitmoji.dev) pour rendre ça plus visuel et amusant.
 
@@ -9,20 +9,20 @@ Nous aimons avoir un historique de projet propre. Notre convention de commits es
 Le message de commit doit être structuré comme suit et **en minuscules** :
 
 ```
-<gitmoji> <type> <description> [(#<numéro de l'incident>)]
+<gitmoji> <type> <description> [(#<numéro de l'issue>)]
 
 [corps optionnel]
 
-[pied(s) optionnel(s)]
+[pied(s) de page optionnel(s)]
 ```
 
 ### Exemple
 
 ```bash
-📝 mettre à jour les contributeurs de la documentation
+📝 mise à jour des contributeurs de la documentation
 
-- Ajouter @jerembdn comme contributeur
-- Ajouter @younesbessa comme contributeur
+- Ajouter @jerembdn en tant que contributeur
+- Ajouter @younesbessa en tant que contributeur
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
@@ -30,12 +30,12 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 La plupart du temps, une simple ligne suffit :
 
 ```bash
-📝 mettre à jour les contributeurs de la documentation
+📝 mise à jour des contributeurs de la documentation
 ```
 
 ## Types
 
-Nous utilisons les types de commits suivants :
+Nous utilisons les types de commit suivants :
 
 | Type | Description |
 | --- | --- |
@@ -47,13 +47,12 @@ Nous utilisons les types de commits suivants :
 | `refactor` | Refactoriser quelque chose |
 | `rename` | Renommer quelque chose |
 | `move` | Déplacer un fichier ou un dossier |
-| `upgrade` | Mettre à niveau les dépendances |
+| `upgrade` | Mettre à jour les dépendances |
 | `downgrade` | Rétrograder les dépendances |
-| `initial` | Commit initial d'un dépôt |
+| `initial` | Commit initial d’un dépôt |
 | `release` | Release / tag de version |
 
-Le premier commit d'un dépôt utilise `initial`, et un tag de version utilise
-`release` :
+Le premier commit d’un dépôt utilise `initial`, et un tag de version utilise `release` :
 
 ```bash
 🎉 commit initial
@@ -62,25 +61,45 @@ Le premier commit d'un dépôt utilise `initial`, et un tag de version utilise
 
 ## Description
 
-Écrivez des descriptions à l'**impératif** et **en minuscules** :
+Le `<type>` est le verbe du sujet, et la description le complète. Lue ensemble, ils forment **une phrase** :
 
 ```bash
-# Bien
-📝 mettre à jour les contributeurs de la documentation
-
-# Mal
-📝 mis à jour les contributeurs de la documentation
-
-# Mal
-📝 Mettre à jour les contributeurs de la documentation
+# Bon
+📝 mise à jour des contributeurs de la documentation
 ```
 
-## Numéro d'incident
-
-Liez les commits aux incidents en ajoutant le numéro d'incident :
+Donc, n'ouvrez pas la description avec un second verbe. Le type est déjà un, et le sujet finit par empiler deux phrases, ce qui est ce que le préfixe `fix:` entraîne. Laissez tomber le verbe et gardez ce sur quoi il a agi :
 
 ```bash
-📝 mettre à jour les contributeurs de la documentation (#123)
+# Mauvais
+💄 améliorer la réduction du gem sur sa carte
+🐛 corriger l’arrêt du pied de page pour qu'il ne se plie pas
+
+# Bon
+💄 améliorer la taille du gem sur sa carte
+🐛 corriger le pliage du pied de page
+```
+
+Écrivez-le à la **forme impérative** et **en minuscules** :
+
+```bash
+# Mauvais
+📝 mis à jour des contributeurs de la documentation
+
+# Mauvais
+📝 Mise à jour des contributeurs de la documentation
+```
+
+<Callout type="info" title="Un Verbe Qui Est un Nom">
+  Certains mots sont les deux, et celui que vous voulez dire est le nom : `✨ ajouter une image open graph` convient. Quand cela se lit comme un verbe, un article en fait un groupe nominal : `✨ ajouter un bouton afficher plus`.
+</Callout>
+
+## Numéro d'Issue
+
+Liez les commits aux issues en ajoutant le numéro de l'issue :
+
+```bash
+📝 mise à jour des contributeurs de la documentation (#123)
 ```
 
 ## Corps
@@ -88,14 +107,14 @@ Liez les commits aux incidents en ajoutant le numéro d'incident :
 Utilisez le corps pour le contexte et la motivation :
 
 ```bash
-📝 mettre à jour les contributeurs de la documentation
+📝 mise à jour des contributeurs de la documentation
 
-- Ajouter @jerembdn comme contributeur
-- Ajouter @younesbessa comme contributeur
+- Ajouter @jerembdn en tant que contributeur
+- Ajouter @younesbessa en tant que contributeur
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="Un Commit, Un But">
-  Chaque commit doit représenter un changement logique unique. Ne mélangez pas les changements non liés.
+<Callout type="info" title="Un Commit, Un Objectif">
+  Chaque commit doit représenter un changement logique unique. Ne mélangez pas des changements sans rapport.
 </Callout>

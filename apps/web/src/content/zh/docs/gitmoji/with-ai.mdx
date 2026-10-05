@@ -1,8 +1,8 @@
 ---
 title: 与人工智能一起
-description: 使用 gitmoji 和 Claude Code
+description: 使用 gitmoji 与 Claude Code
 ---
-安装我们的 gitmoji 插件以便为 [Claude Code](https://claude.ai/code) 生成符合规范的提交。
+安装我们的 gitmoji 插件用于 [Claude Code](https://claude.ai/code)，以生成符合规范的提交。
 
 ## 安装插件
 
@@ -16,16 +16,16 @@ description: 使用 gitmoji 和 Claude Code
 /plugin install gitmoji@onruntime
 ```
 
-或者直接从菜单中安装：
+或者直接从菜单安装：
 
 1. 在 Claude Code 中运行 `/plugin`
-2. 进入 **发现** 标签
-3. 添加市场: `https://onruntime.com/plugins`
+2. 转到 **Discover** 标签
+3. 添加市场： `https://onruntime.com/plugins`
 4. 搜索 "gitmoji" 并安装
 
 ## 使用方法
 
-运行 `/commit` 命令来创建提交：
+运行 `/commit` 命令以创建提交：
 
 ```
 /commit
@@ -35,29 +35,30 @@ description: 使用 gitmoji 和 Claude Code
 /commit fix the login bug
 ```
 
-Claude Code 会分析你的更改并创建遵循 gitmoji 规范的提交。
+Claude Code 将分析你的更改并生成符合 gitmoji 规范的提交。
 
 <Callout type="info" title="插件命令">
-  `/commit` 命令会自动获取你的 git 状态和差异，以生成合适的提交信息。
+  `/commit` 命令会自动获取你的 git 状态和差异，以生成适当的提交信息。
 </Callout>
 
-## 替代方案：CLAUDE.md
+## 备选方案：CLAUDE.md
 
-如果你不想安装插件，可以在项目的 `CLAUDE.md` 中添加以下内容：
+如果你不想安装插件，可以将以下内容添加到你项目的 `CLAUDE.md`：
 
 ````markdown
 ## 提交规范
 
-使用 gitmoji 常规提交：
+使用 gitmoji 传统提交：
 
 ```
 <gitmoji> <type> <description>
 ```
 
-类型：add，fix，improve，update，remove，refactor，rename，move，upgrade，downgrade
+类型：add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
 
 规则：
 - 使用小写字母
-- 使用祈使语气（"add" 而不是 "added"）
-- 每个提交包含一个逻辑更改
+- 类型是主语的动词，描述补充成一个完整的句子。保持命令式（用 "add" 而不是 "added"）
+- 描述开头永远不要用第二个动词：“修复页脚换行”，而不是“修复停止页脚换行”
+- 每个提交要有一个逻辑变更
 ````

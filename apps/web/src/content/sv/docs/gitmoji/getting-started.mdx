@@ -1,8 +1,8 @@
 ---
-title: Börja här
-description: Lär dig vår kommittékonvention
+title: Komma igång
+description: Lär dig vår commit-konvention
 ---
-Vi gillar att ha en ren projektlogg. Vår commit-konvention är inspirerad av [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) men anpassad med [gitmoji](https://gitmoji.dev) för att göra det mer visuellt och roligt.
+Vi gillar att ha en ren projekt historia. Vår commits konvention är inspirerad av [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) men anpassad med [gitmoji](https://gitmoji.dev) för att göra det mer visuellt och roligt.
 
 ## Struktur
 
@@ -11,9 +11,9 @@ Commit-meddelandet ska struktureras enligt följande och **i gemener**:
 ```
 <gitmoji> <typ> <beskrivning> [(#<ärendenummer>)]
 
-[valfritt brödtext]
+[valfri kropp]
 
-[valfria fotnoter]
+[valfri fot(er)]
 ```
 
 ### Exempel
@@ -27,7 +27,7 @@ Commit-meddelandet ska struktureras enligt följande och **i gemener**:
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-Mestadels av tiden räcker det med en enkel rad:
+Mestadels räcker en enkel enradare:
 
 ```bash
 📝 uppdatera dokumentation bidragsgivare
@@ -44,7 +44,7 @@ Vi använder följande commit-typer:
 | `improve` | Förbättra något |
 | `update` | Uppdatera något |
 | `remove` | Ta bort något |
-| `refactor` | Refaktorera något |
+| `refactor` | Refaktorisera något |
 | `rename` | Byt namn på något |
 | `move` | Flytta en fil eller mapp |
 | `upgrade` | Uppgradera beroenden |
@@ -62,18 +62,41 @@ Den första commit av ett repository använder `initial`, och en versionsetikett
 
 ## Beskrivning
 
-Skriv beskrivningar i **imperativ form** och **gemener**:
+`<typ>` är verbet av ämnet, och beskrivningen kompletterar det. Tillsammans gör de **en mening**:
 
 ```bash
 # Bra
 📝 uppdatera dokumentation bidragsgivare
+```
 
+Så öppna inte beskrivningen med ett andra verb. Typen är redan ett, och
+ämnet kommer att stapla två meningar, vilket är vad en `fix:` prefix leder till. Droppa verbet och behåll det som det agerade på:
+
+```bash
 # Dåligt
-📝 uppdaterade dokumentation bidragsgivare
+💄 förbättra skala ner stenen på sitt kort
+🐛 fixa stoppa foten från att rulla
+
+# Bra
+💄 förbättra storleken på stenen på sitt kort
+🐛 fixa fotens rullning
+```
+
+Skriv det i **imperativ form** och **gemener**:
+
+```bash
+# Dåligt
+📝 uppdaterad dokumentation bidragsgivare
 
 # Dåligt
 📝 Uppdatera dokumentation bidragsgivare
 ```
+
+<Callout type="info" title="Ett Verb Som Är Ett Substantiv">
+  Vissa ord är både, och det du menar är substantivet: `✨ add open graph image`
+  är okej. När det läses som ett verb gör en artikel det till en substantivfras igen:
+  `✨ add a show more button`.
+</Callout>
 
 ## Ärendenummer
 
@@ -83,9 +106,9 @@ Länka commits till ärenden genom att lägga till ärendenumret:
 📝 uppdatera dokumentation bidragsgivare (#123)
 ```
 
-## Brödtext
+## Kropp
 
-Använd brödtexten för kontext och motivation:
+Använd kroppen för kontext och motivation:
 
 ```bash
 📝 uppdatera dokumentation bidragsgivare
@@ -97,5 +120,5 @@ Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
 <Callout type="info" title="En Commit, Ett Syfte">
-  Varje commit bör representera en enda logisk förändring. Blanda inte orelaterade förändringar.
+  Varje commit ska representera en enda logisk förändring. Blanda inte ihop orelaterade förändringar.
 </Callout>

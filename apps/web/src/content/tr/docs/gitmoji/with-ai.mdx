@@ -1,26 +1,26 @@
 ---
 title: Yapay zeka ile
-description: Claude Code ile gitmoji kullan
+description: Claude Code ile gitmoji kullanın
 ---
-Gitmoji eklentimizi [Claude Code](https://claude.ai/code) için yükleyin ve geleneklere uygun commitler oluşturun.
+Install our gitmoji eklentisini [Claude Code](https://claude.ai/code) için, konvensiyona uygun commit'ler oluşturmak üzere.
 
 ## Eklentiyi Yükle
 
-onRuntime pazarını ekleyin ve eklentiyi yükleyin:
+onRuntime marketplace'ini ekleyin ve eklentiyi yükleyin:
 
 ```bash
-# onRuntime pazarını ekleyin
+# onRuntime marketplace'ini ekle
 /plugin marketplace add https://onruntime.com/plugins
 
-# gitmoji eklentisini yükleyin
+# gitmoji eklentisini yükle
 /plugin install gitmoji@onruntime
 ```
 
 Ya da menüden doğrudan yükleyin:
 
-1. Claude Code içinde `/plugin` komutunu çalıştırın
+1. Claude Code'da `/plugin` çalıştırın
 2. **Discover** sekmesine gidin
-3. Pazar ekleyin: `https://onruntime.com/plugins`
+3. Marketplace ekleyin: `https://onruntime.com/plugins`
 4. "gitmoji" için arama yapın ve yükleyin
 
 ## Kullanım
@@ -35,10 +35,10 @@ Bir commit oluşturmak için `/commit` komutunu çalıştırın:
 /commit fix the login bug
 ```
 
-Claude Code değişikliklerinizi analiz edecek ve gitmoji geleneklerine uygun bir commit oluşturacaktır.
+Claude Code, değişikliklerinizi analiz eder ve gitmoji konvensiyonuna uygun bir commit oluşturur.
 
 <Callout type="info" title="Eklenti Komutu">
-  `/commit` komutu otomatik olarak git durumunuzu ve diff'inizi alır ve uygun commit mesajını oluşturur.
+  `/commit` komutu otomatik olarak git durumunuzu ve diff'inizi alarak uygun commit mesajını oluşturur.
 </Callout>
 
 ## Alternatif: CLAUDE.md
@@ -46,9 +46,9 @@ Claude Code değişikliklerinizi analiz edecek ve gitmoji geleneklerine uygun bi
 Eklentiyi yüklemek istemiyorsanız, projenizin `CLAUDE.md` dosyasına bunu ekleyin:
 
 ````markdown
-## Commit Gelenekleri
+## Commit Konvansiyonu
 
-Gitmoji geleneksel commitleri kullanın:
+gitmoji geleneksel commit'leri kullanın:
 
 ```
 <gitmoji> <type> <description>
@@ -58,6 +58,7 @@ Türler: add, fix, improve, update, remove, refactor, rename, move, upgrade, dow
 
 Kurallar:
 - Küçük harfle yazın
-- Emir kipi kullanın ("add" değil "added")
-- Her commit için bir mantıksal değişiklik
+- Tür, konunun fiilidir ve açıklama onu bir cümle haline getirir. Emir kipinde tutun ("add" değil "added")
+- Açıklamayı ikinci bir fiille başlatmayın: "fix the footer wrapping", "fix stop the footer from wrapping" değil
+- Her commit için bir mantıklı değişiklik
 ````

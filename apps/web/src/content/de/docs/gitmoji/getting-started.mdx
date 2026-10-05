@@ -2,35 +2,35 @@
 title: Erste Schritte
 description: Lerne unsere Commit-Konvention
 ---
-Wir mögen einen sauberen Projektverlauf. Unser Commit-Konvention ist inspiriert von [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0), aber mit [gitmoji](https://gitmoji.dev) angepasst, um es visuell und spaßig zu machen.
+Wir mögen eine saubere Projektgeschichte. Unser Commit-Standard ist inspiriert von [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0), aber angepasst mit [gitmoji](https://gitmoji.dev), um es visueller und unterhaltsamer zu machen.
 
 ## Struktur
 
-Die Commit-Nachricht sollte wie folgt strukturiert sein und **in Kleinbuchstaben**:
+Die Commit-Nachricht sollte wie folgt strukturiert sein und **in Kleinschreibung**:
 
 ```
-<gitmoji> <type> <beschreibung> [(#<issue nummer>)]
+<gitmoji> <type> <description> [(#<issue number>)]
 
-[optionale nachricht]
+[optionale body]
 
-[optionale fußzeile(n)]
+[optionale footer(s)]
 ```
 
 ### Beispiel
 
 ```bash
-📝 aktualisiere dokumentation mit beiträgen
+📝 update documentation contributors
 
-- Füge @jerembdn als beitragenden hinzu
-- Füge @younesbessa als beitragenden hinzu
+- Add @jerembdn as a contributor
+- Add @younesbessa as a contributor
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-Meistens reicht eine einfache Zeile aus:
+Meistens reicht ein einfacher Einzeiler:
 
 ```bash
-📝 aktualisiere dokumentation mit beiträgen
+📝 update documentation contributors
 ```
 
 ## Typen
@@ -39,48 +39,67 @@ Wir verwenden die folgenden Commit-Typen:
 
 | Typ | Beschreibung |
 | --- | --- |
-| `add` | Füge ein neues Feature hinzu |
-| `fix` | Behebe einen Fehler |
-| `improve` | Verbessere etwas |
-| `update` | Aktualisiere etwas |
-| `remove` | Entferne etwas |
-| `refactor` | Überarbeite etwas |
-| `rename` | Benenne etwas um |
-| `move` | Verschiebe eine Datei oder einen Ordner |
-| `upgrade` | Update Abhängigkeiten |
-| `downgrade` | Downgrade Abhängigkeiten |
+| `add` | Eine neue Funktion hinzufügen |
+| `fix` | Einen Fehler beheben |
+| `improve` | Etwas verbessern |
+| `update` | Etwas aktualisieren |
+| `remove` | Etwas entfernen |
+| `refactor` | Etwas umstrukturieren |
+| `rename` | Etwas umbenennen |
+| `move` | Eine Datei oder einen Ordner verschieben |
+| `upgrade` | Abhängigkeiten aktualisieren |
+| `downgrade` | Abhängigkeiten herabstufen |
 | `initial` | Erster Commit eines Repositories |
-| `release` | Release / Versions-Tag |
+| `release` | Veröffentlichung / Versions-Tag |
 
-Der erste Commit eines Repositories verwendet `initial`, und ein Versions-Tag verwendet
-`release`:
+Der erste Commit eines Repositories verwendet `initial`, und ein Versions-Tag verwendet `release`:
 
 ```bash
-🎉 erster commit
+🎉 initial commit
 🔖 release @onruntime/translations v0.3.0
 ```
 
 ## Beschreibung
 
-Schreibe Beschreibungen im **Imperativ** und **klein geschrieben**:
+Der `<type>` ist das Verb des Subjekts, und die Beschreibung vervollständigt es. Zusammen ergeben sie **einen Satz**:
 
 ```bash
 # Gut
-📝 aktualisiere dokumentation mit beiträgen
-
-# Schlecht
-📝 aktualisierte dokumentation mit beiträgen
-
-# Schlecht
-📝 Aktualisiere dokumentation mit beiträgen
+📝 update documentation contributors
 ```
 
-## Issue Nummer
+Öffne die Beschreibung also nicht mit einem zweiten Verb. Der Typ ist bereits eins, und das Subjekt stapelt am Ende zwei Sätze, was ein `fix:`-Präfix zur Folge hat. Lass das Verb weg und behalte das, worauf es sich bezogen hat:
+
+```bash
+# Schlecht
+💄 improve scale down the gem on its card
+🐛 fix stop the footer from wrapping
+
+# Gut
+💄 improve the gem size on its card
+🐛 fix the footer wrapping
+```
+
+Schreibe es im **Imperativ** und **in Kleinschreibung**:
+
+```bash
+# Schlecht
+📝 updated documentation contributors
+
+# Schlecht
+📝 Update documentation contributors
+```
+
+<Callout type="info" title="Ein Verb, das ein Substantiv ist">
+  Manche Wörter sind beides, und das, was du meinst, ist das Substantiv: `✨ add open graph image` ist okay. Wenn es als Verb gelesen wird, macht ein Artikel es wieder zu einer Substantivphrase: `✨ add a show more button`.
+</Callout>
+
+## Issue-Nummer
 
 Verlinke Commits mit Issues, indem du die Issue-Nummer hinzufügst:
 
 ```bash
-📝 aktualisiere dokumentation mit beiträgen (#123)
+📝 update documentation contributors (#123)
 ```
 
 ## Body
@@ -88,14 +107,14 @@ Verlinke Commits mit Issues, indem du die Issue-Nummer hinzufügst:
 Verwende den Body für Kontext und Motivation:
 
 ```bash
-📝 aktualisiere dokumentation mit beiträgen
+📝 update documentation contributors
 
-- Füge @jerembdn als beitragenden hinzu
-- Füge @younesbessa als beitragenden hinzu
+- Add @jerembdn as a contributor
+- Add @younesbessa as a contributor
 
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
 <Callout type="info" title="Ein Commit, Ein Zweck">
-  Jeder Commit sollte eine einzelne logische Änderung repräsentieren. Misch keine unrelated changes.
+  Jeder Commit sollte eine einzige logische Änderung darstellen. Mische keine nicht verwandten Änderungen.
 </Callout>

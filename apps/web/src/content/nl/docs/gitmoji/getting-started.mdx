@@ -2,16 +2,16 @@
 title: Aan de slag
 description: Leer onze commitconventie
 ---
-We houden ervan om een schone projectgeschiedenis te hebben. Onze commits conventie is geïnspireerd op [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) maar aangepakt met [gitmoji](https://gitmoji.dev) om het visueler en leuker te maken.
+We houden van een schone projectgeschiedenis. Onze commitconventie is geïnspireerd door [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) maar aangepast met [gitmoji](https://gitmoji.dev) om het visueler en leuker te maken.
 
 ## Structuur
 
-Het commitbericht moet als volgt gestructureerd zijn en **in kleine letters**:
+De commitboodschap moet als volgt gestructureerd zijn en **in kleine letters**:
 
 ```
 <gitmoji> <type> <description> [(#<issue nummer>)]
 
-[optionele body]
+[optioneel body]
 
 [optionele footer(s)]
 ```
@@ -27,7 +27,7 @@ Het commitbericht moet als volgt gestructureerd zijn en **in kleine letters**:
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-De meeste tijd is een simpele one-liner voldoende:
+De meeste tijd is een simpele oneliner genoeg:
 
 ```bash
 📝 update documentatie bijdragers
@@ -49,31 +49,53 @@ We gebruiken de volgende commit types:
 | `move` | Verplaats een bestand of map |
 | `upgrade` | Upgrade afhankelijkheden |
 | `downgrade` | Downgrade afhankelijkheden |
-| `initial` | Eerste commit van een repository |
+| `initial` | Initiële commit van een repository |
 | `release` | Release / versie tag |
 
-De eerste commit van een repository gebruikt `initial`, en een versie tag gebruikt 
-`release`:
+De eerste commit van een repository gebruikt `initial`, en een versie tag
+gebruikt `release`:
 
 ```bash
-🎉 initial commit
+🎉 initiële commit
 🔖 release @onruntime/translations v0.3.0
 ```
 
 ## Beschrijving
 
-Schrijf beschrijvingen in **imperatieve wijs** en **kleine letters**:
+De `<type>` is het werkwoord van het onderwerp, en de beschrijving maakt het compleet. Samen vormen ze **één zin**:
 
 ```bash
 # Goed
 📝 update documentatie bijdragers
+```
 
+Dus begin de beschrijving niet met een tweede werkwoord. Het type is er al een, en het onderwerp leidt tot het stapelen van twee zinnen, wat een `fix:` prefix met zich meebrengt. Laat het werkwoord weg en behoud wat er op werd gewerkt:
+
+```bash
 # Slecht
-📝 updated documentatie bijdragers
+💄 verbeter schalen van de juweel op zijn kaart
+🐛 fix stop de footer van inpakken
+
+# Goed
+💄 verbeter de juweelgrootte op zijn kaart
+🐛 fix het inpakken van de footer
+```
+
+Schrijf het in **imperatieve wijs** en **kleine letters**:
+
+```bash
+# Slecht
+📝 bijgewerkt documentatie bijdragers
 
 # Slecht
 📝 Update documentatie bijdragers
 ```
+
+<Callout type="info" title="Een Werkwoord Dat Een Zelfstandig Naamwoord Is">
+  Sommige woorden zijn beide, en degene die je bedoelt, is het zelfstandige naamwoord: `✨ voeg afbeelding voor open graph toe`
+  is prima. Wanneer het als een werkwoord gelezen wordt, maakt een lidwoord het weer tot een zelfstandige naamwoordgroep:  
+  `✨ voeg een 'meer tonen' knop toe`.
+</Callout>
 
 ## Issue Nummer
 
@@ -85,7 +107,7 @@ Koppel commits aan issues door het issue nummer toe te voegen:
 
 ## Body
 
-Gebruik de body voor context en motivatie:
+Gebruik het bodygedeelte voor context en motivatie:
 
 ```bash
 📝 update documentatie bijdragers
@@ -96,6 +118,6 @@ Gebruik de body voor context en motivatie:
 Co-authored-by: Younes Bessa <younes@onruntime.com>
 ```
 
-<Callout type="info" title="Eén Commit, Eén Doel">
-  Elke commit zou een enkele logische verandering moeten vertegenwoordigen. Meng geen ongelijksoortige wijzigingen.
+<Callout type="info" title="Één Commit, Één Doel">
+  Elke commit moet een enkele logische verandering vertegenwoordigen. Meng geen niet-verwante veranderingen.
 </Callout>

@@ -1,15 +1,15 @@
 ---
 title: Mit KI
-description: Nutze gitmoji mit Claude Code
+description: Benutze gitmoji mit Claude Code
 ---
-Installiere unser gitmoji Plugin für [Claude Code](https://claude.ai/code), um Commits gemäß der Konvention zu generieren.
+Installiere unser gitmoji Plugin für [Claude Code](https://claude.ai/code), um Commits gemäß der Konvention zu erstellen.
 
 ## Installiere das Plugin
 
-Füge den onRuntime-Marktplatz hinzu und installiere das Plugin:
+Füge den onRuntime Marktplatz hinzu und installiere das Plugin:
 
 ```bash
-# Füge den onRuntime-Marktplatz hinzu
+# Füge den onRuntime Marktplatz hinzu
 /plugin marketplace add https://onruntime.com/plugins
 
 # Installiere das gitmoji Plugin
@@ -21,7 +21,7 @@ Oder installiere direkt über das Menü:
 1. Führe `/plugin` in Claude Code aus
 2. Gehe zum Tab **Entdecken**
 3. Füge den Marktplatz hinzu: `https://onruntime.com/plugins`
-4. Suche nach "gitmoji" und installiere
+4. Suche nach "gitmoji" und installiere es
 
 ## Nutzung
 
@@ -35,29 +35,32 @@ Führe den Befehl `/commit` aus, um einen Commit zu erstellen:
 /commit fix den Login-Bug
 ```
 
-Claude Code analysiert deine Änderungen und erstellt einen Commit, der der gitmoji-Konvention folgt.
+Claude Code analysiert deine Änderungen und erstellt einen Commit gemäß der gitmoji Konvention.
 
-<Callout type="info" title="Plugin-Befehl">
-  Der Befehl `/commit` ruft automatisch deinen Git-Status und den Diff ab, um die passende Commit-Nachricht zu generieren.
+<Callout type="info" title="Plugin Befehl">
+  Der Befehl `/commit` ruft automatisch deinen Git-Status und Diff ab, um die passende Commit-Nachricht zu generieren.
 </Callout>
 
 ## Alternative: CLAUDE.md
 
-Wenn du das Plugin nicht installieren möchtest, füge dies zu deinem Projekt `CLAUDE.md` hinzu:
+Wenn du das Plugin nicht installieren möchtest, füge dies zu deiner Projektdatei `CLAUDE.md` hinzu:
 
 ````markdown
 ## Commit-Konvention
 
-Verwende gitmoji konventionelle Commits:
+Nutze gitmoji konventionelle Commits:
 
 ```
 <gitmoji> <type> <beschreibung>
 ```
 
-Typen: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
+Arten: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
 
 Regeln:
-- Kleinbuchstaben verwenden
-- Imperativ verwenden ("add" nicht "added")
+- Schreibe in Kleinbuchstaben
+- Der Typ ist das Verb des Subjekts, und die Beschreibung vervollständigt es zu einem
+  Satz. Halte es imperativ ("add" nicht "added")
+- Öffne die Beschreibung niemals mit einem zweiten Verb: "fix den Footer-Wrap", nicht
+  "fix stop den Footer vom Wrap"
 - Eine logische Änderung pro Commit
 ````

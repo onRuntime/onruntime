@@ -16,10 +16,10 @@ Aggiungi il marketplace di onRuntime e installa il plugin:
 /plugin install gitmoji@onruntime
 ```
 
-Oppure installalo direttamente dal menu:
+Oppure installa direttamente dal menu:
 
 1. Esegui `/plugin` in Claude Code
-2. Vai alla scheda **Discover**
+2. Vai alla scheda **Scopri**
 3. Aggiungi il marketplace: `https://onruntime.com/plugins`
 4. Cerca "gitmoji" e installa
 
@@ -32,7 +32,7 @@ Esegui il comando `/commit` per creare un commit:
 ```
 
 ```
-/commit fixa il bug di login
+/commit risolvi il bug di login
 ```
 
 Claude Code analizzerà le tue modifiche e creerà un commit seguendo la convenzione gitmoji.
@@ -48,7 +48,7 @@ Se preferisci non installare il plugin, aggiungi questo al `CLAUDE.md` del tuo p
 ````markdown
 ## Convenzione di Commit
 
-Usa commit convenzionali gitmoji:
+Usa i commit convenzionali gitmoji:
 
 ```
 <gitmoji> <tipo> <descrizione>
@@ -58,6 +58,9 @@ Tipi: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgr
 
 Regole:
 - Scrivi in minuscolo
-- Usa il modo imperativo ("add" non "added")
-- Un cambiamento logico per commit
+- Il tipo è il verbo del soggetto, e la descrizione lo completa in una
+  frase. Tienilo imperativo ("add" non "added")
+- Non aprire mai la descrizione con un secondo verbo: "fix the footer wrapping", non
+  "fix stop the footer from wrapping"
+- Una modifica logica per commit
 ````

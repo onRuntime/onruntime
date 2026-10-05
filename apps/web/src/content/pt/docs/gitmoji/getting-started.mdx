@@ -1,16 +1,16 @@
 ---
-title: Começando
-description: Saiba sobre nossa convenção de commits
+title: Introdução
+description: Aprenda nossa convenção de commit
 ---
 Nós gostamos de ter um histórico de projeto limpo. Nossa convenção de commits é inspirada por [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0), mas personalizada com [gitmoji](https://gitmoji.dev) para torná-la mais visual e divertida.
 
 ## Estrutura
 
-A mensagem do commit deve ser estruturada da seguinte forma e **em letras minúsculas**:
+A mensagem de commit deve ser estruturada da seguinte forma e **em minúsculas**:
 
 ```
-<gitmoji> <tipo> <descrição> [(#<número do problema>)]
-
+<gitmoji> <tipo> <descrição> [(#<número do issue>)]
+ 
 [corpo opcional]
 
 [rodapé(s) opcional(is)]
@@ -19,18 +19,18 @@ A mensagem do commit deve ser estruturada da seguinte forma e **em letras minús
 ### Exemplo
 
 ```bash
-📝 atualizar os colaboradores da documentação
+📝 atualizar contribuidores da documentação
 
-- Adicionar @jerembdn como colaborador
-- Adicionar @younesbessa como colaborador
+- Adicionar @jerembdn como um contribuinte
+- Adicionar @younesbessa como um contribuinte
 
-Co-autora: Younes Bessa <younes@onruntime.com>
+Co-autorado por: Younes Bessa <younes@onruntime.com>
 ```
 
 Na maioria das vezes, uma linha simples é suficiente:
 
 ```bash
-📝 atualizar os colaboradores da documentação
+📝 atualizar contribuidores da documentação
 ```
 
 ## Tipos
@@ -39,7 +39,7 @@ Nós usamos os seguintes tipos de commit:
 
 | Tipo | Descrição |
 | --- | --- |
-| `add` | Adicionar um novo recurso |
+| `add` | Adicionar uma nova funcionalidade |
 | `fix` | Corrigir um bug |
 | `improve` | Melhorar algo |
 | `update` | Atualizar algo |
@@ -48,39 +48,60 @@ Nós usamos os seguintes tipos de commit:
 | `rename` | Renomear algo |
 | `move` | Mover um arquivo ou pasta |
 | `upgrade` | Atualizar dependências |
-| `downgrade` | Reverter dependências |
+| `downgrade` | Rebaixar dependências |
 | `initial` | Commit inicial de um repositório |
-| `release` | Release / tag de versão |
+| `release` | Lançamento / tag de versão |
 
 O primeiro commit de um repositório usa `initial`, e uma tag de versão usa
 `release`:
 
 ```bash
 🎉 commit inicial
-🔖 release @onruntime/translations v0.3.0
+🔖 lançamento @onruntime/translations v0.3.0
 ```
 
 ## Descrição
 
-Escreva descrições no **modo imperativo** e **em letras minúsculas**:
+O `<tipo>` é o verbo do assunto, e a descrição o completa. Lidos juntos, eles formam **uma frase**:
 
 ```bash
 # Bom
-📝 atualizar os colaboradores da documentação
-
-# Ruim
-📝 atualizou os colaboradores da documentação
-
-# Ruim
-📝 Atualizar os colaboradores da documentação
+📝 atualizar contribuidores da documentação
 ```
 
-## Número do Problema
-
-Vincule commits a problemas adicionando o número do problema:
+Então não comece a descrição com um segundo verbo. O tipo já é um, e
+o assunto acaba empilhando duas frases, que é o que um prefixo `fix:` leva a. Elimine o verbo e mantenha o que ele agia:
 
 ```bash
-📝 atualizar os colaboradores da documentação (#123)
+# Ruim
+💄 melhorar a escala do gem no seu cartão
+🐛 consertar o rodapé para não quebrar
+
+# Bom
+💄 melhorar o tamanho do gem no seu cartão
+🐛 consertar o rodapé quebrando
+```
+
+Escreva no **modo imperativo** e **em minúsculas**:
+
+```bash
+# Ruim
+📝 atualizado contribuidores da documentação
+
+# Ruim
+📝 Atualizar contribuidores da documentação
+```
+
+<Callout type="info" title="Um Verbo Que É um Substantivo">
+  Algumas palavras são ambas, e a que você quer dizer é o substantivo: `✨ adicionar imagem open graph` está certo. Quando ler como um verbo, um artigo transforma em uma expressão substantiva novamente: `✨ adicionar um botão mostrar mais`.
+</Callout>
+
+## Número do Issue
+
+Vincule commits a issues adicionando o número do issue:
+
+```bash
+📝 atualizar contribuidores da documentação (#123)
 ```
 
 ## Corpo
@@ -88,12 +109,12 @@ Vincule commits a problemas adicionando o número do problema:
 Use o corpo para contexto e motivação:
 
 ```bash
-📝 atualizar os colaboradores da documentação
+📝 atualizar contribuidores da documentação
 
-- Adicionar @jerembdn como colaborador
-- Adicionar @younesbessa como colaborador
+- Adicionar @jerembdn como um contribuinte
+- Adicionar @younesbessa como um contribuinte
 
-Co-autora: Younes Bessa <younes@onruntime.com>
+Co-autorado por: Younes Bessa <younes@onruntime.com>
 ```
 
 <Callout type="info" title="Um Commit, Um Propósito">

@@ -4,7 +4,7 @@ description: Use gitmoji com Claude Code
 ---
 Instale nosso plugin gitmoji para [Claude Code](https://claude.ai/code) para gerar commits seguindo a convenção.
 
-## Instalar o Plugin
+## Instale o Plugin
 
 Adicione o marketplace do onRuntime e instale o plugin:
 
@@ -19,9 +19,9 @@ Adicione o marketplace do onRuntime e instale o plugin:
 Ou instale diretamente pelo menu:
 
 1. Execute `/plugin` no Claude Code
-2. Vá para a aba **Discover**
+2. Vá para a aba **Descobrir**
 3. Adicione o marketplace: `https://onruntime.com/plugins`
-4. Procure por "gitmoji" e instale
+4. Pesquise por "gitmoji" e instale
 
 ## Uso
 
@@ -32,13 +32,13 @@ Execute o comando `/commit` para criar um commit:
 ```
 
 ```
-/commit corrigir o bug de login
+/commit fix the login bug
 ```
 
-Claude Code vai analisar suas alterações e criar um commit seguindo a convenção gitmoji.
+O Claude Code vai analisar suas mudanças e criar um commit seguindo a convenção gitmoji.
 
 <Callout type="info" title="Comando do Plugin">
-  O comando `/commit` busca automaticamente seu status git e diferenças para gerar a mensagem de commit apropriada.
+  O comando `/commit` automaticamente busca seu status do git e diffs para gerar a mensagem de commit apropriada.
 </Callout>
 
 ## Alternativa: CLAUDE.md
@@ -48,7 +48,7 @@ Se você preferir não instalar o plugin, adicione isso ao `CLAUDE.md` do seu pr
 ````markdown
 ## Convenção de Commit
 
-Use commits convencionais gitmoji:
+Use commits convencionais com gitmoji:
 
 ```
 <gitmoji> <tipo> <descrição>
@@ -58,6 +58,9 @@ Tipos: add, fix, improve, update, remove, refactor, rename, move, upgrade, downg
 
 Regras:
 - Escreva em letras minúsculas
-- Use o modo imperativo ("add" e não "added")
+- O tipo é o verbo do sujeito, e a descrição o completa em uma
+  frase. Mantenha no imperativo ("add" e não "added")
+- Nunca comece a descrição com um segundo verbo: "fix the footer wrapping", não
+  "fix stop the footer from wrapping"
 - Uma mudança lógica por commit
 ````

@@ -1,31 +1,31 @@
 ---
 title: AIと共に
-description: Claude Codeと一緒にgitmojiを使おう
+description: Claude Codeでgitmojiを使おう
 ---
-私たちのgitmojiプラグインを[Claude Code](https://claude.ai/code)にインストールして、規則に従ったコミットを生成しよう。
+gitmoji プラグインを [Claude Code](https://claude.ai/code) にインストールして、規約に従ったコミットを生成しよう。
 
 ## プラグインのインストール
 
-onRuntimeマーケットプレイスを追加して、プラグインをインストールする：
+onRuntime マーケットプレイスを追加して、プラグインをインストールする：
 
 ```bash
-# onRuntimeマーケットプレイスを追加
+# onRuntime マーケットプレイスを追加
 /plugin marketplace add https://onruntime.com/plugins
 
-# gitmojiプラグインをインストール
+# gitmoji プラグインをインストール
 /plugin install gitmoji@onruntime
 ```
 
 または、メニューから直接インストールする：
 
-1. Claude Codeで`/plugin`を実行
-2. **Discover**タブに移動
+1. Claude Code で `/plugin` を実行
+2. **Discover** タブに移動
 3. マーケットプレイスを追加: `https://onruntime.com/plugins`
-4. "gitmoji"を検索してインストール
+4. "gitmoji" を検索してインストール
 
 ## 使い方
 
-`/commit`コマンドを実行してコミットを作成：
+`/commit` コマンドを実行して、コミットを作成する：
 
 ```
 /commit
@@ -35,20 +35,20 @@ onRuntimeマーケットプレイスを追加して、プラグインをイン�
 /commit fix the login bug
 ```
 
-Claude Codeはあなたの変更を分析して、gitmojiの規則に従ったコミットを作成します。
+Claude Code はあなたの変更を分析して、gitmoji 規約に従ったコミットを作成するよ。
 
 <Callout type="info" title="プラグインコマンド">
-  `/commit`コマンドは自動的にあなたのgitステータスとdiffを取得して、適切なコミットメッセージを生成します。
+  `/commit` コマンドは自動的にあなたの git ステータスと diff を取得して、適切なコミットメッセージを生成するよ。
 </Callout>
 
-## 別の方法: CLAUDE.md
+## 代替案: CLAUDE.md
 
-プラグインをインストールしたくない場合は、プロジェクトの`CLAUDE.md`にこれを追加してね：
+プラグインをインストールしたくない場合は、あなたのプロジェクトの `CLAUDE.md` にこれを追加してね：
 
 ````markdown
-## コミットの規則
+## コミット規約
 
-gitmojiの従来のコミットを使って：
+gitmoji の従来のコミットを使おう：
 
 ```
 <gitmoji> <type> <description>
@@ -57,7 +57,8 @@ gitmojiの従来のコミットを使って：
 タイプ: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
 
 ルール：
-- 小文字で書く
-- 命令形を使う（"add"ではなく"added"）
-- 一つの論理的変更につき一つのコミット
+- 小文字で書くこと
+- タイプは主語の動詞で、説明がそれを一文にまとめる。命令形を維持 ("add" ではなく "added")
+- 説明を二つ目の動詞で始めないこと: "fix the footer wrapping" ではなく "fix stop the footer from wrapping"
+- 1 回のコミットにつき、1 つの論理的な変更
 ````

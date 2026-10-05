@@ -6,10 +6,10 @@ Installera vår gitmoji-plugin för [Claude Code](https://claude.ai/code) för a
 
 ## Installera Pluginen
 
-Lägg till onRuntime marketplace och installera pluginen:
+Lägg till onRuntime-marknadsplatsen och installera pluginen:
 
 ```bash
-# Lägg till onRuntime marketplace
+# Lägg till onRuntime-marknadsplatsen
 /plugin marketplace add https://onruntime.com/plugins
 
 # Installera gitmoji-pluginen
@@ -19,8 +19,8 @@ Lägg till onRuntime marketplace och installera pluginen:
 Eller installera direkt från menyn:
 
 1. Kör `/plugin` i Claude Code
-2. Gå till **Upptäck** fliken
-3. Lägg till marketplace: `https://onruntime.com/plugins`
+2. Gå till **Discover**-fliken
+3. Lägg till marknadsplats: `https://onruntime.com/plugins`
 4. Sök efter "gitmoji" och installera
 
 ## Användning
@@ -32,13 +32,13 @@ Kör kommandot `/commit` för att skapa en commit:
 ```
 
 ```
-/commit fixa inloggningsfelet
+/commit fix login-felet
 ```
 
 Claude Code kommer att analysera dina ändringar och skapa en commit enligt gitmoji-konventionen.
 
 <Callout type="info" title="Plugin Kommando">
-  Kommandot `/commit` hämtar automatiskt din git-status och diff för att generera det lämpliga commit-meddelandet.
+  Kommandot `/commit` hämtar automatiskt din git-status och diff för att generera rätt commit-meddelande.
 </Callout>
 
 ## Alternativ: CLAUDE.md
@@ -51,13 +51,16 @@ Om du föredrar att inte installera pluginen, lägg till detta i ditt projekts `
 Använd gitmoji konventionella commits:
 
 ```
-<gitmoji> <typ> <beskrivning>
+<gitmoji> <type> <description>
 ```
 
 Typer: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
 
 Regler:
 - Skriv med små bokstäver
-- Använd imperativ form ("lägg till" inte "lades till")
-- En logisk ändring per commit
+- Typen är verbet i subjektet, och beskrivningen avslutar det i en
+  mening. Håll det imperativ ("add" inte "added")
+- Öppna aldrig beskrivningen med ett andra verb: "fixa footer-wrapper", inte
+  "fixa stoppa footern från att wrap"
+- Ett logiskt ändring per commit
 ````

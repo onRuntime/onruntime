@@ -2,7 +2,7 @@
 title: AI와 함께
 description: Claude Code와 gitmoji 사용하기
 ---
-우리의 gitmoji 플러그인을 [Claude Code](https://claude.ai/code)에 설치해서 규칙에 따라 커밋을 생성해봐.
+우리의 gitmoji 플러그인을 [Claude Code](https://claude.ai/code)에 설치해서 커밋을 규칙에 맞게 생성해봐.
 
 ## 플러그인 설치
 
@@ -16,16 +16,16 @@ onRuntime 마켓플레이스를 추가하고 플러그인을 설치해:
 /plugin install gitmoji@onruntime
 ```
 
-혹은 메뉴에서 바로 설치해:
+아니면 메뉴에서 직접 설치해:
 
 1. Claude Code에서 `/plugin` 실행
-2. **Discover** 탭으로 가기
+2. **Discover** 탭으로 이동
 3. 마켓플레이스 추가: `https://onruntime.com/plugins`
-4. "gitmoji" 검색하고 설치
+4. "gitmoji" 검색 후 설치
 
 ## 사용법
 
-`/commit` 명령어를 실행해서 커밋을 생성해:
+커밋을 생성하려면 `/commit` 명령어를 실행해:
 
 ```
 /commit
@@ -35,29 +35,30 @@ onRuntime 마켓플레이스를 추가하고 플러그인을 설치해:
 /commit fix the login bug
 ```
 
-Claude Code가 너의 변경 사항을 분석하고 gitmoji 규칙에 따라 커밋을 생성할 거야.
+Claude Code는 너의 변경 사항을 분석하고 gitmoji 규칙에 맞는 커밋을 생성할 거야.
 
 <Callout type="info" title="플러그인 명령어">
-  `/commit` 명령어가 자동으로 너의 git 상태와 diff를 가져와서 적절한 커밋 메시지를 생성해.
+  `/commit` 명령어는 자동으로 너의 git 상태와 차이를 가져와서 적절한 커밋 메시지를 생성해.
 </Callout>
 
 ## 대안: CLAUDE.md
 
-플러그인을 설치하고 싶지 않다면, 너의 프로젝트의 `CLAUDE.md`에 이걸 추가해:
+플러그인을 설치하고 싶지 않으면, 이걸 너의 프로젝트 `CLAUDE.md`에 추가해:
 
 ````markdown
 ## 커밋 규칙
 
-gitmoji 전통적 커밋 사용:
+gitmoji 관례적 커밋을 사용해:
 
 ```
 <gitmoji> <type> <description>
 ```
 
-종류: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
+타입: add, fix, improve, update, remove, refactor, rename, move, upgrade, downgrade
 
 규칙:
-- 소문자로 작성
-- 명령형 사용 ("add"가 아닌 "added")
-- 커밋당 한 가지 논리적 변경
+- 소문자로 작성해
+- 타입은 주어의 동사고, 설명은 하나의 문장으로 완성해. 명령형으로 유지해("added"가 아니라 "add"로)
+- 두 번째 동사로 설명을 시작하지 마: "fix the footer wrapping", not "fix stop the footer from wrapping"
+- 한 커밋당 하나의 논리적 변경
 ````
