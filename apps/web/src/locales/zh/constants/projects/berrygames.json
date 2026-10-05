@@ -1,36 +1,104 @@
 {
   "short-description": "一个拥有自己服务器架构的Minecraft迷你游戏网络，有七个游戏和一个社区网站。",
   "description": "一个运行最多500个插槽的Minecraft服务器网络，基于一个以浆果命名的自家插件系列，拥有七个迷你游戏、一个进度系统和一个插入XenForo论坛的Symfony网站。“},{",
+  "long-description": "BerryGames 是一个 Minecraft 迷你游戏网络，也是这个项目中最古老的部分：第一次提交是在 2018 年 9 月，关于一个名为 WitchRush 的迷你游戏插件。\n\n其架构分散在一组插件中，每个插件的名称都是以一种浆果命名。GooseBerry 是 BungeeCord 代理服务器，负责在服务器之间路由玩家，CloudBerry 是所有游戏共享的 Spigot API，SkyBerry 是服务器核心，StrawBerry 是一个 REST API，向网站公开玩家数据。一个 Hub 充当大堂，显示自己的进度，包括硬币、信用、等级和经验。\n\n上面有七个迷你游戏：SkyWars、BedWars（有八队和钻石生成器）、GroundFall 及其 TNT 得分、Catfight、Pvpwall、Pitchout 和 WitchRush。玩家可以获得蓝莓和信用，游戏结束时的屏幕总结了每一轮给他们带来的收获。\n\n工作人员有游戏内的工具，而不是单独的后台：一个朋友系统和一个服务器管理菜单，可以在不离开 Minecraft 的情况下在公共、测试 VIP 和维护之间切换服务器。\n\n公共面是一个 Symfony 网站，连接了 XenForo 论坛，列出了每个游戏的在线玩家人数以及 Discord 动态。在 2021 年初开始了 React 重新设计，但从未完成。九个代码库在 2020 年到 2022 年之间归档了。",
   "features": {
-    "minigames": {},
-    "network-architecture": {},
-    "progression": {},
-    "ingame-tooling": {},
-    "community-site": {},
-    "friends-system": {}
+    "minigames": {
+      "title": "七个迷你游戏",
+      "description": "SkyWars、BedWars、GroundFall、Catfight、Pvpwall、Pitchout 和 WitchRush，每个都有自己的规则和地图"
+    },
+    "network-architecture": {
+      "title": "服务器网络",
+      "description": "一个 BungeeCord 代理，在 Spigot 服务器之间路由玩家，下面有一个共享 API 和服务器核心"
+    },
+    "progression": {
+      "title": "进度和货币",
+      "description": "在游戏之间携带的硬币、信用、蓝莓、等级和经验，并在大厅记分板上显示"
+    },
+    "ingame-tooling": {
+      "title": "游戏内工作人员工具",
+      "description": "一个管理菜单，可以在不离开游戏的情况下在公共、测试 VIP 和维护之间切换服务器"
+    },
+    "community-site": {
+      "title": "社区网站",
+      "description": "一个 Symfony 网站，连接了 XenForo 论坛，显示每个游戏的在线玩家人数和 Discord 动态"
+    },
+    "friends-system": {
+      "title": "好友系统",
+      "description": "通过游戏内互动菜单添加和关注网络中的玩家"
+    }
   },
   "technologies": {
-    "java": {},
-    "spigot": {},
-    "bungeecord": {},
-    "symfony": {},
-    "xenforo": {},
-    "react": {}
+    "java": {
+      "description": "网络上的每个插件"
+    },
+    "spigot": {
+      "description": "游戏服务器、共享 API 和服务器核心"
+    },
+    "bungeecord": {
+      "description": "在服务器之间路由玩家的代理"
+    },
+    "symfony": {
+      "description": "社区网站及其 REST 消费"
+    },
+    "xenforo": {
+      "description": "论坛和网站后面的帐户"
+    },
+    "react": {
+      "description": "2021 年未完成的网站重新设计"
+    }
   },
   "metrics": {
-    "slots": {},
-    "minigames": {},
-    "repositories": {}
+    "slots": {
+      "value": "500",
+      "label": "插槽",
+      "description": "服务器列表中宣布的容量"
+    },
+    "minigames": {
+      "value": "7",
+      "label": "迷你游戏",
+      "description": "从 SkyWars 到 WitchRush"
+    },
+    "repositories": {
+      "value": "9",
+      "label": "代码库",
+      "description": "插件、API、网站和重新设计"
+    }
   },
   "screenshots": {
-    "hub": {},
-    "skywars": {},
-    "bedwars": {},
-    "groundfall": {},
-    "ingame-menus": {},
-    "website": {}
+    "hub": {
+      "caption": "大厅，带有进度记分板"
+    },
+    "skywars": {
+      "caption": "SkyWars，有地图投票和装备"
+    },
+    "bedwars": {
+      "caption": "BedWars，八队和钻石生成器"
+    },
+    "groundfall": {
+      "caption": "GroundFall 回合结束及其奖励"
+    },
+    "ingame-menus": {
+      "caption": "朋友菜单和服务器管理，均在游戏内"
+    },
+    "website": {
+      "caption": "社区网站，显示每个游戏的在线玩家人数"
+    }
   },
-  "challenges": {},
-  "learnings": {},
-  "future-plans": {}
+  "challenges": {
+    "multi-server-architecture": "在多个服务器之间路由玩家，同时保持网络的感觉像是一个地方",
+    "shared-player-state": "在运行在不同服务器上的游戏之间携带货币、等级和进度",
+    "game-loop-per-minigame": "为七个游戏中的每个编写独特的游戏循环、记分板和奖励表",
+    "moderation-at-scale": "给工作人员提供工具，让他们可以在 Minecraft 内部管理网络，而不是在后台",
+    "forum-integration": "将 Symfony 网站接入 XenForo 论坛，以便帐户和帖子保持在同一个地方"
+  },
+  "learnings": {
+    "infrastructure-before-content": "大部分工作都是用于代理、API 和核心，才可以发布第一个游戏",
+    "community-is-the-product": "玩家人数和 Discord 对网络来说比任何单独的功能都重要",
+    "git-hides-the-team": "建设者、管理员和社区工作人员没有留下提交，因此代码库只记载了部分参与者",
+    "minecraft-as-a-school": "运行一个网络提早教会了服务器架构、管理和发布管理，比任何客户项目都要早"
+  },
+  "future-plans": {
+    "archived-repositories": "所有九个代码库都已归档，网络已离线"
+  }
 }
