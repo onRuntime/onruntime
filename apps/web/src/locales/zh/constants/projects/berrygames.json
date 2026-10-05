@@ -1,0 +1,36 @@
+{
+  "short-description": "一个拥有自己服务器架构的Minecraft迷你游戏网络，有七个游戏和一个社区网站。",
+  "description": "一个运行最多500个插槽的Minecraft服务器网络，基于一个以浆果命名的自家插件系列，拥有七个迷你游戏、一个进度系统和一个插入XenForo论坛的Symfony网站。“},{",
+  "features": {
+    "minigames": {},
+    "network-architecture": {},
+    "progression": {},
+    "ingame-tooling": {},
+    "community-site": {},
+    "friends-system": {}
+  },
+  "technologies": {
+    "java": {},
+    "spigot": {},
+    "bungeecord": {},
+    "symfony": {},
+    "xenforo": {},
+    "react": {}
+  },
+  "metrics": {
+    "slots": {},
+    "minigames": {},
+    "repositories": {}
+  },
+  "screenshots": {
+    "hub": {},
+    "skywars": {},
+    "bedwars": {},
+    "groundfall": {},
+    "ingame-menus": {},
+    "website": {}
+  },
+  "challenges": {},
+  "learnings": {},
+  "future-plans": {}
+}

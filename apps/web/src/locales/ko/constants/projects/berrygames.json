@@ -1,0 +1,104 @@
+{
+  "short-description": "자체 서버 아키텍처, 7개의 게임 및 커뮤니티 사이트가 있는 Minecraft 미니게임 네트워크입니다.",
+  "description": "500 슬롯까지 지원하는 Minecraft 서버 네트워크로, 베리의 이름을 딴 여러 내부 플러그인으로 구축되어 있으며, 7개의 미니게임, 진행 시스템, 그리고 XenForo 포럼과 연결된 Symfony 사이트를 가지고 있습니다.",
+  "long-description": "BerryGames는 Minecraft 미니게임 네트워크이며, 이 포트폴리오에서 가장 오래된 것입니다: 첫 커밋은 2018년 9월 WitchRush라는 미니게임 플러그인에서 시작되었습니다.\n\n아키텍처는 베리 이름을 딴 여러 플러그인으로 나뉘어졌습니다. GooseBerry는 서버 간 플레이어를 라우팅하는 BungeeCord 프록시였고, CloudBerry는 모든 게임이 공유하는 Spigot API, SkyBerry는 서버 코어, 그리고 StrawBerry는 웹사이트에 플레이어 데이터를 노출하는 REST API였습니다. 허브에는 로비가 있었으며, 동전, 크레딧, 레벨, 경험치를 보여주는 자체 진행 시스템이 있었습니다.\n\n7개의 미니게임이 위에서 운영되었습니다: SkyWars, 8개 팀과 다이아몬드 생성기가 있는 BedWars, TNT 점수가 있는 GroundFall, Catfight, Pvpwall, Pitchout, 그리고 WitchRush. 플레이어는 블루베리와 크레딧을 벌었고, 게임 종료 화면은 각 라운드에서 그들에게 주어진 내용을 요약했습니다.\n\n스태프는 별도의 백 오피스가 아니라 게임 내에 도구를 가지고 있었습니다: 친구 시스템, 서버를 Public, Beta VIP, Maintenance로 전환할 수 있는 서버 관리 메뉴 등이 있었습니다.\n\n퍼블릭 페이스는 Symfony 사이트와 XenForo 포럼으로 연결되어, 각 게임의 라이브 플레이어 수를 Discord 피드 옆에 나열했습니다. 2021년 초에는 React 재설계가 시작되었지만 완료되지 않았습니다. 9개의 리포지토리는 2020년과 2022년 사이에 아카이브되었습니다.",
+  "features": {
+    "minigames": {
+      "title": "7개의 미니게임",
+      "description": "각각의 규칙과 맵이 있는 SkyWars, BedWars, GroundFall, Catfight, Pvpwall, Pitchout, 그리고 WitchRush"
+    },
+    "network-architecture": {
+      "title": "서버 네트워크",
+      "description": "플레이어를 Spigot 서버 간에 라우팅하는 BungeeCord 프록시와 그 아래의 공유 API 및 서버 코어"
+    },
+    "progression": {
+      "title": "진행 및 통화",
+      "description": "게임 간에 이동하며 로비 점수판에 표시되는 동전, 크레딧, 블루베리, 레벨, 경험치"
+    },
+    "ingame-tooling": {
+      "title": "게임 내 스태프 도구",
+      "description": "게임을 나가지 않고 서버를 퍼블릭, 베타 VIP, 유지보수로 전환하는 관리 메뉴"
+    },
+    "community-site": {
+      "title": "커뮤니티 사이트",
+      "description": "게임 당 라이브 플레이어 수 및 Discord 피드를 보여주는 XenForo 포럼에 연결된 Symfony 사이트"
+    },
+    "friends-system": {
+      "title": "친구 시스템",
+      "description": "게임 내 상호작용 메뉴에서 네트워크 전체의 플레이어를 추가하고 팔로우하기"
+    }
+  },
+  "technologies": {
+    "java": {
+      "description": "네트워크의 모든 플러그인"
+    },
+    "spigot": {
+      "description": "게임 서버, 공유 API 및 서버 코어"
+    },
+    "bungeecord": {
+      "description": "서버 간 플레이어를 라우팅하는 프록시"
+    },
+    "symfony": {
+      "description": "커뮤니티 사이트 및 그 REST 소비"
+    },
+    "xenforo": {
+      "description": "사이트 뒤의 포럼 및 계정"
+    },
+    "react": {
+      "description": "2021년의 미완료 사이트 재설계"
+    }
+  },
+  "metrics": {
+    "slots": {
+      "value": "500",
+      "label": "슬롯",
+      "description": "서버 목록에 공지된 용량"
+    },
+    "minigames": {
+      "value": "7",
+      "label": "미니게임",
+      "description": "SkyWars부터 WitchRush까지"
+    },
+    "repositories": {
+      "value": "9",
+      "label": "리포지토리",
+      "description": "플러그인, API, 사이트 및 재설계"
+    }
+  },
+  "screenshots": {
+    "hub": {
+      "caption": "로비, 진행 점수판과 함께"
+    },
+    "skywars": {
+      "caption": "SkyWars, 맵 투표와 키트"
+    },
+    "bedwars": {
+      "caption": "BedWars, 8개 팀과 다이아몬드 생성기"
+    },
+    "groundfall": {
+      "caption": "GroundFall 라운드 종료 및 보상"
+    },
+    "ingame-menus": {
+      "caption": "게임 내 친구 메뉴 및 서버 관리"
+    },
+    "website": {
+      "caption": "커뮤니티 사이트, 게임 당 라이브 플레이어 수와 함께"
+    }
+  },
+  "challenges": {
+    "multi-server-architecture": "여러 서버 간에 플레이어를 라우팅하면서 네트워크가 하나의 장소처럼 느껴지도록 하기",
+    "shared-player-state": "서로 다른 서버에서 실행되는 게임 간에 통화, 레벨 및 진행을 유지하기",
+    "game-loop-per-minigame": "7개의 각 게임마다 별도의 게임 루프, 점수판 및 보상 테이블 작성하기",
+    "moderation-at-scale": "백 오피스가 아니라 Minecraft 내부에서 네트워크를 운영할 수 있는 도구를 스태프에게 제공하기",
+    "forum-integration": "Symfony 사이트를 XenForo 포럼에 연결하여 계정과 게시물이 하나의 곳에 남도록 하기"
+  },
+  "learnings": {
+    "infrastructure-before-content": "단일 게임이 출시되기 전에 프록시, API 및 핵심에 대부분의 작업이 들어갔습니다.",
+    "community-is-the-product": "플레이어 수와 Discord가 네트워크에 더 중요했습니다.",
+    "git-hides-the-team": "빌더, 관리자 및 커뮤니티 스태프는 커밋을 남기지 않았습니다. 그래서 리포지토리는 관여했던 사람들이 일부만 기록됩니다.",
+    "minecraft-as-a-school": "네트워크를 운영하는 것은 클라이언트 프로젝트보다 서버 아키텍처, 관리 및 릴리즈 관리 교육을 더 일찍 가르쳤습니다."
+  },
+  "future-plans": {
+    "archived-repositories": "모든 9개의 리포지토리는 아카이브되었고, 네트워크는 오프라인입니다."
+  }
+}

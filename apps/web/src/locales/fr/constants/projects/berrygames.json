@@ -1,0 +1,104 @@
+{
+  "short-description": "Réseau de minijeux Minecraft avec sa propre architecture serveur, sept jeux et un site communautaire.",
+  "description": "Un réseau de serveurs Minecraft pouvant accueillir jusqu'à 500 slots, construit sur une famille de plugins maison nommés d'après des baies, avec sept minijeux, un système de progression et un site Symfony branché sur un forum XenForo.",
+  "long-description": "BerryGames était un réseau de minijeux Minecraft, et la plus ancienne chose dans ce portfolio : le premier commit a eu lieu en septembre 2018, sur un plugin de minijeu appelé WitchRush.\n\nL'architecture était répartie sur une famille de plugins, chacun nommé d'après une baie. GooseBerry était le proxy BungeeCord routant les joueurs entre les serveurs, CloudBerry l'API Spigot partagée par chaque jeu, SkyBerry le cœur du serveur, et StrawBerry une API REST exposant les données des joueurs sur le site web. Un Hub contenait le lobby, avec sa propre progression montrant des pièces, des crédits, un niveau et de l'expérience.\n\nSept minijeux se déroulaient dessus : SkyWars, BedWars avec huit équipes et des générateurs de diamants, GroundFall et son scoring TNT, Catfight, Pvpwall, Pitchout et WitchRush. Les joueurs gagnaient des myrtilles et des crédits, et des écrans de fin de jeu résumaient ce que chaque round leur avait donné.\n\nLe personnel avait des outils à l'intérieur du jeu plutôt qu'un bureau séparé : un système d'amis et un menu de gestion du serveur changeant un serveur entre Public, Beta VIP et Maintenance sans quitter Minecraft.\n\nLe visage public était un site Symfony branché sur un forum XenForo, affichant les comptes de joueurs en direct par jeu à côté du flux Discord. Un redesign en React a commencé début 2021 et n'a jamais été terminé. Les neuf dépôts ont été archivés entre 2020 et 2022.",
+  "features": {
+    "minigames": {
+      "title": "Sept minijeux",
+      "description": "SkyWars, BedWars, GroundFall, Catfight, Pvpwall, Pitchout et WitchRush, chacun avec ses propres règles et cartes"
+    },
+    "network-architecture": {
+      "title": "Réseau serveur",
+      "description": "Un proxy BungeeCord routant les joueurs à travers des serveurs Spigot, avec une API partagée et un cœur de serveur en dessous"
+    },
+    "progression": {
+      "title": "Progression et monnaies",
+      "description": "Pièces, crédits, myrtilles, niveaux et expérience transférés entre les jeux et affichés sur le tableau des scores du lobby"
+    },
+    "ingame-tooling": {
+      "title": "Outils pour le personnel en jeu",
+      "description": "Un menu de gestion changeant un serveur entre public, beta VIP et maintenance sans quitter le jeu"
+    },
+    "community-site": {
+      "title": "Site communautaire",
+      "description": "Un site Symfony branché sur un forum XenForo, montrant les comptes de joueurs en direct par jeu et le flux Discord"
+    },
+    "friends-system": {
+      "title": "Système d'amis",
+      "description": "Ajouter et suivre des joueurs à travers le réseau, depuis un menu d'interaction en jeu"
+    }
+  },
+  "technologies": {
+    "java": {
+      "description": "Chaque plugin sur le réseau"
+    },
+    "spigot": {
+      "description": "Serveurs de jeux, l'API partagée et le cœur du serveur"
+    },
+    "bungeecord": {
+      "description": "Proxy routant les joueurs entre les serveurs"
+    },
+    "symfony": {
+      "description": "Site communautaire et sa consommation REST"
+    },
+    "xenforo": {
+      "description": "Forum et comptes derrière le site"
+    },
+    "react": {
+      "description": "Redesign inachevé du site de 2021"
+    }
+  },
+  "metrics": {
+    "slots": {
+      "value": "500",
+      "label": "Slots",
+      "description": "Capacité annoncée dans la liste des serveurs"
+    },
+    "minigames": {
+      "value": "7",
+      "label": "Minijeux",
+      "description": "De SkyWars à WitchRush"
+    },
+    "repositories": {
+      "value": "9",
+      "label": "Dépôts",
+      "description": "Plugins, API, site et redesigns"
+    }
+  },
+  "screenshots": {
+    "hub": {
+      "caption": "Lobby, avec le tableau des scores de progression"
+    },
+    "skywars": {
+      "caption": "SkyWars, avec vote de carte et kits"
+    },
+    "bedwars": {
+      "caption": "BedWars, huit équipes et générateurs de diamants"
+    },
+    "groundfall": {
+      "caption": "Fin d'une manche de GroundFall et ses récompenses"
+    },
+    "ingame-menus": {
+      "caption": "Menu d'amis et gestion de serveur, tous deux dans le jeu"
+    },
+    "website": {
+      "caption": "Site communautaire, avec des comptes de joueurs en direct par jeu"
+    }
+  },
+  "challenges": {
+    "multi-server-architecture": "Routage des joueurs à travers plusieurs serveurs tout en gardant le réseau comme un seul endroit",
+    "shared-player-state": "Transport de monnaies, niveaux et progression entre les jeux fonctionnant sur des serveurs séparés",
+    "game-loop-per-minigame": "Écrire une boucle de jeu distincte, un tableau des scores et une table de récompenses pour chacun des sept jeux",
+    "moderation-at-scale": "Donner au personnel les outils pour gérer le réseau depuis Minecraft plutôt que d'un bureau séparé",
+    "forum-integration": "Brancher un site Symfony sur un forum XenForo pour que les comptes et les publications restent au même endroit"
+  },
+  "learnings": {
+    "infrastructure-before-content": "La plupart du travail était consacré au proxy, à l'API et au cœur avant qu'un seul jeu puisse être publié",
+    "community-is-the-product": "Les comptes de joueurs et le Discord comptaient plus pour le réseau que toute fonctionnalité individuelle",
+    "git-hides-the-team": "Les bâtisseurs, modérateurs et personnel communautaire n'ont laissé aucun commit, donc les dépôts créditent une fraction des personnes impliquées",
+    "minecraft-as-a-school": "Faire fonctionner un réseau a enseigné l'architecture serveur, la modération et la gestion des versions plus tôt que tout projet client ne l'aurait fait"
+  },
+  "future-plans": {
+    "archived-repositories": "Tous les neuf dépôts sont archivés, et le réseau est hors ligne."
+  }
+}

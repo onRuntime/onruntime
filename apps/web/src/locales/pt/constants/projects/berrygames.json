@@ -1,0 +1,104 @@
+{
+  "short-description": "Rede de minijogos de Minecraft com sua própria arquitetura de servidor, sete jogos e um site da comunidade.",
+  "description": "Uma rede de servidor Minecraft com até 500 slots, construída em uma família de plugins internos chamados de frutas silvestres, com sete minijogos, um sistema de progressão e um site Symfony conectado a um fórum XenForo.",
+  "long-description": "BerryGames foi uma rede de minijogos de Minecraft, e a coisa mais antiga neste portfólio: o primeiro commit aconteceu em setembro de 2018, em um plugin de minijogo chamado WitchRush.\n\nA arquitetura foi dividida em uma família de plugins, cada um nomeado com o nome de uma fruta silvestre. GooseBerry era o proxy BungeeCord que roteava jogadores entre servidores, CloudBerry a API Spigot compartilhada por cada jogo, SkyBerry o núcleo do servidor, e StrawBerry uma API REST expondo dados de jogadores para o site. Um Hub mantinha o lobby, com sua própria progressão mostrando moedas, créditos, nível e experiência.\n\nSete minijogos rodavam em cima: SkyWars, BedWars com oito equipes e geradores de diamantes, GroundFall e sua pontuação de TNT, Catfight, Pvpwall, Pitchout, e WitchRush. Jogadores ganhavam mirtilos e créditos, e telas de fim de jogo resumiam o que cada rodada havia dado a eles.\n\nA equipe tinha ferramentas dentro do jogo em vez de um escritório separado: um sistema de amigos, e um menu de gerenciamento de servidor que mudava um servidor entre Público, Beta VIP, e Manutenção sem sair do Minecraft.\n\nA face pública era um site Symfony conectado a um fórum XenForo, listando contagens de jogadores ao vivo por jogo ao lado do feed do Discord. Um redesign em React foi iniciado no início de 2021 e nunca foi terminado. Os nove repositórios foram arquivados entre 2020 e 2022.",
+  "features": {
+    "minigames": {
+      "title": "Sete minijogos",
+      "description": "SkyWars, BedWars, GroundFall, Catfight, Pvpwall, Pitchout e WitchRush, cada um com suas próprias regras e mapas."
+    },
+    "network-architecture": {
+      "title": "Rede de servidores",
+      "description": "Um proxy BungeeCord roteando jogadores entre servidores Spigot, com uma API compartilhada e um núcleo de servidor por baixo."
+    },
+    "progression": {
+      "title": "Progressão e moedas",
+      "description": "Moedas, créditos, mirtilos, níveis e experiência transportados entre jogos e mostrados no placar do lobby."
+    },
+    "ingame-tooling": {
+      "title": "Ferramentas para staff dentro do jogo",
+      "description": "Um menu de gerenciamento que troca um servidor entre público, beta VIP e manutenção sem sair do jogo."
+    },
+    "community-site": {
+      "title": "Site da comunidade",
+      "description": "Um site Symfony conectado a um fórum XenForo, mostrando contagens de jogadores ao vivo por jogo e o feed do Discord."
+    },
+    "friends-system": {
+      "title": "Sistema de amigos",
+      "description": "Adicionar e seguir jogadores pela rede, a partir de um menu de interação dentro do jogo."
+    }
+  },
+  "technologies": {
+    "java": {
+      "description": "Cada plugin na rede."
+    },
+    "spigot": {
+      "description": "Servidores de jogo, a API compartilhada e o núcleo do servidor."
+    },
+    "bungeecord": {
+      "description": "Proxy que roteia jogadores entre servidores."
+    },
+    "symfony": {
+      "description": "Site da comunidade e seu consumo REST."
+    },
+    "xenforo": {
+      "description": "Fórum e contas por trás do site."
+    },
+    "react": {
+      "description": "Redesign do site inacabado de 2021."
+    }
+  },
+  "metrics": {
+    "slots": {
+      "value": "500",
+      "label": "Slots",
+      "description": "Capacidade anunciada na lista de servidores."
+    },
+    "minigames": {
+      "value": "7",
+      "label": "Minijogos",
+      "description": "De SkyWars a WitchRush."
+    },
+    "repositories": {
+      "value": "9",
+      "label": "Repositórios",
+      "description": "Plugins, API, site e redesigns."
+    }
+  },
+  "screenshots": {
+    "hub": {
+      "caption": "Lobby, com o placar de progressão."
+    },
+    "skywars": {
+      "caption": "SkyWars, com votação de mapas e kits."
+    },
+    "bedwars": {
+      "caption": "BedWars, oito equipes e geradores de diamantes."
+    },
+    "groundfall": {
+      "caption": "Final de uma rodada de GroundFall e suas recompensas."
+    },
+    "ingame-menus": {
+      "caption": "Menu de amigos e gerenciamento de servidor, ambos dentro do jogo."
+    },
+    "website": {
+      "caption": "Site da comunidade, com contagens de jogadores ao vivo por jogo."
+    }
+  },
+  "challenges": {
+    "multi-server-architecture": "Roteando jogadores entre vários servidores enquanto mantém a rede com a sensação de ser um só lugar.",
+    "shared-player-state": "Transportando moedas, níveis e progresso entre jogos rodando em servidores separados.",
+    "game-loop-per-minigame": "Escrevendo um loop de jogo distinto, placar e tabela de recompensas para cada um dos sete jogos.",
+    "moderation-at-scale": "Dando à equipe as ferramentas para gerenciar a rede de dentro do Minecraft em vez de um escritório.",
+    "forum-integration": "Conectando um site Symfony a um fórum XenForo para que contas e postagens ficassem em um só lugar."
+  },
+  "learnings": {
+    "infrastructure-before-content": "A maior parte do trabalho foi para o proxy, a API e o núcleo antes que um único jogo pudesse ser lançado.",
+    "community-is-the-product": "Contagens de jogadores e o Discord importavam mais para a rede do que qualquer recurso individual.",
+    "git-hides-the-team": "Construtores, moderadores e equipe da comunidade não deixaram commits, então os repositórios creditaram apenas uma fração das pessoas envolvidas.",
+    "minecraft-as-a-school": "Rodar uma rede ensinou arquitetura de servidor, moderação e gerenciamento de lançamentos antes de qualquer projeto de cliente."
+  },
+  "future-plans": {
+    "archived-repositories": "Todos os nove repositórios estão arquivados, e a rede está offline."
+  }
+}

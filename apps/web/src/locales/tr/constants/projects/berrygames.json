@@ -1,0 +1,104 @@
+{
+  "short-description": "Kendi sunucu mimarisi, yedi oyun ve bir topluluk sitesi ile Minecraft mini oyun ağı.",
+  "description": "500 slot'a kadar çalışan bir Minecraft sunucu ağı, meyvelerle adlandırılan kendi iç yapısına sahip eklentilerden oluşuyor. Yedi mini oyun, bir ilerleme sistemi ve XenForo forumuna bağlı bir Symfony sitesi var.",
+  "long-description": "BerryGames, Minecraft mini oyun ağıydı ve bu portföydeki en eski şey: ilk commit Eylül 2018'de WitchRush adlı bir mini oyun eklentisi ile geldi.\n\nMimari, her biri bir meyvenin ismiyle anılan bir dizi eklentiye dağıtıldı. GooseBerry, oyuncuları sunucular arasında yönlendiren BungeeCord Proxy'di, CloudBerry, her oyuna ortak bir Spigot API'siydi, SkyBerry sunucu çekirdeğiydi ve StrawBerry, oyuncu verilerini web sitesine açan bir REST API'siydi. Bir lobby olan Hub, kendi ilerlemesi ile madeni paralara, kredilere, seviyeye ve deneyime yer veriyordu.\n\nYedi mini oyun üstünde çalışıyordu: SkyWars, sekiz ekiple ve elmas jeneratörleriyle BedWars, TNT puanlamasıyla GroundFall, Catfight, Pvpwall, Pitchout ve WitchRush. Oyuncular yaban mersini ve krediler kazanıyordu ve oyun sonunda ekranlar her turda ne kazandıklarını özetliyordu.\n\nPersonelin, ayrı bir arka ofis yerine oyun içindeki araçları vardı: bir arkadaş sistemi ve oyuncuları Halk, Beta VIP ve Bakım arasında değiştiren bir sunucu yönetim menüsü, Minecraft'tan çıkmadan çalışıyordu.\n\nHalkla ilişkiler, Discord akışı yanında her oyundaki canlı oyuncu sayıları listesini gösteren bir XenForo forumuna bağlı bir Symfony sitesiyle sağlanıyordu. 2021'in başlarında bir React tasarım yenilemesi başlandı ama asla bitmedi. Dokuz repo 2020 ile 2022 arasında arşivlendi.",
+  "features": {
+    "minigames": {
+      "title": "Yedi mini oyun",
+      "description": "SkyWars, BedWars, GroundFall, Catfight, Pvpwall, Pitchout ve WitchRush, her birinin kendi kuralları ve haritaları var"
+    },
+    "network-architecture": {
+      "title": "Sunucu ağı",
+      "description": "Oyuncuları Spigot sunucuları arasında yönlendiren bir BungeeCord proxy'si, altında ortak bir API ve sunucu çekirdeği ile"
+    },
+    "progression": {
+      "title": "İlerleme ve paralar",
+      "description": "Oyunlar arasında taşınan ve lobideki puan tahtasında gösterilen madeni paralar, krediler, yaban mersinleri, seviyeler ve deneyim"
+    },
+    "ingame-tooling": {
+      "title": "Oyun içi personel araçları",
+      "description": "Oyun alanından çıkmadan bir sunucuyu halka açık, beta VIP ve bakım arasında değiştiren bir yönetim menüsü"
+    },
+    "community-site": {
+      "title": "Topluluk sitesi",
+      "description": "Her oyundaki canlı oyuncu sayılarını ve Discord akışını gösteren, XenForo forumuna bağlı bir Symfony sitesi"
+    },
+    "friends-system": {
+      "title": "Arkadaş sistemi",
+      "description": "Bir oyun içi etkileşim menüsünden ağa oyuncu ekleme ve takip etme"
+    }
+  },
+  "technologies": {
+    "java": {
+      "description": "Ağdaki her eklenti"
+    },
+    "spigot": {
+      "description": "Oyun sunucuları, ortak API ve sunucu çekirdeği"
+    },
+    "bungeecord": {
+      "description": "Oyuncuları sunucular arasında yönlendiren proxy"
+    },
+    "symfony": {
+      "description": "Topluluk sitesi ve REST tüketimi"
+    },
+    "xenforo": {
+      "description": "Site arkasındaki forum ve hesaplar"
+    },
+    "react": {
+      "description": "2021'de tamamlanmamış site tasarım yenilemesi"
+    }
+  },
+  "metrics": {
+    "slots": {
+      "value": "500",
+      "label": "Slotlar",
+      "description": "Sunucu listesindeki kapasite"
+    },
+    "minigames": {
+      "value": "7",
+      "label": "Mini oyunlar",
+      "description": "SkyWars'dan WitchRush'a kadar"
+    },
+    "repositories": {
+      "value": "9",
+      "label": "Repolar",
+      "description": "Eklentiler, API, site ve yeniden tasarımlar"
+    }
+  },
+  "screenshots": {
+    "hub": {
+      "caption": "Lobby, ilerleme puan tahtası ile"
+    },
+    "skywars": {
+      "caption": "SkyWars, harita oylaması ve setlerle"
+    },
+    "bedwars": {
+      "caption": "BedWars, sekiz takım ve elmas jeneratörleriyle"
+    },
+    "groundfall": {
+      "caption": "GroundFall turunun sonu ve ödülleri"
+    },
+    "ingame-menus": {
+      "caption": "Arkadaş menüsü ve sunucu yönetimi, her ikisi de oyun içinde"
+    },
+    "website": {
+      "caption": "Topluluk sitesi, her oyundaki canlı oyuncu sayılarıyla"
+    }
+  },
+  "challenges": {
+    "multi-server-architecture": "Birden fazla sunucu arasında oyuncuları yönlendirirken ağı tek bir yer gibi hissettirmek",
+    "shared-player-state": "Ayrı sunucularda çalışan oyunlar arasında paraları, seviyeleri ve ilerlemeyi taşımak",
+    "game-loop-per-minigame": "Her yedi oyun için ayrı bir oyun döngüsü, puan tahtası ve ödül tablosu yazmak",
+    "moderation-at-scale": "Personelin Minecraft içinden ağı yürütmeleri için araçlar vermek, ayrı bir arka ofis yerine",
+    "forum-integration": "Symfony sitesini XenForo forumuna bağlayarak hesapların ve gönderilerin aynı yerde kalmasını sağlamak"
+  },
+  "learnings": {
+    "infrastructure-before-content": "Tek bir oyun çıkmadan önce proxy, API ve çekirdeğe en çok emek harcandı",
+    "community-is-the-product": "Oyuncu sayıları ve Discord, ağa bireysel özelliklerden daha önemliydi",
+    "git-hides-the-team": "Yapımcılar, moderatörler ve topluluk çalışanları hiçbir commit bırakmadığı için repolar, dahil olan kişilerin bir kısmını kredilendiriyor",
+    "minecraft-as-a-school": "Bir ağı çalıştırmak, herhangi bir istemci projesinin öğreniminden daha önce sunucu mimarisini, moderasyonu ve sürüm yönetimini öğretti"
+  },
+  "future-plans": {
+    "archived-repositories": "Dokuz repoların hepsi arşivlendi ve ağ kapalı"
+  }
+}

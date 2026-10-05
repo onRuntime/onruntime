@@ -1,0 +1,104 @@
+{
+  "short-description": "Minecraft minispel nätverk med egen serverarkitektur, sju spel och en community-sajt.",
+  "description": "Ett Minecraft servernätverk med upp till 500 platser, byggt på en familj av in-house plugins döpta efter bär, med sju minispel, ett framstegssystem, och en Symfony-sajt kopplad till ett XenForo-forum.",
+  "long-description": "BerryGames var ett Minecraft minispel nätverk, och det äldsta i denna portfölj: den första commit skedde i september 2018, på en minispel plugin kallad WitchRush.\n\nArkitekturen var uppdelad mellan en familj av plugins, var och en döpt efter ett bär. GooseBerry var BungeeCord proxy som dirigerade spelare mellan servrar, CloudBerry var Spigot API som delades av varje spel, SkyBerry var serverkärnan, och StrawBerry var ett REST API som exponerade spelardata till webbplatsen. En hub höll lobbyn, med sina egna framsteg som visade mynt, krediter, nivå och erfarenhet.\n\nSju minispel kördes ovanpå: SkyWars, BedWars med åtta lag och diamantgeneratorer, GroundFall och dess TNT-poäng, Catfight, Pvpwall, Pitchout, och WitchRush. Spelare tjänade blåbär och krediter, och slutskärmar sammanfattade vad varje omgång gav dem.\n\nPersonal hade verktyg inne i spelet istället för ett separat kontor: ett vännersystem, och en serverhanteringsmeny som växlade en server mellan offentlig, Beta VIP och underhåll utan att lämna Minecraft.\n\nDen offentliga sidan var en Symfony-sajt kopplad till ett XenForo-forum, som visade aktiva spelarantal per spel bredvid Discord-flödet. En React-omdesign påbörjades i början av 2021 men blev aldrig färdig. De nio förråden arkiverades mellan 2020 och 2022.",
+  "features": {
+    "minigames": {
+      "title": "Sju minispel",
+      "description": "SkyWars, BedWars, GroundFall, Catfight, Pvpwall, Pitchout, och WitchRush, var och en med sina egna regler och kartor"
+    },
+    "network-architecture": {
+      "title": "Server nätverk",
+      "description": "En BungeeCord proxy som dirigerade spelare över Spigot servrar, med ett delat API och en serverkärna under"
+    },
+    "progression": {
+      "title": "Framsteg och valutor",
+      "description": "Mynt, krediter, blåbär, nivåer och erfarenhet som förs mellan spel och visas på lobbyens poängtavla"
+    },
+    "ingame-tooling": {
+      "title": "In-game personalverktyg",
+      "description": "En hanteringsmeny som växlar en server mellan offentlig, beta VIP och underhåll utan att lämna spelet"
+    },
+    "community-site": {
+      "title": "Community-sajt",
+      "description": "En Symfony-sajt kopplad till ett XenForo-forum, som visar aktiva spelarantal per spel och Discord-flödet"
+    },
+    "friends-system": {
+      "title": "Vänner system",
+      "description": "Lägga till och följa spelare över nätverket, från en interaktionsmeny i spelet"
+    }
+  },
+  "technologies": {
+    "java": {
+      "description": "Varje plugin på nätverket"
+    },
+    "spigot": {
+      "description": "Spelservrar, det delade API:t, och serverkärnan"
+    },
+    "bungeecord": {
+      "description": "Proxy som dirigerar spelare mellan servrar"
+    },
+    "symfony": {
+      "description": "Community-sajt och dess REST-konsumtion"
+    },
+    "xenforo": {
+      "description": "Forum och konton bakom sajten"
+    },
+    "react": {
+      "description": "Ofärdig omdesign av sajten från 2021"
+    }
+  },
+  "metrics": {
+    "slots": {
+      "value": "500",
+      "label": "Platser",
+      "description": "Kapacitet som meddelats i serverlistan"
+    },
+    "minigames": {
+      "value": "7",
+      "label": "Minispel",
+      "description": "Från SkyWars till WitchRush"
+    },
+    "repositories": {
+      "value": "9",
+      "label": "Förråd",
+      "description": "Plugins, API, sajt, och omdesigns"
+    }
+  },
+  "screenshots": {
+    "hub": {
+      "caption": "Lobby, med poängtavlan för framsteg"
+    },
+    "skywars": {
+      "caption": "SkyWars, med kartavstämning och kit"
+    },
+    "bedwars": {
+      "caption": "BedWars, åtta lag och diamantgeneratorer"
+    },
+    "groundfall": {
+      "caption": "Slutet av en GroundFall-runda och dess belöningar"
+    },
+    "ingame-menus": {
+      "caption": "Vännermeny och serverhantering, båda inne i spelet"
+    },
+    "website": {
+      "caption": "Community-sajt, med aktiva spelarantal per spel"
+    }
+  },
+  "challenges": {
+    "multi-server-architecture": "Dirigera spelare över flera servrar samtidigt som nätverket känns som en enda plats",
+    "shared-player-state": "Bära valutor, nivåer och framsteg mellan spel som körs på separata servrar",
+    "game-loop-per-minigame": "Skriva en distinkt spelloop, poängtavla, och belöningsschema för vart och ett av de sju spelen",
+    "moderation-at-scale": "Ge personal verktyg för att driva nätverket från inne i Minecraft istället för från ett kontor",
+    "forum-integration": "Koppla en Symfony-sajt till ett XenForo-forum så konton och inlägg hölls på ett och samma ställe"
+  },
+  "learnings": {
+    "infrastructure-before-content": "Det mesta av arbetet gick till proxyn, API:t, och kärnan innan ett enda spel kunde lanseras",
+    "community-is-the-product": "Antal spelare och Discord var viktigare för nätverket än någon enskild funktion",
+    "git-hides-the-team": "Byggare, moderatorer och communitypersonal lämnade inga commits, så förråden ger kredit till en bråkdel av de involverade",
+    "minecraft-as-a-school": "Att driva ett nätverk lärde serverarkitektur, moderering, och versionshantering tidigare än något klientprojekt skulle ha gjort"
+  },
+  "future-plans": {
+    "archived-repositories": "Alla nio förråd är arkiverade, och nätverket är offline."
+  }
+}

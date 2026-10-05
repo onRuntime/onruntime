@@ -1,0 +1,104 @@
+{
+  "short-description": "Minecraft minigame netwerk met een eigen serverarchitectuur, zeven spellen en een gemeenschapswebsite.",
+  "description": "Een Minecraft servernetwerk met tot 500 slots, gebouwd op een familie van eigen plugins vernoemd naar bessen, met zeven minigames, een voortgangssysteem en een Symfony-site verbonden met een XenForo forum.",
+  "long-description": "BerryGames was een Minecraft minigame netwerk, en het oudste ding in deze portfolio: de eerste commit kwam op september 2018, op een minigame plugin genaamd WitchRush.\n\nDe architectuur was verdeeld over een familie van plugins, elk vernoemd naar een bes. GooseBerry was de BungeeCord proxy die spelers tussen servers leidde, CloudBerry de Spigot API die door elk spel werd gedeeld, SkyBerry de serverkernel, en StrawBerry een REST API die spelersdata aan de website blootstelde. Een Hub hield de lobby in stand, met zijn eigen voortgang die munten, credits, niveau en ervaring toonde.\n\nZeven minigames waren actief: SkyWars, BedWars met acht teams en diamantgeneratoren, GroundFall en zijn TNT-scores, Catfight, Pvpwall, Pitchout, en WitchRush. Spelers verdienden bosbessen en credits, en de eindschermen van de spellen zetten samen wat elke ronde hen had gegeven.\n\nMedewerkers hadden tools binnen het spel in plaats van een apart back office: een vriendschapsysteem en een serverbeheermenu waarmee een server tussen Publiek, Beta VIP, en Onderhoud kon worden gewisseld zonder Minecraft te verlaten.\n\nDe publieke gezicht was een Symfony-site verbonden met een XenForo forum, met vermelding van live spelersaantallen per spel naast de Discord-feed. Een React-herontwerp werd begin 2021 gestart en nooit afgemaakt. De negen repositories zijn gearchiveerd tussen 2020 en 2022.",
+  "features": {
+    "minigames": {
+      "title": "Zeven minigames",
+      "description": "SkyWars, BedWars, GroundFall, Catfight, Pvpwall, Pitchout, en WitchRush, elk met zijn eigen regels en kaarten"
+    },
+    "network-architecture": {
+      "title": "Servernetwerk",
+      "description": "Een BungeeCord proxy die spelers over Spigot-servers leidt, met een gedeelde API en een serverkern eronder"
+    },
+    "progression": {
+      "title": "Voortgang en valuta",
+      "description": "Munten, credits, bosbessen, niveaus, en ervaring die tussen spellen worden meegedragen en op het lobby scoreboard worden getoond"
+    },
+    "ingame-tooling": {
+      "title": "In-game personeel tools",
+      "description": "Een beheermenu dat een server wisselt tussen publiek, beta VIP, en onderhoud zonder het spel te verlaten"
+    },
+    "community-site": {
+      "title": "Gemeenschapswebsite",
+      "description": "Een Symfony-site verbonden met een XenForo forum, met live spelersaantallen per spel en de Discord-feed"
+    },
+    "friends-system": {
+      "title": "Vriendschapsysteem",
+      "description": "Spelers toevoegen en volgen over het netwerk, vanuit een in-game interactiemenu"
+    }
+  },
+  "technologies": {
+    "java": {
+      "description": "Elk plugin op het netwerk"
+    },
+    "spigot": {
+      "description": "Spelservers, de gedeelde API, en de serverkern"
+    },
+    "bungeecord": {
+      "description": "Proxy die spelers tussen servers leidt"
+    },
+    "symfony": {
+      "description": "Gemeenschapswebsite en zijn REST-consumptie"
+    },
+    "xenforo": {
+      "description": "Forum en accounts achter de site"
+    },
+    "react": {
+      "description": "Onvoltooid site-herontwerp uit 2021"
+    }
+  },
+  "metrics": {
+    "slots": {
+      "value": "500",
+      "label": "Slots",
+      "description": "Capaciteit aangekondigd in de serverlijst"
+    },
+    "minigames": {
+      "value": "7",
+      "label": "Minigames",
+      "description": "Van SkyWars tot WitchRush"
+    },
+    "repositories": {
+      "value": "9",
+      "label": "Repositories",
+      "description": "Plugins, API, site, en herontwerpen"
+    }
+  },
+  "screenshots": {
+    "hub": {
+      "caption": "Lobby, met het voortgang scoreboard"
+    },
+    "skywars": {
+      "caption": "SkyWars, met kaartstemmen en kits"
+    },
+    "bedwars": {
+      "caption": "BedWars, acht teams en diamantgeneratoren"
+    },
+    "groundfall": {
+      "caption": "Einde van een GroundFall ronde en zijn beloningen"
+    },
+    "ingame-menus": {
+      "caption": "Vriendschapsmenu en serverbeheer, beide binnen het spel"
+    },
+    "website": {
+      "caption": "Gemeenschapswebsite, met live spelersaantallen per spel"
+    }
+  },
+  "challenges": {
+    "multi-server-architecture": "Spelers over verschillende servers leiden terwijl het netwerk aanvoelt als één plek",
+    "shared-player-state": "Valuta, niveaus en voortgang tussen spellen die op aparte servers draaien meedragen",
+    "game-loop-per-minigame": "Een aparte game loop, scoreboard, en beloningstabel schrijven voor elk van de zeven spellen",
+    "moderation-at-scale": "Personeel de tools geven om het netwerk vanuit Minecraft te runnen in plaats van een back office",
+    "forum-integration": "Een Symfony-site verbinden met een XenForo forum zodat accounts en berichten op één plek blijven"
+  },
+  "learnings": {
+    "infrastructure-before-content": "Het merendeel van het werk ging naar de proxy, de API, en de core voordat een enkel spel kon worden gelanceerd",
+    "community-is-the-product": "Spelersaantallen en de Discord waren belangrijker voor het netwerk dan welke individuele functie dan ook",
+    "git-hides-the-team": "Bouwers, moderators en gemeenschapsmedewerkers hebben geen commits achtergelaten, waardoor de repositories maar een fractie van de betrokken mensen krediet geven",
+    "minecraft-as-a-school": "Het runnen van een netwerk leerde serverarchitectuur, moderatie, en releasebeheer eerder dan enig clientproject ooit had kunnen bieden"
+  },
+  "future-plans": {
+    "archived-repositories": "Alle negen repositories zijn gearchiveerd, en het netwerk is offline"
+  }
+}

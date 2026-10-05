@@ -1,0 +1,104 @@
+{
+  "short-description": "Minecraft Minigame-Netzwerk mit eigener Serverarchitektur, sieben Spielen und einer Community-Seite.",
+  "description": "Ein Minecraft-Servernetzwerk mit bis zu 500 Slots, gebaut auf einer Familie von hauseigenen Plugins, die nach Beeren benannt sind, mit sieben Minispielen, einem Progressionssystem und einer Symfony-Seite, die an ein XenForo-Forum angeschlossen ist.",
+  "long-description": "BerryGames war ein Minecraft-Minigame-Netzwerk und das älteste in diesem Portfolio: der erste Commit wurde im September 2018 bei einem Minigame-Plugin namens WitchRush getätigt.\n\nDie Architektur war auf eine Familie von Plugins aufgeteilt, die jeweils nach einer Beere benannt waren. GooseBerry war der BungeeCord-Proxy, der Spieler zwischen den Servern leitete, CloudBerry die Spigot-API, die von jedem Spiel genutzt wurde, SkyBerry der Serverkern und StrawBerry eine REST-API, die Spieldaten auf der Website bereitstellte. Ein Hub hielt die Lobby mit seiner eigenen Progression, die Coins, Credits, Level und Erfahrung anzeigte.\n\nSieben Minispiele liefen oben drauf: SkyWars, BedWars mit acht Teams und Diamantgeneratoren, GroundFall und seine TNT-Punkte, Catfight, Pvpwall, Pitchout und WitchRush. Spieler verdienten Heidelbeeren und Credits, und die Endbildschirme fassten zusammen, was jede Runde ihnen gebracht hatte.\n\nDas Personal hatte Werkzeuge im Spiel statt ein separates Backoffice: ein Freundesystem und ein Serververwaltungsmenü, das es ermöglichte, einen Server zwischen Öffentlich, Beta VIP und Wartung zu wechseln, ohne Minecraft zu verlassen.\n\nDas öffentliche Gesicht war eine Symfony-Seite, die an ein XenForo-Forum angeschlossen war und die aktuellen Spielerzahlen pro Spiel neben dem Discord-Feed auflistete. Ein Redesign mit React wurde Anfang 2021 gestartet und nie abgeschlossen. Die neun Repositories wurden zwischen 2020 und 2022 archiviert.",
+  "features": {
+    "minigames": {
+      "title": "Sieben Minispiele",
+      "description": "SkyWars, BedWars, GroundFall, Catfight, Pvpwall, Pitchout und WitchRush, jedes mit eigenen Regeln und Karten."
+    },
+    "network-architecture": {
+      "title": "Servernetzwerk",
+      "description": "Ein BungeeCord-Proxy, der Spieler zwischen Spigot-Servern leitet, mit einer gemeinsamen API und einem darunterliegenden Serverkern."
+    },
+    "progression": {
+      "title": "Fortschritt und Währungen",
+      "description": "Coins, Credits, Heidelbeeren, Level und Erfahrung, die zwischen den Spielen übertragen und auf der Lobby-Tafel angezeigt werden."
+    },
+    "ingame-tooling": {
+      "title": "In-Game-Tools für das Personal",
+      "description": "Ein Verwaltungsmenü, das einen Server zwischen öffentlich, Beta VIP und Wartung wechselt, ohne das Spiel zu verlassen."
+    },
+    "community-site": {
+      "title": "Community-Seite",
+      "description": "Eine Symfony-Seite, die an ein XenForo-Forum angeschlossen ist, zeigt aktuelle Spielerzahlen pro Spiel und den Discord-Feed."
+    },
+    "friends-system": {
+      "title": "Freundesystem",
+      "description": "Spieler im Netzwerk hinzufügen und folgen, über ein Interaktionsmenü im Spiel."
+    }
+  },
+  "technologies": {
+    "java": {
+      "description": "Jedes Plugin im Netzwerk."
+    },
+    "spigot": {
+      "description": "Spieleserver, die gemeinsame API und der Serverkern."
+    },
+    "bungeecord": {
+      "description": "Proxy, der Spieler zwischen Servern leitet."
+    },
+    "symfony": {
+      "description": "Community-Seite und ihre REST-Nutzung."
+    },
+    "xenforo": {
+      "description": "Forum und Konten hinter der Seite."
+    },
+    "react": {
+      "description": "Unvollendetes Redesign der Seite aus 2021."
+    }
+  },
+  "metrics": {
+    "slots": {
+      "value": "500",
+      "label": "Slots",
+      "description": "Kapazität, die in der Serverliste angezeigt wird."
+    },
+    "minigames": {
+      "value": "7",
+      "label": "Minispiele",
+      "description": "Von SkyWars bis WitchRush."
+    },
+    "repositories": {
+      "value": "9",
+      "label": "Repositories",
+      "description": "Plugins, API, Seite und Redesigns."
+    }
+  },
+  "screenshots": {
+    "hub": {
+      "caption": "Lobby mit dem Fortschrittsscoring."
+    },
+    "skywars": {
+      "caption": "SkyWars mit Kartenabstimmung und Kits."
+    },
+    "bedwars": {
+      "caption": "BedWars mit acht Teams und Diamantgeneratoren."
+    },
+    "groundfall": {
+      "caption": "Ende einer GroundFall-Runde und ihre Belohnungen."
+    },
+    "ingame-menus": {
+      "caption": "Freundesmenü und Serververwaltung, alles im Spiel."
+    },
+    "website": {
+      "caption": "Community-Seite mit aktuellen Spielerzahlen pro Spiel."
+    }
+  },
+  "challenges": {
+    "multi-server-architecture": "Spieler über mehrere Server leiten und dabei das Netzwerk wie einen Ort wirken lassen.",
+    "shared-player-state": "Währungen, Levels und Fortschritte zwischen Spielen, die auf separaten Servern laufen, übertragen.",
+    "game-loop-per-minigame": "Eine eigene Spielschleife, Punktetafel und Belohnungstabelle für jedes der sieben Spiele schreiben.",
+    "moderation-at-scale": "Dem Personal die Werkzeuge geben, das Netzwerk von innerhalb von Minecraft zu betreiben und nicht aus einem Backoffice.",
+    "forum-integration": "Eine Symfony-Seite in ein XenForo-Forum integrieren, damit Konten und Beiträge an einem Ort bleiben."
+  },
+  "learnings": {
+    "infrastructure-before-content": "Der Großteil der Arbeit ging in den Proxy, die API und den Kern, bevor ein einziges Spiel veröffentlicht werden konnte.",
+    "community-is-the-product": "Spielerzahlen und der Discord waren für das Netzwerk wichtiger als jede einzelne Funktion.",
+    "git-hides-the-team": "Bauarbeiter, Moderatoren und Community-Mitarbeiter hinterließen keine Commits, sodass die Repositories nur einen Bruchteil der beteiligten Personen anerkennen.",
+    "minecraft-as-a-school": "Das Betreiben eines Netzwerks brachte Serverarchitektur, Moderation und Release-Management früher bei, als es ein Client-Projekt hätte tun können."
+  },
+  "future-plans": {
+    "archived-repositories": "Alle neun Repositories sind archiviert, und das Netzwerk ist offline."
+  }
+}

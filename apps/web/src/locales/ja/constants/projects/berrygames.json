@@ -1,0 +1,104 @@
+{
+  "short-description": "独自のサーバーアーキテクチャを持つMinecraftミニゲームネットワーク、7つのゲーム、そしてコミュニティサイト。",
+  "description": "最大500スロットのMinecraftサーバーネットワークで、ベリーにちなんだ自作プラグインのファミリーをベースに構築されており、7つのミニゲーム、進行システム、SymfonyサイトがXenForoフォーラムに接続されています。",
+  "long-description": "BerryGamesはMinecraftミニゲームネットワークで、これがポートフォリオの中で最も古いものです: 最初のコミットは2018年9月にWitchRushというミニゲームプラグインに行われました。\n\nアーキテクチャは、ベリーにちなんだプラグインのファミリーに分かれていました。GooseBerryはBungeeCordプロキシで、プレイヤーをサーバー間でルーティングし、CloudBerryはすべてのゲームで共有されるSpigot API、SkyBerryはサーバーコア、StrawBerryはプレイヤーデータをウェブサイトに公開するREST APIです。ハブはロビーを保持し、コイン、クレジット、レベル、経験値を表示する進行状況を持っていました。\n\n7つのミニゲームが上で動いていました: SkyWars、8チームとダイヤモンド生成器を持つBedWars、TNTスコアリングのGroundFall、Catfight、Pvpwall、Pitchout、WitchRushです。プレイヤーはブルーベリーとクレジットを獲得し、ゲーム終了画面では各ラウンドが彼らに与えた内容の要約が表示されました。\n\nスタッフはゲーム内ツールを使い、別のバックオフィスなしでゲーム内の友人システムやサーバー管理メニューでサーバーをPublic、Beta VIP、Maintenanceの間で切り替えていました。\n\n公の顔はSymfonyサイトで、XenForoフォーラムに接続されており、各ゲームのライブプレイヤー数をDiscordフィードの横に表示していました。2021年初めにReact再設計が始まったが、完了しませんでした。9つのリポジトリは2020年と2022年の間にアーカイブされました。",
+  "features": {
+    "minigames": {
+      "title": "7つのミニゲーム",
+      "description": "SkyWars、BedWars、GroundFall、Catfight、Pvpwall、Pitchout、WitchRush、それぞれに独自のルールとマップがあります"
+    },
+    "network-architecture": {
+      "title": "サーバーネットワーク",
+      "description": "BungeeCordプロキシがSpigotサーバー間でプレイヤーをルーティングし、下に共有APIとサーバーコアがあります"
+    },
+    "progression": {
+      "title": "進行状況と通貨",
+      "description": "ゲーム間で持ち運ばれ、ロビーのスコアボードに表示されるコイン、クレジット、ブルーベリー、レベル、経験値"
+    },
+    "ingame-tooling": {
+      "title": "ゲーム内スタッフツール",
+      "description": "ゲームを離れずにサーバーをパブリック、ベータVIP、メンテナンスの間で切り替える管理メニュー"
+    },
+    "community-site": {
+      "title": "コミュニティサイト",
+      "description": "各ゲームのライブプレイヤー数とDiscordフィードを表示するSymfonyサイトで、XenForoフォーラムに接続されています"
+    },
+    "friends-system": {
+      "title": "友達システム",
+      "description": "ゲーム内インタラクションメニューからネットワーク全体でプレイヤーを追加し、フォローします"
+    }
+  },
+  "technologies": {
+    "java": {
+      "description": "ネットワーク上のすべてのプラグイン"
+    },
+    "spigot": {
+      "description": "ゲームサーバー、共有API、サーバーコア"
+    },
+    "bungeecord": {
+      "description": "サーバー間でプレイヤーをルーティングするプロキシ"
+    },
+    "symfony": {
+      "description": "コミュニティサイトとそのREST消費"
+    },
+    "xenforo": {
+      "description": "サイトの背後にあるフォーラムとアカウント"
+    },
+    "react": {
+      "description": "2021年の未完了のサイト再設計"
+    }
+  },
+  "metrics": {
+    "slots": {
+      "value": "500",
+      "label": "スロット",
+      "description": "サーバーリストに発表されたキャパシティ"
+    },
+    "minigames": {
+      "value": "7",
+      "label": "ミニゲーム",
+      "description": "SkyWarsからWitchRushまで"
+    },
+    "repositories": {
+      "value": "9",
+      "label": "リポジトリ",
+      "description": "プラグイン、API、サイト、再設計"
+    }
+  },
+  "screenshots": {
+    "hub": {
+      "caption": "ロビー、進行状況スコアボード付き"
+    },
+    "skywars": {
+      "caption": "SkyWars、マップ投票とキット付き"
+    },
+    "bedwars": {
+      "caption": "BedWars、8チームとダイヤモンド生成器"
+    },
+    "groundfall": {
+      "caption": "GroundFallのラウンド終了とその報酬"
+    },
+    "ingame-menus": {
+      "caption": "友達メニューとサーバー管理、どちらもゲーム内で"
+    },
+    "website": {
+      "caption": "コミュニティサイト、各ゲームのライブプレイヤー数付き"
+    }
+  },
+  "challenges": {
+    "multi-server-architecture": "ネットワークを一つの場所として感じさせながら、複数のサーバー間でプレイヤーをルーティングすること",
+    "shared-player-state": "異なるサーバーで動作するゲーム間で通貨、レベル、進行状況を持ち運ぶこと",
+    "game-loop-per-minigame": "7つのゲームそれぞれに異なるゲームループ、スコアボード、報酬テーブルを書くこと",
+    "moderation-at-scale": "Minecraft内からネットワークを運営するためにスタッフにツールを提供すること、バックオフィスではなく",
+    "forum-integration": "アカウントと投稿が一つの場所に保たれるようにSymfonyサイトをXenForoフォーラムに接続すること"
+  },
+  "learnings": {
+    "infrastructure-before-content": "実際にゲームを出荷する前に、プロキシ、API、コアに大部分の作業がかかりました",
+    "community-is-the-product": "プレイヤー数とDiscordは、個別の特徴よりもネットワークにとって重要です",
+    "git-hides-the-team": "ビルダー、モデレーター、コミュニティスタッフはコミットを残さなかったため、リポジトリは関わった人々の一部しかクレジットしません",
+    "minecraft-as-a-school": "ネットワークの運営は、クライアントプロジェクトよりも早くサーバーアーキテクチャやモデレーション、リリース管理を教えてくれました"
+  },
+  "future-plans": {
+    "archived-repositories": "9つのリポジトリはすべてアーカイブされ、ネットワークはオフラインです"
+  }
+}

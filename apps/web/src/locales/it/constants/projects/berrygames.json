@@ -1,0 +1,104 @@
+{
+  "short-description": "Rete di minigiochi Minecraft con la sua architettura di server, sette giochi e un sito comunitario.",
+  "description": "Una rete di server Minecraft che può ospitare fino a 500 giocatori, costruita su una famiglia di plugin interni chiamata come le bacche, con sette minigiochi, un sistema di progressione e un sito Symfony collegato a un forum XenForo.",
+  "long-description": "BerryGames era una rete di minigiochi Minecraft ed è la cosa più antica di questo portfolio: il primo commit risale a settembre 2018, su un plugin di minigioco chiamato WitchRush.\n\nL'architettura era suddivisa in una famiglia di plugin, ciascuno chiamato come una bacca. GooseBerry era il proxy BungeeCord che instradava i giocatori tra i server, CloudBerry l'API Spigot condivisa da ogni gioco, SkyBerry il core del server, e StrawBerry un'API REST che esponeva i dati dei giocatori al sito web. Un Hub ospitava il lobby, con la sua progressione che mostrava monete, crediti, livello e esperienza.\n\nSette minigiochi giravano sopra: SkyWars, BedWars con otto squadre e generatori di diamanti, GroundFall e il suo punteggio TNT, Catfight, Pvpwall, Pitchout e WitchRush. I giocatori guadagnavano mirtilli e crediti, e gli schermi di fine partita riassumevano ciò che ogni round aveva dato loro.\n\nIl personale aveva strumenti all'interno del gioco piuttosto che un ufficio separato: un sistema di amici e un menu di gestione del server che passava un server tra Pubblico, Beta VIP e Manutenzione senza lasciare Minecraft.\n\nIl volto pubblico era un sito Symfony collegato a un forum XenForo, che mostrava il numero di giocatori in tempo reale per ogni gioco accanto al feed Discord. Un redesign in React è stato avviato all'inizio del 2021 e non è mai stato completato. I nove repository sono stati archiviati tra il 2020 e il 2022.",
+  "features": {
+    "minigames": {
+      "title": "Sette minigiochi",
+      "description": "SkyWars, BedWars, GroundFall, Catfight, Pvpwall, Pitchout e WitchRush, ciascuno con le proprie regole e mappe"
+    },
+    "network-architecture": {
+      "title": "Rete di server",
+      "description": "Un proxy BungeeCord che instrada i giocatori tra i server Spigot, con un'API condivisa e un core del server sottostante"
+    },
+    "progression": {
+      "title": "Progressione e valute",
+      "description": "Monete, crediti, mirtilli, livelli ed esperienza portati tra i giochi e mostrati sul punteggio del lobby"
+    },
+    "ingame-tooling": {
+      "title": "Strumenti per il personale in gioco",
+      "description": "Un menu di gestione che passa un server tra pubblico, beta VIP e manutenzione senza lasciare il gioco"
+    },
+    "community-site": {
+      "title": "Sito comunitario",
+      "description": "Un sito Symfony collegato a un forum XenForo, che mostra il numero di giocatori in tempo reale per ogni gioco e il feed Discord"
+    },
+    "friends-system": {
+      "title": "Sistema di amici",
+      "description": "Aggiungere e seguire i giocatori nella rete, da un menu di interazione in gioco"
+    }
+  },
+  "technologies": {
+    "java": {
+      "description": "Ogni plugin sulla rete"
+    },
+    "spigot": {
+      "description": "Server di gioco, l'API condivisa e il core del server"
+    },
+    "bungeecord": {
+      "description": "Proxy che instrada i giocatori tra i server"
+    },
+    "symfony": {
+      "description": "Sito comunitario e il suo consumo REST"
+    },
+    "xenforo": {
+      "description": "Forum e account dietro il sito"
+    },
+    "react": {
+      "description": "Redesign del sito non completato dal 2021"
+    }
+  },
+  "metrics": {
+    "slots": {
+      "value": "500",
+      "label": "Slot",
+      "description": "Capacità annunciata nell'elenco dei server"
+    },
+    "minigames": {
+      "value": "7",
+      "label": "Minigiochi",
+      "description": "Da SkyWars a WitchRush"
+    },
+    "repositories": {
+      "value": "9",
+      "label": "Repositories",
+      "description": "Plugin, API, sito e redesigns"
+    }
+  },
+  "screenshots": {
+    "hub": {
+      "caption": "Lobby, con il punteggio di progressione"
+    },
+    "skywars": {
+      "caption": "SkyWars, con voto della mappa e kit"
+    },
+    "bedwars": {
+      "caption": "BedWars, otto squadre e generatori di diamanti"
+    },
+    "groundfall": {
+      "caption": "Fine di un round di GroundFall e le sue ricompense"
+    },
+    "ingame-menus": {
+      "caption": "Menu amici e gestione server, entrambi all'interno del gioco"
+    },
+    "website": {
+      "caption": "Sito comunitario, con il numero di giocatori in tempo reale per ogni gioco"
+    }
+  },
+  "challenges": {
+    "multi-server-architecture": "Instradare i giocatori tra diversi server mantenendo la rete come un posto unico",
+    "shared-player-state": "Portare valute, livelli e progressi tra i giochi che girano su server separati",
+    "game-loop-per-minigame": "Scrivere un ciclo di gioco distinto, un punteggio e una tabella di ricompense per ciascuno dei sette giochi",
+    "moderation-at-scale": "Fornire allo staff gli strumenti per gestire la rete dall'interno di Minecraft piuttosto che da un ufficio",
+    "forum-integration": "Collegare un sito Symfony a un forum XenForo in modo che account e post rimanessero in un unico posto"
+  },
+  "learnings": {
+    "infrastructure-before-content": "La maggior parte del lavoro è andata nel proxy, nell'API e nel core prima che un singolo gioco potesse essere rilasciato",
+    "community-is-the-product": "Il numero di giocatori e il Discord contavano di più per la rete rispetto a qualsiasi caratteristica individuale",
+    "git-hides-the-team": "Costruttori, moderatori e staff comunitario non hanno lasciato commit, quindi i repository attribuiscono i crediti a una frazione delle persone coinvolte",
+    "minecraft-as-a-school": "Gestire una rete ha insegnato architettura del server, moderazione e gestione dei rilasci prima di qualsiasi progetto client"
+  },
+  "future-plans": {
+    "archived-repositories": "Tutti e nove i repository sono archiviati e la rete è offline"
+  }
+}

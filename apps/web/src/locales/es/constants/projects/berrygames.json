@@ -1,0 +1,104 @@
+{
+  "short-description": "Red de minijuegos de Minecraft con su propia arquitectura de servidor, siete juegos y un sitio comunitario.",
+  "description": "Una red de servidores de Minecraft que admite hasta 500 jugadores, construida sobre una familia de complementos internos llamados como frutas, con siete minijuegos, un sistema de progresión y un sitio de Symfony conectado a un foro de XenForo.",
+  "long-description": "BerryGames fue una red de minijuegos de Minecraft y la cosa más antigua en este portafolio: el primer commit se realizó en septiembre de 2018, en un complemento de minijuego llamado WitchRush.\n\nLa arquitectura estaba dividida en una familia de complementos, cada uno llamado como una fruta. GooseBerry era el proxy de BungeeCord que redirigía a los jugadores entre servidores, CloudBerry la API de Spigot compartida por cada juego, SkyBerry el núcleo del servidor y StrawBerry una API REST que exponía datos de jugadores al sitio web. Un Hub albergaba el vestíbulo, con su propia progresión mostrando monedas, créditos, nivel y experiencia.\n\nSiete minijuegos se ejecutaban encima: SkyWars, BedWars con ocho equipos y generadores de diamantes, GroundFall y su puntuación de TNT, Catfight, Pvpwall, Pitchout y WitchRush. Los jugadores ganaban arándanos y créditos, y las pantallas finales de juego resumían lo que cada ronda les había dado.\n\nEl personal tenía herramientas dentro del juego en lugar de una oficina separada: un sistema de amigos y un menú de gestión del servidor que cambiaba el estado de un servidor entre Público, Beta VIP y Mantenimiento sin salir de Minecraft.\n\nLa cara pública era un sitio de Symfony conectado a un foro de XenForo, que mostraba el conteo de jugadores en vivo por juego junto al feed de Discord. Un rediseño en React comenzó a principios de 2021 y nunca se terminó. Los nueve repositorios fueron archivados entre 2020 y 2022.",
+  "features": {
+    "minigames": {
+      "title": "Siete minijuegos",
+      "description": "SkyWars, BedWars, GroundFall, Catfight, Pvpwall, Pitchout y WitchRush, cada uno con sus propias reglas y mapas"
+    },
+    "network-architecture": {
+      "title": "Red de servidores",
+      "description": "Un proxy de BungeeCord redirigiendo jugadores a través de servidores Spigot, con una API compartida y un núcleo de servidor debajo"
+    },
+    "progression": {
+      "title": "Progresión y monedas",
+      "description": "Monedas, créditos, arándanos, niveles y experiencia llevados entre juegos y mostrados en el marcador del vestíbulo"
+    },
+    "ingame-tooling": {
+      "title": "Herramientas para el personal dentro del juego",
+      "description": "Un menú de gestión que cambia un servidor entre público, beta VIP y mantenimiento sin salir del juego"
+    },
+    "community-site": {
+      "title": "Sitio comunitario",
+      "description": "Un sitio de Symfony conectado a un foro de XenForo, mostrando conteos de jugadores en vivo por juego y el feed de Discord"
+    },
+    "friends-system": {
+      "title": "Sistema de amigos",
+      "description": "Agregar y seguir jugadores a través de la red, desde un menú de interacción dentro del juego"
+    }
+  },
+  "technologies": {
+    "java": {
+      "description": "Cada complemento en la red"
+    },
+    "spigot": {
+      "description": "Servidores de juegos, la API compartida y el núcleo del servidor"
+    },
+    "bungeecord": {
+      "description": "Proxy redirigiendo jugadores entre servidores"
+    },
+    "symfony": {
+      "description": "Sitio comunitario y su consumo REST"
+    },
+    "xenforo": {
+      "description": "Foro y cuentas detrás del sitio"
+    },
+    "react": {
+      "description": "Rediseño del sitio sin terminar de 2021"
+    }
+  },
+  "metrics": {
+    "slots": {
+      "value": "500",
+      "label": "Espacios",
+      "description": "Capacidad anunciada en la lista de servidores"
+    },
+    "minigames": {
+      "value": "7",
+      "label": "Minijuegos",
+      "description": "Desde SkyWars hasta WitchRush"
+    },
+    "repositories": {
+      "value": "9",
+      "label": "Repositorios",
+      "description": "Complementos, API, sitio y rediseños"
+    }
+  },
+  "screenshots": {
+    "hub": {
+      "caption": "Vestíbulo, con el marcador de progresión"
+    },
+    "skywars": {
+      "caption": "SkyWars, con votación de mapas y kits"
+    },
+    "bedwars": {
+      "caption": "BedWars, ocho equipos y generadores de diamantes"
+    },
+    "groundfall": {
+      "caption": "Final de una ronda de GroundFall y sus recompensas"
+    },
+    "ingame-menus": {
+      "caption": "Menú de amigos y gestión del servidor, ambos dentro del juego"
+    },
+    "website": {
+      "caption": "Sitio comunitario, con conteos de jugadores en vivo por juego"
+    }
+  },
+  "challenges": {
+    "multi-server-architecture": "Redirigir jugadores a través de varios servidores mientras se mantiene la red como un solo lugar",
+    "shared-player-state": "Transportar monedas, niveles y progreso entre juegos que corren en servidores separados",
+    "game-loop-per-minigame": "Escribir un bucle de juego distinto, marcador y tabla de recompensas para cada uno de los siete juegos",
+    "moderation-at-scale": "Dar al personal las herramientas para gestionar la red desde dentro de Minecraft en lugar de una oficina",
+    "forum-integration": "Conectar un sitio de Symfony a un foro de XenForo para que cuentas y publicaciones se mantuvieran en un solo lugar"
+  },
+  "learnings": {
+    "infrastructure-before-content": "La mayor parte del trabajo se destinó al proxy, la API y el núcleo antes de que se pudiera lanzar un solo juego",
+    "community-is-the-product": "El conteo de jugadores y Discord importaban más a la red que cualquier característica individual",
+    "git-hides-the-team": "Constructores, moderadores y personal comunitario no dejaron commits, así que los repositorios acreditan solo una fracción de las personas involucradas",
+    "minecraft-as-a-school": "Gestionar una red enseñó arquitectura de servidores, moderación y gestión de lanzamientos antes que cualquier proyecto de cliente"
+  },
+  "future-plans": {
+    "archived-repositories": "Los nueve repositorios están archivados, y la red está fuera de línea."
+  }
+}
