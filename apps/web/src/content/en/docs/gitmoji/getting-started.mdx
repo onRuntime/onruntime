@@ -63,18 +63,43 @@ The first commit of a repository uses `initial`, and a version tag uses
 
 ## Description
 
-Write descriptions in **imperative mood** and **lowercase**:
+The `<type>` is the verb of the subject, and the description completes it. Read
+together, they make **one sentence**:
 
 ```bash
 # Good
 📝 update documentation contributors
+```
 
+So don't open the description with a second verb. The type is already one, and
+the subject ends up stacking two sentences, which is what a `fix:` prefix leads
+to. Drop the verb and keep what it acted on:
+
+```bash
+# Bad
+💄 improve scale down the gem on its card
+🐛 fix stop the footer from wrapping
+
+# Good
+💄 improve the gem size on its card
+🐛 fix the footer wrapping
+```
+
+Write it in **imperative mood** and **lowercase**:
+
+```bash
 # Bad
 📝 updated documentation contributors
 
 # Bad
 📝 Update documentation contributors
 ```
+
+<Callout type="info" title="A Verb That Is a Noun">
+  Some words are both, and the one you mean is the noun: `✨ add open graph image`
+  is fine. When it reads as a verb, an article makes it a noun phrase again:
+  `✨ add a show more button`.
+</Callout>
 
 ## Issue Number
 
