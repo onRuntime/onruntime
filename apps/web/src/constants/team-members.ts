@@ -126,6 +126,12 @@ const TeamMembers: Record<string, TeamMember> = {
   "romain": {
     name: "Romain",
     roles: [TeamRole.DESIGNER],
+  },
+  "arthur-danjou": {
+    name: "Arthur Danjou",
+    roles: [TeamRole.DEVELOPER],
+    website: "https://go.arthurdanjou.fr/website",
+    github: "https://github.com/ArthurDanjou",
   }
 };
 

@@ -1,0 +1,68 @@
+{
+  "short-description": "Minecraft minigame network with its own server architecture, seven games, and a community site.",
+  "description": "A Minecraft server network running up to 500 slots, built on a family of in-house plugins named after berries, with seven minigames, a progression system, and a Symfony site plugged into a XenForo forum.",
+  "long-description": "BerryGames was a Minecraft minigame network, and the oldest thing in this portfolio: the first commit lands in September 2018, on a minigame plugin called WitchRush.\n\nThe architecture was split across a family of plugins, each named after a berry. GooseBerry was the BungeeCord proxy routing players between servers, CloudBerry the Spigot API shared by every game, SkyBerry the server core, and StrawBerry a REST API exposing player data to the website. A Hub held the lobby, with its own progression showing coins, credits, level, and experience.\n\nSeven minigames ran on top: SkyWars, BedWars with eight teams and diamond generators, GroundFall and its TNT scoring, Catfight, Pvpwall, Pitchout, and WitchRush. Players earned blueberries and credits, and end-of-game screens summarised what each round had given them.\n\nStaff had tools inside the game rather than a separate back office: a friends system, and a server management menu switching a server between Public, Beta VIP, and Maintenance without leaving Minecraft.\n\nThe public face was a Symfony site plugged into a XenForo forum, listing live player counts per game next to the Discord feed. A React redesign was started in early 2021 and never finished. The nine repositories were archived between 2020 and 2022.",
+  "features": {
+    "minigames": {
+      "title": "Seven minigames",
+      "description": "SkyWars, BedWars, GroundFall, Catfight, Pvpwall, Pitchout, and WitchRush, each with its own rules and maps"
+    },
+    "network-architecture": {
+      "title": "Server network",
+      "description": "A BungeeCord proxy routing players across Spigot servers, with a shared API and a server core underneath"
+    },
+    "progression": {
+      "title": "Progression and currencies",
+      "description": "Coins, credits, blueberries, levels, and experience carried between games and shown on the lobby scoreboard"
+    },
+    "ingame-tooling": {
+      "title": "In-game staff tools",
+      "description": "A management menu switching a server between public, beta VIP, and maintenance without leaving the game"
+    },
+    "community-site": {
+      "title": "Community site",
+      "description": "A Symfony site plugged into a XenForo forum, showing live player counts per game and the Discord feed"
+    },
+    "friends-system": {
+      "title": "Friends system",
+      "description": "Adding and following players across the network, from an in-game interaction menu"
+    }
+  },
+  "technologies": {
+    "java": { "description": "Every plugin on the network" },
+    "spigot": { "description": "Game servers, the shared API, and the server core" },
+    "bungeecord": { "description": "Proxy routing players between servers" },
+    "symfony": { "description": "Community site and its REST consumption" },
+    "xenforo": { "description": "Forum and accounts behind the site" },
+    "react": { "description": "Unfinished site redesign from 2021" }
+  },
+  "metrics": {
+    "slots": { "value": "500", "label": "Slots", "description": "Capacity announced in the server list" },
+    "minigames": { "value": "7", "label": "Minigames", "description": "From SkyWars to WitchRush" },
+    "repositories": { "value": "9", "label": "Repositories", "description": "Plugins, API, site, and redesigns" }
+  },
+  "screenshots": {
+    "hub": { "caption": "Lobby, with the progression scoreboard" },
+    "skywars": { "caption": "SkyWars, with map voting and kits" },
+    "bedwars": { "caption": "BedWars, eight teams and diamond generators" },
+    "groundfall": { "caption": "End of a GroundFall round and its rewards" },
+    "ingame-menus": { "caption": "Friends menu and server management, both inside the game" },
+    "website": { "caption": "Community site, with live player counts per game" }
+  },
+  "challenges": {
+    "multi-server-architecture": "Routing players across several servers while keeping the network feeling like one place",
+    "shared-player-state": "Carrying currencies, levels, and progress between games running on separate servers",
+    "game-loop-per-minigame": "Writing a distinct game loop, scoreboard, and reward table for each of the seven games",
+    "moderation-at-scale": "Giving staff the tools to run the network from inside Minecraft rather than a back office",
+    "forum-integration": "Plugging a Symfony site into a XenForo forum so accounts and posts stayed in one place"
+  },
+  "learnings": {
+    "infrastructure-before-content": "Most of the work went into the proxy, the API, and the core before a single game could ship",
+    "community-is-the-product": "Player counts and the Discord mattered more to the network than any individual feature",
+    "git-hides-the-team": "Builders, moderators, and community staff left no commits, so the repositories credit a fraction of the people involved",
+    "minecraft-as-a-school": "Running a network taught server architecture, moderation, and release management earlier than any client project would have"
+  },
+  "future-plans": {
+    "archived-repositories": "All nine repositories are archived, and the network is offline"
+  }
+}
