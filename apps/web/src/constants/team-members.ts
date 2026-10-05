@@ -120,7 +120,7 @@ const TeamMembers: Record<string, TeamMember> = {
     linkedin: "https://www.linkedin.com/in/louis-lazare-51057b266/",
   },
   "ralph": {
-    name: "Ralph",
+    name: "Rémi",
     roles: [TeamRole.PRODUCT_MANAGER],
   },
   "romain": {
