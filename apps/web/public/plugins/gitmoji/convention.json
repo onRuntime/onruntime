@@ -52,11 +52,70 @@
   ],
   "rules": [
     "Write the subject in lowercase",
-    "Use imperative mood (\"add\" not \"added\")",
+    "The <type> is the verb of the subject: \"<type> <description>\" has to read as one sentence, with the description completing the type. Keep it imperative (\"add\", never \"added\")",
+    "Never open the description with a second verb. \"fix stop the footer from wrapping\" stacks two sentences; \"fix the footer wrapping\" is one. Drop the verb and keep what it acted on, or move it into the sentence the type opens",
     "One logical change per commit",
     "Keep the description concise",
     "Pick the gitmoji from the official list, and pick the type from the types above. They are independent choices: never derive the type from the gitmoji's name or description. When no type obviously fits, collapse to the nearest general one",
     "Never sign a commit as an agent: no Co-Authored-By for the agent, no \"Generated with\" line, no robot-emoji attribution. A human co-author is welcome, an agent is not"
+  ],
+  "secondVerbs": [
+    "add",
+    "allow",
+    "avoid",
+    "bring",
+    "collapse",
+    "convert",
+    "disable",
+    "enable",
+    "enforce",
+    "ensure",
+    "exclude",
+    "expand",
+    "expose",
+    "extract",
+    "fix",
+    "handle",
+    "hide",
+    "ignore",
+    "improve",
+    "include",
+    "keep",
+    "let",
+    "make",
+    "persist",
+    "prefer",
+    "prevent",
+    "propagate",
+    "reduce",
+    "refactor",
+    "refuse",
+    "remember",
+    "render",
+    "respect",
+    "restore",
+    "retranslate",
+    "reuse",
+    "say",
+    "scale",
+    "separate",
+    "serve",
+    "show",
+    "skip",
+    "stop",
+    "surface",
+    "swap",
+    "teach",
+    "tell",
+    "throw",
+    "treat",
+    "trim",
+    "turn",
+    "unify",
+    "upgrade",
+    "wait",
+    "warn",
+    "wrap"
   ],
   "forbiddenFooters": [
     {
@@ -80,11 +139,30 @@
       "flags": "i"
     }
   ],
+  "counterExamples": [
+    {
+      "wrong": "🐛 fix stop the footer from wrapping",
+      "right": "🐛 fix the footer wrapping"
+    },
+    {
+      "wrong": "💄 improve scale down the gem on its card",
+      "right": "💄 improve the gem size on its card"
+    },
+    {
+      "wrong": "♻️ refactor extract the footer links into a constant",
+      "right": "♻️ refactor the footer links into a constant"
+    },
+    {
+      "wrong": "✨ add show the mockup when a project has a screenshot",
+      "right": "✨ add the mockup to the projects that have a screenshot"
+    }
+  ],
   "examples": [
-    "🐛 fix stop the conversion link from delaying the click",
+    "🐛 fix the conversion link delaying the click",
     "✨ add icu plural and select arguments to messages",
-    "♻️ refactor extract the footer links into a constant",
+    "♻️ refactor the footer links into a constant",
     "📝 add documentation links to the package readmes",
+    "💄 improve the rvby gem size on its card",
     "🔖 release @onruntime/translations v0.3.0",
     "🎉 initial commit"
   ]

@@ -49,7 +49,8 @@ point for the description: $ARGUMENTS
      (or `git diff --staged <path>`). Never commit a file you haven't read
    - Pick the gitmoji that describes the change, then pick the type. They are
      independent choices
-   - Write the subject, then check its `<type>` against `convention.json`
-     before committing
+   - Write the subject, then check it against `convention.json` before
+     committing: the `<type>` it takes, and the one sentence the type and the
+     description have to read as
    - Create the commit
 4. Repeat for each remaining group

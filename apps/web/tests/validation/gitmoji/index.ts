@@ -18,7 +18,9 @@ export const DOC_FILE = path.join(
 export type Convention = {
   types: { name: string; description: string }[];
   rules: string[];
+  secondVerbs: string[];
   forbiddenFooters: { label: string; pattern: string; flags?: string }[];
+  counterExamples: { wrong: string; right: string }[];
   examples: string[];
 };
 

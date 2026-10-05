@@ -16,6 +16,20 @@ import {
 // | `add` | Add a new feature |
 const TYPE_ROW_PATTERN = /^\|\s*`([a-z]+)`\s*\|/gm;
 
+// What the hook says is wrong with a message, or null when it lets it through.
+function refusal(message: string): string | null {
+  const output = execFileSync("node", [VALIDATOR, "--message", message], {
+    encoding: "utf8",
+  });
+  if (output.trim() === "") return null;
+
+  const { permissionDecisionReason } = JSON.parse(output).hookSpecificOutput;
+  const problems = /What is wrong:\n([\s\S]*?)\n\n/.exec(
+    permissionDecisionReason,
+  );
+  return problems?.[1] ?? permissionDecisionReason;
+}
+
 export function conventionTests() {
   const convention: Convention = JSON.parse(
     fs.readFileSync(CONVENTION_FILE, "utf8"),
@@ -63,23 +77,60 @@ export function conventionTests() {
       const refused: string[] = [];
 
       for (const example of convention.examples) {
-        const output = execFileSync("node", [VALIDATOR, "--message", example], {
-          encoding: "utf8",
-        });
-        if (output.trim() === "") continue;
-
-        const { permissionDecisionReason } =
-          JSON.parse(output).hookSpecificOutput;
-        const problems = /What is wrong:\n([\s\S]*?)\n\n/.exec(
-          permissionDecisionReason,
-        );
-        refused.push(`${example}\n${problems?.[1] ?? permissionDecisionReason}`);
+        const problems = refusal(example);
+        if (problems !== null) refused.push(`${example}\n${problems}`);
       }
 
       assert.deepStrictEqual(
         refused,
         [],
         `convention.json shows examples its own hook refuses:\n${refused.join("\n")}`,
+      );
+    });
+
+    // A counter-example is the shortest way to show what the type-as-verb rule
+    // asks for, so both halves of a pair have to behave: the left one refused,
+    // the rewrite accepted. A pair that drifts teaches the wrong lesson, and it
+    // is printed in every refusal the hook writes.
+    test("every counter-example is refused and every rewrite passes", () => {
+      const wrong: string[] = [];
+
+      for (const pair of convention.counterExamples) {
+        if (refusal(pair.wrong) === null) {
+          wrong.push(`the hook allows "${pair.wrong}", shown as wrong`);
+        }
+
+        const problems = refusal(pair.right);
+        if (problems !== null) {
+          wrong.push(
+            `the hook refuses "${pair.right}", shown as the rewrite:\n${problems}`,
+          );
+        }
+      }
+
+      assert.deepStrictEqual(wrong, [], `\n${wrong.join("\n")}`);
+    });
+
+    // The list is read into a Set and matched against a lowercased word, so an
+    // entry carrying a capital, a space or a duplicate would never match and
+    // would sit there looking enforced.
+    test("the second verbs are single lowercase words, sorted and unique", () => {
+      const verbs = convention.secondVerbs;
+
+      assert.deepStrictEqual(
+        verbs.filter((verb) => !/^[a-z]+$/.test(verb)),
+        [],
+        "a second verb is not a single lowercase word",
+      );
+      assert.deepStrictEqual(
+        [...verbs].sort(),
+        verbs,
+        "the second verbs are not in alphabetical order",
+      );
+      assert.strictEqual(
+        new Set(verbs).size,
+        verbs.length,
+        "the second verbs hold a duplicate",
       );
     });
 
@@ -96,6 +147,10 @@ export function conventionTests() {
       assert.ok(
         convention.forbiddenFooters.length > 0,
         "no forbidden footer is declared",
+      );
+      assert.ok(
+        rules.includes("second verb"),
+        "convention.json refuses a second verb but never says so in rules",
       );
     });
   });

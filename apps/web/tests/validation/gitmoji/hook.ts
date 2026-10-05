@@ -14,28 +14,42 @@ const heredoc = (message: string) =>
 
 const CASES: [Expectation, string, string][] = [
   // Conforming subjects
-  ["allowed", "a conforming subject", `git commit -m "🐛 fix stop the footer from wrapping"`],
+  ["allowed", "a conforming subject", `git commit -m "🐛 fix the footer wrapping"`],
   ["allowed", "an issue number", `git commit -m "✨ add dark mode toggle (#42)"`],
-  ["allowed", "a real commit of this repository", `git commit -m "⚡️ improve stop the conversion link from delaying the click"`],
+  ["allowed", "a real commit of this repository", `git commit -m "💄 fix nested code styling inside pre blocks"`],
   ["allowed", "a scoped package release", `git commit -m "🔖 release @onruntime/translations v0.3.0"`],
   ["allowed", "the initial commit", `git commit -m "🎉 initial commit"`],
-  ["allowed", "an emoji without its variation selector", `git commit -m "♻ refactor extract the footer links"`],
+  ["allowed", "an emoji without its variation selector", `git commit -m "♻ refactor the footer links"`],
   ["allowed", "a zwj emoji", `git commit -m "🧑‍💻 improve the developer experience"`],
 
   // Structure
   ["refused", "a plain sentence", `git commit -m "Update footer links"`],
   ["refused", "conventional commits", `git commit -m "fix: footer links wrap"`],
-  ["refused", "no gitmoji", `git commit -m "fix stop the footer from wrapping"`],
-  ["refused", "a type outside the convention", `git commit -m "🐛 bugfix stop the footer from wrapping"`],
+  ["refused", "no gitmoji", `git commit -m "fix the footer wrapping"`],
+  ["refused", "a type outside the convention", `git commit -m "🐛 bugfix the footer wrapping"`],
   ["refused", "a type read off the gitmoji's name", `git commit -m "🎨 style reformat the footer"`],
   ["refused", "nothing but a gitmoji and a type", `git commit -m "🐛 fix"`],
   ["refused", "an emoji outside the official list", `git commit -m "🦄 add a unicorn"`],
   ["refused", "a plausible but unofficial emoji", `git commit -m "🔄 update stuff"`],
   ["refused", "an emoji merged upstream but not released", `git commit -m "🦖 add backwards compatibility"`],
 
+  // The <type> is the verb of the subject, so the description carries on from
+  // it. A description opening on its own verb is the shape a `fix:` prefix
+  // leads to, and the one word the hook can catch without reading English.
+  ["refused", "a second verb after the type", `git commit -m "💄 improve scale down the rvby gem on its card"`],
+  ["refused", "a second verb after fix", `git commit -m "🐛 fix hide the browser mockup on projects without a website"`],
+  ["refused", "the type used again as the verb", `git commit -m "✨ add add a dark mode toggle"`],
+  ["allowed", "the same change without the second verb", `git commit -m "💄 improve the rvby gem size on its card"`],
+
+  // Words the list leaves alone, because they open a noun phrase here. They are
+  // why the list holds only verbs that are not also an ordinary noun.
+  ["allowed", "a verb used as a noun", `git commit -m "🍱 add open graph image"`],
+  ["allowed", "a verb naming a behaviour", `git commit -m "🎨 fix scroll behavior for landing page links"`],
+  ["allowed", "a hyphenated noun", `git commit -m "✨ add catch-all not found page"`],
+
   // Lowercase, as the convention words it. An identifier keeps its own casing;
   // a capitalised ordinary word is the shape this rule is after.
-  ["refused", "a capitalised first word", `git commit -m "🐛 fix Stop the footer from wrapping"`],
+  ["refused", "a capitalised first word", `git commit -m "🐛 fix The footer wrapping"`],
   ["allowed", "a file name's own casing", `git commit -m "📝 update CLAUDE.md with the plugin documentation"`],
   ["allowed", "a product's own casing", `git commit -m "⬆️ upgrade Node.js to v21"`],
   ["allowed", "an identifier mid-description", `git commit -m "💄 add className support to the safari component"`],
@@ -73,7 +87,7 @@ const CASES: [Expectation, string, string][] = [
   // through: refusing it would block a legitimate commit.
   ["allowed", "a message in a shell variable", `git commit -m "$MSG"`],
   ["allowed", "a command substitution", `git commit -m "$(cat .git/MSG)"`],
-  ["allowed", "ansi-c quoting", `git commit -m $'🐛 fix stop the footer from wrapping'`],
+  ["allowed", "ansi-c quoting", `git commit -m $'🐛 fix the footer wrapping'`],
   ["allowed", "a relative -F path", `cd sub && git commit -F msg.txt`],
 
   // Not a commit at all
@@ -85,7 +99,7 @@ const CASES: [Expectation, string, string][] = [
   ["refused", "an absolute git path", `/usr/bin/git commit -m "Update things"`],
   ["refused", "git -C", `git -C /tmp commit -m "Update things"`],
   ["refused", "the second commit of a chain", `git commit -m "🐛 fix a thing" && git commit -m "And another"`],
-  ["allowed", "a commit after staging", `git add . && git commit -m "♻️ refactor extract the footer links"`],
+  ["allowed", "a commit after staging", `git add . && git commit -m "♻️ refactor the footer links"`],
 ];
 
 function decide(command: string): Expectation {
